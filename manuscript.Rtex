@@ -8,6 +8,7 @@
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{references.bib}
+\usepackage{pgfplotstable}
 
 \title{Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
 \shorttitle{Anti-Alcohol Messages in Context}
@@ -102,30 +103,46 @@ s=study1a_drink_df %>% group_by(QualtricsMsgID) %>% count() %>% ungroup() %>% su
 \subsection{Procedures}
 Study 1a participants completed a Qualtrics survey in which they were pseudo-randomly assigned to view 12 out of the 140 stimuli so that stimuli were shown evenly across participants. After viewing each stimulus, participants rated their current urge to drink alcohol, followed by their emotional responses to the stimulus, followed by their perceptions of the source of the stimulus, the perceived valence of the stimulus, and familiarity with the portrayed scene. Each stimulus was rated by an average of $\Sexpr{round(s$m,2)}$ (SD = $\Sexpr{round(s$s,2)}$) participants.
 
-<<>>=
+<<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 s=study1b_drink_df %>% filter(grepl('non',condition)) %>% dplyr::group_by(QualtricsURL) %>% count() %>% ungroup() %>% summarise(m=mean(n,na.rm=T),s=sd(n,na.rm=T))
 print(s)
 @
 
 Study 1b mirrored all procedures described for Study 1a, but Study 1b participants viewed a different selection of stimuli. Specifically, for each Study 1b participant, six stimuli showed non-alcoholic drinks (either from professional or non-professional sources; the focal stimuli in this study). In addition, Study 1b participants viewed 6 stimuli showing alcoholic drinks (stimuli of non-interest in this study) in order to create an experience comparable to that of Study 1a participants. For each participant, the non-alcohol stimuli were randomly chosen out of a total of 30 non-alcohol stimuli. The alcohol stimuli were chosen out of the set of 76 alcohol-related stimuli that constitute a subset of the alcohol-related stimuli used in Study 1a. All stimuli were shown evenly across participants. Each non-alcohol stimulus was rated by an average of $\Sexpr{round(s$m,2)}$ (SD = $\Sexpr{round(s$s,2)}$) participants.
 
-Study 2 participants completed a Qualtrics survey in combination with a timed experimental task hosted on www.Pavlovia.org. In this task, each participant was exposed to a set of 88 stimuli (22 per condition; a subset of Study 1 stimuli) in random order. Each stimulus was shown for 6 seconds, followed by a brief fixation period and, subsequently, a standardized alcohol or non-alcohol cue which was shown for 4 seconds. Standardized (non-)alcohol cues were sampled from the Amsterdam Beverage Picture Set [@pronkValidationAmsterdamBeverage2015]. After viewing the alcohol or non-alcohol cue for 2 seconds, a rating scale appeared on the screen, asking participants to rate their urge to consume the drink shown (Figure \@ref(fig:FigureAlcValTask)). 
 
-```{r FigureAlcValTask,fig.cap='Stimuli. A) Example Image per Experimental Condition; B) Post Templates for Instagram and Website Searches'}
-knitr::include_graphics("Figures/FigureAlcValTask.png")
-```
+\begin{figure}
+    \caption{Alcohol Value Task}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/FigAlcValTask.png}
+    \label{fig:FigAlcValTask}
+\end{figure}
 
-\subsection{Procedure}
-\lipsum[7]
+Study 2 participants completed a Qualtrics survey in combination with a timed experimental task hosted on www.Pavlovia.org. In this task, each participant was exposed to a set of 88 stimuli (22 per condition; a subset of Study 1 stimuli) in random order. Each stimulus was shown for 6 seconds, followed by a brief fixation period and, subsequently, a standardized alcohol or non-alcohol cue which was shown for 4 seconds. Standardized (non-)alcohol cues were sampled from the Amsterdam Beverage Picture Set \cite{pronk_validation_2015}. After viewing the alcohol or non-alcohol cue for 2 seconds, a rating scale appeared on the screen, asking participants to rate their urge to consume the drink shown (Figure \ref{fig:FigureAlcValTask}). 
 
-\subsubsection{Instrument \#1}
-\lipsum[8]
+\subsection{Measures}
+\paragraph{Manipulation Checks (Study 1a and 1b only)}
+Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
 
-\paragraph{Reliability}
-\lipsum[9]
+In addition, Study 1a and 1b participants rated the perceived **source** of each image: "Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image. Options included: A professional or company account, An influencer, and An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes)". Ratings were provided on three 7-point Likert-type scales (1 = Certainly did not post this, 7 = Certainly posted this). While our experimental manipulations only covered professional and peer-produced ('average user') sources, we added an Influencer category to the manipulation check to assess whether there were differences in participants' likelihood to misattribute a stimulus to an Influencer as a source.
 
-\subparagraph{Inter-rater reliability}
-\lipsum[10]
+\paragraph{Emotional Responses (Study 1a and 1b only}
+Study 1a and 1b participants rated: "To what extent does this post make you feel the following? [amused, sad, scared, jealous, shocked, happy, embarrassed (for someone else), positive, negative]" on 7-point Likert-type scales (1 = Not at all; 7 = very much). 
+
+\paragraph(Familiarity (Study 1a and 1b only)
+Study 1a and 1b participants rated different aspects of familiarty with the scene portrayed in each stimulus: "To what extent do you agree or disagree with the following statements? This post ... [shows people that are like me/shows a situation I'm familiar with/is a post i could imagine seeing on my Instagram feed/shows an image of high quality]" on 7-point Likert-type scales (1 = Totally disagree; 7 = totally agree)
+
+\subsection{Data Analysis}
+We conducted two-types of analyses. First, we estimated within-subject effects of conditions on drinking urge using multi-level mixed regression models as implemented in R's lmerTest package [@R-lmerTest] to account for the nested structure of the data. Second, we conducted stimulus-level analyses, aggregating over participants.
+
+\section(Results)
+First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli. Table \@ref(tab:manipulationCheckTableVal) shows within-person effects. Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much more positive and less negative outcomes of alcohol consumption than anti-alcohol stimuli. Figure \@ref(fig:FigureMC) illustrates mean differences at the stimulus level.
+
+
+\pgfplotstabletypeset[]{MCtable_study1a.csv}
+
+\subsection(Manipulation Checks (Study 1a & Study 1b))
+
+\section(Discussion)
 
 \subparagraph{Test-retest reliability}
 \lipsum[11]
