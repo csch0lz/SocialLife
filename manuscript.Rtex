@@ -82,8 +82,9 @@ source('scripts/customFunctions.R')
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
 study2_logs=read_csv('data/study2/cleaned/logs_cleaned.csv',col_types=cols())
-study2_s1=read_csv('data/study2/cleaned/Scanner_Task_Pilot_S1_anonymized.csv',col_types=cols())
-
+study2_s1=read_csv('data/study2/cleaned/S1_cleaned.csv',col_types=cols())
+study1a_drink_df=readRDS('data/study1a/cleaned/drink_df.RDS')
+study1b_drink_df=readRDS('data/study1b/cleaned/drink_df.RDS')
 @
 
 \subsection{Participants}
@@ -92,14 +93,27 @@ For Study 1, $\Sexpr{dim(ppts_study1a)[1]}$ participants (Mean Age = $\Sexpr{rou
 
 For Study 1b, $\Sexpr{dim(ppts_study1b)[1]}$ participants (Mean Age = $\Sexpr{round(mean(ppts_study1b$age),2)}$, SD= $\Sexpr{round(sd(ppts_study1b$age),2)}$, Range= $\Sexpr{min(ppts_study1b$age)}$ - $\Sexpr{max(ppts_study1b$age)}$, Gender: $\Sexpr{sum(ppts_study1b$gender_char=='male')}$ male, $\Sexpr{sum(ppts_study1b$gender_char=='female')}$ female, $\Sexpr{sum(ppts_study1b$gender_char=='non-binary')}$ non-binary, $\Sexpr{sum(ppts_study1b$gender_char=='prefer not to say')}$ prefer not to say) were recruited on Prolific. Following procedures in Study 1a, participants reported the frequency of alcohol consumption and binge drinking. The largest group of participants reported to drink $\Sexpr{getmode(ppts_study1b$drinking_freq_char)}$ (N=$\Sexpr{sum(ppts_study1b$drinking_freq_char==getmode(ppts_study1b$drinking_freq_char),na.rm=T)}$, range = $\Sexpr{ppts_study1b %>% filter(drinking_freq==max(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$-$\Sexpr{ppts_study1b %>% filter(drinking_freq==min(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$) and binge drink $\Sexpr{getmode(na.omit(ppts_study1b$binge_drinking_char))}$ (N=$\Sexpr{sum(ppts_study1b$binge_drinking_char==getmode(na.omit(ppts_study1b$binge_drinking_char)),na.rm=T)}$, range = $\Sexpr{ppts_study1b %>% filter(binge_drinking==max(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$-$\Sexpr{ppts_study1b %>% filter(binge_drinking==min(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$.
 
+For Study 2, $\Sexpr{length(unique(study2_logs$pID))}$ participants (Mean Age = $\Sexpr{round(mean(study2_s1$age),2)}$, SD=$\Sexpr{round(sd(study2_s1$age),2)}$, Range=$\Sexpr{round(min(study2_s1$age),2)}$-$\Sexpr{round(max(study2_s1$age),2)}$, Gender: $\Sexpr{sum(study2_s1$gender_char=='male')}$ male, $\Sexpr{sum(study2_s1$gender_char=='female')}$ female) were recruited through an online recruitment tool for students at our university. All participants were Instagram users and had consumed alcohol in the past. Study 2 participants completed the Alcohol Use Disorder Identification Test (AUDIT, [@bohnAlcoholUseDisorders1995]). Their scores ranged from $\Sexpr{min(study2_s1$AUDIT_score)}$ to $\Sexpr{max(study2_s1$AUDIT_score)}$ (Mean = $\Sexpr{round(mean(study2_s1$AUDIT_score),2)}$, SD = $\Sexpr{round(sd(study2_s1$AUDIT_score),2)}$). 
 
+<<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
+s=study1a_drink_df %>% group_by(QualtricsMsgID) %>% count() %>% ungroup() %>% summarise(m=mean(n,na.rm=T),s=sd(n,na.rm=T))
+@
 
+\subsection{Procedures}
+Study 1a participants completed a Qualtrics survey in which they were pseudo-randomly assigned to view 12 out of the 140 stimuli so that stimuli were shown evenly across participants. After viewing each stimulus, participants rated their current urge to drink alcohol, followed by their emotional responses to the stimulus, followed by their perceptions of the source of the stimulus, the perceived valence of the stimulus, and familiarity with the portrayed scene. Each stimulus was rated by an average of $\Sexpr{round(s$m,2)}$ (SD = $\Sexpr{round(s$s,2)}$) participants.
 
+<<>>=
+s=study1b_drink_df %>% filter(grepl('non',condition)) %>% dplyr::group_by(QualtricsURL) %>% count() %>% ungroup() %>% summarise(m=mean(n,na.rm=T),s=sd(n,na.rm=T))
+print(s)
+@
 
+Study 1b mirrored all procedures described for Study 1a, but Study 1b participants viewed a different selection of stimuli. Specifically, for each Study 1b participant, six stimuli showed non-alcoholic drinks (either from professional or non-professional sources; the focal stimuli in this study). In addition, Study 1b participants viewed 6 stimuli showing alcoholic drinks (stimuli of non-interest in this study) in order to create an experience comparable to that of Study 1a participants. For each participant, the non-alcohol stimuli were randomly chosen out of a total of 30 non-alcohol stimuli. The alcohol stimuli were chosen out of the set of 76 alcohol-related stimuli that constitute a subset of the alcohol-related stimuli used in Study 1a. All stimuli were shown evenly across participants. Each non-alcohol stimulus was rated by an average of $\Sexpr{round(s$m,2)}$ (SD = $\Sexpr{round(s$s,2)}$) participants.
 
+Study 2 participants completed a Qualtrics survey in combination with a timed experimental task hosted on www.Pavlovia.org. In this task, each participant was exposed to a set of 88 stimuli (22 per condition; a subset of Study 1 stimuli) in random order. Each stimulus was shown for 6 seconds, followed by a brief fixation period and, subsequently, a standardized alcohol or non-alcohol cue which was shown for 4 seconds. Standardized (non-)alcohol cues were sampled from the Amsterdam Beverage Picture Set [@pronkValidationAmsterdamBeverage2015]. After viewing the alcohol or non-alcohol cue for 2 seconds, a rating scale appeared on the screen, asking participants to rate their urge to consume the drink shown (Figure \@ref(fig:FigureAlcValTask)). 
 
-\subsection{Design}
-\lipsum[6]
+```{r FigureAlcValTask,fig.cap='Stimuli. A) Example Image per Experimental Condition; B) Post Templates for Instagram and Website Searches'}
+knitr::include_graphics("Figures/FigureAlcValTask.png")
+```
 
 \subsection{Procedure}
 \lipsum[7]
