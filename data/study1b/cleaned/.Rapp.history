@@ -1,0 +1,2 @@
+load("/Users/cscholz/Library/CloudStorage/OneDrive-UvA/Research/Projects/TalkingDrinks_fMRI(2019-PC-11278)/writing/PilotPaperTalkingDrinks/data/study1b/cleaned/drink_df.RDS")
+drink_df
