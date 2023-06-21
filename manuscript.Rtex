@@ -68,12 +68,13 @@ Any comments or hashtags on the original sampled Instagram posts were removed an
 
 THE FULL SET OF STIMULI IS AVAILABLE AT...
 
-<<echo=FALSE,include=FALSE>>=
-
+<<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
+library('tidyverse')
+ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 @
 
 \subsection{Participants}
-For Study 1, 327 participants (Mean Age = 23.75, SD= 4.13, Range= 18 - 35, Gender: 216 male, 107 female, 3 non-binary, 1 prefer not to say) were recruited on Prolific.
+For Study 1, $\Sexpr{dim(ppts_study1a)[1]}$ participants (Mean Age = $\Sexpr{round(mean(ppts_study1a$age),2)}$, SD=$\Sexpr{round(sd(ppts_study1a$age),2)}$, Range= $\Sexpr{max(ppts_study1a$age)}$-$\Sexpr{min(ppts_study1a$age)}$, Gender: $\Sexpr{sum(ppts_study1a$gender_char=='male')}$216 male, 107 female, 3 non-binary, 1 prefer not to say) were recruited on Prolific.
 For Study 2, 51 participants (Mean Age = 20.04, SD=1.99, Range=18-25, Gender: 13 male, 37 female) through an online recruitment tool for students at our university. All participants were Instagram users and had consumed alcohol in the past. AUDIT scores ranged from 1 to 25 (Mean = 8.18, SD = 4.95).
 
 
