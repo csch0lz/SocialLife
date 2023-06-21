@@ -30,19 +30,18 @@ mc_table=valence_df %>%
   broom.mixed::tidy(.,conf.int=T) %>%
   mutate(rating='negative',group=ifelse(group=='ResponseId','pID',
                                         ifelse(group=='QualtricsMsgID','mID',group))) %>% 
-  rbind(pos_val_mod,.) %>%
+  rbind(pos_val_mod,.) %>% 
   mutate(`95% CI`=case_when(!is.na(conf.low)~paste0('[',format(round(conf.low,2),nsmall=2),';',format(round(conf.high,2),nsmall=2),']'),TRUE~NA_character_),
          p.value=formatp(p.value)) %>% 
-  select(rating,effect, group, term, estimate, `95% CI`, p.value) %>% 
-  pivot_wider(.,names_from = rating, values_from=c('estimate','p.value',`95% CI`)) %>% 
-  select(effect,group,term,names(.)[grepl('_positive',names(.))],names(.)[grepl('_negative',names(.))]) %>% 
-  arrange(!is.na(group),!(!is.na(estimate_negative) & !is.na(estimate_positive))) %>% 
+  select(rating,effect, group, term, estimate, `95% CI`, p.value) %>%
+  arrange(rating,!is.na(group),!(!is.na(estimate))) %>% 
   mutate(term=case_when(is.na(group)~term,TRUE~paste(group,term,sep=' '))) %>%
   select(-group) 
 
 mc_table[is.na(mc_table)]<-''
-mc_table$term<-c('Intercept','Valence: pro-alcohol','pID Intercept','sID Intercept','Residual')
+mc_table$term<-rep(c('Intercept','Valence: pro-alcohol','pID Intercept','sID Intercept','Residual'),2)
 
-mc_table=optimizeColWidth(mc_table)
+mc_table=optimizeColWidth(mc_table) %>%
+  mutate(effect=ifelse(effect=='ran_pars','random',effect))
 
 write_csv(mc_table, 'Tables/mc_table_study1a.csv')
