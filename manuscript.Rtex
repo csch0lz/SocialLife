@@ -60,13 +60,26 @@ Prior work has theorized and demonstrated that the effects of multiple sources o
 Two online studies in independent samples were conducted to examine the effects of valence and source characteristics of Instagram posts about alcohol on the urge to consume alcohol in young adults.
 
 \subsection{Stimuli}
-A set of 120 manipulated stimuli were created for Study 1, of which 88 were chosen and re-tested in Study 2. Stimuli consisted of an alcohol-related image and a hashtag which were both entered into one of two templates, a template mimicking an Instagram post (used for all Study 1 stimuli and half of the Study 2 stimuli) or a template mimicking the result of a Google search (used only in Study 2; see Figure 1A)\footnote{The two templates were introduced for an exploratory research question. None of the results discussed here are influenced by template.}. Stimuli were designed to manipulate two experimental factors, valence and source. 
+A set of 120 alcohol-related manipulated stimuli were created for Study 1a, of which 88 were chosen and re-tested in Study 2^[I can give details about why/how in supplementaries. Briefly, the sub-selection was made for the scanner task.]. Stimuli consisted of an alcohol-related image and a hashtag. To manipulate **valence**, we chose _pro-alcohol_ images which showed alcohol or alcohol consumption in a positive context (e.g. portraying positive outcomes of drinking) and a set of _anti-alcohol_ images which portrayed alcohol or alcohol consumption in a negative context (e.g. showing negative outcomes of drinking). Post **source** was manipulated by choosing pro- and anti-alcohol images from public Instagram accounts of _everyday users_, namely images with relatively few likes at the time of sampling that were not posted by a professional organization, business, or influencer account, or from a _professional source_. Professional pro-alcohol images were sampled from professional Instagram accounts of businesses and brands (e.g. bars and alcohol brands) and include marketing materials for specific types of alcohol and alcohol-related, branded events. Professional anti-alcohol images were sampled from global, English-language public health campaigns advocating against (excessive) drinking, derived from an online search. The source was not explicitly communicated to participants. 
 
-To manipulate valence, we chose pro-alcohol images which showed alcohol or alcohol consumption in a positive context (e.g. portraying positive outcomes of drinking) and a set of anti-alcohol images which portrayed alcohol or alcohol consumption in a negative context (e.g. showing negative outcomes of drinking). Post source was manipulated by choosing pro- and anti-alcohol images from public Instagram accounts of everyday users, namely images with relatively few likes at the time of sampling that were not posted by a professional organization, business, or influencer account, or from a professional source. Professional pro-alcohol images were sampled from professional Instagram accounts of businesses and brands (e.g. bars and alcohol brands) and include marketing materials for specific types of alcohol and alcohol-related, branded events. Professional anti-alcohol images were taken from global, English-language public health campaigns advocating against (excessive) drinking, derived from an online search. Figure 1B shows example images per experimental condition.
+For Study 1b, an additional set of 30 stimuli were created which all displayed non-alcoholic drinks. Similar to alcohol-related stimuli, these non-alcoholic stimuli were based on public Instagram posts from _everyday users_ or _professional sources_. All non-alcoholic stimuli expressed positive sentiment towards the depicted beverage. Figure \@ref(fig:FigureStimuli)A shows example images for each condition. 
 
-Any comments or hashtags on the original sampled Instagram posts were removed and replaced with standardized hashtags that match the condition in question. The goal of creating these hashtags was to standardize the amount of text shown in each condition and to clearly identify each image as related to alcohol. For peer-produced posts, we sampled hashtags that are frequently used on Instagram for the types of images used in this study (e.g. [EXAMPLES]). For professional pro-alcohol posts, we used hashtags communicating brand names (e.g. #baccardi). For professional anti-alcohol stimuli we used hashtags related to the content of the campaigns, often the campaign slogan (e.g. #EXAMPLE).
+We sought to standardize the amount of text shown in each condition and to clearly identify each image as related to alcohol or not. To this end, original comments and hashtags on sampled Instagram posts were removed and replaced with one standardized hashtag per image that matched the condition in question. For peer-produced posts, we used hashtags that were frequently used on Instagram for the types of images used in this study and hashtags used to sample posts from public Instagram accounts. For professional pro-alcohol posts, we used hashtags that were frequently used by the businesses and brands from which posts were sampled (e.g. brand or event names). For professional anti-alcohol stimuli we used hashtags related to the content of the campaigns, often the (abbreviated) campaign slogan.
 
-THE FULL SET OF STIMULI IS AVAILABLE AT...
+Finally, we manipulated the **online platform** in Study 2, by entering images and their assigned hashtags into one of two templates, a template mimicking an Instagram post (used for all Study 1a/b stimuli and half of the Study 2 stimuli) or a template mimicking the result of a Google search (used for half the Study 2 stimuli; see Figure \ref{fig:FigureStimuli}B). The purpose of this manipulation was to test the specificity of any results to the context of social media as opposed to online environments more generally. Note that, because we did not find any significant effects of the online platform factor, these conditions are collapsed for all analyses reported here.
+
+All stimuli are available on our OSF project page. 
+
+\begin{figure}
+    \caption{Stimuli. A) Example Stimulus per Experimental Condition; B) Templates for Manipulation of Online Platform in Study 2}
+    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{FigureStimuli.png}
+    \label{fig:FigureStimuli}
+\end{figure}
+
+Figure~ shows this trend. \lipsum[16]
+
+
+"Figures/FigureStimuli.png"
 
 <<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library('tidyverse')
@@ -154,7 +167,7 @@ As shown in Figure~\ref{fig:Figure2}, these results are impressive. \lipsum[20]
 
 \begin{figure}
     \caption{This is my second figure caption.}
-    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figure1.pdf}
+    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figures/Figure1.pdf}
     \label{fig:Figure2}
 \end{figure}
 
