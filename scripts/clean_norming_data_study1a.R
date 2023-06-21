@@ -146,6 +146,35 @@ ppt_df = ppt_df %>%
                                        binge_drinking==10~'Never',
                                        TRUE~NA_character_))
 
+# Split conditions 
+
+drink_df=drink_df %>% mutate(val_cond=case_when(grepl('pro_',condition)~'pro-alcohol',
+                                                grepl('anti_',condition)~'anti-alcohol',
+                                                TRUE~NA_character_),
+                             val_cond=factor(val_cond),
+                             source_cond=case_when(grepl('prof',condition)~'professional',
+                                                   grepl('soc',condition)~'peer-produced',
+                                                   TRUE~NA_character_),
+                             source_cond=factor(source_cond),)
+
+valence_df <- valence_df %>% mutate(val_cond=case_when(grepl('pro_',condition)~'pro-alcohol',
+                                                       grepl('anti_',condition)~'anti-alcohol',
+                                                       TRUE~NA_character_),
+                                    val_cond=factor(val_cond),
+                                    source_cond=case_when(grepl('prof',condition)~'professional',
+                                                          grepl('soc',condition)~'peer-produced',
+                                                          TRUE~NA_character_),
+                                    source_cond=factor(source_cond),)
+
+source_df <- source_df %>% mutate(val_cond=case_when(grepl('pro_',condition)~'pro-alcohol',
+                                                     grepl('anti_',condition)~'anti-alcohol',
+                                                     TRUE~NA_character_),
+                                  val_cond=factor(val_cond),
+                                  source_cond=case_when(grepl('prof',condition)~'professional',
+                                                        grepl('soc',condition)~'peer-produced',
+                                                        TRUE~NA_character_),
+                                  source_cond=factor(source_cond))
+
 
 # Save out datastructures
 saveRDS(drink_df,'data/study1a/cleaned/drink_df.RDS')

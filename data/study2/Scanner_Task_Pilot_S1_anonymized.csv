@@ -1,0 +1,100 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,DistributionChannel,UserLanguage,icf,age,insta,alcohol,drunk,gender,gender_4_TEXT,AUDIT1,AUDIT2,AUDIT3,AUDIT4,AUDIT5,AUDIT6,AUDIT7,AUDIT8,AUDIT9,AUDIT10,diet,meat_1,meat_2,meat_3,meat_4,meat_5,meat_6,meat_7,meat_8,meat_9,meat_10,meat_11,meat_12,meat_13,meat_14,meat_15,meat_16,pID
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Distribution Channel,User Language,"Informed Consent to Participate
+
+
+
+After reading the information above, do you wish to voluntarily participate in this research study? Please choose an option below.",What is your age? (in years),Do you have an Instagram account?,Have you ever consumed alcoholic beverages in you life?,Have you ever been drunk or tipsy in your life?,What is your gender? - Selected Choice,What is your gender? - Prefer to self-describe - Text,"During the last 12 months how often have you had a drink containing alcohol?
+
+
+
+By one drink we mean a small glass or bottle of beer, a small glass of wine or prosecco, a shot glass of liquor or spirits.","During the last 12 months, how many drinks containing alcohol did you have on a typical day when you were drinking?
+ 
+
+By one drink we mean a small glass or bottle of beer, a small glass of wine or prosecco, a shot glass of liquor or spirits.","During the last 12 months, how often did you have six or more drinks on one occasion?
+ 
+
+By one drink we mean a small glass or bottle of beer, a small glass of wine or prosecco, a shot glass of liquor or spirits.","During the last 12 months, how often have you found that you were not able to stop drinking once you had started?","During the last 12 months, how often have you failed to do what was normally expected from you because of drinking?","During the last 12 months, how often have you needed a first drink in the morning to get yourself going after a heavy drinking session?","During the last 12 months, how often have you had a feeling of guilt or remorse after drinking?","During the last 12 months, how often have you been unable to remember what happened the night before because you had been drinking?",Have you or someone else been inured as a result of your drinking?,Has a relative or friend or a doctor or another health care worker been concerned about your drinking or suggested you cut down?,"Which of the following categories best describe your current diet?
+OmnivorousConsume animal products, except those excluded for taste preference, medical (e.g., allergy, intolerance), and/or religious reasons.
+Semi- or partial vegetarian	Consume some, but not all, of the following: red meat (beef, veal, etc.), pork, poultry, fish, and/or seafood. Consume eggs and dairy products.
+Vegetarian	Never consume red meat (beef, veal, etc.), pork, poultry, fish, or seafood, but may consume eggs and/or dairy products.
+Strict vegetarian or dietary vegan	Never consume any animal products, including red meat (beef, veal, etc.), pork, poultry, fish, seafood, eggs, dairy products, or other animal products (e.g., gelatin, casein, etc.).
+Lifestyle vegan	Never consume any animal products, and avoid some or all non-food animal products (e.g., leather, silk, cosmetics containing animal ingredients, etc.) and/or products tested on animals.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - It is only natural to eat meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - It is unnatural to eat an all plant-based diet.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Our human ancestors ate meat all the time.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Human beings naturally crave meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - It is necessary to eat meat in order to be healthy.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - You cannot get all the protein, vitamins, and mineral you need on an all plant-based diet.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Human beings need to eat meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - A healthy diet requires at least some meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Not eating meat is socially unacceptable.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - It is abnormal for humans not to eat meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Most people I know eat meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - It is normal to eat meat.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Meat is delicious.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Meat adds so much flavor to a meal it does not make sense to leave it out.","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - The best tasting food is normally a meat based dish (e.g., steak, chicken breast, grilled fish).","Below is a series of statements on meat consumption.
+Do you agree or disagree with these statements? - Meals without meat would just be bland and boring.",pID
+"{""ImportId"":""startDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""endDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""Europe/Berlin""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID22""}","{""ImportId"":""QID17_TEXT""}","{""ImportId"":""QID18""}","{""ImportId"":""QID24""}","{""ImportId"":""QID25""}","{""ImportId"":""QID19""}","{""ImportId"":""QID19_4_TEXT""}","{""ImportId"":""QID5""}","{""ImportId"":""QID6""}","{""ImportId"":""QID7""}","{""ImportId"":""QID9""}","{""ImportId"":""QID10""}","{""ImportId"":""QID12""}","{""ImportId"":""QID13""}","{""ImportId"":""QID14""}","{""ImportId"":""QID15""}","{""ImportId"":""QID16""}","{""ImportId"":""QID2""}","{""ImportId"":""QID3_1""}","{""ImportId"":""QID3_4""}","{""ImportId"":""QID3_5""}","{""ImportId"":""QID3_6""}","{""ImportId"":""QID3_7""}","{""ImportId"":""QID3_8""}","{""ImportId"":""QID3_9""}","{""ImportId"":""QID3_10""}","{""ImportId"":""QID3_11""}","{""ImportId"":""QID3_12""}","{""ImportId"":""QID3_13""}","{""ImportId"":""QID3_14""}","{""ImportId"":""QID3_15""}","{""ImportId"":""QID3_16""}","{""ImportId"":""QID3_17""}","{""ImportId"":""QID3_18""}","{""ImportId"":""pID""}"
+2020-11-13 14:42:06,2020-11-13 14:47:32,0,100,325,1,2020-11-13 14:47:32,R_OPtcJLyB5GjWKfT,,,,,anonymous,EN,1,20,1,1,3,2,,1,1,1,0,0,0,1,0,0,0,1,16,15,21,15,15,16,15,16,17,16,19,18,16,15,15,15,434969
+2020-11-13 14:46:51,2020-11-13 14:53:38,0,100,407,1,2020-11-13 14:53:39,R_1kLjeObMTpu3QIS,,,,,anonymous,EN,1,25,1,1,3,2,,3,1,2,1,0,0,1,1,4,0,1,17,19,18,19,18,20,19,18,15,17,17,19,19,15,16,15,434970
+2020-11-13 14:47:57,2020-11-13 14:54:32,0,100,395,1,2020-11-13 14:54:32,R_3qxRR7ZZYG7sPJF,,,,,anonymous,EN,1,27,1,1,3,2,,2,3,4,0,0,0,1,1,2,0,1,15,15,20,20,19,18,19,19,15,17,19,20,21,20,20,19,434970
+2020-11-13 14:52:45,2020-11-13 14:55:26,0,100,161,1,2020-11-13 14:55:27,R_2z8bKYOxaaSCRE5,,,,,anonymous,EN,1,19,1,1,2,1,,1,0,0,0,0,0,0,0,0,0,1,15,18,20,19,20,16,19,20,15,18,21,21,20,20,21,20,434974
+2020-11-13 14:55:34,2020-11-13 14:58:49,0,100,194,1,2020-11-13 14:58:49,R_32JS2S3nB75Xw38,,,,,anonymous,EN,1,19,1,1,3,2,,1,2,1,0,0,0,1,1,0,0,6,15,15,19,15,15,15,15,15,15,15,19,20,20,15,15,15,434978
+2020-11-13 14:56:55,2020-11-13 15:00:03,0,100,187,1,2020-11-13 15:00:03,R_2P0PAP3bAHm5Rx5,,,,,anonymous,EN,1,19,1,1,1,2,,2,3,2,0,0,0,0,0,0,0,1,19,15,19,20,19,19,19,19,15,16,20,21,19,16,15,15,434982
+2020-11-13 14:54:20,2020-11-13 15:03:15,0,100,535,1,2020-11-13 15:03:16,R_30wuC3Sth7nYL6Q,,,,,anonymous,EN,1,27,1,1,3,2,,2,3,4,0,0,0,1,1,2,0,1,15,15,18,17,17,18,17,20,15,17,20,19,21,19,20,19,434970
+2020-11-13 14:54:51,2020-11-13 15:03:26,0,100,514,1,2020-11-13 15:03:26,R_3JE6saYHFEtcncK,,,,,anonymous,EN,1,18,1,1,3,2,,2,0,1,0,0,0,0,0,2,0,1,20,20,21,20,17,15,20,19,16,19,20,18,21,15,17,16,434977
+2020-11-13 14:38:20,2020-11-13 15:05:10,0,100,1610,1,2020-11-13 15:05:10,R_339njLHy5Zom4gW,,,,,anonymous,EN,1,20,1,1,3,1,,2,0,1,0,0,0,0,0,0,0,1,20,18,20,19,16,19,19,16,17,17,20,19,21,17,16,16,434967
+2020-11-13 14:56:03,2020-11-13 15:06:53,0,100,650,1,2020-11-13 15:06:53,R_1gArcl2u0Mn0zFb,,,,,anonymous,EN,1,18,1,1,2,2,,2,0,0,0,0,0,1,0,0,0,1,20,17,19,19,19,17,18,20,16,17,20,20,19,19,19,16,434979
+2020-11-13 15:05:01,2020-11-13 15:08:55,0,100,233,1,2020-11-13 15:08:55,R_Z8h1PD1gytsZ6Q9,,,,,anonymous,EN,1,25,1,1,3,1,,2,1,1,0,0,0,1,0,0,0,1,19,19,19,17,18,19,18,19,16,17,20,20,19,18,17,17,434990
+2020-11-13 15:01:40,2020-11-13 15:09:59,0,100,499,1,2020-11-13 15:09:59,R_3m4TGX0yZUuEv2t,,,,,anonymous,EN,1,19,1,1,3,1,,1,1,1,1,0,0,1,1,0,0,1,16,15,20,18,18,19,17,19,17,17,18,21,21,20,19,19,434986
+2020-11-13 15:04:40,2020-11-13 15:15:09,0,100,628,1,2020-11-13 15:15:10,R_3JruExDAhkHAdpx,,,,,anonymous,EN,1,19,1,1,3,2,,3,3,3,0,2,3,4,3,4,0,1,17,20,20,17,17,19,16,20,16,16,20,20,21,20,20,20,434988
+2020-11-13 15:00:55,2020-11-13 15:18:11,0,100,1036,1,2020-11-13 15:18:12,R_2bHSn68NQRq0nQK,,,,,anonymous,EN,1,20,1,1,3,2,,2,1,1,0,0,0,1,0,0,0,1,19,18,18,20,18,18,18,19,15,18,20,20,20,15,16,15,434985
+2020-11-13 15:16:36,2020-11-13 15:26:54,0,100,617,1,2020-11-13 15:26:55,R_1rOExkShQe5rPD3,,,,,anonymous,EN,1,20,1,1,3,1,,2,0,1,0,0,0,0,0,0,0,1,18,19,17,19,19,19,19,20,15,17,20,19,21,19,20,16,434997
+2020-11-13 15:04:50,2020-11-13 15:31:00,0,100,1569,1,2020-11-13 15:31:00,R_1NsMcjvbjnirfFP,,,,,anonymous,EN,1,18,1,1,2,2,,1,2,1,0,0,0,0,0,0,0,1,16,16,17,15,17,17,15,16,15,15,20,19,21,17,16,15,434989
+2020-11-13 15:28:15,2020-11-13 15:32:03,0,100,227,1,2020-11-13 15:32:04,R_27VzOy8otsDf6bo,,,,,anonymous,EN,1,22,1,1,3,2,,4,2,2,3,1,0,0,1,0,0,1,15,15,20,15,15,15,15,15,15,15,20,20,20,15,19,15,435005
+2020-11-13 15:24:14,2020-11-13 15:32:27,0,100,492,1,2020-11-13 15:32:27,R_2agKeuiZ6e9yiJn,,,,,anonymous,EN,1,25,1,1,3,2,,3,0,2,0,0,0,1,0,0,0,5,16,16,18,16,16,17,16,15,16,16,19,18,17,16,16,15,435002
+2020-11-13 15:39:35,2020-11-13 15:43:50,0,100,254,1,2020-11-13 15:43:50,R_3HLDExCapsYPfsh,,,,,anonymous,EN,1,45,1,1,3,2,,1,0,0,0,0,0,0,0,0,0,1,18,16,18,18,15,17,17,17,15,16,16,18,19,17,18,16,435011
+2020-11-13 15:49:54,2020-11-13 15:53:21,0,100,206,1,2020-11-13 15:53:21,R_57TkwYjMNmoxtFn,,,,,anonymous,EN,1,20,1,1,3,2,,2,1,0,0,0,0,0,0,0,0,4,15,15,18,16,16,15,15,15,19,16,20,16,16,15,15,16,435020
+2020-11-13 15:46:02,2020-11-13 15:53:49,0,100,467,1,2020-11-13 15:53:49,R_26o6ugew43mqkTr,,,,,anonymous,EN,1,19,1,1,3,1,,2,1,1,0,0,0,1,0,0,0,4,16,16,18,15,20,19,15,18,15,16,20,20,17,16,17,16,435017
+2020-11-13 15:50:38,2020-11-13 15:55:59,0,100,320,1,2020-11-13 15:55:59,R_231Q4eT3RS3cWJB,,,,,anonymous,EN,1,22,1,1,3,2,,2,1,1,1,1,0,1,0,0,0,1,16,17,19,16,16,19,16,15,16,16,17,19,19,16,19,15,435021
+2020-11-13 15:53:37,2020-11-13 15:56:38,0,100,180,1,2020-11-13 15:56:38,R_2dthy3WmNbXl2OH,,,,,anonymous,EN,1,20,1,1,3,2,,2,1,0,0,0,0,0,0,0,0,4,16,16,18,16,16,16,16,16,18,16,19,16,16,16,16,16,435020
+2020-11-13 15:58:35,2020-11-13 15:59:37,0,100,61,1,2020-11-13 15:59:38,R_1i2tAQ2x0tLDvs0,,,,,anonymous,EN,1,20,1,1,3,2,,2,1,0,0,0,0,0,0,0,0,4,16,16,18,17,16,15,16,16,17,16,16,16,16,16,16,16,435025
+2020-11-13 15:15:04,2020-11-13 16:08:54,0,100,3229,1,2020-11-13 16:08:54,R_2zSKfsibhCiQtxs,,,,,anonymous,EN,1,18,1,1,3,2,,3,1,2,0,0,0,0,3,4,0,1,20,21,21,21,21,21,21,20,15,21,21,21,21,21,21,21,434995
+2020-11-13 16:14:01,2020-11-13 16:21:31,0,100,449,1,2020-11-13 16:21:31,R_1OVaxb93ECVJ1WC,,,,,anonymous,EN,1,20,1,1,3,2,,4,1,2,0,2,0,2,1,2,0,1,20,19,18,18,16,18,17,19,16,17,18,18,20,20,20,16,435029
+2020-11-13 16:43:11,2020-11-13 16:46:31,0,100,199,1,2020-11-13 16:46:31,R_bm99xKVVoKanVg5,,,,,anonymous,EN,1,18,1,1,1,2,,0,,,,,,,,2,0,1,19,16,18,16,20,20,17,20,16,16,20,20,20,20,20,19,435047
+2020-11-13 16:42:27,2020-11-13 16:47:25,0,100,297,1,2020-11-13 16:47:25,R_6tcDBlXsWW1j0rL,,,,,anonymous,EN,1,18,1,1,2,2,,1,0,0,0,0,0,1,0,0,0,1,16,19,20,19,16,20,19,21,15,20,21,21,19,17,15,16,435045
+2020-11-13 16:42:20,2020-11-13 16:50:38,0,100,498,1,2020-11-13 16:50:39,R_3prkxulltoI7ALe,,,,,anonymous,EN,1,18,1,1,2,1,,2,1,2,1,2,2,1,1,0,0,1,20,18,19,18,19,18,18,20,19,18,19,19,19,19,18,18,435044
+2020-11-13 16:50:49,2020-11-13 16:53:00,0,100,131,1,2020-11-13 16:53:01,R_3HFvkV3QrTQL7Xg,,,,,anonymous,EN,1,18,1,1,3,2,,1,0,0,0,0,0,0,0,4,0,1,19,19,21,20,20,19,20,19,18,18,21,21,21,20,20,19,435053
+2020-11-13 14:52:14,2020-11-13 16:53:33,0,100,7279,1,2020-11-13 16:53:33,R_29bNtbefV40Nv5w,,,,,anonymous,EN,1,19,1,1,3,2,,2,1,1,0,1,0,0,0,2,0,1,15,15,20,15,19,20,15,19,15,15,18,21,19,17,17,15,434972
+2020-11-13 16:49:38,2020-11-13 16:55:23,0,100,344,1,2020-11-13 16:55:23,R_VVTFuWDCCf7H9aF,,,,,anonymous,EN,1,19,1,1,3,2,,3,0,1,0,0,0,1,0,0,0,4,17,19,19,16,17,20,18,19,15,15,20,16,20,16,18,18,435052
+2020-11-13 16:55:04,2020-11-13 16:59:35,0,100,270,1,2020-11-13 16:59:35,R_etzEbWlupIRHIt3,,,,,anonymous,EN,1,19,1,1,3,2,,2,2,2,1,0,0,1,0,0,0,7,15,15,15,15,15,15,15,15,15,15,21,16,20,15,15,15,435054
+2020-11-13 16:43:05,2020-11-13 17:02:13,0,100,1148,1,2020-11-13 17:02:14,R_sHiP1sYlj9jeWYx,,,,,anonymous,EN,1,19,1,1,3,1,,3,1,2,2,0,0,0,2,4,0,1,19,19,16,16,16,15,15,16,15,16,21,21,21,18,20,15,435046
+2020-11-13 16:56:44,2020-11-13 17:02:51,0,100,367,1,2020-11-13 17:02:52,R_238mXNT9h4Ktl2T,,,,,anonymous,EN,1,22,1,1,3,1,,3,1,2,0,0,0,1,0,0,0,1,16,16,18,20,16,15,16,16,16,18,19,20,20,15,16,15,435055
+2020-11-13 16:57:43,2020-11-13 17:04:21,0,100,398,1,2020-11-13 17:04:22,R_Q4BfXGTvJLO4Vnr,,,,,anonymous,EN,1,23,1,1,3,1,,2,2,2,0,0,0,0,0,0,0,1,18,16,16,16,16,16,17,18,16,16,20,18,20,16,19,16,435056
+2020-11-13 16:58:09,2020-11-13 17:05:32,0,100,443,1,2020-11-13 17:05:32,R_AKTWdC6JKQ9G7HH,,,,,anonymous,EN,1,19,1,1,3,1,,4,2,2,1,3,0,1,1,0,4,4,17,16,20,16,15,15,16,15,15,16,20,18,17,15,15,15,435057
+2020-11-13 16:44:00,2020-11-13 17:11:05,0,100,1624,1,2020-11-13 17:11:05,R_3oQSJDcrr5jEhUd,,,,,anonymous,EN,1,20,1,1,3,1,,3,0,1,1,0,0,1,0,4,4,1,19,19,20,19,20,20,17,19,17,19,20,21,21,21,20,16,435048
+2020-11-13 16:36:00,2020-11-13 17:15:23,0,100,2362,1,2020-11-13 17:15:23,R_3iIPUIKeLb1iq7R,,,,,anonymous,EN,1,19,1,1,3,2,,3,1,1,2,2,0,1,0,4,0,1,16,16,19,16,15,16,15,16,20,15,19,18,18,17,16,16,435042
+2020-11-13 17:11:48,2020-11-13 17:15:56,0,100,248,1,2020-11-13 17:15:56,R_bq48xnwNdDMIrap,,,,,anonymous,EN,1,20,1,1,3,2,,3,1,1,2,2,0,4,1,4,0,4,18,18,19,19,20,17,18,19,15,16,19,18,20,15,20,15,435062
+2020-11-13 17:03:15,2020-11-13 17:19:20,0,100,965,1,2020-11-13 17:19:20,R_3pmaCKXOdGgGxn6,,,,,anonymous,EN,1,19,1,1,3,2,,4,2,1,0,1,0,1,1,0,0,1,21,16,21,19,17,20,19,19,15,16,18,19,21,19,19,17,435061
+2020-11-13 17:17:55,2020-11-13 17:22:44,0,100,289,1,2020-11-13 17:22:45,R_2pJhKDklUaDJfLn,,,,,anonymous,EN,1,21,1,1,1,2,,2,1,1,0,0,0,0,1,2,0,1,19,19,20,17,18,19,18,19,17,19,20,20,21,18,19,18,435063
+2020-11-13 17:20:46,2020-11-13 17:30:24,0,100,577,1,2020-11-13 17:30:24,R_tKTsHfCkcwLGGWt,,,,,anonymous,EN,1,24,1,1,3,2,,1,0,0,0,0,0,1,0,0,0,1,20,19,20,21,20,20,20,19,18,18,20,20,20,18,20,20,435066
+2020-11-13 17:39:34,2020-11-13 17:49:27,0,100,592,1,2020-11-13 17:49:27,R_eYdF7xdWng9oEtX,,,,,anonymous,EN,1,18,1,1,3,1,,2,1,1,0,0,0,0,0,4,0,1,16,18,21,19,19,20,19,19,16,16,20,20,19,17,15,18,435078
+2020-11-13 17:44:06,2020-11-13 17:53:06,0,100,539,1,2020-11-13 17:53:06,R_1CjPaTGNUkiEKxc,,,,,anonymous,EN,1,20,1,1,3,2,,3,1,2,1,1,0,1,1,2,0,4,16,16,19,19,16,16,16,16,15,16,18,20,19,16,16,15,435080
+2020-11-13 15:20:14,2020-11-13 18:21:05,0,100,10850,1,2020-11-13 18:21:06,R_C7YrMrIlTmutb7r,,,,,anonymous,EN,1,18,1,1,3,2,,2,2,1,1,1,1,0,0,0,0,4,15,15,19,17,15,15,18,15,15,15,20,15,20,15,18,15,434998
+2020-11-13 14:51:59,2020-11-13 18:39:14,0,100,13635,1,2020-11-13 18:39:15,R_3CUitzUAU9AVnFh,,,,,anonymous,EN,1,19,1,1,3,2,,3,1,1,0,0,0,0,1,2,0,1,20,20,19,20,20,20,21,21,16,20,21,21,21,17,17,16,434971
+2020-11-13 18:34:29,2020-11-13 18:39:18,0,100,288,1,2020-11-13 18:39:18,R_UsYGQlrdhNpJ2M1,,,,,anonymous,EN,1,20,1,1,3,2,,2,1,1,0,1,0,1,0,0,0,4,19,16,20,19,17,17,18,19,15,16,20,19,20,16,17,15,435089
+2020-11-13 18:36:19,2020-11-13 18:41:35,0,100,316,1,2020-11-13 18:41:36,R_2fkfvIvlCmc1V2p,,,,,anonymous,EN,1,20,1,1,3,2,,2,3,2,2,1,0,2,0,2,0,4,16,16,17,17,15,15,16,15,19,16,20,18,19,16,15,16,435090
+2020-11-13 18:41:43,2020-11-13 18:47:18,0,100,334,1,2020-11-13 18:47:18,R_4IKKrDT559YpcQh,,,,,anonymous,EN,1,20,1,1,3,2,,3,1,2,1,1,0,1,1,0,0,1,18,19,19,16,16,18,17,16,16,17,17,19,21,16,16,19,435092
+2020-11-13 18:45:19,2020-11-13 18:47:51,0,100,152,1,2020-11-13 18:47:52,R_C7U8WDxfPXbkNQB,,,,,anonymous,EN,1,19,1,1,3,2,,3,0,1,0,0,0,0,1,2,0,1,21,19,19,19,21,20,20,21,15,19,21,21,21,16,16,16,435095
+2020-11-13 18:43:13,2020-11-13 18:50:30,0,100,436,1,2020-11-13 18:50:30,R_3oYBemDVSTyUYpZ,,,,,anonymous,EN,1,21,1,1,3,2,,2,1,1,0,0,0,1,0,0,0,1,17,17,18,18,17,19,18,17,15,17,19,21,21,20,21,19,435093
+2020-11-13 18:50:49,2020-11-13 18:52:46,0,100,116,1,2020-11-13 18:52:46,R_1HcrkHRrPE7l7cH,,,,,anonymous,EN,1,19,1,1,3,2,,1,0,1,0,0,0,0,1,2,0,1,20,19,20,20,21,21,21,21,15,20,21,21,21,17,16,16,435097
+2020-11-13 18:51:38,2020-11-13 18:54:24,0,100,166,1,2020-11-13 18:54:25,R_2Tq7Ct0JXReiira,,,,,anonymous,EN,1,21,1,1,3,2,,2,1,1,0,0,0,0,0,0,0,1,18,17,18,17,17,17,17,18,16,17,19,20,21,21,21,20,435098
+2020-11-13 18:53:20,2020-11-13 18:57:48,0,100,267,1,2020-11-13 18:57:48,R_2B5aBFBQ66uKpYI,,,,,anonymous,EN,1,19,1,1,3,2,,2,2,2,0,0,0,0,1,2,0,1,15,15,18,18,15,16,15,15,15,15,19,19,21,16,19,15,435100
+2020-11-13 18:41:38,2020-11-13 18:59:30,0,100,1071,1,2020-11-13 18:59:30,R_30kQUzeoAdDScgV,,,,,anonymous,EN,1,23,1,1,3,2,,3,1,2,0,0,0,1,1,0,0,4,17,16,16,18,17,17,18,17,15,15,17,18,18,18,16,17,435091
+2020-11-13 19:00:34,2020-11-13 19:02:41,0,100,127,1,2020-11-13 19:02:41,R_3t0UPa0gdcK5g77,,,,,anonymous,EN,1,23,1,1,3,2,,3,1,2,0,0,0,1,1,0,0,4,18,15,16,17,17,16,16,17,15,15,19,17,19,18,19,19,435105
+2020-11-13 18:56:54,2020-11-13 19:03:22,0,100,388,1,2020-11-13 19:03:23,R_UGWFEcBhNfm5zjP,,,,,anonymous,EN,1,20,1,1,3,2,,3,0,1,2,1,1,1,2,0,0,1,19,16,20,17,19,18,18,19,15,16,21,20,20,19,19,16,435101
+2020-11-13 16:58:39,2020-11-13 20:04:17,0,100,11138,1,2020-11-13 20:04:18,R_1NEzGmrYhBSlgm9,,,,,anonymous,EN,1,24,1,1,3,2,,4,1,2,2,1,0,1,1,0,0,4,17,18,18,16,16,19,17,17,15,16,16,18,19,17,19,16,435058
+2020-11-13 16:24:42,2020-11-13 17:42:00,0,9,4638,0,2020-11-20 13:00:03,R_25yzotsF0cpAkZJ,,,,,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,435034
+2020-11-13 15:39:13,2020-11-13 15:44:00,0,9,286,0,2020-11-20 13:00:05,R_2BffqA8DF2SIFky,,,,,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,435010
+2020-11-13 17:27:54,2020-11-13 17:28:21,0,9,26,0,2020-11-20 13:00:35,R_Ol2BY5YheQyLetb,,,,,anonymous,EN,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,435067
