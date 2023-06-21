@@ -18,24 +18,12 @@ getmode <- function(v) {
   uniqv[which.max(tabulate(match(v, uniqv)))]
 }
 
-formatp <- function(p_value){
-  formatted_p <- ifelse(p_value<0.001,'<.001',as.character(format(round(p_value,3),nsmall=3)))
-  return(formatted_p)
-}
-
 round_format=function(vec,digits=2){
   format(round(vec,digits),nsmall=digits)
 }
 
 plot_aes=theme_bw() + 
   theme(legend.position='bottom',text=element_text(size=10))
-
-#optimize output column width with shorter column names for results tables with p-values and B
-optimizeColWidth<-function(table){
-  names(table)=sub('.value','',names(table))
-  names(table)=sub('estimate_','B',names(table))
-  return(table)
-}
 
 
 #Get upper and lower triangle of correlation matrix for heatmap plotting
