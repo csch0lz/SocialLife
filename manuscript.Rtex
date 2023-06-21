@@ -79,6 +79,7 @@ All stimuli are available on our OSF project page.
 
 <<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library('tidyverse')
+library('kableExtra')
 source('scripts/customFunctions.R')
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
@@ -135,10 +136,13 @@ Study 1a and 1b participants rated different aspects of familiarty with the scen
 We conducted two-types of analyses. First, we estimated within-subject effects of conditions on drinking urge using multi-level mixed regression models as implemented in R's lmerTest package [@R-lmerTest] to account for the nested structure of the data. Second, we conducted stimulus-level analyses, aggregating over participants.
 
 \section(Results)
-First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli. Table \@ref(tab:manipulationCheckTableVal) shows within-person effects. Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much more positive and less negative outcomes of alcohol consumption than anti-alcohol stimuli. Figure \@ref(fig:FigureMC) illustrates mean differences at the stimulus level.
+First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli. Table \ref(tab:manipulationCheckTableVal) shows within-person effects. Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much more positive and less negative outcomes of alcohol consumption than anti-alcohol stimuli. Figure \@ref(fig:FigureMC) illustrates mean differences at the stimulus level.
 
+<<>>=
+mc_table=read_csv('Tables/mc_table_study1a.csv',col_types=cols())
+kbl(mc_table,booktabs=T,digits=2) 
+@
 
-\pgfplotstabletypeset[]{MCtable_study1a.csv}
 
 \subsection(Manipulation Checks (Study 1a & Study 1b))
 
