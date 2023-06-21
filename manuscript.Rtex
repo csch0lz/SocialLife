@@ -60,37 +60,38 @@ Prior work has theorized and demonstrated that the effects of multiple sources o
 Two online studies in independent samples were conducted to examine the effects of valence and source characteristics of Instagram posts about alcohol on the urge to consume alcohol in young adults.
 
 \subsection{Stimuli}
-A set of 120 alcohol-related manipulated stimuli were created for Study 1a, of which 88 were chosen and re-tested in Study 2^[I can give details about why/how in supplementaries. Briefly, the sub-selection was made for the scanner task.]. Stimuli consisted of an alcohol-related image and a hashtag. To manipulate **valence**, we chose _pro-alcohol_ images which showed alcohol or alcohol consumption in a positive context (e.g. portraying positive outcomes of drinking) and a set of _anti-alcohol_ images which portrayed alcohol or alcohol consumption in a negative context (e.g. showing negative outcomes of drinking). Post **source** was manipulated by choosing pro- and anti-alcohol images from public Instagram accounts of _everyday users_, namely images with relatively few likes at the time of sampling that were not posted by a professional organization, business, or influencer account, or from a _professional source_. Professional pro-alcohol images were sampled from professional Instagram accounts of businesses and brands (e.g. bars and alcohol brands) and include marketing materials for specific types of alcohol and alcohol-related, branded events. Professional anti-alcohol images were sampled from global, English-language public health campaigns advocating against (excessive) drinking, derived from an online search. The source was not explicitly communicated to participants. 
-
-For Study 1b, an additional set of 30 stimuli were created which all displayed non-alcoholic drinks. Similar to alcohol-related stimuli, these non-alcoholic stimuli were based on public Instagram posts from _everyday users_ or _professional sources_. All non-alcoholic stimuli expressed positive sentiment towards the depicted beverage. Figure \@ref(fig:FigureStimuli)A shows example images for each condition. 
-
-We sought to standardize the amount of text shown in each condition and to clearly identify each image as related to alcohol or not. To this end, original comments and hashtags on sampled Instagram posts were removed and replaced with one standardized hashtag per image that matched the condition in question. For peer-produced posts, we used hashtags that were frequently used on Instagram for the types of images used in this study and hashtags used to sample posts from public Instagram accounts. For professional pro-alcohol posts, we used hashtags that were frequently used by the businesses and brands from which posts were sampled (e.g. brand or event names). For professional anti-alcohol stimuli we used hashtags related to the content of the campaigns, often the (abbreviated) campaign slogan.
-
-Finally, we manipulated the **online platform** in Study 2, by entering images and their assigned hashtags into one of two templates, a template mimicking an Instagram post (used for all Study 1a/b stimuli and half of the Study 2 stimuli) or a template mimicking the result of a Google search (used for half the Study 2 stimuli; see Figure \ref{fig:FigureStimuli}B). The purpose of this manipulation was to test the specificity of any results to the context of social media as opposed to online environments more generally. Note that, because we did not find any significant effects of the online platform factor, these conditions are collapsed for all analyses reported here.
-
-All stimuli are available on our OSF project page. 
+A set of 120 alcohol-related manipulated stimuli were created for Study 1a, of which 88 were chosen and re-tested in Study 2. Stimuli consisted of an alcohol-related image and a hashtag. To manipulate valence, we chose pro-alcohol images which showed alcohol or alcohol consumption in a positive context (e.g. portraying positive outcomes of drinking) and a set of anti-alcohol images which portrayed alcohol or alcohol consumption in a negative context (e.g. showing negative outcomes of drinking). Post source was manipulated by choosing pro- and anti-alcohol images from public Instagram accounts of everyday users, namely images with relatively few likes at the time of sampling that were not posted by a professional organization, business, or influencer account, or from a professional source. Professional pro-alcohol images were sampled from professional Instagram accounts of businesses and brands (e.g. bars and alcohol brands) and include marketing materials for specific types of alcohol and alcohol-related, branded events. Professional anti-alcohol images were sampled from global, English-language public health campaigns advocating against (excessive) drinking, derived from an online search. The source was not explicitly communicated to participants. 
 
 \begin{figure}
     \caption{Stimuli. A) Example Stimulus per Experimental Condition; B) Templates for Manipulation of Online Platform in Study 2}
-    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{FigureStimuli.png}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/FigureStimuli.png}
     \label{fig:FigureStimuli}
 \end{figure}
 
-Figure~ shows this trend. \lipsum[16]
+For Study 1b, an additional set of 30 stimuli were created which all displayed non-alcoholic drinks. Similar to alcohol-related stimuli, these non-alcoholic stimuli were based on public Instagram posts from everyday users or professional sources. All non-alcoholic stimuli expressed positive sentiment towards the depicted beverage. Figure \ref{fig:FigureStimuli}A shows example images for each condition. 
 
+We sought to standardize the amount of text shown in each condition and to clearly identify each image as related to alcohol or not. To this end, original comments and hashtags on sampled Instagram posts were removed and replaced with one standardized hashtag per image that matched the condition in question. For peer-produced posts, we used hashtags that were frequently used on Instagram for the types of images used in this study and hashtags used to sample posts from public Instagram accounts. For professional pro-alcohol posts, we used hashtags that were frequently used by the businesses and brands from which posts were sampled (e.g. brand or event names). For professional anti-alcohol stimuli we used hashtags related to the content of the campaigns, often the (abbreviated) campaign slogan.
 
-"Figures/FigureStimuli.png"
+Finally, we manipulated the online platform in Study 2, by entering images and their assigned hashtags into one of two templates, a template mimicking an Instagram post (used for all Study 1a/b stimuli and half of the Study 2 stimuli) or a template mimicking the result of a Google search (used for half the Study 2 stimuli; see Figure \ref{fig:FigureStimuli}B). The purpose of this manipulation was to test the specificity of any results to the context of social media as opposed to online environments more generally. Note that, because we did not find any significant effects of the online platform factor, these conditions are collapsed for all analyses reported here.
+
+All stimuli are available on our OSF project page. 
 
 <<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library('tidyverse')
 source('scripts/customFunctions.R')
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
+ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
+study2_logs=read_csv('data/study2/cleaned/logs_cleaned.csv',col_types=cols())
+study2_s1=read_csv('data/study2/cleaned/Scanner_Task_Pilot_S1_anonymized.csv',col_types=cols())
+
 @
 
 \subsection{Participants}
 For Study 1, $\Sexpr{dim(ppts_study1a)[1]}$ participants (Mean Age = $\Sexpr{round(mean(ppts_study1a$age),2)}$, SD=$\Sexpr{round(sd(ppts_study1a$age),2)}$, Range= $\Sexpr{max(ppts_study1a$age)}$-$\Sexpr{min(ppts_study1a$age)}$, Gender: $\Sexpr{sum(ppts_study1a$gender_char=='male')}$ male, $\Sexpr{sum(ppts_study1a$gender_char=='female')}$ female, $\Sexpr{sum(ppts_study1a$gender_char=='non-binary')}$ non-binary, $\Sexpr{sum(ppts_study1a$gender_char=='prefer not to say')}$ prefer not to say) were recruited on Prolific. Using two survey items recommended by the NIAAA's "Task Force on Recommended Alcohol Questions" (adjusted for European drink sizes), participants reported the frequency of alcohol consumption and binge drinking. The largest group of participants reported to drink $\Sexpr{getmode(ppts_study1a$drinking_freq_char)}$ (N=$\Sexpr{sum(ppts_study1a$drinking_freq_char==getmode(ppts_study1a$drinking_freq_char),na.rm=T)}$, range = $\Sexpr{ppts_study1a %>% filter(drinking_freq==max(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$-$\Sexpr{ppts_study1a %>% filter(drinking_freq==min(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$) and binge drink $\Sexpr{getmode(na.omit(ppts_study1a$binge_drinking_char))}) (N=$\Sexpr{sum(ppts_study1a$binge_drinking_char==getmode(na.omit(ppts_study1a$binge_drinking_char)),na.rm=T)}$, range = $\Sexpr{ppts_study1a %>% filter(binge_drinking==max(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$)-$\Sexpr{ppts_study1a %>% filter(binge_drinking==min(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$).
 
-For Study 2, 51 participants (Mean Age = 20.04, SD=1.99, Range=18-25, Gender: 13 male, 37 female) through an online recruitment tool for students at our university. All participants were Instagram users and had consumed alcohol in the past. AUDIT scores ranged from 1 to 25 (Mean = 8.18, SD = 4.95).
+
+For Study 1b, $\Sexpr{dim(ppts_study1b)[1]}$ participants (Mean Age = $\Sexpr{round(mean(ppts_study1b$age),2)}$, SD= $\Sexpr{round(sd(ppts_study1b$age),2)}$, Range= $\Sexpr{min(ppts_study1b$age)}$ - $\Sexpr{max(ppts_study1b$age)}$, Gender: $\Sexpr{sum(ppts_study1b$gender_char=='male')}$ male, $\Sexpr{sum(ppts_study1b$gender_char=='female')}$ female, $\Sexpr{sum(ppts_study1b$gender_char=='non-binary')}$ non-binary, $\Sexpr{sum(ppts_study1b$gender_char=='prefer not to say')}$ prefer not to say) were recruited on Prolific. Following procedures in Study 1a, participants reported the frequency of alcohol consumption and binge drinking. The largest group of participants reported to drink $\Sexpr{getmode(ppts_study1b$drinking_freq_char)}$ (N=$\Sexpr{sum(ppts_study1b$drinking_freq_char==getmode(ppts_study1b$drinking_freq_char),na.rm=T)}$, range = $\Sexpr{ppts_study1b %>% filter(drinking_freq==max(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$-$\Sexpr{ppts_study1b %>% filter(drinking_freq==min(drinking_freq,na.rm=T)) %>% select(drinking_freq_char) %>% distinct()}$) and binge drink $\Sexpr{getmode(na.omit(ppts_study1b$binge_drinking_char))}$ (N=$\Sexpr{sum(ppts_study1b$binge_drinking_char==getmode(na.omit(ppts_study1b$binge_drinking_char)),na.rm=T)}$, range = $\Sexpr{ppts_study1b %>% filter(binge_drinking==max(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$-$\Sexpr{ppts_study1b %>% filter(binge_drinking==min(binge_drinking,na.rm=T)) %>% select(binge_drinking_char) %>% distinct()}$.
+
 
 
 
@@ -167,7 +168,7 @@ As shown in Figure~\ref{fig:Figure2}, these results are impressive. \lipsum[20]
 
 \begin{figure}
     \caption{This is my second figure caption.}
-    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figures/Figure1.pdf}
+    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figure1.pdf}
     \label{fig:Figure2}
 \end{figure}
 
