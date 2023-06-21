@@ -114,6 +114,39 @@ familiarity_df = df %>% pivot_longer(values_to='fam_rating',names_to = 'variable
   select(ResponseId,pIDs,QualtricsMsgNr,QualtricsMsgID,familiarity_variable,fam_rating) %>%
   left_join(msg_ids,by=c('QualtricsMsgID'='Qualtrics_ID')) 
 
+# Clean dataframes and variables
+ppt_df = ppt_df %>% 
+  mutate_at(c('binge_drinking','drinking_freq'),as.numeric) %>%
+  mutate(gender_char=case_when(gender==1~'male',
+                               gender==2~'female',
+                               gender==3~'non-binary',
+                               gender==4~'prefer to self-describe',
+                               gender==5~'prefer not to say'),
+         drinking_freq_char=case_when(drinking_freq==1~'Every day', 
+                                      drinking_freq==2~'5 to 6 times a week',
+                                      drinking_freq==3~'3 to 4 times a week',
+                                      drinking_freq==4~'twice a week',
+                                      drinking_freq==5~'once a week',
+                                      drinking_freq==6~'2 to 3 times a month',
+                                      drinking_freq==7~'once a month',
+                                      drinking_freq==8~'3 to 11 times in the past year',
+                                      drinking_freq==9~'1 to 2 times in the past year',
+                                      drinking_freq==10~'I did not drink any alcohol in the past year, but I did drink in the past.',
+                                      drinking_freq==11~'I never drank any alcohol in my life',
+                                      TRUE~NA_character_),
+         binge_drinking_char=case_when(binge_drinking==1~'Every day', 
+                                       binge_drinking==2~'5 to 6 days a week',
+                                       binge_drinking==3~'3 to 4 days a week',
+                                       binge_drinking==4~'two days a week',
+                                       binge_drinking==5~'one day a week',
+                                       binge_drinking==6~'2 to 3 days a month',
+                                       binge_drinking==7~'onc day a month',
+                                       binge_drinking==8~'3 to 11 days in the past year',
+                                       binge_drinking==9~'1 to 2 days in the past year',
+                                       binge_drinking==10~'Never',
+                                       TRUE~NA_character_))
+
+
 # Save out datastructures
 saveRDS(drink_df,'data/study1a/cleaned/drink_df.RDS')
 saveRDS(attention_df,'data/study1a/cleaned/attention_df.RDS')
