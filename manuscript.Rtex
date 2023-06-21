@@ -1,0 +1,234 @@
+\documentclass[man]{apa7}
+
+\usepackage{lipsum}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+
+\title{Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
+\shorttitle{Anti-Alcohol Messages in Context}
+
+\author{Christin Scholz\textsuperscript{1}, 
+        Hanneke Hendriks\textsuperscript{2}, 
+        Eva van Reijmersdal\textsuperscript{1}, 
+        Hang-Yee Chan\textsuperscript{3}}
+\affiliation{\textsuperscript{1}Amsterdam School of Communication Research 
+University of Amsterdam, 
+             \textsuperscript{2}Radboud University Nijmegen, 
+             \textsuperscript{3}Department of Marketing King's College London}
+             
+\abstract{[ABSTRACT WILL BE HERE]}
+
+\keywords{alcohol craving, health communication, anti-alcohol messages, persuasion, social media, alcohol marketing, influencers, emotions}
+
+\authornote{
+   \addORCIDlink{Christin Scholz}{0000-0000-0000-0000}
+
+  Correspondence concerning this article should be addressed to Christin Scholz, Department of Communication, Amsterdam School of Communication Research, University of Amsterdam, 1018WV, Amsterdam, The Netherlands.  E-mail: c.scholz@uva.nl}
+
+\begin{document}
+\maketitle
+Like most daily choices, alcohol consumption has various pros and cons. On the one hand, it can be a social catalyst, associated with fun times and good memories. On the other hand, excessive alcohol consumption is also among those unhealthy lifestyle choices that remain leading causes of death and disease across many Western European and North American countries (\cite{oecd_avoidable_2016}). In line with this ambiguity, diverse stakeholders, from alcohol brands to public health officials, have strong interests in influencing alcohol consumption. Research shows that persuasive messages from both sides impact drinking decisions (\cite{jernigan_alcohol_2017,young_effectiveness_2018}). The complexity of the information environment surrounding alcohol and other issues like it makes it exceedingly difficult to predict the effects of any given persuasive message targeting related behaviors or attitudes. Understanding to what extent and why health promotion messages such as anti-alcohol messaging outperform health-harming competitors may significantly improve our ability to design effective health communication. Across two empirical studies, we describe the effects of professional anti-alcohol information in the context of it's real-world competitors (professional and peer-produced pro- and anti-alcohol information). We further examine diverse emotional responses and familiarity as key mechanisms of these effects. [CONTRIBUTION]
+
+\subsection{The Alcohol Information Environment}
+Once any persuasive message is released to it's target group, it enters rich information environments (e.g. on social media) which include other content produced by professionals or peers that is relevant to the same decision (e.g. alcohol consumption) and may or may not be in line with the original message (\cite{hendriks_social_2018, stautz_immediate_2016, young_effectiveness_2018}). 
+
+For instance, in the context of alcohol, pro-alcohol information, that is information about positive consequences of alcohol consumption, is distributed by both professional alcohol marketers and peers. Alcohol marketing has been shown to increase purchase and drinking behavior (\cite{jernigan_alcohol_2017}). In addition, alcohol consumption is strongly driven by social influences from peers [CITES] who are known to overwhelmingly talk positively about alcohol to each other \cite{scholz_neural_2019, hendriks_what_2015} and post about positive consequences of drinking on social media (\cite{hendriks_social_2018}). Similarly, anti-alcohol information is distributed by professionals (e.g. policy makers and organizations such as universities) and peers (e.g. narratives about negative drinking experiences).
+
+Overall, research indicates that exposure to information about alcohol is frequent and overwhelmingly pro-alcohol. Nevertheless, arguments against alcohol consumption tend to be well known by many, creating a state of ambiguity. How do we make decisions about drinking within this complex environment?
+
+\subsection{Decisions in Complex Information Environments}
+
+Prior work has theorized and demonstrated that the effects of multiple sources of influence on the same decision interfere with each other. For instance, social interactions that derogate a mass media campaign message can cause unexpected boomerang effects and responses to anti-alcohol campaigns interact with pro-alcohol peer influence to impact alcohol consumption (David et al., 2006; Katz, 1957; Scholz et al., 2019; Southwell & Yzer, 2007). Similarly, a comprehensive theoretical model of cognitive and psychological mechanisms that support the integration of multiple sources of influence on consumption decisions and, therefore, a reliable way to predict persuasive message effects in real life remains missing. 
+
+\subsection{Message Development and  Evaluation}
+
+\subsection{Mechanisms}
+
+\subsection{Current Study}
+- We ran 3 online studies (called Study 1a, 1b, 2) to examine differential and cumulative effects of different types of alcohol-related information on craving for alcohol and to explore mechanisms of these effects
+- Study 1a: Exposure to 12 pieces of alcohol-related information in within-person experiment: professional vs. peer-produced sources, pro- vs. anti-alcohol valence, Instagram post vs. Google search result, measures of drinking urge after exposure as well as potential mechanisms (emotional responses, familiarity with depicted situations)
+- Study 1b: Exposure to 12 pieces of information: info about non-alcoholic drinks vs. alcohol-related information (sub-sample of study 1a stimuli), measures of drinking urge after exposure as well as potential mechanisms (emotional responses, familiarity with depicted situations)
+- Study 2: Exposure to all alcohol-related types of information (88 trials per person/22 per condition), followed by exposure to a standardized alcohol cue (e.g. a beer bottle) and drinking urge rating
+- Context: All analyses are exploratory (i.e. not pre-registered).
+
+\section{Method}
+Two online studies in independent samples were conducted to examine the effects of valence and source characteristics of Instagram posts about alcohol on the urge to consume alcohol in young adults.
+
+\subsection{Stimuli}
+A set of 120 manipulated stimuli were created for Study 1, of which 88 were chosen and re-tested in Study 2. Stimuli consisted of an alcohol-related image and a hashtag which were both entered into one of two templates, a template mimicking an Instagram post (used for all Study 1 stimuli and half of the Study 2 stimuli) or a template mimicking the result of a Google search (used only in Study 2; see Figure 1A)\footnote{The two templates were introduced for an exploratory research question. None of the results discussed here are influenced by template.}. Stimuli were designed to manipulate two experimental factors, valence and source. 
+
+To manipulate valence, we chose pro-alcohol images which showed alcohol or alcohol consumption in a positive context (e.g. portraying positive outcomes of drinking) and a set of anti-alcohol images which portrayed alcohol or alcohol consumption in a negative context (e.g. showing negative outcomes of drinking). Post source was manipulated by choosing pro- and anti-alcohol images from public Instagram accounts of everyday users, namely images with relatively few likes at the time of sampling that were not posted by a professional organization, business, or influencer account, or from a professional source. Professional pro-alcohol images were sampled from professional Instagram accounts of businesses and brands (e.g. bars and alcohol brands) and include marketing materials for specific types of alcohol and alcohol-related, branded events. Professional anti-alcohol images were taken from global, English-language public health campaigns advocating against (excessive) drinking, derived from an online search. Figure 1B shows example images per experimental condition.
+
+Any comments or hashtags on the original sampled Instagram posts were removed and replaced with standardized hashtags that match the condition in question. The goal of creating these hashtags was to standardize the amount of text shown in each condition and to clearly identify each image as related to alcohol. For peer-produced posts, we sampled hashtags that are frequently used on Instagram for the types of images used in this study (e.g. [EXAMPLES]). For professional pro-alcohol posts, we used hashtags communicating brand names (e.g. #baccardi). For professional anti-alcohol stimuli we used hashtags related to the content of the campaigns, often the campaign slogan (e.g. #EXAMPLE).
+
+THE FULL SET OF STIMULI IS AVAILABLE AT...
+
+\subsection{Participants}
+For Study 1, 327 participants (Mean Age = 23.75, SD= 4.13, Range= 18 - 35, Gender: 216 male, 107 female, 3 non-binary, 1 prefer not to say) were recruited on Prolific.
+For Study 2, 51 participants (Mean Age = 20.04, SD=1.99, Range=18-25, Gender: 13 male, 37 female) through an online recruitment tool for students at our university. All participants were Instagram users and had consumed alcohol in the past. AUDIT scores ranged from 1 to 25 (Mean = 8.18, SD = 4.95).
+
+<<>>=
+source('scripts/clean_norming_data_study1a.R')
+
+@
+
+
+
+
+\subsection{Design}
+\lipsum[6]
+
+\subsection{Procedure}
+\lipsum[7]
+
+\subsubsection{Instrument \#1}
+\lipsum[8]
+
+\paragraph{Reliability}
+\lipsum[9]
+
+\subparagraph{Inter-rater reliability}
+\lipsum[10]
+
+\subparagraph{Test-retest reliability}
+\lipsum[11]
+
+\paragraph{Validity}
+\lipsum[12]
+
+\subparagraph{Face validity}
+\lipsum[13]
+
+\subparagraph{Construct validity}
+\lipsum[14]
+
+\section{Results}
+Table~\ref{tab:BasicTable} summarizes the data. \lipsum[15]
+
+\begin{table}
+  \caption{Sample Basic Table}
+  \label{tab:BasicTable}
+  \begin{tabular}{@{}llr@{}}         \toprule
+  \multicolumn{2}{c}{Item}        \\ \cmidrule(r){1-2}
+  Animal    & Description & Price \\ \midrule
+  Gnat      & per gram    & 13.65 \\
+            & each        &  0.01 \\
+  Gnu       & stuffed     & 92.50 \\
+  Emu       & stuffed     & 33.33 \\
+  Armadillo & frozen      &  8.99 \\ \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+    \caption{This is my first figure caption.}
+    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figure1.pdf}
+    \label{fig:Figure1}
+\end{figure}
+
+Figure~\ref{fig:Figure1} shows this trend. \lipsum[16]
+
+\section{Discussion}
+\lipsum[17]
+
+\lipsum[18]
+
+\lipsum[19]
+
+\printbibliography
+
+\appendix
+
+\section{Instrument}
+\label{app:instrument}
+
+As shown in Figure~\ref{fig:Figure2}, these results are impressive. \lipsum[20]
+
+\begin{figure}
+    \caption{This is my second figure caption.}
+    \includegraphics[bb=0in 0in 2.5in 2.5in, height=2.5in, width=2.5in]{Figure1.pdf}
+    \label{fig:Figure2}
+\end{figure}
+
+\lipsum[21]
+\section{Pilot Data}
+\label{app:surveydata}
+
+The detailed results are shown in Table~\ref{tab:DeckedTable}. \lipsum[22]
+
+\begin{table}
+  \begin{threeparttable}
+    \caption{A More Complex Decked Table}
+    \label{tab:DeckedTable}
+    \begin{tabular}{@{}lrrr@{}}         \toprule
+    Distribution type  & \multicolumn{2}{l}{Percentage of} & Total number   \\
+                       & \multicolumn{2}{l}{targets with}  & of trials per  \\
+                       & \multicolumn{2}{l}{segment in}    & participant    \\ \cmidrule(r){2-3}
+                                    &  Onset  &  Coda            &          \\ \midrule
+    Categorical -- onset\tabfnm{a}  &    100  &     0            &  196     \\
+    Probabilistic                   &     80  &    20\tabfnm{*}  &  200     \\
+    Categorical -- coda\tabfnm{b}   &      0  &   100\tabfnm{*}  &  196     \\ \midrule
+    \end{tabular}
+    \begin{tablenotes}[para,flushleft]
+        {\small
+            \textit{Note.} All data are approximate.
+
+            \tabfnt{a}Categorical may be onset.
+            \tabfnt{b}Categorical may also be coda.
+
+            \tabfnt{*}\textit{p} < .05.
+            \tabfnt{**}\textit{p} < .01.
+         }
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\lipsum[23]
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%% End of file `./samples/longsample.tex'.

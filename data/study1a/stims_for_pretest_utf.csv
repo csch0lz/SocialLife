@@ -1,0 +1,161 @@
+category,filename,hashtag,source,people,faces,females,alcohol_visible,words_on_pic,meme,exclude,problem_drinking,prop_females,need_preprocessing,labels
+anti_prof,ap4.png,#DrinkResponsibly,,1,0,0.0,0,6,0,,1,0.0,0,Drink Responsibly
+anti_prof,ap9.png,#ControlTonight,,1,1,1.0,0,0,0,,1,1.0,0,Control Tonight
+anti_prof,ap16.png,#DontPushIt,,0,0,0.0,0,10,0,,1,,0,Don't Push It
+anti_prof,ap17.png,#DontPushIt,,1,0,1.0,0,11,0,,1,1.0,0,Don't Push It
+anti_prof,ap18.png,#DontPushIt,,0,0,0.0,0,11,0,,1,,0,Don't Push It
+anti_prof,ap19.png,#DontPushIt,,1,1,0.0,1,11,0,,1,0.0,0,Don't Push It
+anti_prof,ap23.png,#DrinkHeads,,1,0,0.0,1,13,0,,1,0.0,0,Drink Heads
+anti_prof,ap24.png,#DrinkHeads,,3,1,1.0,1,0,0,,1,0.333333333,0,Drink Heads
+anti_prof,ap28.png,#FuckOff,,0,0,0.0,0,22,0,,1,,0,Fuck Off
+anti_prof,ap29.png,#AlcoholDignity,,1,1,0.0,1,6,0,,1,0.0,0,Alcohol Dignity
+anti_prof,ap32.png,#TheOtherHangover,,5,5,4.0,1,10,0,,1,0.8,0,The Other Hangover
+anti_prof,ap34.png,#TheOtherHangover,,5,1,3.0,1,9,0,,1,0.6,0,The Other Hangover
+anti_prof,ap35.png,#TheOtherHangover,,6,6,5.0,1,8,0,,1,0.833333333,0,The Other Hangover
+anti_prof,ap39.png,#DrunksAreJerks,,4,4,2.0,1,6,0,,1,0.5,0,Drunks Are Jerks
+anti_prof,ap40.png,#DrunksAreJerks,,5,2,2.0,1,6,0,,1,0.4,0,Drunks Are Jerks
+anti_prof,ap41.png,#LessThanYouThink,,0,0,0.0,1,19,0,,1,,0,Less Than You Think
+anti_prof,ap44.png,#LessThanYouThink,,0,0,0.0,1,18,0,,1,,0,Less Than You Think
+anti_prof,ap45.png,#LessThanYouThink,,0,0,0.0,1,9,0,,1,,0,Less Than You Think
+anti_prof,ap46.png,#KnowYourLimits,,1,0,1.0,1,17,0,,1,1.0,0,Know Your Limits
+anti_prof,ap48.png,#KnowYourLimits,,0,0,0.0,0,7,0,,1,,0,Know Your Limits
+anti_prof,ap49.png,#KnowYourLimits,,0,0,0.0,0,28,0,,1,,0,Know Your Limits
+anti_prof,ap50.png,#KnowYourLimits,,0,0,0.0,0,26,0,,1,,0,Know Your Limits
+anti_prof,ap52.png,#KnowYourLimits,,1,1,1.0,0,13,0,,1,1.0,0,Know Your Limits
+anti_prof,ap53.png,#KnowYourLimits,,0,0,0.0,0,24,0,,1,,0,Know Your Limits
+anti_prof,ap54.png,#KnowYourLimits,,0,0,0.0,0,1,0,,1,,0,Know Your Limits
+anti_prof,ap60.png,#DrunkNightmare,,5,3,4.0,1,9,0,,1,0.8,0,Drunk Nightmare
+anti_prof,ap64.png,#DrunkNightmare,,6,4,0.0,1,22,0,,1,0.0,0,Drunk Nightmare
+anti_prof,ap65.png,#DrunkNightmare,,6,2,2.0,1,22,0,,1,0.333333333,0,Drunk Nightmare
+anti_prof,ap67.png,#TwoDrinksAgo,,2,2,1.0,0,17,0,,1,0.5,0,Two Drinks Ago
+anti_prof,ap69.png,#CutThemOff,,1,1,1.0,0,22,0,,1,1.0,0,Cut Them Off
+anti_prof,ap71.png,#TwoDrinksAgo,,1,1,1.0,0,9,0,,1,1.0,0,Two Drinks Ago
+anti_prof,ap73.png,#KnowWhen,,1,0,1.0,0,7,0,,1,1.0,0,Know When
+anti_prof,ap77.png,#StopBeforeItGetsUgly,,1,1,0.0,0,31,0,,1,0.0,0,Stop Before It Gets Ugly
+anti_prof,ap79.png,#ThanksAcohol,,10,6,6.0,0,2,0,,1,0.6,0,Thanks Acohol
+anti_prof,ap82.png,#WhatAreYouDoing?,,2,0,0.0,0,8,0,,1,0.0,0,What Are You Doing
+anti_prof,ap83.png,#WhatAreYouDoing?,,5,3,2.0,1,8,0,,1,0.4,0,What Are You Doing
+anti_prof,ap84.png,#WhatAreYouDoing?,,8,5,2.0,0,8,0,,1,0.25,0,What Are You Doing
+anti_prof,ap87.png,#WhatAreYouDoing?,,4,0,4.0,0,8,0,,1,1.0,0,What Are You Doing
+anti_prof,ap89.png,#RecklessDrunk,,1,1,1.0,0,18,0,,1,1.0,0,Reckless Drunk
+anti_prof,ap92.png,#DrinkingChoices,,4,3,2.0,1,12,0,,1,0.5,0,Drinking Choices
+anti_soc,as1.png,#StopDrinkingAlcohol,https://www.instagram.com/p/B5sBG7jD8zV/,2,2,0.0,0,9,0,,1,0.0,1,Stop Drinking Alcohol
+anti_soc,as2.png,#NoAlcoholNeeded,https://www.instagram.com/p/B5ctbqpq492/,5,1,1.0,0,0,0,,1,0.2,1,No Alcohol Needed
+anti_soc,as3.png,#DrunkShame,https://www.instagram.com/p/Bmqz8HugXnA/,3,1,0.0,1,0,0,,1,0.0,1,Drunk Shame
+anti_soc,as4.png,#Hangover,https://www.instagram.com/p/BPKmylzgFWC/,2,2,2.0,0,0,0,,1,1.0,1,Hangover
+anti_soc,as5.png,#DrunkShame,https://www.instagram.com/p/BFUNiyjC5Hx/,1,1,0.0,0,0,0,,1,0.0,1,Drunk Shame
+anti_soc,as6.png,#TooDrunk,https://www.instagram.com/p/0zOcm3g7MB/,1,1,0.0,0,0,0,,1,0.0,1,Too Drunk
+anti_soc,as8.png,#Hangover,https://www.instagram.com/p/B6xjZrvjrBV/,1,1,1.0,0,0,0,,1,1.0,1,Hangover
+anti_soc,as9.png,#DrunkPhoto,https://www.instagram.com/p/4f-MqUG5xZ/,5,3,2.0,0,0,0,,1,0.4,1,Drunk Photo
+anti_soc,as10.png,#TooDrunkToFunction,https://www.instagram.com/p/6WH-xULkRi/,1,1,0.0,0,8,0,,1,0.0,1,Too Drunk To Function
+anti_soc,as11.png,#DrunkShaming,https://www.instagram.com/p/S96uDmq0Is/,1,1,0.0,0,0,0,,1,0.0,1,Drunk Shaming
+anti_soc,as14.png,#TooMuchAlcohol,Hanneke,2,1,0.0,1,0,0,,1,0.0,0,Too Much Alcohol
+anti_soc,as15.png,#TooMuchToDrink,Hanneke,4,0,,1,0,0,,1,,0,Too Much To Drink
+anti_soc,as16.png,#Drunk,Hanneke,2,0,1.0,1,6,0,,1,0.5,0,Drunk
+anti_soc,as18.png,#Hangover,Hanneke,0,0,,1,0,0,,1,,0,Hangover
+anti_soc,as19.png,#DrunkShame,https://www.instagram.com/p/TRMWHfq0Ah/,1,1,0.0,0,8,0,,1,0.0,1,Drunk Shame
+anti_soc,as21.png,#DrunkBuzzkill,https://www.instagram.com/p/BXow-G4hRL6/,1,1,0.0,0,0,0,,1,0.0,1,Drunk Buzzkill
+anti_soc,as22.png,#TooDrunk,https://www.instagram.com/p/BEVv6wMrSn5/,1,0,1.0,0,0,0,,1,1.0,1,Too Drunk
+anti_soc,as23.png,#DrunkShaming,https://www.instagram.com/p/if7YxGOcBc/,2,2,1.0,0,0,0,,1,0.5,1,Drunk Shaming
+anti_soc,as25.png,#PassedOutDrunk,https://www.instagram.com/p/B01EvLdj90W/,3,0,1.0,0,0,0,,1,0.333333333,1,Passed Out Drunk
+anti_soc,as27.png,#TooDrunkToParty,https://www.instagram.com/p/B7d3-a3nXOh/,7,7,4.0,0,0,0,,1,0.571428571,1,Too Drunk To Party
+anti_soc,as28.png,#PassedOutDrunk,https://www.instagram.com/p/B7IiXyeoJ7t/,2,2,0.0,1,0,0,,1,0.0,1,Passed Out Drunk
+anti_soc,as29.png,#DrunkRegrets,https://www.instagram.com/p/B5d975IlxxR/,2,2,1.0,0,8,0,,1,0.5,1,Drunk Regrets
+anti_soc,as30.png,#TooMuchAlcohol,https://www.instagram.com/p/B5yMtmZqSfP/,1,1,0.0,0,0,0,,1,0.0,1,Too Much Alcohol
+anti_soc,as34.png,#DrunkRegrets,https://www.facebook.com/dryjuly/posts/know-someone-whod-be-making-this-face-this-morning-you-wont-be-making-this-face-/10156813109344262/,1,1,0.0,0,13,1,,1,0.0,0,Drunk Regrets
+anti_soc,as37.png,#DrunkIdiot,https://astrologymemes.com/i/5737360,1,1,0.0,0,20,1,,1,0.0,0,Drunk Idiot
+anti_soc,as38.png,#DrunkFights,https://www.instagram.com/p/BBGIe5nirs8/,1,1,1.0,0,0,0,,1,1.0,1,Drunk Fights
+anti_soc,as43.png,#DrunkFalls,https://www.instagram.com/p/mhSMP3PgGT/,1,1,0.0,0,0,0,,1,0.0,1,Drunk Falls
+anti_soc,as44.png,#DrunkAccident,https://www.instagram.com/p/SXf64crcki/,1,1,1.0,0,0,0,,1,1.0,1,Drunk Accident
+anti_soc,as45.png,#DrunkAccident,https://www.instagram.com/p/B6zE9zEHAbl/,1,1,1.0,0,0,0,,1,1.0,1,Drunk Accident
+anti_soc,as46.png,#DrunkAccident,https://www.instagram.com/p/BWThKMRATfC/,1,1,1.0,0,0,0,,1,1.0,1,Drunk Accident
+anti_soc,as47.png,#DrunkIdiot,https://www.instagram.com/p/BMCyvmUhFvf/,1,3,1.0,0,0,0,,1,1.0,1,Drunk Idiot
+anti_soc,as48.png,#DrunkFalls,https://www.instagram.com/p/6zfxTZgA6h/,1,2,1.0,0,0,0,,1,1.0,1,Drunk Falls
+anti_soc,as49.png,#TooDrunkToFunction,https://www.instagram.com/p/4ahX6FjrRG/,1,1,0.0,0,0,0,,1,0.0,1,Too Drunk To Function
+anti_soc,as52.png,#DrunkIdiot,https://www.instagram.com/p/CGL5_uyjHlX/,1,0,0.0,0,0,0,,1,0.0,1,Drunk Idiot
+anti_soc,as53.png,#IcingAlcoholWounds,https://www.instagram.com/p/Zkd5PBMDQc/,1,1,1.0,0,0,0,,1,1.0,1,Icing Alcohol Wounds
+anti_soc,as54.png,#PassedOutDrunk,https://www.instagram.com/p/CEreqElgCnT/,2,2,0.0,0,0,0,,1,0.0,1,Passed Out Drunk
+anti_soc,as55.png,#DrunkShame,https://www.instagram.com/p/CEByvzqBdnJ/,1,1,0.0,1,0,0,,1,0.0,1,Drunk Shame
+anti_soc,as56.png,#PassedOutDrunk,https://www.instagram.com/explore/tags/passedoutdrunk/,2,2,1.0,0,0,0,,1,0.5,1,Passed Out Drunk
+anti_soc,as58.png,#TooDrunkToParty,https://www.instagram.com/p/CAWYW2KKdrR/,1,0,0.0,0,0,0,,1,0.0,1,Too Drunk To Party
+anti_soc,as59.png,#LameDrunk,https://www.instagram.com/p/CEyAWJPliRO/,1,1,1.0,1,0,0,,1,1.0,1,Lame Drunk
+pro_prof,pp5.png,#Heineken,https://www.instagram.com/p/BueHRBYAoVw/,1,1,1.0,1,0,0,,1,1.0,1,Heineken
+pro_prof,pp12.png,#Heineken,https://www.instagram.com/p/BhebBFQA01-/,4,3,2.0,1,0,0,,1,0.5,1,Heineken
+pro_prof,pp13.png,#Bacardi,https://www.instagram.com/p/B7_LFaflp9e/,5,2,2.0,1,0,0,,1,0.4,1,Bacardi
+pro_prof,pp14.png,#Bacardi,https://www.instagram.com/p/B63KVk1lb25/,0,0,0.0,1,0,0,,1,,1,Bacardi
+pro_prof,pp15.png,#Bacardi,https://www.instagram.com/p/B5coNTJlHWz/,5,2,4.0,1,0,0,,1,0.8,1,Bacardi
+pro_prof,pp16.png,#Bacardi,https://www.instagram.com/p/B4CsfxOFZvF/,1,0,1.0,1,0,0,,1,1.0,1,Bacardi
+pro_prof,pp17.png,#Bacardi,https://www.instagram.com/p/ByF7Ydcg_I0/,7,3,4.0,1,0,0,,1,0.571428571,1,Bacardi
+pro_prof,pp18.png,#Smirnoff,https://www.instagram.com/p/BlvfYWaA1DT/,0,0,0.0,1,0,0,,1,,1,Smirnoff
+pro_prof,pp20.png,#Smirnoff,https://www.instagram.com/p/BPxo2hsh4jN/,3,3,3.0,1,0,0,,1,1.0,1,Smirnoff
+pro_prof,pp22.png,#JackDaniels,https://www.instagram.com/p/B1g7gJ3HOVt/,0,0,0.0,1,0,0,,1,,1,Jack Daniels
+pro_prof,pp23.png,#JackDaniels,https://www.instagram.com/p/Bv4RiNVHhZ3/,17,2,6.0,1,0,0,,1,0.352941176,1,Jack Daniels
+pro_prof,pp24.png,#Patron,https://www.instagram.com/p/B452A83n9o1/,11,7,6.0,1,0,0,,1,0.545454545,1,Patron
+pro_prof,pp25.png,#JoseCuervoTequila,https://www.instagram.com/p/B6T9qSdIdvn/,2,1,1.0,1,0,0,,1,0.5,1,Jose Cuervo Tequila
+pro_prof,pp26.png,#JoseCuervoTequila,https://www.instagram.com/p/B4510CkIbEK/,4,0,2.0,1,0,0,,1,0.5,1,Jose Cuervo Tequila
+pro_prof,pp27.png,#JoseCuervoTequila,https://www.instagram.com/p/B3K54-djILl/,3,2,1.0,1,0,0,,1,0.333333333,1,Jose Cuervo Tequila
+pro_prof,pp28.png,#JoseCuervoTequila,https://www.instagram.com/p/BdtHIRJFrZw/,0,0,0.0,1,0,0,,1,,1,Jose Cuervo Tequila
+pro_prof,pp31.png,#JoseCuervoTequila,https://www.instagram.com/p/BcIbzXylPDm/,1,1,1.0,1,0,0,,1,1.0,1,Jose Cuervo Tequila
+pro_prof,pp32.png,#JoseCuervoTequila,https://www.instagram.com/p/BY9YoCRljAv/,4,1,3.0,1,0,0,,1,0.75,1,Jose Cuervo Tequila
+pro_prof,pp37.png,#Jägermeister,https://www.instagram.com/p/B8_wEqeKgaZ/,3,3,2.0,1,0,0,,1,0.666666667,1,Jägermeister
+pro_prof,pp38.png,#Jägermeister,https://www.instagram.com/p/B652nvkqZhA/,1,1,0.0,1,0,0,,1,0.0,1,Jägermeister
+pro_prof,pp39.png,#Jägermeister,https://www.instagram.com/p/B8wV0HvKyHn/,3,3,2.0,1,0,0,,1,0.666666667,1,Jägermeister
+pro_prof,pp40.png,#Jägermeister,https://www.instagram.com/p/B5f2WNjqj62/,2,2,1.0,1,0,0,,1,0.5,1,Jägermeister
+pro_prof,pp41.png,#Jägermeister,https://www.instagram.com/p/B5N0rGtK_St/,4,4,2.0,1,0,0,,1,0.5,1,Jägermeister
+pro_prof,pp42.png,#Jägermeister,https://www.instagram.com/p/B4kopCcKq9p/,2,2,1.0,1,0,0,,1,0.5,1,Jägermeister
+pro_prof,pp43.png,#Jägermeister,https://www.instagram.com/p/B4fa0d_qX4C/,4,2,1.0,1,0,0,,1,0.25,1,Jägermeister
+pro_prof,pp44.png,#Jägermeister,https://www.instagram.com/p/B3kDCQ7I5IT/,2,2,1.0,1,0,0,,1,0.5,1,Jägermeister
+pro_prof,pp45.png,#Jägermeister,https://www.instagram.com/p/B1eR0bcCnNh/,3,3,1.0,1,0,0,,1,0.333333333,1,Jägermeister
+pro_prof,pp46.png,#SierraTequila,https://www.instagram.com/p/BntYhZVj_l2/,0,0,0.0,1,0,0,,1,,1,Sierra Tequila
+pro_prof,pp47.png,#SierraTequila,https://www.instagram.com/p/BBH5fjEkwKu/,1,0,0.0,1,0,0,,1,0.0,1,Sierra Tequila
+pro_prof,pp48.png,#SierraTequila,https://www.instagram.com/p/oOSHLOEwNi/,3,3,2.0,1,0,0,,1,0.666666667,1,Sierra Tequila
+pro_prof,pp51.png,#AbsolutVodka,https://www.instagram.com/p/B4133ioHgGJ/,2,2,2.0,1,0,0,,1,1.0,1,Absolut Vodka
+pro_prof,pp53.png,#AbsolutVodka,https://www.instagram.com/p/B0DIcKLoarX/,3,1,2.0,1,0,0,,1,0.666666667,1,Absolut Vodka
+pro_prof,pp54.png,#AbsolutVodka,https://www.instagram.com/p/BqaHgPxlfaS/,2,2,2.0,1,0,0,,1,1.0,1,Absolut Vodka
+pro_prof,pp55.png,#AbsolutVodka,https://www.instagram.com/p/BnqA2_CFdXy/,2,1,1.0,1,0,0,,1,0.5,1,Absolut Vodka
+pro_prof,pp57.png,#StolichnayaVodka,https://www.instagram.com/p/BvBZpVinhtM/,12,3,2.0,1,0,0,,1,0.166666667,1,Stolichnaya Vodka
+pro_soc,ps1.png,#Cocktails,https://www.instagram.com/p/B6_JjwUoezA/,1,1,0.0,1,0,0,,1,0.0,1,Cocktails
+pro_soc,ps7.png,#Cheers ,Hanneke,5,0,3.0,1,0,0,,1,0.6,0,Cheers
+pro_soc,ps14.png,#GetDrunk,https://www.instagram.com/p/B80bUVUHJLT/,1,1,1.0,1,0,0,,1,1.0,1,Get Drunk
+pro_soc,ps15.png,#CheersToUs,https://www.instagram.com/p/B60sL7envZr/,5,5,3.0,1,0,0,,1,0.6,1,Cheers To Us
+pro_soc,ps16.png,#Party,https://www.instagram.com/p/BxeUNL-Il85/,3,3,1.0,1,0,0,,1,0.333333333,1,Party
+pro_soc,ps17.png,#DrinkingShots,https://www.instagram.com/p/B0Ntm6Yod_7/,4,2,1.0,1,0,0,,1,0.25,1,Drinking Shots
+pro_soc,ps18.png,#LetGo,https://www.instagram.com/p/BuvPmzwFC4E/,9,6,6.0,1,0,0,,1,0.666666667,1,Let Go
+pro_soc,ps19.png,#PartyShots,https://www.instagram.com/p/Bq905YMFGPC/,4,4,1.0,1,0,0,,1,0.25,1,Party Shots
+pro_soc,ps20.png,#CheersToUs,https://www.instagram.com/p/B8juxXAF3sO/,3,3,0.0,1,0,0,,1,0.0,1,Cheers To Us
+pro_soc,ps21.png,#Cheers,https://www.instagram.com/p/B8-tekRp8Xz/,13,7,3.0,1,0,0,,1,0.23076923100000002,1,Cheers
+pro_soc,ps22.png,#FridayNight,https://www.instagram.com/p/B79DM2NC-3F/,5,5,0.0,1,0,0,,1,0.0,1,Friday Night
+pro_soc,ps23.png,#WineNight,https://www.instagram.com/p/B8k6PmSgpEe/,2,2,2.0,1,0,0,,1,1.0,1,Wine Night
+pro_soc,ps24.png,#PartnersInCrime,https://www.instagram.com/p/B8Ui-wHH-6d/,2,2,2.0,1,0,0,,1,1.0,1,Partners In Crime
+pro_soc,ps25.png,#FriendsAndBeers,https://www.instagram.com/p/B8yQVqnFqZU/,6,4,3.0,1,0,0,,1,0.5,1,Friends And Beers
+pro_soc,ps26.png,#BottomsUp,https://www.instagram.com/p/B8-A8v_iKPJ/,2,2,1.0,1,0,0,,1,0.5,1,Bottoms Up
+pro_soc,ps27.png,#WeekendFriends,https://www.instagram.com/p/B84RTUQiXR-/,12,6,6.0,1,0,0,,1,0.5,1,Weekend Friends
+pro_soc,ps28.png,#CheersToUs,https://www.instagram.com/p/B6TQdkcFxZc/,11,5,4.0,1,0,0,,1,0.363636364,1,Cheers To Us
+pro_soc,ps29.png,#DoubleFisting,https://www.instagram.com/p/B8zZVc-JzOu/,2,2,2.0,1,0,0,,1,1.0,1,Double Fisting
+pro_soc,ps30.png,#DrinkingGames,https://www.instagram.com/p/B88yxQmlYUD/,9,1,1.0,1,0,0,,1,0.111111111,1,Drinking Games
+pro_soc,ps32.png,#FreeShot,https://www.instagram.com/p/B8qA-v2lpfE/,7,1,1.0,1,0,0,,1,0.14285714300000002,1,Free Shot
+pro_soc,ps33.png,#BottomsUp,https://www.instagram.com/p/B8WYhgSiIWY/,2,2,0.0,1,0,0,,1,0.0,1,Bottoms Up
+pro_soc,ps35.png,#FriendsNight,https://www.instagram.com/p/B3krJ0VCgSy/,2,2,2.0,1,0,0,,1,1.0,1,Friends Night
+pro_soc,ps37.png,#Truth,https://www.instagram.com/p/B89Du0gJWrV/,1,1,0.0,1,13,1,,1,0.0,1,Truth
+pro_soc,ps40.png,#WineDay,https://www.instagram.com/p/B8wtQF3pSjB/,0,0,0.0,1,3,1,,1,,1,Wine Day
+pro_soc,ps41.png,#CocktailTime,https://www.instagram.com/p/CAH1YGegB2H/,2,2,2.0,1,0,0,,1,1.0,1,Cocktail Time
+pro_soc,ps42.png,#FriendsNight,https://www.instagram.com/p/CAIeEkPgcjS/,4,3,4.0,1,0,0,,1,1.0,1,Friends Night
+pro_soc,ps43.png,#BYOB,https://www.instagram.com/p/B_nd-zjFQeF/,1,1,0.0,1,0,0,,1,0.0,1,BYOB
+pro_soc,ps47.png,#DrinksDrinksDrinks,https://www.instagram.com/p/B7Tth2iIwHO/,7,7,0.0,1,0,0,,1,0.0,1,Drinks Drinks Drinks
+pro_soc,ps48.png,#DrinkUp,https://www.instagram.com/p/B8qxxhbHOZY/,1,1,1.0,1,0,0,,1,1.0,1,Drink Up
+pro_soc,ps49.png,#ForTheTeam,https://www.instagram.com/p/B89ivn7hkVi/,6,5,1.0,1,0,0,,1,0.166666667,1,For The Team
+pro_soc,ps50.png,#Celebrate,https://www.instagram.com/p/B89irQaJqdj/,2,2,2.0,1,0,0,,1,1.0,1,Celebrate
+pro_soc,ps34.png,#Yummie,https://www.instagram.com/p/B7MJ2JtCtL4/,1,1,0.0,1,0,0,,1,0.0,1,Yummie
+pro_prof,pp58.png,#StolichnayaVodka,https://www.instagram.com/p/B0eFog_hy8i/,1,0,0.0,1,0,0,,1,0.0,1,Stolichnaya Vodka
+pro_prof,pp59.png,#StolichnayaVodka,https://www.instagram.com/p/BounjOggRRD/,9,8,2.0,1,0,0,,1,0.222222222,1,Stolichnaya Vodka
+pro_soc,ps51.png,#PartyLife,https://www.instagram.com/p/B9i3MBcHZdD/,5,1,4.0,1,0,0,,1,0.8,1,Party Life
+pro_soc,ps52.png,#Friends,https://www.instagram.com/p/B9juS8el-Ra/,3,3,3.0,1,0,0,,1,1.0,1,Friends
+pro_soc,ps53.png,#CocktailTime,https://www.instagram.com/p/B9fCYpwhfwp/,1,1,1.0,1,0,0,,1,1.0,1,Cocktail Time
+pro_soc,ps54.png,#PartyGame,https://www.instagram.com/p/BiXbnaaFyT5/,5,5,5.0,1,0,0,,1,1.0,1,Party Game
+pro_soc,ps55.png,#BottleChug,https://www.instagram.com/p/CGOYG5iHNqh/,1,1,0.0,1,0,0,,1,0.0,1,Bottle Chug
+pro_soc,ps56.png,#DrinksDrinksDrinks,https://www.instagram.com/p/CGUl_W3ljEA/,1,1,1.0,1,0,0,,1,1.0,1,Drinks Drinks Drinks
+pro_soc,ps57.png,#Whiskey,https://www.instagram.com/p/CGNVFa4AqnH/,3,2,3.0,1,0,0,,1,1.0,1,Whiskey
+pro_soc,ps58.png,#LoveTequila,https://www.instagram.com/p/CGABUQUl3tD/,2,1,2.0,1,0,0,,1,1.0,1,Love Tequila
+pro_prof,pp60.png,#Jägermeister,https://www.instagram.com/p/B6bJyK6qpka/,2,2,1.0,1,0,0,,1,0.5,1,Jägermeister
+pro_prof,pp61.png,#Jägermeister,https://www.instagram.com/p/B1eR0bcCnNh/,3,3,1.0,1,0,0,,1,0.333333333,1,Jägermeister
+pro_prof,pp62.png,#SierraTequila,https://www.instagram.com/p/BqkaoX1FXWO/,2,0,0.0,1,0,0,,1,0.0,1,Sierra Tequila
