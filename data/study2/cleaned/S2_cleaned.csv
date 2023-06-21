@@ -1,0 +1,401 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,DistributionChannel,UserLanguage,open_debrief,pID,cond,debrief_item,debrief_rating
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,easy to understand,2
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,don't know what to do,4
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,ratings reflect preferences,3
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,like task,5
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,trouble focusing,6
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,too fast,5
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,good speed,2
+2020-11-13 15:11:09,2020-11-13 15:12:08,0,100,59,1,2020-11-13 15:12:09,R_3lLkrWv0ov5ayJJ,NA,NA,NA,NA,anonymous,EN,NA,434970,22,interesting,5
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,easy to understand,6
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,don't know what to do,1
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,ratings reflect preferences,6
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,like task,4
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,trouble focusing,4
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,too fast,5
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,good speed,6
+2020-11-13 15:13:08,2020-11-13 15:13:42,0,100,33,1,2020-11-13 15:13:42,R_25yVekLOzgtR21X,NA,NA,NA,NA,anonymous,EN,NA,434974,19,interesting,3
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,easy to understand,6
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,don't know what to do,1
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,ratings reflect preferences,4
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,like task,4
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,trouble focusing,2
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,too fast,6
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,good speed,4
+2020-11-13 15:12:05,2020-11-13 15:16:55,0,100,290,1,2020-11-13 15:16:55,R_1QmUexbVSrBHvDc,NA,NA,NA,NA,anonymous,EN,"Whenever the orange drink popped up I said 1 to everything because I don't like that soda at all. Also, I have never reduced myself to that because as soon as I feel bad I usually stop. I also always want to be in control so that I can help other people if they get too drunk.",434969,31,interesting,7
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,easy to understand,5
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,don't know what to do,1
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,ratings reflect preferences,6
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,like task,4
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,trouble focusing,3
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,too fast,5
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,good speed,2
+2020-11-13 15:17:43,2020-11-13 15:18:45,0,100,61,1,2020-11-13 15:18:45,R_1QAbSjVpDa7Tts9,NA,NA,NA,NA,anonymous,EN,NA,434978,9,interesting,3
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,easy to understand,3
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,don't know what to do,5
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,ratings reflect preferences,6
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,like task,4
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,trouble focusing,6
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,too fast,6
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,good speed,3
+2020-11-13 15:22:44,2020-11-13 15:24:31,0,100,107,1,2020-11-13 15:24:31,R_vw1Xv4qLC2OfKdH,NA,NA,NA,NA,anonymous,EN,NA,434977,3,interesting,4
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,easy to understand,6
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,don't know what to do,2
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,ratings reflect preferences,5
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,like task,6
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,trouble focusing,2
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,too fast,1
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,good speed,7
+2020-11-13 15:26:24,2020-11-13 15:27:29,0,100,65,1,2020-11-13 15:27:30,R_WeX0eXuVx1s609j,NA,NA,NA,NA,anonymous,EN,NA,434990,18,interesting,5
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,easy to understand,7
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,don't know what to do,1
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,ratings reflect preferences,6
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,like task,4
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,trouble focusing,2
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,too fast,1
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,good speed,5
+2020-11-13 15:28:03,2020-11-13 15:29:34,0,100,90,1,2020-11-13 15:29:34,R_1nNjTCcF68DO4no,NA,NA,NA,NA,anonymous,EN,NA,434979,19,interesting,6
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,easy to understand,4
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,don't know what to do,2
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,ratings reflect preferences,6
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,like task,4
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,trouble focusing,2
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,too fast,3
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,good speed,5
+2020-11-13 15:27:14,2020-11-13 15:30:41,0,100,207,1,2020-11-13 15:30:41,R_3KUYwpFwlIxqwGM,NA,NA,NA,NA,anonymous,EN,NA,434967,22,interesting,3
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,easy to understand,5
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,don't know what to do,3
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,ratings reflect preferences,7
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,like task,5
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,trouble focusing,2
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,too fast,4
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,good speed,5
+2020-11-13 15:30:14,2020-11-13 15:31:47,0,100,92,1,2020-11-13 15:31:47,R_1Fm3dGVF7stPuCM,NA,NA,NA,NA,anonymous,EN,It was really interesting,434986,0,interesting,5
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,easy to understand,5
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,don't know what to do,1
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,ratings reflect preferences,6
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,like task,2
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,trouble focusing,6
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,too fast,2
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,good speed,6
+2020-11-13 15:34:14,2020-11-13 15:36:18,0,100,124,1,2020-11-13 15:36:19,R_xGaviOuMBVfEJEZ,NA,NA,NA,NA,anonymous,EN,Just want you to keep in mind that I am currently hungover so even looking at the alcohol makes me feel sick but I tried my best to respond as if I was not hungover.,434988,5,interesting,2
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,easy to understand,7
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,don't know what to do,4
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,ratings reflect preferences,3
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,like task,3
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,trouble focusing,5
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,too fast,5
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,good speed,1
+2020-11-13 15:16:21,2020-11-13 15:41:12,0,100,1490,1,2020-11-13 15:41:12,R_3IYmjrVuMom7c9Z,NA,NA,NA,NA,anonymous,EN,NA,434982,1,interesting,3
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,easy to understand,5
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,don't know what to do,3
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,ratings reflect preferences,5
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,like task,4
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,trouble focusing,4
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,too fast,4
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,good speed,3
+2020-11-13 15:46:18,2020-11-13 15:48:35,0,100,137,1,2020-11-13 15:48:35,R_2aqL8D9TlalfiWn,NA,NA,NA,NA,anonymous,EN,NA,434997,26,interesting,4
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,easy to understand,7
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,don't know what to do,1
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,ratings reflect preferences,7
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,like task,5
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,trouble focusing,1
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,too fast,2
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,good speed,7
+2020-11-13 15:49:54,2020-11-13 15:51:07,0,100,73,1,2020-11-13 15:51:07,R_uqNF43BWaIP01hv,NA,NA,NA,NA,anonymous,EN,I hate tequila so my answers when tequila appeared are more related to my hatred towards it than to the image before.,435005,12,interesting,5
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,easy to understand,7
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,don't know what to do,1
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,ratings reflect preferences,7
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,like task,4
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,trouble focusing,5
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,too fast,5
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,good speed,6
+2020-11-13 15:37:24,2020-11-13 16:07:27,0,100,1803,1,2020-11-13 16:07:28,R_3rG0Bj36kphVQJD,NA,NA,NA,NA,anonymous,EN,NA,434985,26,interesting,2
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,easy to understand,7
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,don't know what to do,2
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,ratings reflect preferences,6
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,like task,5
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,trouble focusing,4
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,too fast,1
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,good speed,6
+2020-11-13 16:13:31,2020-11-13 16:14:26,0,100,54,1,2020-11-13 16:14:26,R_vMgOb2BRfilG8KJ,NA,NA,NA,NA,anonymous,EN,NA,435021,14,interesting,5
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,easy to understand,5
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,don't know what to do,2
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,ratings reflect preferences,6
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,like task,4
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,trouble focusing,2
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,too fast,4
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,good speed,4
+2020-11-13 16:13:38,2020-11-13 16:15:50,0,100,131,1,2020-11-13 16:15:50,R_0V8qNPnsweXmhgd,NA,NA,NA,NA,anonymous,EN,NA,435017,3,interesting,4
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,easy to understand,5
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,don't know what to do,3
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,ratings reflect preferences,5
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,like task,2
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,trouble focusing,3
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,too fast,3
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,good speed,5
+2020-11-13 16:20:51,2020-11-13 16:21:21,0,100,30,1,2020-11-13 16:21:21,R_2t5MCNzHoJfhqS8,NA,NA,NA,NA,anonymous,EN,x,435025,12,interesting,3
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,easy to understand,6
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,don't know what to do,2
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,ratings reflect preferences,6
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,like task,5
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,trouble focusing,3
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,too fast,2
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,good speed,6
+2020-11-13 16:22:17,2020-11-13 16:23:33,0,100,76,1,2020-11-13 16:23:33,R_QaaYdqYYYMiShUJ,NA,NA,NA,NA,anonymous,EN,No,435002,1,interesting,5
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,easy to understand,6
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,don't know what to do,3
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,ratings reflect preferences,6
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,like task,6
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,trouble focusing,5
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,too fast,7
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,good speed,2
+2020-11-13 16:26:46,2020-11-13 16:27:36,0,100,50,1,2020-11-13 16:27:36,R_3MSZjuLHzPN1YI1,NA,NA,NA,NA,anonymous,EN,shouldve been slower,434995,30,interesting,7
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,easy to understand,6
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,don't know what to do,2
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,ratings reflect preferences,6
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,like task,6
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,trouble focusing,2
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,too fast,5
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,good speed,5
+2020-11-13 16:41:49,2020-11-13 16:43:06,0,100,77,1,2020-11-13 16:43:06,R_24GmvDIdMZayTyH,NA,NA,NA,NA,anonymous,EN,I liked the interaction in the test,435029,15,interesting,6
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,easy to understand,7
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,don't know what to do,1
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,ratings reflect preferences,6
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,like task,6
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,trouble focusing,1
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,too fast,3
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,good speed,3
+2020-11-13 17:05:07,2020-11-13 17:06:20,0,100,72,1,2020-11-13 17:06:20,R_27airp0KgnLQpds,NA,NA,NA,NA,anonymous,EN,NA,435045,8,interesting,6
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,easy to understand,6
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,don't know what to do,2
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,ratings reflect preferences,6
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,like task,3
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,trouble focusing,2
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,too fast,2
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,good speed,6
+2020-11-13 17:07:04,2020-11-13 17:07:51,0,100,47,1,2020-11-13 17:07:52,R_VLwDwDQFjuRdsQ1,NA,NA,NA,NA,anonymous,EN,NA,435047,18,interesting,5
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,easy to understand,7
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,don't know what to do,2
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,ratings reflect preferences,6
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,like task,7
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,trouble focusing,2
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,too fast,2
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,good speed,6
+2020-11-13 17:08:58,2020-11-13 17:09:52,0,100,53,1,2020-11-13 17:09:52,R_1JOATYIKQHmHZIR,NA,NA,NA,NA,anonymous,EN,This alcohol task was a great experience for me to find out my tastes and preferences in different drinking situations.,435044,9,interesting,6
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,easy to understand,7
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,don't know what to do,1
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,ratings reflect preferences,7
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,like task,5
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,trouble focusing,5
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,too fast,3
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,good speed,2
+2020-11-13 17:10:11,2020-11-13 17:10:52,0,100,40,1,2020-11-13 17:10:52,R_1N3cgN0uCPFeTG0,NA,NA,NA,NA,anonymous,EN,NA,435053,30,interesting,5
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,easy to understand,2
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,don't know what to do,1
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,ratings reflect preferences,5
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,like task,3
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,trouble focusing,5
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,too fast,2
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,good speed,3
+2020-11-13 17:13:58,2020-11-13 17:15:34,0,100,96,1,2020-11-13 17:15:34,R_1BVZJm1BOtTndDm,NA,NA,NA,NA,anonymous,EN,At times it moved a bit too fast to really evaluate what was shown,435052,15,interesting,3
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,easy to understand,7
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,don't know what to do,3
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,ratings reflect preferences,6
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,like task,7
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,trouble focusing,2
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,too fast,2
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,good speed,7
+2020-11-13 17:17:18,2020-11-13 17:18:19,0,100,60,1,2020-11-13 17:18:19,R_2qDkbpwyNAWJyzA,NA,NA,NA,NA,anonymous,EN,NA,435054,25,interesting,7
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,easy to understand,2
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,don't know what to do,5
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,ratings reflect preferences,3
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,like task,2
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,trouble focusing,7
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,too fast,5
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,good speed,4
+2020-11-13 17:16:11,2020-11-13 17:18:47,0,100,155,1,2020-11-13 17:18:47,R_vJowXIZwHLKSdSp,NA,NA,NA,NA,anonymous,EN,"Sometimes I gave low answers for things because I thought the drink choice was gross not because of how I felt about a drink after seeing the Instagram post, for example, Echo Falls doesn't go well with any situation.",434972,6,interesting,4
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,easy to understand,6
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,don't know what to do,1
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,ratings reflect preferences,6
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,like task,5
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,trouble focusing,4
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,too fast,2
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,good speed,6
+2020-11-13 17:22:23,2020-11-13 17:23:33,0,100,69,1,2020-11-13 17:23:33,R_bxcKi8QX27AjqGl,NA,NA,NA,NA,anonymous,EN,NA,435056,30,interesting,7
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,easy to understand,6
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,don't know what to do,2
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,ratings reflect preferences,7
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,like task,2
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,trouble focusing,4
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,too fast,5
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,good speed,3
+2020-11-13 17:21:46,2020-11-13 17:25:51,0,100,244,1,2020-11-13 17:25:51,R_2WuSSjPzKwlMCjA,NA,NA,NA,NA,anonymous,EN,NA,435046,11,interesting,3
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,easy to understand,3
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,don't know what to do,4
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,ratings reflect preferences,6
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,like task,6
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,trouble focusing,5
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,too fast,5
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,good speed,2
+2020-11-13 17:22:07,2020-11-13 17:26:01,0,100,233,1,2020-11-13 17:26:01,R_1gelw9ioymFp9da,NA,NA,NA,NA,anonymous,EN,"When displaying images of ""negative consequences"" before ""partying"" images, I think respondents will have a negative connotation to drinking and may not respond accurately to the ""partying"" images as they still retain the consequences in their heads.",435055,11,interesting,6
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,easy to understand,2
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,don't know what to do,2
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,ratings reflect preferences,6
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,like task,2
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,trouble focusing,3
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,too fast,2
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,good speed,5
+2020-11-13 17:25:15,2020-11-13 17:27:02,0,100,107,1,2020-11-13 17:27:02,R_3hARprS43BnxMTp,NA,NA,NA,NA,anonymous,EN,I strongly dislike tequila and Heineken as a brand,435057,26,interesting,2
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,easy to understand,7
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,don't know what to do,5
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,ratings reflect preferences,6
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,like task,3
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,trouble focusing,5
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,too fast,2
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,good speed,5
+2020-11-13 17:28:07,2020-11-13 17:29:23,0,100,75,1,2020-11-13 17:29:23,R_0f6NwbssNZ0Nqkp,NA,NA,NA,NA,anonymous,EN,the choice of drinks affected my decisions more than the images at times,435048,31,interesting,3
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,easy to understand,6
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,don't know what to do,1
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,ratings reflect preferences,6
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,like task,5
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,trouble focusing,5
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,too fast,2
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,good speed,5
+2020-11-13 17:36:09,2020-11-13 17:37:07,0,100,58,1,2020-11-13 17:37:07,R_3rG6k9KwrNTY6u6,NA,NA,NA,NA,anonymous,EN,NA,435042,18,interesting,5
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,easy to understand,1
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,don't know what to do,6
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,ratings reflect preferences,2
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,like task,1
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,trouble focusing,7
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,too fast,6
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,good speed,1
+2020-11-13 17:36:36,2020-11-13 17:37:52,0,100,76,1,2020-11-13 17:37:52,R_28J6YS3Q9LeGuQC,NA,NA,NA,NA,anonymous,EN,NA,435062,31,interesting,1
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,easy to understand,5
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,don't know what to do,1
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,ratings reflect preferences,7
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,like task,2
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,trouble focusing,3
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,too fast,1
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,good speed,4
+2020-11-13 17:39:42,2020-11-13 17:41:56,0,100,133,1,2020-11-13 17:41:56,R_1CE29rGdSwRFNBq,NA,NA,NA,NA,anonymous,EN,Wider variety of alcoholic beverages - I barely/don't drink half of them,435061,2,interesting,1
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,easy to understand,4
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,don't know what to do,5
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,ratings reflect preferences,6
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,like task,3
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,trouble focusing,5
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,too fast,2
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,good speed,3
+2020-11-13 17:41:32,2020-11-13 17:42:17,0,100,45,1,2020-11-13 17:42:17,R_2WNfFfWM7yzxLoI,NA,NA,NA,NA,anonymous,EN,NA,435063,15,interesting,2
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,easy to understand,3
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,don't know what to do,3
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,ratings reflect preferences,4
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,like task,5
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,trouble focusing,5
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,too fast,5
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,good speed,3
+2020-11-13 17:52:06,2020-11-13 17:53:59,0,100,113,1,2020-11-13 17:53:59,R_1KxR8WhIon1NkbG,NA,NA,NA,NA,anonymous,EN,NA,435066,27,interesting,5
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,easy to understand,6
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,don't know what to do,2
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,ratings reflect preferences,4
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,like task,4
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,trouble focusing,4
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,too fast,2
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,good speed,3
+2020-11-13 18:07:34,2020-11-13 18:09:52,0,100,138,1,2020-11-13 18:09:53,R_1eElxqUvbMURccf,NA,NA,NA,NA,anonymous,EN,I would only use one brand of a particular brand. Some people have different preferences for beer or another drink.,435078,10,interesting,5
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,easy to understand,7
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,don't know what to do,1
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,ratings reflect preferences,6
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,like task,6
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,trouble focusing,4
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,too fast,2
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,good speed,4
+2020-11-13 18:39:02,2020-11-13 18:40:38,0,100,95,1,2020-11-13 18:40:38,R_3qBCtYkPj7z7HIn,NA,NA,NA,NA,anonymous,EN,"I found the survey really interesting, but maybe you could speed up to pauses between the pictures:)",434998,13,interesting,6
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,easy to understand,7
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,don't know what to do,1
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,ratings reflect preferences,7
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,like task,5
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,trouble focusing,2
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,too fast,1
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,good speed,6
+2020-11-13 18:57:11,2020-11-13 18:58:11,0,100,59,1,2020-11-13 18:58:11,R_1QAFfK3ITWBBbbR,NA,NA,NA,NA,anonymous,EN,Not really,435089,15,interesting,5
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,easy to understand,5
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,don't know what to do,2
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,ratings reflect preferences,5
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,like task,3
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,trouble focusing,2
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,too fast,4
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,good speed,4
+2020-11-13 19:02:48,2020-11-13 19:04:21,0,100,93,1,2020-11-13 19:04:21,R_12ndXBgpeNSuWxP,NA,NA,NA,NA,anonymous,EN,I have a bad memory with some beverages presented that is why I have rated them low,435090,3,interesting,5
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,easy to understand,6
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,don't know what to do,1
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,ratings reflect preferences,6
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,like task,6
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,trouble focusing,3
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,too fast,4
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,good speed,2
+2020-11-13 19:21:31,2020-11-13 19:23:47,0,100,135,1,2020-11-13 19:23:47,R_1fcLlRujr1jgDSq,NA,NA,NA,NA,anonymous,EN,"No, it was a fun task.",435101,23,interesting,6
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,easy to understand,4
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,don't know what to do,4
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,ratings reflect preferences,3
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,like task,3
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,trouble focusing,5
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,too fast,5
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,good speed,3
+2020-11-13 19:25:18,2020-11-13 19:26:31,0,100,73,1,2020-11-13 19:26:32,R_3O3cunloItXZHpb,NA,NA,NA,NA,anonymous,EN,NA,434989,31,interesting,3
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,easy to understand,7
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,don't know what to do,1
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,ratings reflect preferences,6
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,like task,5
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,trouble focusing,2
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,too fast,1
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,good speed,6
+2020-11-13 19:26:38,2020-11-13 19:28:50,0,100,131,1,2020-11-13 19:28:50,R_5pegIDZsvwDjavL,NA,NA,NA,NA,anonymous,EN,I consider that the preference for the type of beverage does not depend on the picture shown as I personally replied based on my usual preferences.,435097,6,interesting,5
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,easy to understand,7
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,don't know what to do,1
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,ratings reflect preferences,7
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,like task,7
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,trouble focusing,1
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,too fast,1
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,good speed,7
+2020-11-13 19:26:59,2020-11-13 19:30:23,0,100,203,1,2020-11-13 19:30:23,R_3KI4Mr1L4RAUSEC,NA,NA,NA,NA,anonymous,EN,NA,435098,27,interesting,7
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,easy to understand,6
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,don't know what to do,1
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,ratings reflect preferences,6
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,like task,6
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,trouble focusing,5
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,too fast,3
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,good speed,5
+2020-11-13 19:31:21,2020-11-13 19:32:49,0,100,87,1,2020-11-13 19:32:49,R_3dRJuc16ISDqcEk,NA,NA,NA,NA,anonymous,EN,NA,435105,3,interesting,6
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,easy to understand,5
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,don't know what to do,3
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,ratings reflect preferences,6
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,like task,4
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,trouble focusing,2
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,too fast,2
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,good speed,6
+2020-11-13 19:54:13,2020-11-13 19:55:10,0,100,57,1,2020-11-13 19:55:11,R_3wNZMNY6J0Levlv,NA,NA,NA,NA,anonymous,EN,NA,435100,2,interesting,5
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,easy to understand,7
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,don't know what to do,1
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,ratings reflect preferences,7
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,like task,5
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,trouble focusing,2
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,too fast,7
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,good speed,3
+2020-11-13 20:22:14,2020-11-13 20:23:21,0,100,66,1,2020-11-13 20:23:21,R_3nV0Zapvjw5DG8u,NA,NA,NA,NA,anonymous,EN,NA,435058,30,interesting,7
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,easy to understand,3
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,don't know what to do,1
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,ratings reflect preferences,6
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,like task,1
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,trouble focusing,3
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,too fast,2
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,good speed,4
+2020-11-13 19:04:50,2020-11-13 20:25:36,0,100,4845,1,2020-11-13 20:25:36,R_O2qm5hI3FkLNLcB,NA,NA,NA,NA,anonymous,EN,Did not totally understand if it meant that after seeing this picture would you like to have this drink today or if it meant that when you're in the place of the picture would you to have a certain drink in that moment.,435092,26,interesting,3
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,easy to understand,4
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,don't know what to do,1
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,ratings reflect preferences,5
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,like task,4
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,trouble focusing,4
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,too fast,2
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,good speed,4
+2020-11-13 18:10:59,2020-11-13 20:43:14,0,100,9135,1,2020-11-13 20:43:15,R_2xQbhyoPHwZnIhy,NA,NA,NA,NA,anonymous,EN,NA,435080,27,interesting,4

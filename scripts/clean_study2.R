@@ -102,3 +102,6 @@ cue_df=logs %>% dplyr::group_by(alc_cue,val_cond,source_cond) %>%
   mutate(alc_cue=sub('.jpg','',alc_cue)) %>%left_join(abps)
 
 write_csv(cue_df,'data/study2/cleaned/cue_df.csv')
+write_csv(S1,'data/study2/cleaned/S1_cleaned.csv')
+write_csv(S2,'data/study2/cleaned/S2_cleaned.csv')
+write_csv(S3,'data/study2/cleaned/S3_cleaned.csv')
