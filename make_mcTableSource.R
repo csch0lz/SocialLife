@@ -44,13 +44,7 @@ mc_table2=study1a_source_df %>% filter(grepl('influencer',source)) %>% lmer(sour
   rbind(professional_mod,.) %>% 
   mutate(`95% CI`=case_when(!is.na(conf.low)~paste0('[',format(round(conf.low,2),nsmall=2),';',format(round(conf.high,2),nsmall=2),']'),TRUE~NA_character_),
          p.value=formatp(p.value)) %>% 
-  select(rating,effect, group, term, estimate, `95% CI`, p.value) %>% 
-  pivot_wider(.,names_from = rating, values_from=c('estimate','p.value',`95% CI`)) %>% 
-  select(effect,group,term,names(.)[grepl('_professional',names(.))],names(.)[grepl('_average',names(.))],names(.)[grepl('_influencer',names(.))]) %>% 
-  arrange(!is.na(group)) %>% 
-  mutate(term=case_when(is.na(group)~term,TRUE~paste(group,term,sep=' '))) %>%
-  select(-group) %>% 
-  mutate_at(vars(names(.)[grepl('estimate',names(.))]),round_format)
+  select(rating,effect, group, term, estimate, `95% CI`, p.value) 
 
 mc_table2_nonalc=study1b_source_df %>% filter(grepl('non',condition), grepl('influencer',source)) %>% lmer(source_rating~source_cond+(1|ResponseId)+(1|QualtricsURL),data=.) %>%
   broom.mixed::tidy(.,conf.int=T) %>%  
@@ -60,24 +54,21 @@ mc_table2_nonalc=study1b_source_df %>% filter(grepl('non',condition), grepl('inf
   rbind(professional_mod_nonalc,.) %>% 
   mutate(`95% CI`=case_when(!is.na(conf.low)~paste0('[',format(round(conf.low,2),nsmall=2),';',format(round(conf.high,2),nsmall=2),']'),TRUE~NA_character_),
          p.value=formatp(p.value)) %>% 
-  select(rating,effect, group, term, estimate, `95% CI`, p.value) %>% 
-  pivot_wider(.,names_from = rating, values_from=c('estimate','p.value',`95% CI`)) %>% 
-  select(effect,group,term,names(.)[grepl('_professional',names(.))],names(.)[grepl('_average',names(.))],names(.)[grepl('_influencer',names(.))]) %>% 
-  arrange(!is.na(group)) %>% 
-  mutate(term=case_when(is.na(group)~term,TRUE~paste(group,term,sep=' '))) %>%
-  select(-group) %>% 
-  mutate_at(vars(names(.)[grepl('estimate',names(.))]),round_format)
+  select(rating,effect, group, term, estimate, `95% CI`, p.value) 
 
 mc_table2[is.na(mc_table2)] <- ''
 mc_table2_nonalc[is.na(mc_table2_nonalc)]<-''
-mc_table2$term=c('Intercept','source','pID Intercept','sID Intercept','Residual')
-mc_table2_nonalc$term=c('Intercept','source','pID Intercept','sID Intercept','Residual')
+mc_table2$term=rep(c('Intercept','source: professional','pID Intercept','sID Intercept','Residual'),3)
+mc_table2_nonalc$term=rep(c('Intercept','source: professional','pID Intercept','sID Intercept','Residual'),3)
 
 empty_row=mc_table2[1,]
 empty_row[1,]<-NA
 empty_row_1=empty_row %>% mutate(effect='STUDY 1a', term='Alcoholic Drinks')
 empty_row_2=empty_row %>% mutate(effect='STUDY 1b', term='Non-Alcoholic Drinks')
 
-mc_table2_all<-rbind(empty_row_1,mc_table2,empty_row_2,mc_table2_nonalc)
+mc_table2_all<-rbind(empty_row_1,mc_table2,empty_row_2,mc_table2_nonalc) %>% select(-group)
+names(mc_table2_all)[1]<-'DV'
+names(mc_table2_all)[dim(mc_table2_all)[2]]<-'p'
+
 
 write_csv(mc_table2_all,'Tables/mcTableSource.csv')
