@@ -191,14 +191,20 @@ ggarrange(val_mc_plot,source_mc_plot, source_mc_plot_nonalc, ncol=3)
 
 @
 
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor, accounting for random intercepts across participants and stimuli (Table \@ref(tab:mcTableSource)). Images from professional sources showed higher ratings for professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli (see \@ref(fig:FigureMC)B and C, Table \@ref(tab:mcTableSource)). Of note, professional stimuli were more often misattributed to an influencer source compared to peer-produced stimuli.
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor, accounting for random intercepts across participants and stimuli (Table \@ref(tab:mcTableSource)). Images from professional sources showed higher ratings for professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli (see \@ref(fig:FigureMC)B and C, Table (Table ~\ref{tab:mcTableSource}). Of note, professional stimuli were more often misattributed to an influencer source compared to peer-produced stimuli.
 
 <<mcTableSource,echo=FALSE>>=
-mc_table=read_csv('Tables/mc_table_source.csv',col_types=cols())
+mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
+mutate_all(as.character) 
+
+names(mc_table)<-c('effect','term','Pr: estimate','Pr: p','Pr: 95% CI','Pe: estimate','Pe: p','Pe: 95% CI','In: estimate','In: p','Inmc_table2_nonalc: 95% CI') 
+
 mc_table[is.na(mc_table)]<-''
 
-kable(mc_table,booktabs=T,digits=2,caption='Manipulation Check')
+kable(mc_table,caption='Effects of source condition on each of three perceived sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T)
 @
+
+
 
 
 \section{Discussion}
