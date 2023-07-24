@@ -69,6 +69,7 @@ empty_row_2=empty_row %>% mutate(effect='STUDY 1b', term='Non-Alcoholic Drinks')
 mc_table2_all<-rbind(empty_row_1,mc_table2,empty_row_2,mc_table2_nonalc) %>% select(-group)
 names(mc_table2_all)[1]<-'DV'
 names(mc_table2_all)[dim(mc_table2_all)[2]]<-'p'
+mc_table2_all$effect=ifelse(mc_table2_all$effect=='ran_pars','random',mc_table2_all$effect)
 
 
 write_csv(mc_table2_all,'Tables/mcTableSource.csv')
