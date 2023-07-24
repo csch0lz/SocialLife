@@ -9,6 +9,7 @@
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{references.bib}
 \usepackage{pgfplotstable}
+\usepackage{longtable}
 
 \title{Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
 \shorttitle{Anti-Alcohol Messages in Context}
@@ -191,18 +192,26 @@ ggarrange(val_mc_plot,source_mc_plot, source_mc_plot_nonalc, ncol=3)
 
 @
 
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor, accounting for random intercepts across participants and stimuli (Table \@ref(tab:mcTableSource)). Images from professional sources showed higher ratings for professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli (see \@ref(fig:FigureMC)B and C, Table (Table ~\ref{tab:mcTableSource}). Of note, professional stimuli were more often misattributed to an influencer source compared to peer-produced stimuli.
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table \@ref(tab:mcTableSource), and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainy that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
 
-<<mcTableSource,echo=FALSE>>=
+<<mcTableSource,echo=FALSE,results='asis'>>=
 mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
-mutate_all(as.character) 
-
-names(mc_table)<-c('effect','term','Pr: estimate','Pr: p','Pr: 95% CI','Pe: estimate','Pe: p','Pe: 95% CI','In: estimate','In: p','Inmc_table2_nonalc: 95% CI') 
+mutate(estimate=round(estimate,2)) %>%
+mutate_all(as.character)
 
 mc_table[is.na(mc_table)]<-''
 
-kable(mc_table,caption='Effects of source condition on each of three perceived sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T)
+kable(mc_table,caption='Effects of source condition on each of three perceived sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
+kable_styling(font_size=8)
 @
+
+\subsection{Condition Effects on Craving}
+
+Next, we examined whether stimulus valence and source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages. (Table \@ref(tab:drinkingUrgeModels)). 
+
+Across both studies, there is a main effect of stimulus valence condition on the urge to drink alcohol so that pro-alcohol posts lead to stronger urges to drink than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
+
+
 
 
 
