@@ -207,9 +207,20 @@ kable_styling(font_size=8)
 
 \subsection{Condition Effects on Craving}
 
-Next, we examined whether stimulus valence and source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages. (Table \@ref(tab:drinkingUrgeModels)). 
+Next, we examined whether stimulus valence and source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
 
-Across both studies, there is a main effect of stimulus valence condition on the urge to drink alcohol so that pro-alcohol posts lead to stronger urges to drink than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
+Across both studies, Table \@ref(tab:cravingTable) shows main effects of stimulus valence condition on the urge to drink alcohol so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
+
+<<cravingTable,echo=FALSE,results='asis'>>=
+craving_table=read_csv('Tables/cravingTable.csv',col_types=cols()) %>%
+mutate(estimate=round(estimate,2)) %>%
+mutate_all(as.character)
+
+craving_table[is.na(craving_table_table)]<-''
+craving_table
+#kable(mc_table,caption='Effects of source condition on each of three perceived #sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus #ID',booktabs=T,digit=2) %>%
+#kable_styling(font_size=8)
+@
 
 
 
