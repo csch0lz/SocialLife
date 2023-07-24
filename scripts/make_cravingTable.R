@@ -56,4 +56,4 @@ urge_table=urge_table %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.
           select(effect,term,`Study 1a`, `Study 2`) 
 
 write_csv(urge_table,'Tables/cravingTable.csv')
-#caption='Condition effects on drinking urge in response to diverse alcohol-related information',note='The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID')
+#
