@@ -1,4 +1,5 @@
 #Clean log files
+library('tidyverse')
 logs=read_csv('data/study2/all_logs.csv')
 logs=logs %>% 
   filter(pID!='pID') %>%

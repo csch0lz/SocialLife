@@ -1,0 +1,13 @@
+effect,term,estimate_professional,p.value_professional,95% CI_professional,estimate_average,p.value_average,95% CI_average,estimate_influencer,p.value_influencer,95% CI_influencer
+STUDY 1a,Alcoholic Drinks,NA,NA,NA,NA,NA,NA,NA,NA,NA
+fixed,Intercept,1.97,<.001,[ 1.77; 2.16], 5.66,<.001,[ 5.47; 5.84],3.30,<.001,[ 3.04; 3.56]
+fixed,source,3.15,<.001,[ 2.90; 3.41],-2.55,<.001,[-2.78;-2.31],0.73,<.001,[ 0.38; 1.08]
+ran_pars,pID Intercept,0.64,,, 0.70,,,0.85,,
+ran_pars,sID Intercept,0.75,,, 0.69,,,1.06,,
+ran_pars,Residual,1.54,,, 1.56,,,1.56,,
+STUDY 1b,Non-Alcoholic Drinks,NA,NA,NA,NA,NA,NA,NA,NA,NA
+fixed,Intercept,3.42,<.001,[ 2.82; 4.02], 5.26,<.001,[ 4.81; 5.71],4.59,<.001,[ 4.09; 5.09]
+fixed,source,2.63,<.001,[ 1.81; 3.45],-2.25,<.001,[-2.81;-1.70],0.72,0.033,[ 0.06; 1.37]
+ran_pars,pID Intercept,0.74,,, 1.08,,,1.02,,
+ran_pars,sID Intercept,1.05,,, 0.68,,,0.81,,
+ran_pars,Residual,1.55,,, 1.46,,,1.54,,
