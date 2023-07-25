@@ -442,16 +442,12 @@ familiarity_study1ab = familiarity_study1ab %>%
 
 Does familiarity play a role in alcohol craving?
 
-<<>>=
-drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
-familiarity_1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df)
+<<familiarityTable, echo=FALSE,results='asis'>>=
+fam_table=read_csv('Tables/familiarityTable.csv',col_types=cols()) 
 
-familiarity_1ab_wide = familiarity_1ab %>% 
-                       pivot_wider(values_from=fam_rating,names_from=familiarity_variable) %>% 
-                       mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
+fam_table[is.na(fam_table)]<-''
 
-drink_1ab %>% right_join(familiarity_1ab_wide) %>% 
-lmer(drink_rating~fam_index*val_cond+(1|pIDs),data=combined) %>% summary()
+kable(fam_table,caption='Relationship between perceived message familiarity and alcohol craving by condition, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=3) 
 @
 
 \section{Discussion}
