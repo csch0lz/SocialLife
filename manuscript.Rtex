@@ -53,9 +53,8 @@ Despite the fact that there is strong evidence about interference between mass m
 
 When related messages are studied by different individuals with different disciplinary backgrounds, the result is incomparable self-report measures, operationalizations of message impact, and conceptualizations of message strategies. Consequently, this somewhat scattered literature provides little information about how these different types of messages compare in the natural competition for young people's attention. In this set of studies, we exposed the same group of study participants to pro- and anti-alcohol information from peer- and professional sources to directly compare message impact, here operationalized as alcohol craving directly following message exposure. 
 
-\subsection{Moderators???}
-
-\subsection{Mechanisms}
+\subsection{Drivers of Craving}
+^[Note: For the intro and discussion - looking at emotions, because emotions are strongly linked to engagement like sharing on social media and linked to message effectiveness more generally.]
 
 \section{Method}
 We conducted three online studies (Studies 1a, 1b, and 2) to directly compare the impact of different types of alcohol-related information on craving for alcohol and to explore mechanisms of these effects. The goal of Study 1a was establish craving responses to professional and peer-produced pro- and anti-alcohol information in a large sample of messages. In Study 1b, we added professional- and peer-produced information about non-alcoholic drinks as a comparison condition. Study 2 represents a conceptual replication of Studies 1a/b using a more intensive within-subjects design with higher statistical power. All participants provided informed consent and all procedures were approved by the ethical review board at [UNIVERSITY ANONYMIZED FOR REVIEW].
@@ -88,6 +87,8 @@ library('tidyverse')
 library('kableExtra')
 library('ggpubr')
 library('plotrix')
+library('ggpattern')
+library('reshape2')
 source('scripts/customFunctions.R')
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
@@ -100,6 +101,8 @@ study1a_valence_df=readRDS('data/study1a/cleaned/valence_df.RDS')
 study1b_source_df=readRDS('data/study1b/cleaned/source_df.RDS')
 study1a_familiarity_df=readRDS('data/study1a/cleaned/familiarity_df.RDS')
 study1b_familiarity_df=readRDS('data/study1b/cleaned/familiarity_df.RDS')
+study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS')
+study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 @
 
 \subsection{Participants}
@@ -429,7 +432,7 @@ familiarity_study1ab = familiarity_study1ab %>%
   mutate(fam_index=(`like me` + `familiar situation`)/2)
 @
 
-<<FigureFamiliarity, fig.cap="Familiarity Ratings by Condition (Study 1a/b)">>=
+<<FigureFamiliarity, fig.cap="Familiarity Ratings by Condition (Study 1a/b)",echo=FALSE,message=FALSE>>=
   familiarity_study1ab%>%
   dplyr::group_by(source,valence,filename) %>%
     summarize(fam_index=mean(fam_index,na.rm=T)) %>% 
@@ -440,15 +443,93 @@ familiarity_study1ab = familiarity_study1ab %>%
   scale_fill_grey() + theme_bw()
 @
 
-Does familiarity play a role in alcohol craving?
+Does familiarity play a role in alcohol craving? As shown in Table ~\ref{tab:famTable} and Figure ~\ref{fig:famFigure}, when participants perceived messages to be more familiar, they also experienced higher alcohol craving, but this effect was moderated by valence condition so that familiarity was more strongly positively associated with alcohol craving in pro- compared to anti-alcohol messages and in anti-alcohol compared to non-alcoholic messages. Surprisingly, even in anti-alcohol messages, familiarity does not lead to increased message effectiveness, but rather a boomerang effect in the form of increased craving.
 
-<<familiarityTable, echo=FALSE,results='asis'>>=
+<<famTable, echo=FALSE,message=FALSE,results='asis'>>=
 fam_table=read_csv('Tables/familiarityTable.csv',col_types=cols()) 
 
 fam_table[is.na(fam_table)]<-''
 
-kable(fam_table,caption='Relationship between perceived message familiarity and alcohol craving by condition, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=3) 
+fam_table %>% kable(caption='Relationship between perceived message familiarity and alcohol craving by condition, pID = participant ID; sID = stimulus ID)',booktabs=T) 
 @
+
+<<famFigure, echo=FALSE,message=FALSE,results='asis',fig.cap='Stimulus-level relationship between perceived message familiarity and alcohol craving by valence condition'>>=
+drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
+familiarity_1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df)
+
+familiarity_1ab_wide = familiarity_1ab %>% 
+  pivot_wider(values_from=fam_rating,names_from=familiarity_variable) %>% 
+  mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
+
+drink_1ab %>% right_join(familiarity_1ab_wide) %>% 
+  group_by(filename) %>%
+  summarise(fam_index=mean(fam_index,na.rm=T),
+            drink_rating=mean(drink_rating,na.rm=T),
+            val_cond=first(val_cond)) %>% 
+  mutate(val_cond=factor(val_cond,levels=c('anti-alcohol','non-alcoholic','pro-alcohol'))) %>%
+  ggplot(aes(x=fam_index,y=drink_rating,color=val_cond)) + 
+  geom_smooth(method='lm') +
+  geom_point() +
+  theme_bw() +
+  scale_color_grey() +
+  ylab('Alcohol Craving') + 
+  xlab('Familiarity Index') +
+  labs(color='Valence')
+@
+
+\subsubsection{Emotions}
+
+Finally, we examined emotional responses to different types of alcohol-related information (rated by Study 1 a/b participants). We found meaningful condition differences in the experienced emotions in response to the stimuli tested across Studies 1a & 1b. For instance, anti-alcohol stimuli compared to pro-alcohol stimuli evoked more negative and less positive emotions. Differences between professional and social stimuli were substantially smaller than differences between valence conditions and mostly visible for anti-alcohol stimuli (Figure ~\ref{fig:FigureEmo}). Specifically, for anti-alcohol stimuli, professional sources led to slightly more scared, shocked, sad and negative responses, while peer-produced sources were more likely to be rated as amusing and embarrassing (for someone else).
+
+<<FigureEmo,fig.cap='Emotional Responses to Stimuli (Study 1)',results='as.is',echo=FALSE,message=FALSE>>=
+emo_vars=unique(study1a_emo_df$specific_emotion) 
+emo_vars=case_when(grepl('embarrassed',emo_vars)~sub('\\(','\n \\(',emo_vars),TRUE~emo_vars)
+
+emo_df_1ab=study1a_emo_df %>% bind_rows(study1b_emo_df) %>% left_join(drink_1ab) %>%
+  mutate(source=case_when(source=grepl('prof',condition)~'professional',
+                          grepl('soc',condition)~'peer-produced',
+                          TRUE~NA_character_),
+         valence=case_when(grepl('non_',condition)~'non-alcoholic',
+                           grepl('pro_',condition)~'pro-alcohol',
+                           grepl('anti_',condition)~'anti-alcohol',
+                           TRUE~NA_character_),
+         condition=case_when(condition=='pro_social'~'pro-alcohol \npeer-produced',
+                             condition=='pro_prof'~'pro-alcohol \nprofessional',
+                             condition=='anti_social'~'anti-alcohol \npeer-produced',
+                             condition=='anti_prof'~'anti-alcohol \nprofessional',
+                             condition=='non_pro_prof'~'non-alcoholic \nprofessional',
+                             condition=='non_pro_social'~'non-alcoholic \npeer-produced',
+                             TRUE~NA_character_),
+         specific_emotion=case_when(grepl('embarrassed',specific_emotion)~sub('\\(','\n \\(',specific_emotion),
+                                    TRUE~specific_emotion)) %>% 
+  group_by(valence,source,specific_emotion,filename) %>% 
+  summarize(mean_emo_rating=mean(emo_rating,na.rm=T),
+            mean_drink_rating=mean(drink_rating,na.rm=T)) 
+  
+emo_df_1ab%>%
+  group_by(valence,source,specific_emotion) %>%
+  summarize(`Average Emotion Rating (1-7)`=mean(mean_emo_rating,na.rm=T),
+            se_emo=std.error(mean_emo_rating,na.rm=T)) %>% 
+filter(!is.na(source)) %>% 
+ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) + 
+    geom_bar(stat='identity',position='dodge') +
+    #(axis.text.x = element_text(angle = 90)) + 
+  geom_errorbar(aes(ymin=`Average Emotion Rating (1-7)`-(1.96*se_emo),ymax=`Average Emotion Rating (1-7)`+(1.96*se_emo)),position=position_dodge(0.9),width=0.15) +
+  facet_wrap(~specific_emotion) +
+  scale_fill_grey() +
+  labs(x='Valence Condition')
+  #theme(axis.text.x = element_text(angle = 90))
+@
+
+\begin{figure}
+    \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/}
+    \label{fig:FigureStimuli}
+\end{figure}
+
+
+ 
+
 
 \section{Discussion}
 asdf
