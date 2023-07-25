@@ -192,7 +192,7 @@ ggarrange(val_mc_plot,source_mc_plot, source_mc_plot_nonalc, ncol=3)
 
 @
 
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table \@ref(tab:mcTableSource), and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainy that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainy that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
 
 <<mcTableSource,echo=FALSE,results='asis'>>=
 mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
@@ -209,18 +209,67 @@ kable_styling(font_size=8)
 
 Next, we examined whether stimulus valence and source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
 
-Across both studies, Table \@ref(tab:cravingTable) shows main effects of stimulus valence condition on the urge to drink alcohol so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
+Across both studies, Table ~\ref{tab:cravingTable} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
 
-<<cravingTable,echo=FALSE,results='asis'>>=
-craving_table=read_csv('Tables/cravingTable.csv',col_types=cols()) %>%
-mutate(estimate=round(estimate,2)) %>%
-mutate_all(as.character)
+<<cravingTable, echo=FALSE,results='asis'>>=
+craving_table=read_csv('Tables/cravingTable.csv',col_types=cols()) 
 
-craving_table[is.na(craving_table_table)]<-''
-craving_table
-#kable(mc_table,caption='Effects of source condition on each of three perceived #sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus #ID',booktabs=T,digit=2) %>%
-#kable_styling(font_size=8)
+craving_table[is.na(craving_table)]<-''
+
+kable(craving_table,caption='Condition effects on drinking urge in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
+
+\subsubsection{Valence Effect Exploration}
+
+Study 2 results show that the main effect of valence is specific to trials in which participants rated their urge to consume alcoholic (rather than non-alcoholic) drinks, demonstrating that pro-alcohol stimuli specifically enhance the urge to consume alcohol not a general thirst for fluids (see Figure ~\ref{fig:specificityPlot}).
+
+<<specificityPlot,fig.cap="Stimulus-Level Relationship between Stimulus Valence (pro- vs. anti-alcohol) and Drinking #Urge; Error bars represent 95\\% confidence intervals.",echo=FALSE,message=FALSE>>=
+
+valPlot1a=study1a_drink_df %>% group_by(QualtricsMsgID) %>%
+    summarize(avg_drink_rating=mean(drink_rating,na.rm=T),val_cond=unique(val_cond)) %>%
+             group_by(val_cond) %>% 
+             summarize(se_drink_rating=std.error(avg_drink_rating),
+                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>% 
+  ggplot(aes(val_cond,avg_drink_rating)) + 
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 1a') + 
+  ylab('Average Drinking Urge (1-5)') + 
+  xlab('Valence Condition') + 
+  theme_bw() + 
+  theme(legend.position='bottom',text=element_text(size=10)) +
+  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
+
+valPlot1b=study1b_drink_df %>% group_by(filename) %>%
+    summarize(avg_drink_rating=mean(drink_rating,na.rm=T),val_cond=unique(val_cond)) %>%
+             group_by(val_cond) %>% 
+             summarize(se_drink_rating=std.error(avg_drink_rating),
+                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>% 
+  ggplot(aes(val_cond,avg_drink_rating)) + 
+  geom_bar(stat='identity') + 
+  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 1a') + 
+  ylab('Average Drinking Urge (1-5)') + 
+  xlab('Valence Condition') + 
+  theme_bw() + 
+  theme(legend.position='bottom',text=element_text(size=10)) +
+  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
+
+
+# New facet label names for type varialbe
+type.labs <- c("alcoholic cues", "non-alcoholic cues")
+names(type.labs) <- c("alcohol", "non-alcohol")
+
+valPlot2=study2_logs %>% group_by(file,val_cond,type) %>% 
+  summarize(avg_rating.keys=mean(rating.keys,na.rm=T)) %>%
+  group_by(val_cond,type) %>% 
+  summarize(avg_drink_rating=mean(avg_rating.keys),
+            se_drink_rating=std.error(avg_rating.keys,na.rm=T)) %>% ungroup() %>% 
+         ggplot(aes(val_cond,avg_drink_rating)) + geom_bar(stat='identity') + geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 2') + ylab('Average Drinking Urge (1-5)') + xlab('Valence Condition') + labs(y='') + facet_wrap(~type,labeller=labeller(type=type.labs)) + theme_bw() + theme(legend.position='bottom',text=element_text(size=10)) + scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
+
+ggarrange(valPlot1a,valPlot1b,valPlot2, ncol=2)
+@
+
+The size of the valence effect is larger in Study 1 (Mean difference on the 5-point scale: `r avgs=drink_df %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(drink_rating,na.rm=T), sd_drink_rating=sd(drink_rating,na.rm=T)) %>% ungroup()``r round(avgs$avg_drink_rating[2]-avgs$avg_drink_rating[1],2)`) than in Study 2 (Mean difference on the 5-point scale: `r avgs=logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(rating.keys,na.rm=T),sd_drink_rating=sd(rating.keys,na.rm=T)) %>% ungroup() ``r round(avgs$avg_drink_rating[2]-avgs$avg_drink_rating[1],2)`). This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1 and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1 participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their urge to drink one specific type of alcohol. As such, the Study 1 effect size may be seen as a closer estimate of real-world effects. 
+
 
 
 
