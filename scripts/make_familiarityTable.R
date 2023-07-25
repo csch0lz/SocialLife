@@ -25,7 +25,7 @@ familiarity_1ab_wide = familiarity_1ab %>%
   mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
 
 fam_table=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
-  lmer(drink_rating~fam_index*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
+  lmer(drink_rating~fam_index*val_cond*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
