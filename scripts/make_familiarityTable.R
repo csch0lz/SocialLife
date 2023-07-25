@@ -40,5 +40,7 @@ fam_table=fam_table %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
                                Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))
 
+fam_table$Estimate[!grepl(',',fam_table$Estimate)]<-as.character(round(as.numeric(fam_table$Estimate[!grepl(',',fam_table$Estimate)]),2))
+
 fam_table %>% dplyr::select(effect,term,Estimate) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
 write_csv(.,'Tables/familiarityTable.csv')
