@@ -98,6 +98,8 @@ study1b_drink_df=readRDS('data/study1b/cleaned/drink_df.RDS')
 study1a_source_df=readRDS('data/study1a/cleaned/source_df.RDS')
 study1a_valence_df=readRDS('data/study1a/cleaned/valence_df.RDS')
 study1b_source_df=readRDS('data/study1b/cleaned/source_df.RDS')
+study1a_familiarity_df=readRDS('data/study1a/cleaned/familiarity_df.RDS')
+study1b_familiarity_df=readRDS('data/study1b/cleaned/familiarity_df.RDS')
 @
 
 \subsection{Participants}
@@ -192,7 +194,7 @@ ggarrange(val_mc_plot,source_mc_plot, source_mc_plot_nonalc, ncol=3)
 
 @
 
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainy that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainty that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
 
 <<mcTableSource,echo=FALSE,results='asis'>>=
 mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
@@ -203,11 +205,11 @@ mc_table[is.na(mc_table)]<-''
 
 kable(mc_table,caption='Effects of source condition on each of three perceived sources in Study 1a & 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
 kable_styling(font_size=8)
-@
+@ 
 
 \subsection{Condition Effects on Craving}
 
-Next, we examined whether stimulus valence and source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
+Next, we examined whether stimulus valence and perceived source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
 
 Across both studies, Table ~\ref{tab:cravingTable} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
 
@@ -221,40 +223,72 @@ kable(craving_table,caption='Condition effects on drinking urge in response to d
 
 \subsubsection{Valence Effect Exploration}
 
+<<echo=FALSE,message=FALSE>>=
+all_ppts=ppts_study1a %>% bind_rows(ppts_study1b)
+all_drink_df=study1a_drink_df %>% bind_rows(study1b_drink_df)
+
+drink_ppts=all_drink_df %>% left_join(all_ppts,by='pIDs') %>%
+  mutate(val_cond=factor(val_cond,levels=c('anti-alcohol','non-alcoholic','pro-alcohol')))
+
+test1_data=drink_ppts %>% 
+  group_by(filename, val_cond,source_cond) %>%
+  summarise(drink_rating=mean(drink_rating,na.rm=T)) %>% 
+  filter(val_cond!='anti-alcohol') %>% 
+mutate(val_cond=factor(val_cond, levels=c('pro-alcohol','non-alcoholic')))
+ 
+varEQL1=test1_data %>% var.test(drink_rating~val_cond,data=.) %>% .$p.value > 0.05
+
+t1=test1_data %>% t.test(drink_rating~val_cond,data=.,var.equal=varEQL1)
+
+test2_data=drink_ppts %>% 
+  group_by(filename, val_cond,source_cond) %>%
+  summarise(drink_rating=mean(drink_rating,na.rm=T)) %>% 
+  filter(val_cond!='pro-alcohol') %>% 
+mutate(val_cond=factor(val_cond, levels=c('anti-alcohol','non-alcoholic')))
+
+varEQL2=test2_data %>% var.test(drink_rating~val_cond,data=.) %>% .$p.value > 0.05
+
+t2=test2_data %>% t.test(drink_rating~val_cond,data=.,var.equal=varEQL2)
+@
+
+Next we asked whether the observed differences in drinking urge in complex information environments are primarily driven by increases in drinking urge in response to pro-alcohol information (compared to non-alcohol information) or due to decreases in drinking urge in response to anti-alcohol information. To this end, we conducted an additional stimulus-level (i.e. between-participant) analysis combining Study 1a and Study 1b data in order to compare drinking urges in response to pro- and anti-alcohol information to drinking urges in response to information about non-alcoholic drinks. As shown in Figure ~\ref{fig:specificityPlot}, pro-alcohol information strongly enhances drinking urge as compared to non-alcoholic information (T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$.
+
+In contrast, drinking urge in response to anti-alcohol information is very similar to the responses given to non-alcoholic stimuli ((T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$). 
+
 Study 2 results show that the main effect of valence is specific to trials in which participants rated their urge to consume alcoholic (rather than non-alcoholic) drinks, demonstrating that pro-alcohol stimuli specifically enhance the urge to consume alcohol not a general thirst for fluids (see Figure ~\ref{fig:specificityPlot}).
 
 <<specificityPlot,fig.cap="Stimulus-Level Relationship between Stimulus Valence (pro- vs. anti-alcohol) and Drinking #Urge; Error bars represent 95\\% confidence intervals.",echo=FALSE,message=FALSE>>=
 
-valPlot1a=study1a_drink_df %>% group_by(QualtricsMsgID) %>%
+study1a_data=study1a_drink_df %>% group_by(QualtricsMsgID) %>%
     summarize(avg_drink_rating=mean(drink_rating,na.rm=T),val_cond=unique(val_cond)) %>%
              group_by(val_cond) %>% 
              summarize(se_drink_rating=std.error(avg_drink_rating),
-                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>% 
-  ggplot(aes(val_cond,avg_drink_rating)) + 
-  geom_bar(stat='identity') + 
-  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 1a') + 
+                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>%
+    mutate(Study='Study 1a')
+
+study1b_data=study1b_drink_df %>% group_by(filename) %>%
+    summarize(avg_drink_rating=mean(drink_rating,na.rm=T),val_cond=unique(val_cond)) %>%
+             group_by(val_cond) %>% 
+             summarize(se_drink_rating=std.error(avg_drink_rating),
+                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>%
+    mutate(Study='Study 1b')
+
+valPlot1_data=rbind(study1a_data,study1b_data)
+
+valPlot1= valPlot1_data%>% 
+  mutate(val_cond=factor(val_cond,levels=c('anti-alcohol','non-alcoholic','pro-alcohol')),
+         Study=factor(Study,levels=c('Study 1a','Study 1b'))) %>%
+  ggplot(aes(x=val_cond,y=avg_drink_rating,fill=Study)) + 
+  geom_col(position='dodge') + 
+  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2,position=position_dodge(width=0.9)) + ggtitle('Study 1a/b') + 
   ylab('Average Drinking Urge (1-5)') + 
   xlab('Valence Condition') + 
   theme_bw() + 
   theme(legend.position='bottom',text=element_text(size=10)) +
-  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
+  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5)) + 
+  scale_fill_manual(values=c('lightgrey','darkgrey'))
 
-valPlot1b=study1b_drink_df %>% group_by(filename) %>%
-    summarize(avg_drink_rating=mean(drink_rating,na.rm=T),val_cond=unique(val_cond)) %>%
-             group_by(val_cond) %>% 
-             summarize(se_drink_rating=std.error(avg_drink_rating),
-                       avg_drink_rating=mean(avg_drink_rating,na.rm=T)) %>% ungroup() %>% 
-  ggplot(aes(val_cond,avg_drink_rating)) + 
-  geom_bar(stat='identity') + 
-  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 1a') + 
-  ylab('Average Drinking Urge (1-5)') + 
-  xlab('Valence Condition') + 
-  theme_bw() + 
-  theme(legend.position='bottom',text=element_text(size=10)) +
-  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
-
-
-# New facet label names for type varialbe
+# New facet label names for type variable
 type.labs <- c("alcoholic cues", "non-alcoholic cues")
 names(type.labs) <- c("alcohol", "non-alcohol")
 
@@ -265,16 +299,160 @@ valPlot2=study2_logs %>% group_by(file,val_cond,type) %>%
             se_drink_rating=std.error(avg_rating.keys,na.rm=T)) %>% ungroup() %>% 
          ggplot(aes(val_cond,avg_drink_rating)) + geom_bar(stat='identity') + geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 2') + ylab('Average Drinking Urge (1-5)') + xlab('Valence Condition') + labs(y='') + facet_wrap(~type,labeller=labeller(type=type.labs)) + theme_bw() + theme(legend.position='bottom',text=element_text(size=10)) + scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
 
-ggarrange(valPlot1a,valPlot1b,valPlot2, ncol=2)
+ggarrange(valPlot1,valPlot2, ncol=2)
 @
 
-The size of the valence effect is larger in Study 1 (Mean difference on the 5-point scale: `r avgs=drink_df %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(drink_rating,na.rm=T), sd_drink_rating=sd(drink_rating,na.rm=T)) %>% ungroup()``r round(avgs$avg_drink_rating[2]-avgs$avg_drink_rating[1],2)`) than in Study 2 (Mean difference on the 5-point scale: `r avgs=logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(rating.keys,na.rm=T),sd_drink_rating=sd(rating.keys,na.rm=T)) %>% ungroup() ``r round(avgs$avg_drink_rating[2]-avgs$avg_drink_rating[1],2)`). This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1 and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1 participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their urge to drink one specific type of alcohol. As such, the Study 1 effect size may be seen as a closer estimate of real-world effects. 
+<<echo=FALSE,message=FALSE>>=
+avgs_study1a=study1a_drink_df %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(drink_rating,na.rm=T), sd_drink_rating=sd(drink_rating,na.rm=T)) %>% ungroup()
+
+avgs_study2=study2_logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(rating.keys,na.rm=T),sd_drink_rating=sd(rating.keys,na.rm=T)) %>% ungroup() 
+@
+
+The size of the valence effect is larger in Study 1a (Mean difference on the 5-point scale: $\Sexpr{round(avgs_study1a$avg_drink_rating[2]-avgs_study1a$avg_drink_rating[1],2)}$) than in Study 2 (Mean difference on the 5-point scale: $\Sexpr{round(avgs_study2$avg_drink_rating[2]-avgs_study2$avg_drink_rating[1],2)}$). This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1a and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1a participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their urge to drink one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
 
 
+\subsubsection{Drinking habits and valence effects}
 
+Our results suggest that pro-alcohol content leads to substantially increased drinking urges in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
 
+<<echo=FALSE,message=FALSE>>=
+effects1b=study1b_drink_df %>% 
+    mutate(val=case_when(grepl('non',condition)~'non',
+                       grepl('anti',condition)~'anti',
+                       grepl('pro_',condition)~'pro',
+                       TRUE~NA_character_)) %>%
+  group_by(pIDs, val) %>% 
+  summarise(avg_urge=mean(drink_rating,na.rm=T)) %>% 
+  pivot_wider(names_from=val,values_from=avg_urge) %>%
+  mutate(PROvsNON=pro-non,
+         ANTIvsNON=anti-non) %>%
+  ungroup() %>%
+  pivot_longer(names_to='contrast',values_to='effect size valence',cols=c('PROvsNON','ANTIvsNON')) %>%
+  dplyr::select(-anti,-non,-pro)
+@
 
+Results show that there is indeed a positive relationship between the frequency of binge drinking and the effect of exposure to pro- compared to non-alcoholic information, but binge drinking frequency was not related to a participants' response to anti-alcohol compared to non-alcoholic information (Table ~\ref{tab:bingedrinkeffectsizeTab}; Figure ~\ref{fig:bingedrinkeffectsizeFig}).
 
+<<bingedrinkeffectsizeTab,echo=FALSE,message=FALSE,results='asis'>>= 
+
+effects1b %>% 
+  left_join(ppts_study1b) %>%
+  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
+                                      binge_drinking==9~2,
+                                      binge_drinking==8~3,
+                                      binge_drinking==7~4,
+                                      binge_drinking==6~5,
+                                      binge_drinking==5~6,
+                                      binge_drinking==4~7,
+                                      binge_drinking==3~8,
+                                      binge_drinking==2~9,
+                                      binge_drinking==1~10,
+                                      TRUE~binge_drinking)) %>% 
+  mutate(contrast=factor(contrast,levels=c('PROvsNON','ANTIvsNON'))) %>% 
+  lm(`effect size valence`~binge_drinking_rev*contrast,data=.)  %>% 
+  summary() %>%
+  .$coefficients %>%  data.frame() %>%
+  mutate(Parameter=c('Intercept','Binge Drinking Frequency (BD)','Contrast: Anti- vs. Non-alcoholic', 'BD x Contrast')) %>%
+  remove_rownames(.) %>% 
+  select(Parameter, everything()) %>% 
+  rename(., se='Std..Error') %>% 
+  kable(caption='Linear regression of the size of the effect of alcohol-related compared to non-alcoholic information on a dummy variable indicating either pro- or anti-alcohol information and binge drinking habits',booktab=T,digits=3)
+@
+
+<<bingedrinkeffectsizeFig,fig.cap='Relationship between binge drinking habits and effects of pro- and anti-alcohol information compared to non-alcoholic information on alcohol craving',echo=FALSE,message=FALSE>>=
+effects1b %>% 
+  arrange(`effect size valence`) %>% 
+  mutate(order=row_number()) %>% 
+  select(pIDs,order) %>%
+  right_join(effects1b) %>%
+  arrange(order) %>%
+  filter(!is.na(`effect size valence`)) %>% 
+  left_join(ppts_study1b) %>%
+  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
+                                      binge_drinking==9~2,
+                                      binge_drinking==8~3,
+                                      binge_drinking==7~4,
+                                      binge_drinking==6~5,
+                                      binge_drinking==5~6,
+                                      binge_drinking==4~7,
+                                      binge_drinking==3~8,
+                                      binge_drinking==2~9,
+                                      binge_drinking==1~10,
+                                      TRUE~binge_drinking),
+         contrast=case_when(contrast=='PROvsNON'~'Pro-alcohol vs. Non-alcoholic',
+                            contrast=='ANTIvsNON'~'Anti-alcohol vs. Non-alcoholic',
+                            TRUE~contrast)) %>%
+  ggplot(aes(x=binge_drinking_rev,y=`effect size valence`, color=contrast)) +
+  geom_smooth(method='lm') +
+  theme_bw() +
+  geom_point() +
+  labs(y='Difference in Drinking Urge',x='Binge Drinking Frequency 1=Never, 10=Daily')+
+  scale_color_grey() +
+  scale_x_continuous(breaks=seq(1,10,1)) 
+@
+
+\subsection{Drivers of Alcohol Craving}
+
+What are the drivers of alcohol craving in the context of different message types?
+
+\subsection{Familiarity} 
+
+Next we examined whether and how familiarity impacted alcohol craving across pro- and anti-alcohol messages in Study 1a and 1b. For each message, participants rated the extent to which it showed people like them (_like me_) or showed a familiar situation (_familiar_). We created a familiarity index by averaging these two items. Figure ~\ref{fig:FigureFamiliarity} displays means and 95% confidence intervals across conditions. 
+
+Unsurprisingly, pro-alcohol stimuli were perceived as more familiar than anti-alcohol stimuli, likely due to a lower occurrence of anti-alcohol information in natural social media environments and elsewhere CITES. Peer-produced pro-alcohol information even felt similar in terms of familiarity to non-alcoholic information.
+
+<<echo=FALSE, message=FALSE>>=
+familiarity_study1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df) %>% 
+  mutate(var=case_when(grepl('like me',familiarity_variable)~'like me',
+                       grepl('familiar with',familiarity_variable)~'familiar situation',
+                       grepl('imagine seeing',familiarity_variable)~'realisitc',
+                       grepl('high quality',familiarity_variable)~'high quality',
+                       TRUE~NA_character_),
+         source=case_when(grepl('prof',condition)~'professional',
+                          grepl('soc',condition)~'peer-produced',
+                          TRUE~NA_character_),
+         valence=case_when(grepl('non_',condition)~'non-alcoholic',
+                           grepl('pro_',condition)~'pro-alcohol',
+                           grepl('anti_',condition)~'anti-alcohol',
+                           TRUE~NA_character_),
+         condition=case_when(condition=='pro_social'~'pro-alcohol \npeer-produced',
+                             condition=='pro_prof'~'pro-alcohol \nprofessional',
+                             condition=='anti_social'~'anti-alcohol \npeer-produced',
+                             condition=='anti_prof'~'anti-alcohol \nprofessional',
+                             condition=='non_pro_prof'~'non-alcoholic \nprofessional',
+                             condition=='non_pro_social'~'non-alcoholic \npeer-produced',
+                             TRUE~NA_character_)) %>%
+  dplyr::select(-familiarity_variable)
+
+familiarity_study1ab = familiarity_study1ab %>% 
+  pivot_wider(values_from=fam_rating,names_from=var) %>% 
+  mutate(fam_index=(`like me` + `familiar situation`)/2)
+@
+
+<<FigureFamiliarity, fig.cap="Familiarity Ratings by Condition (Study 1a/b)">>=
+  familiarity_study1ab%>%
+  dplyr::group_by(source,valence,filename) %>%
+    summarize(fam_index=mean(fam_index,na.rm=T)) %>% 
+  group_by(source,valence) %>%
+  summarize(`Average Rating (1-7)`=mean(fam_index,na.rm=T),se_fam_index=std.error(fam_index,na.rm=T)) %>% ggplot(aes(source,`Average Rating (1-7)`,fill=valence)) + 
+  geom_bar(stat='identity',position='dodge') + labs(x='Source',y='Familiarity Index (1-7)', fill='Valence') +
+  geom_errorbar(aes(ymin=`Average Rating (1-7)`-(1.96*se_fam_index),ymax=`Average Rating (1-7)`+(1.96*se_fam_index)),position=position_dodge(0.9),width=0.15)+
+  scale_fill_grey() + theme_bw()
+@
+
+Does familiarity play a role in alcohol craving?
+
+<<>>=
+drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
+familiarity_1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df)
+
+familiarity_1ab_wide = familiarity_1ab %>% 
+                       pivot_wider(values_from=fam_rating,names_from=familiarity_variable) %>% 
+                       mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
+
+drink_1ab %>% right_join(familiarity_1ab_wide) %>% 
+lmer(drink_rating~fam_index*val_cond+(1|pIDs),data=combined) %>% summary()
+@
 
 \section{Discussion}
 asdf
@@ -282,44 +460,3 @@ asdf
 
 \end{document}
 
-%% 
-%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
-%% 
-%% This work may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License (LPPL), either
-%% version 1.3c of this license or (at your option) any later
-%% version.  The latest version of this license is in the file:
-%% 
-%% http://www.latex-project.org/lppl.txt
-%% 
-%% Users may freely modify these files without permission, as long as the
-%% copyright line and this statement are maintained intact.
-%% 
-%% This work is not endorsed by, affiliated with, or probably even known
-%% by, the American Psychological Association.
-%% 
-%% This work is "maintained" (as per LPPL maintenance status) by
-%% Daniel A. Weiss.
-%% 
-%% This work consists of the file  apa7.dtx
-%% and the derived files           apa7.ins,
-%%                                 apa7.cls,
-%%                                 apa7.pdf,
-%%                                 README,
-%%                                 APA7american.txt,
-%%                                 APA7british.txt,
-%%                                 APA7dutch.txt,
-%%                                 APA7english.txt,
-%%                                 APA7german.txt,
-%%                                 APA7ngerman.txt,
-%%                                 APA7greek.txt,
-%%                                 APA7czech.txt,
-%%                                 APA7turkish.txt,
-%%                                 APA7endfloat.cfg,
-%%                                 Figure1.pdf,
-%%                                 shortsample.tex,
-%%                                 longsample.tex, and
-%%                                 bibliography.bib.
-%% 
-%%
-%% End of file `./samples/longsample.tex'.
