@@ -132,8 +132,10 @@ ppt_df = ppt_df %>%
 
 # Split conditions 
 
-drink_df=drink_df %>% mutate(val_cond='non-alcoholic',
-                                           val_cond=as.factor(val_cond),
+drink_df=drink_df %>% mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
+                                               grepl('anti',condition)~'anti-alcohol',
+                                               grepl('pro_',condition)~'pro-alcohol'),
+                             val_cond=as.factor(val_cond),
                                            source_cond=case_when(grepl('prof',condition)~'professional',
                                                                  grepl('soc',condition)~'peer-produced',
                                                                  TRUE~NA_character_),
