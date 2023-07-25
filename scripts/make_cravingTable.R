@@ -56,4 +56,3 @@ urge_table=urge_table %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.
           select(effect,term,`Study 1a`, `Study 2`) 
 
 write_csv(urge_table,'Tables/cravingTable.csv')
-#
