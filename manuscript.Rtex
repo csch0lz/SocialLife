@@ -316,7 +316,7 @@ The size of the valence effect is larger in Study 1a (Mean difference on the 5-p
 
 \subsubsection{Drinking habits and valence effects}
 
-Our results suggest that pro-alcohol content leads to substantially increased drinking urges in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
+Our results suggest that pro-alcohol content leads to substantially increased alcohol craving in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
 
 <<echo=FALSE,message=FALSE>>=
 effects1b=study1b_drink_df %>% 
@@ -521,18 +521,29 @@ ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) +
   #theme(axis.text.x = element_text(angle = 90))
 @
 
+How are these emotional responses linked to drinking urges for pro- and anti-alcohol content? Naively, one may expect negative emotions to be more relevant for the effect of anti-alcohol (compared to pro-alcohol) stimuli on drinking urges and vice versa for positive emotions. A key assumption here is that there should be little variance in positive [/negative] emotions in anti-alcohol [/pro-alcohol] stimuli and any positive [/negative] emotion that is evoked should serve the message intent (i.e. lower [/heighten] drinking urges).
+
+Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and drinking urge ratings (significance indicators corrected for family-wise error rate at p<.05 FWER). First, it is striking that for both pro- and anti-alcohol information, nine out of 10 emotions show significant relationships with drinking urge, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
+
+Second, Figure ~\ref{fig:corMatsEmo} only partially confirms the expected pattern described above. Positive emotions indeed seem to show stronger positive relationships with drinking urge in pro-alcohol compared to anti-alcohol stimuli, but these differences are not as pronounced as may be expected. That is, even for anti-alcohol information, positive emotions play an important role and achieve medium-sized correlations with drinking urges. Importantly, all correlations have the same directionality across pro- and anti-alcohol stimuli. For instance, even in the context of anti-alcohol stimuli, positive emotions are related  In other words, to achieve maximum desired effects on drinking urge when distributing alcohol-related information, one key goal is to avoid evoking undesirable emotions in receivers. 
+
 \begin{figure}
     \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
-    \includegraphics[height=4.5in, width=6.5in]{Figures/}
-    \label{fig:FigureStimuli}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/EmoCorMat_Figure.png}
+    \label{fig:corMatsEmo}
 \end{figure}
 
+A multi-level regression model confirms this impression (see Table ~\ref{tab:emoTable}). The effects of emotions on alcohol craving are more pronounced for both positive (positive effect) and negative emotions (negative effect). 
 
- 
+<<>>=
 
+@
 
 \section{Discussion}
-asdf
+
+
+\subsection{Limitations}
+- not a representative sample of stimuli (but informative given open source)
 
 
 \end{document}
