@@ -12,14 +12,14 @@ round_format=function(vec,digits=2){
 }
 
 
-study1a_drink_df=readRDS('../data/study1a/cleaned/drink_df.RDS')
-study1a_ppts=readRDS('../data/study1a/cleaned/ppt_df.RDS')
-study2_logs=read_csv('../data/study2/cleaned/logs_cleaned.csv',col_types=cols())
-study2_ppts=read_csv('../data/study2/cleaned/S1_cleaned.csv') 
+study1a_drink_df=readRDS('data/study1a/cleaned/drink_df.RDS')
+study1a_ppts=readRDS('data/study1a/cleaned/ppt_df.RDS')
+study2_logs=read_csv('data/study2/cleaned/logs_cleaned.csv',col_types=cols())
+study2_ppts=read_csv('data/study2/cleaned/S1_cleaned.csv') 
 
 s1_urge_model<-study1a_drink_df %>% 
   left_join(study1a_ppts) %>% 
-  lmer(drink_rating~val_cond*source_cond + age + gender_char + as.numeric(binge_drinking) + as.numeric(drinking_freq)+
+  lmer(drink_rating_z~val_cond*source_cond + age + gender_char + as.numeric(binge_drinking) + as.numeric(drinking_freq)+
          (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
@@ -29,7 +29,7 @@ s1_urge_model<-study1a_drink_df %>%
 urge_table<-study2_logs %>% 
   left_join(study2_ppts) %>% 
   filter(type=='alcohol') %>% 
-  lmer(rating.keys~val_cond*source_cond + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
+  lmer(rating.keys_z~val_cond*source_cond + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study=2, group=ifelse(group=='file','sID',group)) %>%
