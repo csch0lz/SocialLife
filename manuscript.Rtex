@@ -175,7 +175,7 @@ Study 1a participants rated each image on two valence items: "Two what extent do
 In addition, Study 1a and 1b participants rated the perceived source of each image: "Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image. Options included: A professional or company account, An influencer, and An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes)". Ratings were provided on three 7-point Likert-type scales (1 = Certainly did not post this, 7 = Certainly posted this). While our experimental manipulations only covered professional and peer-produced ('average user') sources, we added an Influencer category to the manipulation check to assess whether there were differences in participants' likelihood to misattribute a stimulus to an Influencer as a source.
 
 \paragraph{Beverage Craving}
-Participants across all studies rated their current craving for (non-)alcoholic beverages in response to stimulus exposure. Study 1a and 1b participants rated their alcohol craving using the following question immediately after exposure to each stimulus: "Looking at this post makes me want to drink alcohol today." on a 7-point Likert-type scale (1 = Not at all; 7 = very much). Study 2 participants rated their craving for a specific alcoholic or non-alcoholic beverage in response to standardized beverage cues shown directly after exposure to each stimulus (\ref{fig:FigureAlcValTask}). To enable comparisons across datasets, beverage craving was z-scored within study.
+Participants across all studies rated their current craving for (non-)alcoholic beverages in response to stimulus exposure. Study 1a and 1b participants rated their alcohol craving using the following question immediately after exposure to each stimulus: "Looking at this post makes me want to drink alcohol today." on a 7-point Likert-type scale (1 = Not at all; 7 = very much). Study 2 participants rated their craving for a specific alcoholic or non-alcoholic beverage in response to standardized beverage cues shown directly after exposure to each stimulus (\ref{fig:FigureAlcValTask}). Given the differences in rating scales, beverage craving was z-scored within study for all analyses including data from both Studies 1a/b and 2.
 
 \paragraph{Emotional Responses (Study 1a and 1b only}
 Study 1a and 1b participants rated: "To what extent does this post make you feel the following? [amused, sad, scared, jealous, shocked, happy, embarrassed (for someone else), positive, negative]" on 7-point Likert-type scales (1 = Not at all; 7 = very much). 
@@ -264,9 +264,9 @@ kable_styling(font_size=8)
 
 \subsection{Condition Effects on Craving}
 
-Next, we examined whether stimulus valence and perceived source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
+Next, we examined whether stimulus valence and perceived source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on (standardized) alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
 
-Across both studies, Table ~\ref{tab:cravingTable} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. We will further explore both the valence and source effects below.
+Across both studies, Table ~\ref{tab:cravingTable} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. 
 
 <<cravingTable, echo=FALSE,results='asis'>>=
 craving_table=read_csv('Tables/cravingTable.csv',col_types=cols()) 
@@ -276,7 +276,9 @@ craving_table[is.na(craving_table)]<-''
 kable(craving_table,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
 
-\subsubsection{Valence Effect}
+The size of the valence effect is larger in Study 1a. This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1a and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1a participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their craving for one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
+
+\subsubsection{Non-Alcoholic Control and Specificity of Valence Effects}
 
 <<echo=FALSE,message=FALSE>>=
 all_ppts=ppts_study1a %>% bind_rows(ppts_study1b)
@@ -306,11 +308,11 @@ varEQL2=test2_data %>% var.test(drink_rating~val_cond,data=.) %>% .$p.value > 0.
 t2=test2_data %>% t.test(drink_rating~val_cond,data=.,var.equal=varEQL2)
 @
 
-Next we asked whether the observed differences in alcohol craving in complex information environments are primarily driven by increases in drinking urge in response to pro-alcohol information (compared to non-alcohol information) or due to decreases in drinking urge in response to anti-alcohol information. To this end, we conducted an additional stimulus-level (i.e. between-participant) analysis combining Study 1a and Study 1b data in order to compare drinking urges in response to pro- and anti-alcohol information to drinking urges in response to information about non-alcoholic drinks. As shown in Figure ~\ref{fig:specificityPlot}, pro-alcohol information strongly enhances drinking urge as compared to non-alcoholic information (T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$.
+We further examined valence effects on alcohol craving by asking 1) whether the observed differences in alcohol craving are primarily driven by increases in craving in response to pro-alcohol information (compared to non-alcohol information) or due to decreases in craving in response to anti-alcohol information, and 2) whether alcohol-related information specifically increased alcohol craving as opposed to general appetite for beverages. 
 
-In contrast, drinking urge in response to anti-alcohol information is very similar to the responses given to non-alcoholic stimuli ((T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$). 
+First, we conducted an additional stimulus-level (i.e. between-participant) analysis combining Study 1a and Study 1b data in order to compare alcohol craving in response to pro- and anti-alcohol information to alcohol craving in response to information about non-alcoholic drinks. As shown in Figure ~\ref{fig:specificityPlot}, pro-alcohol information strongly enhances alcohol as compared to non-alcoholic information (T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$. In contrast, alcohol craving in response to anti-alcohol information is very similar to the responses given to non-alcoholic stimuli ((T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$), which could indicate a floor effect. 
 
-Study 2 results show that the main effect of valence is specific to trials in which participants rated their urge to consume alcoholic (rather than non-alcoholic) drinks, demonstrating that pro-alcohol stimuli specifically enhance the urge to consume alcohol not a general thirst for fluids (see Figure ~\ref{fig:specificityPlot}).
+Second, Study 2 results show that the main effect of valence is specific to trials in which participants rated their urge to consume alcoholic (rather than non-alcoholic) drinks, demonstrating that pro-alcohol stimuli specifically enhance the urge to consume alcohol not a general thirst for fluids (see Figure ~\ref{fig:specificityPlot}).
 
 <<specificityPlot,fig.cap="Stimulus-Level Relationship between Stimulus Valence (pro- vs. anti-alcohol) and Drinking #Urge; Error bars represent 95\\% confidence intervals.",echo=FALSE,message=FALSE>>=
 
@@ -335,12 +337,12 @@ valPlot1= valPlot1_data%>%
          Study=factor(Study,levels=c('Study 1a','Study 1b'))) %>%
   ggplot(aes(x=val_cond,y=avg_drink_rating,fill=Study)) + 
   geom_col(position='dodge') + 
-  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2,position=position_dodge(width=0.9)) + ggtitle('Study 1a/b') + 
-  ylab('Average Drinking Urge (1-5)') + 
+  geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2,position=position_dodge(width=0.9)) + ggtitle('Study 1a/b (Craving scale: 1-7)') + 
+  ylab('Average Beverage Craving') + 
   xlab('Valence Condition') + 
   theme_bw() + 
   theme(legend.position='bottom',text=element_text(size=10)) +
-  scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5)) + 
+  scale_y_continuous(breaks=seq(1,7,1),limits=c(0,7)) + 
   scale_fill_manual(values=c('lightgrey','darkgrey'))
 
 # New facet label names for type variable
@@ -352,7 +354,7 @@ valPlot2=study2_logs %>% group_by(file,val_cond,type) %>%
   group_by(val_cond,type) %>% 
   summarize(avg_drink_rating=mean(avg_rating.keys),
             se_drink_rating=std.error(avg_rating.keys,na.rm=T)) %>% ungroup() %>% 
-         ggplot(aes(val_cond,avg_drink_rating)) + geom_bar(stat='identity') + geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 2') + ylab('Average Drinking Urge (1-5)') + xlab('Valence Condition') + labs(y='') + facet_wrap(~type,labeller=labeller(type=type.labs)) + theme_bw() + theme(legend.position='bottom',text=element_text(size=10)) + scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
+         ggplot(aes(val_cond,avg_drink_rating)) + geom_bar(stat='identity') + geom_errorbar(aes(ymin=avg_drink_rating-(1.96*se_drink_rating), ymax=avg_drink_rating+(1.96*se_drink_rating)),width=.2) + ggtitle('Study 2 (Craving Scale 1-5)') + ylab('Average Beverage Craving (1-5)') + xlab('Valence Condition') + labs(y='') + facet_wrap(~type,labeller=labeller(type=type.labs)) + theme_bw() + theme(legend.position='bottom',text=element_text(size=10)) + scale_y_continuous(breaks=seq(1,5,1),limits=c(0,5))
 
 ggarrange(valPlot1,valPlot2, ncol=2)
 @
@@ -363,88 +365,18 @@ avgs_study1a=study1a_drink_df %>% group_by(val_cond) %>% summarize(avg_drink_rat
 avgs_study2=study2_logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(rating.keys,na.rm=T),sd_drink_rating=sd(rating.keys,na.rm=T)) %>% ungroup() 
 @
 
-The size of the valence effect is larger in Study 1a (Mean difference on the 5-point scale: $\Sexpr{round(avgs_study1a$avg_drink_rating[2]-avgs_study1a$avg_drink_rating[1],2)}$) than in Study 2 (Mean difference on the 5-point scale: $\Sexpr{round(avgs_study2$avg_drink_rating[2]-avgs_study2$avg_drink_rating[1],2)}$). This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1a and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1a participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their urge to drink one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
+\subsubsection{Individual Differences in Valence Effects}
 
-
-\subsubsection{Drinking habits and valence effects}
-
-Our results suggest that pro-alcohol content leads to substantially increased alcohol craving in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
-
-<<echo=FALSE,message=FALSE>>=
-effects1b=study1b_drink_df %>% 
-    mutate(val=case_when(grepl('non',condition)~'non',
-                       grepl('anti',condition)~'anti',
-                       grepl('pro_',condition)~'pro',
-                       TRUE~NA_character_)) %>%
-  group_by(pIDs, val) %>% 
-  summarise(avg_urge=mean(drink_rating,na.rm=T)) %>% 
-  pivot_wider(names_from=val,values_from=avg_urge) %>%
-  mutate(PROvsNON=pro-non,
-         ANTIvsNON=anti-non) %>%
-  ungroup() %>%
-  pivot_longer(names_to='contrast',values_to='effect size valence',cols=c('PROvsNON','ANTIvsNON')) %>%
-  dplyr::select(-anti,-non,-pro)
-@
+Our results suggest that pro-alcohol content leads to substantially increased alcohol craving in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. This could be due to a floor effect so that non-alcoholic information was already associated with a minimum level of alcohol craving in this study and sample. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages may be more impactful for some participants than for others. For instance, many anti-alcohol campaigns are targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
 
 Results show that there is indeed a positive relationship between the frequency of binge drinking and the effect of exposure to pro- compared to non-alcoholic information, but binge drinking frequency was not related to a participants' response to anti-alcohol compared to non-alcoholic information (Table ~\ref{tab:bingedrinkeffectsizeTab}; Figure ~\ref{fig:bingedrinkeffectsizeFig}).
 
 <<bingedrinkeffectsizeTab,echo=FALSE,message=FALSE,results='asis'>>= 
+library('lmerTest')
 
-effects1b %>% 
-  left_join(ppts_study1b) %>%
-  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
-                                      binge_drinking==9~2,
-                                      binge_drinking==8~3,
-                                      binge_drinking==7~4,
-                                      binge_drinking==6~5,
-                                      binge_drinking==5~6,
-                                      binge_drinking==4~7,
-                                      binge_drinking==3~8,
-                                      binge_drinking==2~9,
-                                      binge_drinking==1~10,
-                                      TRUE~binge_drinking)) %>% 
-  mutate(contrast=factor(contrast,levels=c('PROvsNON','ANTIvsNON'))) %>% 
-  lm(`effect size valence`~binge_drinking_rev*contrast,data=.)  %>% 
-  summary() %>%
-  .$coefficients %>%  data.frame() %>%
-  mutate(Parameter=c('Intercept','Binge Drinking Frequency (BD)','Contrast: Anti- vs. Non-alcoholic', 'BD x Contrast')) %>%
-  remove_rownames(.) %>% 
-  select(Parameter, everything()) %>% 
-  rename(., se='Std..Error') %>% 
-  kable(caption='Linear regression of the size of the effect of alcohol-related compared to non-alcoholic information on a dummy variable indicating either pro- or anti-alcohol information and binge drinking habits',booktab=T,digits=3)
 @
 
-<<bingedrinkeffectsizeFig,fig.cap='Relationship between binge drinking habits and effects of pro- and anti-alcohol information compared to non-alcoholic information on alcohol craving',echo=FALSE,message=FALSE>>=
-effects1b %>% 
-  arrange(`effect size valence`) %>% 
-  mutate(order=row_number()) %>% 
-  select(pIDs,order) %>%
-  right_join(effects1b) %>%
-  arrange(order) %>%
-  filter(!is.na(`effect size valence`)) %>% 
-  left_join(ppts_study1b) %>%
-  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
-                                      binge_drinking==9~2,
-                                      binge_drinking==8~3,
-                                      binge_drinking==7~4,
-                                      binge_drinking==6~5,
-                                      binge_drinking==5~6,
-                                      binge_drinking==4~7,
-                                      binge_drinking==3~8,
-                                      binge_drinking==2~9,
-                                      binge_drinking==1~10,
-                                      TRUE~binge_drinking),
-         contrast=case_when(contrast=='PROvsNON'~'Pro-alcohol vs. Non-alcoholic',
-                            contrast=='ANTIvsNON'~'Anti-alcohol vs. Non-alcoholic',
-                            TRUE~contrast)) %>%
-  ggplot(aes(x=binge_drinking_rev,y=`effect size valence`, color=contrast)) +
-  geom_smooth(method='lm') +
-  theme_bw() +
-  geom_point() +
-  labs(y='Difference in Drinking Urge',x='Binge Drinking Frequency 1=Never, 10=Daily')+
-  scale_color_grey() +
-  scale_x_continuous(breaks=seq(1,10,1)) 
-@
+
 
 \subsection{Drivers of Alcohol Craving}
 
