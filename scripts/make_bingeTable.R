@@ -50,4 +50,4 @@ binge_table$term=c('Intercept','Binge Drinking Frequency (BD)','Valence 1: Anti-
   
 binge_table=binge_table %>% mutate(p.value=ifelse(p.value!='',paste0('p = ',p.value),p.value))
 
-write_csv(urge_table,'Tables/bingeTable.csv')
+write_csv(binge_table,'Tables/bingeTable.csv')
