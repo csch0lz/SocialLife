@@ -40,7 +40,8 @@ binge_table=study1b_drink_df %>%
   mutate_at(names(.)[grepl('estimate',names(.))],round_format) %>% 
   mutate_at(names(.)[grepl('estimate',names(.))],sub,pattern='NA',replacement=' ') %>% 
   select(-group) %>%
-  mutate_all(as.character) 
+  mutate_all(as.character)  %>%
+  mutate(effect=ifelse(effect=='ran_pars','random',effect))
 
 
 binge_table[is.na(binge_table)]<-''
