@@ -369,11 +369,15 @@ avgs_study2=study2_logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=me
 
 Our results suggest that pro-alcohol content leads to substantially increased alcohol craving in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. This could be due to a floor effect so that non-alcoholic information was already associated with a minimum level of alcohol craving in this study and sample. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages may be more impactful for some participants than for others. For instance, many anti-alcohol campaigns are targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
 
-Results show that there is indeed a positive relationship between the frequency of binge drinking and the effect of exposure to pro- compared to non-alcoholic information, but binge drinking frequency was not related to a participants' response to anti-alcohol compared to non-alcoholic information (Table ~\ref{tab:bingedrinkeffectsizeTab}; Figure ~\ref{fig:bingedrinkeffectsizeFig}).
+Results show that there is indeed a positive relationship between the frequency of binge drinking and the effect of exposure to pro- compared to non-alcoholic information, but binge drinking frequency was not related to a participants' response to anti-alcohol compared to non-alcoholic information (Table ~\ref{tab:bingeTable}; Figure ~\ref{fig:bingeFigure}).
 
-<<bingedrinkeffectsizeTab,echo=FALSE,message=FALSE,results='asis'>>= 
-library('lmerTest')
+<<bingeTable,echo=FALSE,message=FALSE,results='asis'>>= 
 
+binge_table=read_csv('Tables/bingeTable.csv',col_types=cols()) 
+
+binge_table[is.na(binge_table)]<-''
+
+kable(binge_table,caption='Effect of valence and binge-drinking habits on alcohol craving in Study 1b; ID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
 
 
