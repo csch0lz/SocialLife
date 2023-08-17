@@ -1,6 +1,6 @@
 #Clean log files
 library('tidyverse')
-logs=read_csv('data/study2/all_logs.csv')
+logs=read_csv('data/study2/all_logs.csv',col_types=cols())
 logs=logs %>% 
   filter(pID!='pID') %>%
   mutate(alc_cue=sub('imgs/alc_cues/','',alc_cue),
@@ -22,7 +22,11 @@ logs = logs %>% mutate(val_cond=case_when(grepl('anti',condition)~'anti-alcohol'
                                           TRUE~NA_character_),
                        source_cond=case_when(grepl('prof',condition)~'professional',
                                              grepl('soc',condition)~'peer-produced',
-                                             TRUE~NA_character_))
+                                             TRUE~NA_character_)) %>%
+        #zscore craving
+        mutate(rating.keys_z=as.vector(scale(rating.keys)))
+
+names(logs)[grepl('keys_z',names(logs))]<-'rating.keys_z'
 
 write_csv(logs,'data/study2/cleaned/logs_cleaned.csv')
 
@@ -66,13 +70,6 @@ S2=read_csv('data/study2/Scanner_Task_Pilot_S2_anonymized.csv',col_types=cols())
 duplicated_pIDs=unique(S2$pID[duplicated(S2$pID)])
 S2=remove_duplicates(duplicated_pIDs,S2)
 
-# Also some duplicated data in S2
-S3=read_csv('data/study2/Scanner_Task_Pilot_S3_anonymized.csv',col_types=cols()) %>%
-  slice(3:dim(.)[1])
-duplicated_pIDs=unique(S3$pID[duplicated(S3$pID)])
-S3=remove_duplicates(duplicated_pIDs,S3)
-
-
 S2=S2 %>% filter(pID %in% logs$pID) %>%
   pivot_longer(values_to='debrief_rating',names_to='debrief_item',names(.)[grepl('debrief',names(.)) & !grepl('open',names(.))]) %>%
   mutate(debrief_rating=as.numeric(debrief_rating),
@@ -87,7 +84,6 @@ S2=S2 %>% filter(pID %in% logs$pID) %>%
 
 S1=S1 %>% filter(pID %in% logs$pID)
 S2=S2 %>% filter(pID %in% logs$pID)
-S3=S3 %>% filter(pID %in% logs$pID)
 
 #Add participant info to logs
 logs= S1 %>% select(gender_char,age,AUDIT_score,AUDIT_cat,pID) %>% distinct() %>% right_join(logs,by=c('pID'))
@@ -105,4 +101,3 @@ cue_df=logs %>% dplyr::group_by(alc_cue,val_cond,source_cond) %>%
 write_csv(cue_df,'data/study2/cleaned/cue_df.csv')
 write_csv(S1,'data/study2/cleaned/S1_cleaned.csv')
 write_csv(S2,'data/study2/cleaned/S2_cleaned.csv')
-write_csv(S3,'data/study2/cleaned/S3_cleaned.csv')

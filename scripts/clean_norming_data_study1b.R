@@ -58,7 +58,9 @@ drink_df = df %>% pivot_longer(values_to='drink_rating',names_to = 'variable', c
                   drink_rating=as.numeric(drink_rating)) %>% 
            filter(!is.na(drink_rating)) %>%
            select(-variable) %>% 
-           left_join(msg_ids) 
+           left_join(msg_ids) %>%
+           #zscore craving
+           mutate(drink_rating_z =scale(drink_rating))
 
 # emo data
 emo_df = df %>% pivot_longer(values_to='emo_rating',names_to = 'variable', cols=names(df)[grepl('emo_',names(df))]) %>%

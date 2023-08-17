@@ -54,7 +54,9 @@ drink_df = df %>% pivot_longer(values_to='drink_rating',names_to = 'variable', c
            separate(variable,into=c('QualtricsMsgNr','variable','QualtricsBaseLink','QualtricsMsgID'),sep='_') %>%
            filter(!is.na(drink_rating)) %>%
            select(-variable,-QualtricsBaseLink) %>%
-           left_join(msg_ids,by=c('QualtricsMsgID'='Qualtrics_ID')) 
+           left_join(msg_ids,by=c('QualtricsMsgID'='Qualtrics_ID')) %>%
+           #standardize drink_rating %>%
+           mutate(drink_rating_z=scale(drink_rating))
 
 # attention data
 attention_df = df %>% pivot_longer(values_to='attention_rating',names_to = 'variable', cols=names(df)[grepl('attention_',names(df))]) %>%
