@@ -273,7 +273,7 @@ craving_table=read_csv('Tables/cravingTable.csv',col_types=cols())
 
 craving_table[is.na(craving_table)]<-''
 
-kable(craving_table,caption='Condition effects on drinking urge in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
+kable(craving_table,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
 
 \subsubsection{Valence Effect}
