@@ -61,7 +61,7 @@ emo_plot_anti_prof=emo_cormat_anti_prof %>%
   coord_fixed() +
   labs(x='',y='') +
   ggtitle('Anti - Prof.')+
-  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1),legend.position='right')
+  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1))
 
 ###ANTI-ALCOHOL (Peer-Produced)
 emo_anti_peer=emo_df_all %>%mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
@@ -106,7 +106,7 @@ emo_plot_anti_peer=emo_cormat_anti_peer %>%
   coord_fixed() +
   labs(x='',y='') +
   ggtitle('Anti - Peer')+
-  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1),legend.position='right')
+  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1))
 
 ###PRO-ALCOHOL
 emo_pro=emo_df_all %>%mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
@@ -148,7 +148,7 @@ emo_plot_pro=emo_cormat_pro %>%
   coord_fixed() +
   labs(x='',y='') +
   ggtitle('Pro')+
-  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1),legend.position='right')
+  theme(axis.text.x=element_text(angle=45,vjust=1, size=8, hjust=1))
 
 final=ggarrange(emo_plot_anti_prof,emo_plot_anti_peer,emo_plot_pro,nrow=1,common.legend=TRUE)
 
