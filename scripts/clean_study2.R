@@ -4,7 +4,8 @@ logs=read_csv('data/study2/all_logs.csv',col_types=cols())
 logs=logs %>% 
   filter(pID!='pID') %>%
   mutate(alc_cue=sub('imgs/alc_cues/','',alc_cue),
-         alc_cue=sub('.jpg','',alc_cue))
+         alc_cue=sub('.jpg','',alc_cue),
+         pID=paste0(pID,'_study2'))
 
 #Identify non alcohol cue trials in logs
 all_alc_cues=read_csv('data/study2/FINAL_alc_cues.csv',col_types=cols()) %>%
@@ -35,7 +36,8 @@ write_csv(logs,'data/study2/cleaned/logs_cleaned.csv')
 
 #Surveys
 S1=read_csv('data/study2/Scanner_Task_Pilot_S1_anonymized.csv',col_types=cols()) %>%
-  slice(3:dim(.)[1]) %>% filter(Finished==1) 
+  slice(3:dim(.)[1]) %>% filter(Finished==1) %>%
+  mutate(pID=paste0(pID,'_study2'))
 ## some people did S1 multiple times because they got stuck with the task > only keep their first response
 duplicated_pIDs=unique(S1$pID[duplicated(S1$pID)])
 remove_duplicates<-function(duplicated_pIDs,df){
@@ -65,7 +67,8 @@ S1=S1 %>% filter(pID %in% logs$pID) %>%
 
 
 S2=read_csv('data/study2/Scanner_Task_Pilot_S2_anonymized.csv',col_types=cols()) %>%
-  slice(3:dim(.)[1])
+  slice(3:dim(.)[1]) %>%
+  mutate(pID=paste0(pID,'_study2'))
 # Also some duplicated data in S2
 duplicated_pIDs=unique(S2$pID[duplicated(S2$pID)])
 S2=remove_duplicates(duplicated_pIDs,S2)

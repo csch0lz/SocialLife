@@ -13,7 +13,8 @@ df = df %>%
    slice(3:dim(.)[1]) %>%
    filter(real_pilot_ppt=='1',Finished==1,icf==1) %>%
    mutate(`Duration (in minutes)`=as.numeric(`Duration (in seconds)`)/60) %>%
-   filter(!is.na(pIDs)) 
+   filter(!is.na(pIDs)) %>%
+   mutate(pIDs=paste0(pIDs,'_study1a'))
 
 # participant data
 ppt_df= df %>% select(ResponseId,pIDs,StartDate,EndDate,Finished,`Duration (in minutes)`,gender,age,drinking_freq,binge_drinking,Insta) %>%

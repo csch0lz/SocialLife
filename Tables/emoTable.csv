@@ -1,11 +1,11 @@
 effect,term,Estimate
-fixed,Intercept,"1.28 [1.1, 1.46], p < .001"
-fixed,Positive emotions (PosEmo),"0.33 [0.29, 0.37], p < .001"
-fixed,Valence: pro-alcohol,"0.33 [0.12, 0.55], p = 0.003"
-fixed,Negative emotions (NegEmo),"-0.06 [-0.08, -0.03], p < .001"
-fixed,PosEmo x Valence,"0.22 [0.18, 0.27], p < .001"
-fixed,NegEmo x Valence,"-0.08 [-0.13, -0.04], p < .001"
-random,pID Intercept,0.73
+fixed,Intercept,"1.28 [1.1, 1.45], p < .001"
+fixed,Positive emotions (PosEmo),"0.33 [0.29, 0.36], p < .001"
+fixed,Valence: pro-alcohol,"0.37 [0.16, 0.58], p < .001"
+fixed,Negative emotions (NegEmo),"-0.05 [-0.08, -0.03], p < .001"
+fixed,PosEmo x Valence,"0.23 [0.18, 0.27], p < .001"
+fixed,NegEmo x Valence,"-0.09 [-0.14, -0.05], p < .001"
+random,pID Intercept,0.76
 random,sID Intercept,0.22
 random,Study intercept,0
-random,Residual,1.01
+random,Residual,0.98
