@@ -1,0 +1,72 @@
+\documentclass[man]{apa7}
+
+\usepackage{lipsum}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
+\usepackage{pgfplotstable}
+\usepackage{longtable}
+
+\title{Supplementary Materials - Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
+\shorttitle{Supplementary Materials}
+
+\author{Christin Scholz\textsuperscript{1}, 
+        Hanneke Hendriks\textsuperscript{2}, 
+        Eva van Reijmersdal\textsuperscript{1}, 
+        Hang-Yee Chan\textsuperscript{3}}
+\affiliation{\textsuperscript{1}Amsterdam School of Communication Research 
+University of Amsterdam, 
+             \textsuperscript{2}Radboud University Nijmegen, 
+             \textsuperscript{3}Department of Marketing King's College London}
+
+
+\begin{document}
+
+
+<<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
+library('tidyverse')
+library('kableExtra')
+library('ggpubr')
+library('plotrix')
+library('ggpubr')
+library('reshape2')
+source('scripts/customFunctions.R')
+ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
+ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
+study2_logs=read_csv('data/study2/cleaned/logs_cleaned.csv',col_types=cols())
+study2_s1=read_csv('data/study2/cleaned/S1_cleaned.csv',col_types=cols())
+study1a_drink_df=readRDS('data/study1a/cleaned/drink_df.RDS')
+study1b_drink_df=readRDS('data/study1b/cleaned/drink_df.RDS')
+study1a_source_df=readRDS('data/study1a/cleaned/source_df.RDS')
+study1a_valence_df=readRDS('data/study1a/cleaned/valence_df.RDS')
+study1b_source_df=readRDS('data/study1b/cleaned/source_df.RDS')
+study1a_familiarity_df=readRDS('data/study1a/cleaned/familiarity_df.RDS')
+study1b_familiarity_df=readRDS('data/study1b/cleaned/familiarity_df.RDS')
+study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS')
+study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
+@
+
+
+\section{Supplementary Results}
+
+\subsection{Emotions}
+
+In the main manuscript, we report results directly testing H3 about the relationship between self-reported alcohol craving and positive and negative emotional responses to alcohol-related information of different types. Here, we report supplementary results regarding bivariate relationships between alcohol craving and a larger set of specific positive and negative emotions.
+
+Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and ratings of alcohol-craving (significance indicators corrected for family-wise error rate at p<.05 FWER). For both pro- and anti-alcohol information, nine out of 10 emotions show significant bivariate relationships with alcohol craving, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
+
+\begin{figure}
+    \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/EmoCorMat_Figure.png}
+    \label{fig:corMatsEmo}
+\end{figure}
+
+
+
+
+\end{document}
+
