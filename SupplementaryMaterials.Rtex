@@ -61,10 +61,19 @@ Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion a
 
 \begin{figure}
     \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
-    \includegraphics[height=4.5in, width=6.5in]{Figures/EmoCorMat_Figure.png}
+    \includegraphics[height=5in, width=6in]{Figures/EmoCorMat_Figure.png}
     \label{fig:corMatsEmo}
 \end{figure}
 
+\subsection{Familiarity}
+
+<<famSITable, echo=FALSE,message=FALSE,results='asis'>>=
+fam_table=read_csv('Tables/familiaritySITable.csv',col_types=cols()) 
+
+fam_table[is.na(fam_table)]<-''
+
+fam_table %>% kable(caption='Relationship between perceived message familiarity and alcohol craving by source condition for pro- (left) and anti-alcohol messages (right), pID = participant ID; sID = stimulus ID)',booktabs=T) 
+@
 
 
 
