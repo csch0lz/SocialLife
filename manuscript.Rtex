@@ -310,7 +310,7 @@ t2=test2_data %>% t.test(drink_rating~val_cond,data=.,var.equal=varEQL2)
 
 We further examined valence effects on alcohol craving by asking 1) whether the observed differences in alcohol craving are primarily driven by increases in craving in response to pro-alcohol information (compared to non-alcohol information) or due to decreases in craving in response to anti-alcohol information, and 2) whether alcohol-related information specifically increased alcohol craving as opposed to general appetite for beverages. 
 
-First, we conducted an additional stimulus-level (i.e. between-participant) analysis combining Study 1a and Study 1b data in order to compare alcohol craving in response to pro- and anti-alcohol information to alcohol craving in response to information about non-alcoholic drinks. As shown in Figure ~\ref{fig:specificityPlot}, pro-alcohol information strongly enhances alcohol as compared to non-alcoholic information (T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$. In contrast, alcohol craving in response to anti-alcohol information is very similar to the responses given to non-alcoholic stimuli ((T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$), which could indicate a floor effect. 
+First, we conducted an additional stimulus-level (i.e. between-participant) analysis combining Study 1a and Study 1b data in order to compare alcohol craving in response to pro- and anti-alcohol information to alcohol craving in response to information about non-alcoholic drinks. As shown in Figure ~\ref{fig:specificityPlot}, pro-alcohol information strongly enhances alcohol as compared to non-alcoholic information (T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$. In contrast, alcohol craving in response to anti-alcohol information is very similar to the responses given to non-alcoholic stimuli ((T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$), which could indicate a floor effect. As such, H1 is partially supported in that we find significantly enhanced alcohol craving in response to pro-alcohol compared to non-alcoholic stimuli. However, we do not find an additional reduction in cravign in response to anti-alcohol stimuli.
 
 Second, Study 2 results show that the main effect of valence is specific to trials in which participants rated their urge to consume alcoholic (rather than non-alcoholic) drinks, demonstrating that pro-alcohol stimuli specifically enhance the urge to consume alcohol not a general thirst for fluids (see Figure ~\ref{fig:specificityPlot}).
 
@@ -369,7 +369,7 @@ avgs_study2=study2_logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=me
 
 Our results suggest that pro-alcohol content leads to substantially increased alcohol craving in comparison to non-alcoholic and anti-alcohol content. Anti-alcohol content did not lead to substantially lower alcohol craving than non-alcoholic stimuli. This could be due to a floor effect so that non-alcoholic information was already associated with a minimum level of alcohol craving in this study and sample. One plausible conclusion is that the amount of pro-alcohol content on social media is more consequential than the amount of anti-alcohol content. A contradicting viewpoint is that anti-alcohol messages may be more impactful for some participants than for others. For instance, many anti-alcohol campaigns are targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with those who drink to a lesser extent. To explore this possibility, we examined associations between individual differences in drinking habits and the size of the effect of information valence on drinking urge for each participant in Study 1b.
 
-Results show that there is indeed a positive relationship between the frequency of binge drinking and the effect of exposure to pro- compared to non-alcoholic information, but binge drinking frequency was not related to a participants' response to anti-alcohol compared to non-alcoholic information (Table ~\ref{tab:bingeTable}; Figure ~\ref{fig:bingeFigure}).
+Results show that binge drinking frequency indeed plays an important role so that those who report to binge-drink more often, on average, report higher alcohol craving and a higher sensitivity to pro-alcohol (compared to non-alcoholic) stimuli, but not to anti-alcohol stimuli (Table ~\ref{tab:bingeTable}; Figure ~\ref{fig:bingeFigure}).
 
 <<bingeTable,echo=FALSE,message=FALSE,results='asis'>>= 
 
@@ -380,11 +380,126 @@ binge_table[is.na(binge_table)]<-''
 kable(binge_table,caption='Effect of valence and binge-drinking habits on alcohol craving in Study 1b; ID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
 
-
+<<bingeFigure,fig.cap='Relationship between binge drinking habits and effects of pro- and anti-alcohol information compared to non-alcoholic information on alcohol craving',echo=FALSE,message=FALSE>>=
+study1b_drink_df %>% 
+  left_join(ppts_study1b) %>%
+  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
+                                      binge_drinking==9~2,
+                                      binge_drinking==8~3,
+                                      binge_drinking==7~4,
+                                      binge_drinking==6~5,
+                                      binge_drinking==5~6,
+                                      binge_drinking==4~7,
+                                      binge_drinking==3~8,
+                                      binge_drinking==2~9,
+                                      binge_drinking==1~10,
+                                      TRUE~binge_drinking),
+        binge_drink_cat=case_when(binge_drinking_rev>median(binge_drinking_rev)~'>Median',
+                                  binge_drinking_rev<=median(binge_drinking_rev)~'<=Median',
+                                  TRUE~NA_character_))%>%
+    group_by(val_cond,binge_drink_cat) %>%
+    summarize(se_drink_rating=std.error(drink_rating),
+              drink_rating=mean(drink_rating,na.rm=T)) %>% ungroup() %>%
+  ggplot(aes(x=val_cond,y=drink_rating, fill=binge_drink_cat)) +
+  geom_col(position=position_dodge()) +
+  geom_errorbar(aes(ymin=drink_rating-1.96*se_drink_rating,ymax=drink_rating+1.96*se_drink_rating),position=position_dodge(width=0.9),width=0.2) +
+  theme_bw() +
+  labs(y='Alcohol Craving',x='Valence Condition',fill='Binge Drinking Habits')+
+  scale_fill_grey() 
+@
 
 \subsection{Drivers of Alcohol Craving}
 
-What are the drivers of alcohol craving in the context of different message types?
+What are the drivers of alcohol craving in the context diverse types of alcohol information?
+
+\subsubsection{Emotions}
+
+We examined emotional responses to different types of alcohol-related information (rated by Study 1 a/b participants). We found meaningful condition differences in the experienced emotions in response to the stimuli tested across Studies 1a \& 1b. For instance, anti-alcohol stimuli compared to pro-alcohol stimuli evoked more negative and less positive emotions. Differences between professional and social stimuli were substantially smaller than differences between valence conditions and mostly visible for anti-alcohol stimuli (Figure ~\ref{fig:FigureEmo}). Specifically, for anti-alcohol stimuli, professional sources led to slightly more scared, shocked, sad and negative responses, while peer-produced sources were more likely to be rated as amusing and causing second-hand embarrassment. This supports a special role of peer-produced anti-alcohol information within the complex information environment.
+
+<<FigureEmo,fig.cap='Emotional Responses to Alcohol Information (Study 1 a/b)',results='as.is',echo=FALSE,message=FALSE>>=
+drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
+emo_vars=unique(study1a_emo_df$specific_emotion) 
+emo_vars=case_when(grepl('embarrassed',emo_vars)~sub('\\(','\n \\(',emo_vars),TRUE~emo_vars)
+
+emo_df_1ab=study1a_emo_df %>% bind_rows(study1b_emo_df) %>% left_join(drink_1ab) %>%
+  mutate(source=case_when(source=grepl('prof',condition)~'professional',
+                          grepl('soc',condition)~'peer-produced',
+                          TRUE~NA_character_),
+         valence=case_when(grepl('non_',condition)~'non-alcoholic',
+                           grepl('pro_',condition)~'pro-alcohol',
+                           grepl('anti_',condition)~'anti-alcohol',
+                           TRUE~NA_character_),
+         condition=case_when(condition=='pro_social'~'pro-alcohol \npeer-produced',
+                             condition=='pro_prof'~'pro-alcohol \nprofessional',
+                             condition=='anti_social'~'anti-alcohol \npeer-produced',
+                             condition=='anti_prof'~'anti-alcohol \nprofessional',
+                             condition=='non_pro_prof'~'non-alcoholic \nprofessional',
+                             condition=='non_pro_social'~'non-alcoholic \npeer-produced',
+                             TRUE~NA_character_),
+         specific_emotion=case_when(grepl('embarrassed',specific_emotion)~sub('\\(','\n \\(',specific_emotion),
+                                    TRUE~specific_emotion)) %>% 
+  group_by(valence,source,specific_emotion,filename) %>% 
+  summarize(mean_emo_rating=mean(emo_rating,na.rm=T),
+            mean_drink_rating=mean(drink_rating,na.rm=T)) 
+  
+emo_df_1ab%>%
+  group_by(valence,source,specific_emotion) %>%
+  summarize(`Average Emotion Rating (1-7)`=mean(mean_emo_rating,na.rm=T),
+            se_emo=std.error(mean_emo_rating,na.rm=T)) %>% 
+filter(!is.na(source)) %>% 
+ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) + 
+    geom_bar(stat='identity',position='dodge') +
+  geom_errorbar(aes(ymin=`Average Emotion Rating (1-7)`-(1.96*se_emo),ymax=`Average Emotion Rating (1-7)`+(1.96*se_emo)),position=position_dodge(0.9),width=0.15) +
+  facet_wrap(~specific_emotion) +
+  scale_fill_grey() +
+  labs(x='Valence Condition',fill='Source')
+@
+
+How are these emotional responses linked to alcohol craving for pro- and anti-alcohol content? Based on prior literature, we hypothesized that the effect of negative emotions on alcohol craving will be moderated by valence so that there is a stronger negative relationship for professionally-produced anti-alcohol
+than peer-produced and professionally produced pro-alcohol information (H3). A key assumption here is that there should be little variance in positive (/negative) emotions in anti-alcohol (/pro-alcohol) stimuli and any positive (/negative) emotion that is evoked should serve the message intent (i.e. lower (/heighten) alcohol craving).
+
+The standard deviation of ratings of positive emotional responses to professional anti-alcohol stimuli 
+
+
+
+
+Second, Figure ~\ref{fig:RegEmo} shows linear relationship between emotional responses to the four types of messages and alcohol craving. Positive emotions indeed seem to show stronger positive relationships with drinking urge in pro-alcohol compared to anti-alcohol stimuli, but these differences are not as pronounced as may be expected. That is, even for anti-alcohol information, positive emotions play an important role and achieve medium-sized correlations with drinking urges. Importantly, all correlations have the same directionality across pro- and anti-alcohol stimuli. In other words, to achieve maximum desired effects on drinking urge when distributing alcohol-related information, one key goal is to avoid evoking undesirable emotions in receivers. 
+
+First, ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and ratings of alcohol-craving (significance indicators corrected for family-wise error rate at p<.05 FWER). For both pro- and anti-alcohol information, nine out of 10 emotions show significant bivariate relationships with alcohol craving, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
+
+
+
+\begin{figure}
+    \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
+    \includegraphics[height=4.5in, width=6.5in]{Figures/EmoCorMat_Figure.png}
+    \label{fig:corMatsEmo}
+\end{figure}
+
+<<RegEmo,results='as.is',echo=FALSE,warning=FALSE,message=FALSE,fig.cap='Relationship between the strength of experienced emotions in response to message exposure and alcohol craving by message type (Study 1a/b)'>>=
+emo_df_1ab = study1a_emo_df %>% bind_rows(study1b_emo_df)
+drink_df_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
+
+master=drink_df_1ab %>% right_join(emo_df_1ab) %>% filter(specific_emotion %in% c('positive','negative'))
+
+master%>%
+mutate(condition=fct_recode(condition,'Anti - Professional'='anti_prof','Anti - Peer-Produced'='anti_social','Pro - Professional'='pro_prof','Pro - Peer-Produced'='pro_social')) %>%
+ggplot(aes(x=emo_rating,y=drink_rating,color=condition)) +
+  geom_smooth(method='lm') +
+  scale_color_manual(values=c('darkred','red','darkgreen','green')) +
+  facet_wrap(~specific_emotion) +
+  labs(color='Condition',y='Alcohol Craving (1-7)',x='Strength of experienced emotion (1-7)') + 
+  theme_bw()
+@
+
+A multi-level regression model confirms this impression (see Table ~\ref{tab:emoTable}). The effects of emotions on alcohol craving are more pronounced for both positive (positive effect) and negative emotions (negative effect). 
+
+<<emoTable, echo=FALSE,message=FALSE,results='asis'>>=
+emo_table=read_csv('Tables/emoTable.csv',col_types=cols()) 
+
+emo_table[is.na(emo_table)]<-''
+
+emo_table %>% kable(caption='Relationship between positive and negative emotions and alcohol craving by condition, pID = participant ID; sID = stimulus ID)',booktabs=T) 
+@
 
 \subsection{Familiarity} 
 
@@ -442,7 +557,7 @@ fam_table %>% kable(caption='Relationship between perceived message familiarity 
 @
 
 <<famFigure, echo=FALSE,message=FALSE,results='asis',fig.cap='Stimulus-level relationship between perceived message familiarity and alcohol craving by valence condition'>>=
-drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
+
 familiarity_1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df)
 
 familiarity_1ab_wide = familiarity_1ab %>% 
@@ -465,71 +580,6 @@ drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   labs(color='Valence')
 @
 
-\subsubsection{Emotions}
-
-Finally, we examined emotional responses to different types of alcohol-related information (rated by Study 1 a/b participants). We found meaningful condition differences in the experienced emotions in response to the stimuli tested across Studies 1a & 1b. For instance, anti-alcohol stimuli compared to pro-alcohol stimuli evoked more negative and less positive emotions. Differences between professional and social stimuli were substantially smaller than differences between valence conditions and mostly visible for anti-alcohol stimuli (Figure ~\ref{fig:FigureEmo}). Specifically, for anti-alcohol stimuli, professional sources led to slightly more scared, shocked, sad and negative responses, while peer-produced sources were more likely to be rated as amusing and embarrassing (for someone else).
-
-<<FigureEmo,fig.cap='Emotional Responses to Stimuli (Study 1)',results='as.is',echo=FALSE,message=FALSE>>=
-emo_vars=unique(study1a_emo_df$specific_emotion) 
-emo_vars=case_when(grepl('embarrassed',emo_vars)~sub('\\(','\n \\(',emo_vars),TRUE~emo_vars)
-
-emo_df_1ab=study1a_emo_df %>% bind_rows(study1b_emo_df) %>% left_join(drink_1ab) %>%
-  mutate(source=case_when(source=grepl('prof',condition)~'professional',
-                          grepl('soc',condition)~'peer-produced',
-                          TRUE~NA_character_),
-         valence=case_when(grepl('non_',condition)~'non-alcoholic',
-                           grepl('pro_',condition)~'pro-alcohol',
-                           grepl('anti_',condition)~'anti-alcohol',
-                           TRUE~NA_character_),
-         condition=case_when(condition=='pro_social'~'pro-alcohol \npeer-produced',
-                             condition=='pro_prof'~'pro-alcohol \nprofessional',
-                             condition=='anti_social'~'anti-alcohol \npeer-produced',
-                             condition=='anti_prof'~'anti-alcohol \nprofessional',
-                             condition=='non_pro_prof'~'non-alcoholic \nprofessional',
-                             condition=='non_pro_social'~'non-alcoholic \npeer-produced',
-                             TRUE~NA_character_),
-         specific_emotion=case_when(grepl('embarrassed',specific_emotion)~sub('\\(','\n \\(',specific_emotion),
-                                    TRUE~specific_emotion)) %>% 
-  group_by(valence,source,specific_emotion,filename) %>% 
-  summarize(mean_emo_rating=mean(emo_rating,na.rm=T),
-            mean_drink_rating=mean(drink_rating,na.rm=T)) 
-  
-emo_df_1ab%>%
-  group_by(valence,source,specific_emotion) %>%
-  summarize(`Average Emotion Rating (1-7)`=mean(mean_emo_rating,na.rm=T),
-            se_emo=std.error(mean_emo_rating,na.rm=T)) %>% 
-filter(!is.na(source)) %>% 
-ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) + 
-    geom_bar(stat='identity',position='dodge') +
-    #(axis.text.x = element_text(angle = 90)) + 
-  geom_errorbar(aes(ymin=`Average Emotion Rating (1-7)`-(1.96*se_emo),ymax=`Average Emotion Rating (1-7)`+(1.96*se_emo)),position=position_dodge(0.9),width=0.15) +
-  facet_wrap(~specific_emotion) +
-  scale_fill_grey() +
-  labs(x='Valence Condition')
-  #theme(axis.text.x = element_text(angle = 90))
-@
-
-How are these emotional responses linked to drinking urges for pro- and anti-alcohol content? Naively, one may expect negative emotions to be more relevant for the effect of anti-alcohol (compared to pro-alcohol) stimuli on drinking urges and vice versa for positive emotions. A key assumption here is that there should be little variance in positive [/negative] emotions in anti-alcohol [/pro-alcohol] stimuli and any positive [/negative] emotion that is evoked should serve the message intent (i.e. lower [/heighten] drinking urges).
-
-Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and drinking urge ratings (significance indicators corrected for family-wise error rate at p<.05 FWER). First, it is striking that for both pro- and anti-alcohol information, nine out of 10 emotions show significant relationships with drinking urge, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
-
-Second, Figure ~\ref{fig:corMatsEmo} only partially confirms the expected pattern described above. Positive emotions indeed seem to show stronger positive relationships with drinking urge in pro-alcohol compared to anti-alcohol stimuli, but these differences are not as pronounced as may be expected. That is, even for anti-alcohol information, positive emotions play an important role and achieve medium-sized correlations with drinking urges. Importantly, all correlations have the same directionality across pro- and anti-alcohol stimuli. For instance, even in the context of anti-alcohol stimuli, positive emotions are related  In other words, to achieve maximum desired effects on drinking urge when distributing alcohol-related information, one key goal is to avoid evoking undesirable emotions in receivers. 
-
-\begin{figure}
-    \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
-    \includegraphics[height=4.5in, width=6.5in]{Figures/EmoCorMat_Figure.png}
-    \label{fig:corMatsEmo}
-\end{figure}
-
-A multi-level regression model confirms this impression (see Table ~\ref{tab:emoTable}). The effects of emotions on alcohol craving are more pronounced for both positive (positive effect) and negative emotions (negative effect). 
-
-<<emoTable, echo=FALSE,message=FALSE,results='asis'>>=
-emo_table=read_csv('Tables/emoTable.csv',col_types=cols()) 
-
-emo_table[is.na(emo_table)]<-''
-
-emo_table %>% kable(caption='Relationship between positive and negative emotions and alcohol craving by condition, pID = participant ID; sID = stimulus ID)',booktabs=T) 
-@
 
 \section{Discussion}
 
