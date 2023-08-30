@@ -70,6 +70,7 @@ mc_table2_all<-rbind(empty_row_1,mc_table2,empty_row_2,mc_table2_nonalc) %>% sel
 names(mc_table2_all)[1]<-'DV'
 names(mc_table2_all)[dim(mc_table2_all)[2]]<-'p'
 mc_table2_all$effect=ifelse(mc_table2_all$effect=='ran_pars','random',mc_table2_all$effect)
+mc_table2_all$DV = ifelse(mc_table2_all$DV=='average','peer',mc_table2_all$DV)
 
 
 write_csv(mc_table2_all,'Tables/mcTableSource.csv')
