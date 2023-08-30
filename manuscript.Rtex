@@ -199,10 +199,10 @@ craving_table_main=read_csv('Tables/cravingTableMain.csv',col_types=cols())
 
 craving_table_main[is.na(craving_table_main)]<-''
 
-kable(craving_table_main,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
+kable(craving_table_main,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence + source + control variables +(1|participant ID) + (1|stimulus ID)')
 @
 
-The size of the valence effect is larger in Study 1a. This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1a and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1a participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their craving for one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
+The size of the valence effect is somewhat larger in Study 1a. This could be due to differences in the task design. Study 1a participants responded directly to the stimulus while Study 2 participants provided craving ratings after seeing standardized images of alcoholic drinks. Further, Study 1a participants were asked whether looking at the stimulus makes them want to drink alcohol today whereas Study 2 participants were asked about their craving for one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
 
 \subsubsection{Non-Alcoholic Control and Specificity of Valence Effects}
 
