@@ -163,7 +163,7 @@ s1b=study1b_drink_df %>% filter(grepl('non',condition)) %>% group_by(filename) %
 @ 
 Participants in all three studies completed within-subject designs with multiple trials per person (Trial N Study 1a: $\Sexpr{study1a_drink_df %>% group_by(pIDs) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$, Study 1b: $\Sexpr{study1b_drink_df %>% group_by(pIDs) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$, Study 2: $\Sexpr{study2_logs %>% group_by(pID) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$). Participants in Study 1a and Study 2 exclusively saw alcohol-related stimuli. Alcohol-related stimuli were randomly chosen per participant from a list of $\Sexpr{study1a_drink_df %>% summarize(length(unique(QualtricsMsgID)))}$ stimuli in Study 1a ($\Sexpr{study1a_drink_df %>% group_by(condition) %>% summarize(n_msgs=length(unique(QualtricsMsgID))) %>% summarize(first(n_msgs)) }$ per valence*source condition) so that all stimuli were presented evenly. A sub-sample of $\Sexpr{study2_logs %>% group_by(pID) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$ alcohol-related stimuli were chosen for inclusion in Study 2 ($\Sexpr{study2_logs %>% group_by(pID,condition) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$ per valence*source condition) and all stimuli were shown to all participants. Study 1b participants saw $\Sexpr{study1b_drink_df %>% filter(grepl('non',condition)) %>% group_by(pIDs) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$ non-alcoholic stimuli per person which were not part of the other two studies and $\Sexpr{study1b_drink_df %>% filter(!grepl('non',condition)) %>% group_by(pIDs) %>% count() %>% ungroup() %>% summarize(unique(n)[1])}$ alcohol-related stimuli that were randomly chosen for each participant out of the full set of Study 1a stimuli. In Study 1a, each stimulus was rated by an average of $\Sexpr{round(s1a$mean,2)}$ (SD = $\Sexpr{round(s1a$sd,2)}$) participants. In Study 1b, each non-alcoholic stimulus was rated an average of $\Sexpr{round(s1b$mean,2)}$ (SD = $\Sexpr{round(s1b$sd,2)}$) times.
 
-Per stimulus, participants in Study 1a and 1b rated alcohol craving in response to the stimulus, followed by their perceptions of the stimulus source, the perceived valence of the stimulus, and familiarity with the portrayed scene. In Study 2, participants completed a task in which each stimulus was shown for 6 seconds, followed by a brief fixation period and, subsequently, a standardized alcohol or non-alcohol cue which was shown for 4 seconds. Standardized (non-)alcohol cues were sampled from the Amsterdam Beverage Picture Set \cite{pronk_validation_2015}. After viewing the alcohol ($\Sexpr{study2_logs %>% group_by(pID,type) %>% count() %>% filter(type=='alcohol') %>% ungroup() %>%summarize(first(n))}$ trials/person) or non-alcohol ($\Sexpr{study2_logs %>% group_by(pID,type) %>% count() %>% filter(type=='non-alcohol') %>% ungroup() %>%summarize(first(n))}$ trials/person) cue for 2 seconds, a rating scale appeared on the screen, asking participants to rate their current craving for the beverage on the screen (Figure \ref{fig:FigureAlcValTask}). 
+Per stimulus, participants in Study 1a and 1b rated alcohol craving in response to the stimulus, followed by two manipulation checks for the valence and source manipulations (see Supplementary Materials) and familiarity with the portrayed scene. In Study 2, participants completed a task in which each stimulus was shown for 6 seconds, followed by a brief fixation period and, subsequently, a standardized alcohol or non-alcohol cue which was shown for 4 seconds. Standardized (non-)alcohol cues were sampled from the Amsterdam Beverage Picture Set \cite{pronk_validation_2015}. After viewing the alcohol ($\Sexpr{study2_logs %>% group_by(pID,type) %>% count() %>% filter(type=='alcohol') %>% ungroup() %>%summarize(first(n))}$ trials/person) or non-alcohol ($\Sexpr{study2_logs %>% group_by(pID,type) %>% count() %>% filter(type=='non-alcohol') %>% ungroup() %>%summarize(first(n))}$ trials/person) cue for 2 seconds, a rating scale appeared on the screen, asking participants to rate their current craving for the beverage on the screen (Figure \ref{fig:FigureAlcValTask}). 
 
 \begin{figure}
     \caption{Example Trial Study 2 Task}
@@ -172,11 +172,6 @@ Per stimulus, participants in Study 1a and 1b rated alcohol craving in response 
 \end{figure}
 
 \subsection{Measures}
-\paragraph{Manipulation Checks (Study 1a/1b)}
-Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
-
-In addition, Study 1a and 1b participants rated the perceived source of each image: "Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image." Answer choices included: A professional or company account, An influencer, and An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes). Ratings were provided on three 7-point Likert-type scales (1 = Certainly did not post this, 7 = Certainly posted this). While our experimental manipulations only covered professional and peer-produced ('average user') sources, we added an Influencer category to the manipulation check to assess whether there were differences in participants' likelihood to misattribute a stimulus to an Influencer as a source.
-
 \paragraph{Beverage Craving}
 Study 1a and 1b participants rated their alcohol craving using the following question immediately after exposure to each stimulus: "Looking at this post makes me want to drink alcohol today." on a 7-point Likert-type scale (1 = Not at all; 7 = very much). Study 2 participants rated their craving for a specific alcoholic or non-alcoholic beverage in response to standardized beverage cues shown directly after exposure to each stimulus on a 5-point Likert-type scale (\ref{fig:FigureAlcValTask}). Given the differences in rating scales, beverage craving was z-scored within study for all analyses including data from both Studies 1a/b and 2.
 
@@ -190,98 +185,21 @@ Study 1a and 1b participants rated different aspects of familiarty with the scen
 
 Although the existing literature supports a set of directional hypotheses (see theoretical background), the analyses presented here should be interpreted as exploratory and were not pre-registered. 
 
-We conducted two types of analyses. First, we estimated condition effects on beverage craving using multi-level mixed regression models as implemented in R's lmerTest package (\cite{kuznetsova_lmertest_2019}) to account for the nested structure of the data. Second, we conducted stimulus-level analyses, aggregating over participants.
+Before hypothesis testing, we confirmed that the stimuli were perceived as intended using the two manipulation checks measured in Study 1a and 1b (see Supplementary Materials for details). We then conducted two types of analyses. First, we estimated condition effects on beverage craving using multi-level mixed regression models as implemented in R's lmerTest package (\cite{kuznetsova_lmertest_2019}) to account for the nested structure of the data. Second, we conducted stimulus-level analyses, aggregating over participants.
 
 \section{Results}
-First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Figure \ref{fig:mcPlot}A for condition-averages).
-
-<<mcTableVal,echo=FALSE>>=
-mc_table=read_csv('Tables/mc_table_study1a.csv',col_types=cols())
-mc_table[is.na(mc_table)]<-''
-names(mc_table)[1]<-'DV'
-
-kable(mc_table,booktabs=T,digits=2,caption='Condition Effects on Perceived Valence (Study 1a)') %>% kable_styling() %>%
-  add_footnote('Note. DV = Dependent Variable. The equation used to fit the two models in this table was Perceived Valence [Positive/Negative] ~ Valence (pro- > anti-alcohol) +(1|participant ID) + (1|stimulus ID)') 
-@
-
-<<mcPlot,fig.cap="Manipulation Checks for A) Stimulus Valence (Study 1a) and Source for B) alcohol-related stimuli (Study 1a) and C) non-alcoholic stimuli (Study 1b); Error bars indicate 95 percent confidence intervals",echo=FALSE,message=FALSE>>=
-val_mc_plot=study1a_valence_df  %>%
-  mutate(valence=sub(' aspects of drinking alcohol','',valence),
-  val_cond=fct_recode(val_cond,'anti'='anti-alcohol','pro-\nalcohol'='pro-alcohol')) %>% 
-  group_by(QualtricsMsgID,valence) %>%
-  summarize(mean_valence_rating=mean(valence_rating,na.rm=T),val_cond=unique(val_cond)) %>% 
-  group_by(val_cond,valence) %>% summarize(mean=mean(mean_valence_rating,na.rm=T), se=std.error(mean_valence_rating,na.rm=T)) %>% 
-ggplot(aes(valence,mean,fill=val_cond)) + 
-  geom_bar(stat='identity',position='dodge') + 
-  geom_errorbar(aes(ymin = mean-(1.96*se), ymax = mean+(1.96*se)),position=position_dodge(width=0.9),width=0.15) + 
-  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
-  labs(title='A',y='Average Rating (1 not at all-7 very much)',x='Aspects of drinking alcohol',fill='Valence Cond.') + 
-  scale_fill_grey()+theme(legend.position="bottom") + plot_aes
-
-source_mc_plot_nonalc=study1b_source_df %>% filter(grepl('non',condition)) %>% 
-  mutate(source_cond=case_when(grepl('prof', condition)~'professional',
-                               TRUE~'peer'),
-         `Post Source`=case_when(grepl('company',source)~'Professional',
-                                 grepl('influencer',source)~'Influencer',
-                                 grepl('average',source)~'Peer',
-                                 TRUE~NA_character_)) %>%
-  group_by(QualtricsURL,`Post Source`) %>%
-  summarize(mean_source_rating=mean(source_rating,na.rm=T),source_cond=unique(source_cond)) %>% 
-  group_by(source_cond,`Post Source`) %>% summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
-  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
-  labs(title='C',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
-  scale_fill_grey()  +
-  theme(legend.position="bottom") + plot_aes
-
-source_mc_plot=study1a_source_df %>% 
-  mutate(source_cond=case_when(grepl('prof', condition)~'professional',
-                               TRUE~'peer'),
-         `Post Source`=case_when(grepl('company',source)~'Professional',
-                                 grepl('influencer',source)~'Influencer',
-                                 grepl('average',source)~'Peer',
-                                 TRUE~NA_character_)) %>%
-  group_by(`Post Source`,QualtricsMsgID) %>%
-  summarize(mean_source_rating=mean(source_rating,na.rm=T),source_cond=unique(source_cond)) %>%
-  group_by(source_cond,`Post Source`) %>% 
-  summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
-  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
-  labs(title='B',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
-  scale_fill_grey() +
-  theme(legend.position="bottom") + plot_aes
-  
-combined_plots <- source_mc_plot + source_mc_plot_nonalc + plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
-
-val_mc_plot + combined_plots +
-  plot_layout(ncol=2,widths=c(1.5,2))
-
-
-@
-
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models, regressing the extent to which participants were certain that each of three types of users (professionals, influencers, and average users) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Images from professional sources showed higher ratings for certainty that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of average users. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli.
-
-<<mcTableSource,echo=FALSE,results='asis'>>=
-mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
-mutate(estimate=round(estimate,2)) %>%
-mutate_all(as.character)
-
-mc_table[is.na(mc_table)]<-''
-
-kable(mc_table,caption='Effects of source condition on each of three perceived sources in Study 1a \\& 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
-kable_styling(font_size=8)
-@ 
 
 \subsection{Condition Effects on Craving}
 
-Next, we examined whether stimulus valence and perceived source impacted alcohol craving by estimating within-person effects of valence condition, source condition, and a two-way interaction term on (standardized) alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data accounting for random intercepts across participants and messages.  
+Next, we examined whether stimulus valence and perceived source impacted alcohol craving by estimating within-person effects of valence condition, source condition on (standardized) alcohol craving ratings in a multi-level regression model of Study 1a and Study 2 data controlling for age, gender, binge-drinking and drinking frequency, and accounting for random intercepts across participants and messages.  
+Across both studies, Table ~\ref{tab:cravingTableMain} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source. Re-fitting the two models with an additional interaction term between valence and source conditions revealed no differences in valence effects depending on stimulus source (see Supplementary Materials for details).  
 
-Across both studies, Table ~\ref{tab:cravingTable} shows main effects of stimulus valence condition on alcohol craving so that pro-alcohol posts lead to stronger alcohol craving than anti-alcohol posts. We did not find a main effect of source or an interaction between source and valence. 
+<<cravingTableMain, echo=FALSE,results='asis'>>=
+craving_table_main=read_csv('Tables/cravingTableMain.csv',col_types=cols()) 
 
-<<cravingTable, echo=FALSE,results='asis'>>=
-craving_table=read_csv('Tables/cravingTable.csv',col_types=cols()) 
+craving_table_main[is.na(craving_table_main)]<-''
 
-craving_table[is.na(craving_table)]<-''
-
-kable(craving_table,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
+kable(craving_table_main,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
 @
 
 The size of the valence effect is larger in Study 1a. This could be due to differences in the task design. Participants responded directly to the stimulus in Study 1a and to standardized images of alcoholic drinks after viewing each stimulus in Study 2. Further, Study 1a participants were asked whether looking at the image makes them want to drink alcohol today whereas Study 2 participants were asked about their craving for one specific type of alcohol. As such, the Study 1a effect size may be seen as a closer estimate of real-world effects. 
