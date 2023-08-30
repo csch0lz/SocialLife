@@ -34,6 +34,7 @@ library('ggpubr')
 library('plotrix')
 library('ggpubr')
 library('reshape2')
+library('patchwork')
 source('scripts/customFunctions.R')
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
@@ -50,8 +51,102 @@ study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS')
 study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 @
 
+\section{Supplementary Methods}
+\subsection{Manipulation Checks (Study 1a/1b)}
+Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
+
+In addition, Study 1a and 1b participants rated the perceived source of each image: "Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image." Answer choices included: A professional or company account, An influencer, and An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes). Ratings were provided on three 7-point Likert-type scales (1 = Certainly did not post this, 7 = Certainly posted this). While our experimental manipulations only covered professional and peer-produced ('average user') sources, we added an Influencer category to the manipulation check to assess whether there were differences in participants' likelihood to misattribute a stimulus to an Influencer as a source.
 
 \section{Supplementary Results}
+\subsection{Manipulation Checks}
+We used the manipulation checks assessed in Study 1a and 1b in order to examine whether the stimuli where perceived as intended.
+
+First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Figure \ref{fig:mcPlot}A for condition-averages).
+
+<<mcTableVal,echo=FALSE>>=
+mc_table=read_csv('Tables/mc_table_study1a.csv',col_types=cols())
+mc_table[is.na(mc_table)]<-''
+names(mc_table)[1]<-'DV'
+
+kable(mc_table,booktabs=T,digits=2,caption='Condition Effects on Perceived Valence (Study 1a)') %>% kable_styling() %>%
+  add_footnote('Note. DV = Dependent Variable. The equation used to fit the two models in this table was Perceived Valence [Positive/Negative] ~ Valence (pro- > anti-alcohol) +(1|participant ID) + (1|stimulus ID)') 
+@
+
+<<mcPlot,fig.cap="Manipulation Checks for A) Stimulus Valence (Study 1a) and Source for B) alcohol-related stimuli (Study 1a) and C) non-alcoholic stimuli (Study 1b); Error bars indicate 95 percent confidence intervals",echo=FALSE,message=FALSE>>=
+val_mc_plot=study1a_valence_df  %>%
+  mutate(valence=sub(' aspects of drinking alcohol','',valence),
+  val_cond=fct_recode(val_cond,'anti'='anti-alcohol','pro-\nalcohol'='pro-alcohol')) %>% 
+  group_by(QualtricsMsgID,valence) %>%
+  summarize(mean_valence_rating=mean(valence_rating,na.rm=T),val_cond=unique(val_cond)) %>% 
+  group_by(val_cond,valence) %>% summarize(mean=mean(mean_valence_rating,na.rm=T), se=std.error(mean_valence_rating,na.rm=T)) %>% 
+ggplot(aes(valence,mean,fill=val_cond)) + 
+  geom_bar(stat='identity',position='dodge') + 
+  geom_errorbar(aes(ymin = mean-(1.96*se), ymax = mean+(1.96*se)),position=position_dodge(width=0.9),width=0.15) + 
+  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
+  labs(title='A',y='Average Rating (1 not at all-7 very much)',x='Aspects of drinking alcohol',fill='Valence Cond.') + 
+  scale_fill_grey()+theme(legend.position="bottom") + plot_aes
+
+source_mc_plot_nonalc=study1b_source_df %>% filter(grepl('non',condition)) %>% 
+  mutate(source_cond=case_when(grepl('prof', condition)~'professional',
+                               TRUE~'peer'),
+         `Post Source`=case_when(grepl('company',source)~'Professional',
+                                 grepl('influencer',source)~'Influencer',
+                                 grepl('average',source)~'Peer',
+                                 TRUE~NA_character_)) %>%
+  group_by(QualtricsURL,`Post Source`) %>%
+  summarize(mean_source_rating=mean(source_rating,na.rm=T),source_cond=unique(source_cond)) %>% 
+  group_by(source_cond,`Post Source`) %>% summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
+  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
+  labs(title='C',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
+  scale_fill_grey()  +
+  theme(legend.position="bottom") + plot_aes
+
+source_mc_plot=study1a_source_df %>% 
+  mutate(source_cond=case_when(grepl('prof', condition)~'professional',
+                               TRUE~'peer'),
+         `Post Source`=case_when(grepl('company',source)~'Professional',
+                                 grepl('influencer',source)~'Influencer',
+                                 grepl('average',source)~'Peer',
+                                 TRUE~NA_character_)) %>%
+  group_by(`Post Source`,QualtricsMsgID) %>%
+  summarize(mean_source_rating=mean(source_rating,na.rm=T),source_cond=unique(source_cond)) %>%
+  group_by(source_cond,`Post Source`) %>% 
+  summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
+  scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
+  labs(title='B',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
+  scale_fill_grey() +
+  theme(legend.position="bottom") + plot_aes
+  
+combined_plots <- source_mc_plot + source_mc_plot_nonalc + plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
+
+val_mc_plot + combined_plots +
+  plot_layout(ncol=2,widths=c(1.5,2))
+@
+
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models per study, regressing the extent to which participants were certain that each of three types of users (professional, influencer, and peer) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Stimuli from professional sources showed higher ratings for certainty that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of certainty that a peer produced the stimulus. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli. 
+
+<<mcTableSource,echo=FALSE,results='asis'>>=
+mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
+mutate(estimate=round(estimate,2)) %>%
+mutate_all(as.character)
+
+mc_table[is.na(mc_table)]<-''
+
+kable(mc_table,caption='Effects of source condition on each of three perceived source ratings in Study 1a \\& 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
+kable_styling(font_size=8) %>% add_footnote('Note. DV = Dependent Variable. The equation used to fit the three models per study in this table was Perceived source certainty ~ Source condition +(1|participant ID) + (1|stimulus ID)')
+@ 
+
+\subsection{Condition Effects on Craving}
+
+In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableMain} reveals no differences in valence effects depending on stimulus source.  
+
+<<cravingTableInter, echo=FALSE,results='asis'>>=
+craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols()) 
+
+craving_table_inter[is.na(craving_table_inter)]<-''
+
+kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
+@
 
 \subsection{Emotions}
 
