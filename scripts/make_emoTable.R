@@ -62,8 +62,6 @@ emo_table_main=emo_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_cha
 
 emo_table_main$Estimate[!grepl(',',emo_table_main$Estimate)]<-as.character(round(as.numeric(emo_table_main$Estimate[!grepl(',',emo_table_main$Estimate)]),2))
 
-
-
 names(emo_table_full)[3]<-'Full Model'
 names(emo_table_main)[3]<-'Main Effects Model'
 

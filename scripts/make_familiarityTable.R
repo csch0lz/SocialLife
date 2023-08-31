@@ -24,25 +24,48 @@ familiarity_1ab_wide = familiarity_1ab %>%
   pivot_wider(values_from=fam_rating,names_from=familiarity_variable) %>% 
   mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
 
-fam_table=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
+fam_table_full=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   lmer(drink_rating~fam_index*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table$term=c('Intercept','Familiarity Index (FI)','Valence (1): pro-alcohol','Valence (2): non-alcoholic','FI x Valence (1)','FI x Valence (2)','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence (1): pro-alcohol','Valence (2): non-alcoholic','FI x Valence (1)','FI x Valence (2)','pID Intercept','sID Intercept','study Intercept','Residual')
 
-fam_table=fam_table %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
+fam_table_full=fam_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
                                                  p.value<0.001~paste0('p < .001'),
                                                  TRUE~NA_character_),
                                Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
-                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))
+                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate)) %>%
+  dplyr::select(effect,term,Estimate)
 
-fam_table$Estimate[!grepl(',',fam_table$Estimate)]<-as.character(round(as.numeric(fam_table$Estimate[!grepl(',',fam_table$Estimate)]),2))
+fam_table_full$Estimate[!grepl(',',fam_table_full$Estimate)]<-as.character(round(as.numeric(fam_table_full$Estimate[!grepl(',',fam_table_full$Estimate)]),2))
 
-fam_table %>% dplyr::select(effect,term,Estimate) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
+fam_table_main=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
+  lmer(drink_rating~fam_index+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
+  broom.mixed::tidy(.,conf.int=TRUE) %>% 
+  mutate(study=1,group=ifelse(group=='pIDs','pID',
+                              ifelse(group=='QualtricsMsgID','sID',group)))
+
+
+fam_table_main$term=c('Intercept','Familiarity Index (FI)','Valence (1): pro-alcohol','Valence (2): non-alcoholic','pID Intercept','sID Intercept','study Intercept','Residual')
+
+fam_table_main=fam_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
+                                                 p.value>=0.001~paste0('p = ',round(p.value,3)),
+                                                 p.value<0.001~paste0('p < .001'),
+                                                 TRUE~NA_character_),
+                               Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
+                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate)) %>%
+  dplyr::select(effect,term,Estimate)
+
+fam_table_main$Estimate[!grepl(',',fam_table_main$Estimate)]<-as.character(round(as.numeric(fam_table_main$Estimate[!grepl(',',fam_table_main$Estimate)]),2))
+
+names(fam_table_full)[3]<-'Full Model'
+names(fam_table_main)[3]<-'Main Effects Model'
+
+fam_table_main %>% left_join(fam_table_full) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
 write_csv(.,'Tables/familiarityTable.csv')
 
 # supplementary table source effects
