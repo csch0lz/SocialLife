@@ -1,13 +1,13 @@
 effect,term,Study 1a,Study 2
-fixed,Intercept," 0.74 [ 0.27; 1.20], p = 0.002","-0.69 [-2.02; 0.64], p = 0.302"
+fixed,Intercept,"-0.45 [-0.57;-0.34], p = <.001","-0.56 [-1.87; 0.75], p = 0.396"
 fixed,Valence: pro-alcohol," 1.04 [ 0.92; 1.16], p = <.001"," 0.84 [ 0.72; 0.96], p = <.001"
 fixed,Source: professional,"-0.04 [-0.16; 0.07], p = 0.467","-0.04 [-0.16; 0.08], p = 0.510"
 fixed,Age,"-0.02 [-0.03; 0.00], p = 0.030"," 0.00 [-0.07; 0.06], p = 0.913"
 fixed,Gender: Male,"-0.17 [-0.31;-0.02], p = 0.022"," 0.18 [-0.10; 0.47], p = 0.206"
 fixed,ValencexSource," 0.03 [-0.13; 0.20], p = 0.700"," 0.09 [-0.07; 0.26], p = 0.267"
 fixed,Gender: Non-Binary,"-0.13 [-0.75; 0.49], p = 0.679",    
-fixed,Binge Drinking Freq.,"-0.09 [-0.13;-0.05], p = <.001",    
-fixed,Drinking Freq.,"-0.03 [-0.08; 0.02], p = 0.175",    
+fixed,Binge Drinking Freq.," 0.09 [ 0.05; 0.13], p = <.001",    
+fixed,Drinking Freq.," 0.03 [-0.02; 0.08], p = 0.175",    
 fixed,AUDIT,    ," 0.02 [-0.01; 0.04], p = 0.227"
 ran_pars,pID Intercept, 0.50, 0.43
 ran_pars,sID Intercept, 0.22, 0.15

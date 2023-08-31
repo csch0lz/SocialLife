@@ -131,7 +131,30 @@ ppt_df = ppt_df %>%
                                        binge_drinking==8~'3 to 11 days in the past year',
                                        binge_drinking==9~'1 to 2 days in the past year',
                                        binge_drinking==10~'Never',
-                                       TRUE~NA_character_))
+                                       TRUE~NA_character_),
+         binge_drinking_rev=case_when(binge_drinking==10~1,
+                                      binge_drinking==9~2,
+                                      binge_drinking==8~3,
+                                      binge_drinking==7~4,
+                                      binge_drinking==6~5,
+                                      binge_drinking==5~6,
+                                      binge_drinking==4~7,
+                                      binge_drinking==3~8,
+                                      binge_drinking==2~9,
+                                      binge_drinking==1~10,
+                                      TRUE~binge_drinking),
+         drinking_freq_rev=case_when(drinking_freq==11~1,
+                                     drinking_freq==10~2,
+                                     drinking_freq==9~3,
+                                     drinking_freq==8~4,
+                                     drinking_freq==7~5,
+                                     drinking_freq==6~6,
+                                     drinking_freq==5~7,
+                                     drinking_freq==4~8,
+                                     drinking_freq==3~9,
+                                     drinking_freq==2~10,
+                                     drinking_freq==1~11,
+                                     TRUE~NA_real_))
 
 # Split conditions 
 

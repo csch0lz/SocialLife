@@ -17,18 +17,7 @@ study1b_ppts=readRDS('data/study1b/cleaned/ppt_df.RDS')
 
 binge_table=study1b_drink_df %>% 
   left_join(study1b_ppts) %>%
-  mutate(binge_drinking_rev=case_when(binge_drinking==10~1,
-                                      binge_drinking==9~2,
-                                      binge_drinking==8~3,
-                                      binge_drinking==7~4,
-                                      binge_drinking==6~5,
-                                      binge_drinking==5~6,
-                                      binge_drinking==4~7,
-                                      binge_drinking==3~8,
-                                      binge_drinking==2~9,
-                                      binge_drinking==1~10,
-                                      TRUE~binge_drinking),
-         val_cond=factor(val_cond,levels=c('non-alcoholic','anti-alcohol','pro-alcohol'))) %>% 
+  mutate(val_cond=factor(val_cond,levels=c('non-alcoholic','anti-alcohol','pro-alcohol'))) %>% 
   mutate(binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE)) %>%
   lmer(drink_rating~binge_drinking_rev*val_cond + (1|pIDs) + (1|filename),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
