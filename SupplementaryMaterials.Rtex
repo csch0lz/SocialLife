@@ -145,7 +145,7 @@ craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols())
 
 craving_table_inter[is.na(craving_table_inter)]<-''
 
-kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction (Note=The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2) 
+kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence * source + control variables +(1|participant ID) + (1|stimulus ID)')
 @
 
 \subsection{Emotions}
