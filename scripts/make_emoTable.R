@@ -20,25 +20,54 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Stud
 drink_1ab=bind_rows(study1a_drink_df,study1b_drink_df)
 emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=specific_emotion,values_from=emo_rating)
 
-emo_table=emo_1ab %>% left_join(drink_1ab) %>%
-  lmer(drink_rating~positive*val_cond+negative*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.) %>% 
+emo_table_full=emo_1ab %>% left_join(drink_1ab) %>%
+  lmer(drink_rating~positive*val_cond+negative*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
                               ifelse(group=='filename','sID',group))) 
 
 
-emo_table$term=c('Intercept','Positive emotions (PosEmo)','Valence: pro-alcohol','Negative emotions (NegEmo)','PosEmo x Valence','NegEmo x Valence','pID Intercept','sID Intercept','Study intercept','Residual')
+emo_table_full$term=c('Intercept','Positive emotions (PosEmo)','Valence: pro-alcohol','Negative emotions (NegEmo)','PosEmo x Valence','NegEmo x Valence','pID Intercept','sID Intercept','Study intercept','Residual')
 
-emo_table=emo_table %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
+emo_table_full=emo_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
                                                  p.value<0.001~paste0('p < .001'),
                                                  TRUE~NA_character_),
                                Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
-                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))
+                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))%>%
+  dplyr::select(effect,term,Estimate) 
 
-emo_table$Estimate[!grepl(',',emo_table$Estimate)]<-as.character(round(as.numeric(emo_table$Estimate[!grepl(',',emo_table$Estimate)]),2))
 
-emo_table %>% dplyr::select(effect,term,Estimate) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
+emo_table_full$Estimate[!grepl(',',emo_table_full$Estimate)]<-as.character(round(as.numeric(emo_table_full$Estimate[!grepl(',',emo_table_full$Estimate)]),2))
+
+
+emo_table_main=emo_1ab %>% left_join(drink_1ab) %>%
+  lmer(drink_rating~positive+negative+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  broom.mixed::tidy(.,conf.int=TRUE) %>% 
+  #add_row(.,effect='STUDY 1',.before=1)
+  mutate(group=ifelse(group=='pIDs','pID',
+                      ifelse(group=='filename','sID',group))) 
+
+
+emo_table_main$term=c('Intercept','Positive emotions (PosEmo)','Negative emotions (NegEmo)','Valence: pro-alcohol','pID Intercept','sID Intercept','Study intercept','Residual')
+
+emo_table_main=emo_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
+                                                           p.value>=0.001~paste0('p = ',round(p.value,3)),
+                                                           p.value<0.001~paste0('p < .001'),
+                                                           TRUE~NA_character_),
+                                         Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
+                                         Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate)) %>%
+                dplyr::select(effect,term,Estimate) 
+
+emo_table_main$Estimate[!grepl(',',emo_table_main$Estimate)]<-as.character(round(as.numeric(emo_table_main$Estimate[!grepl(',',emo_table_main$Estimate)]),2))
+
+
+
+names(emo_table_full)[3]<-'Full Model'
+names(emo_table_main)[3]<-'Main Effects Model'
+
+emo_table_main %>% full_join(emo_table_full) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
+  arrange(effect) %>%
   write_csv(.,'Tables/emoTable.csv')
 
