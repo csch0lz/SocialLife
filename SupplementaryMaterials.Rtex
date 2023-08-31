@@ -150,13 +150,13 @@ kable(craving_table_inter,caption='Condition effects on standardized alcohol cra
 
 \subsection{Emotions}
 
-In the main manuscript, we report results directly testing H3 about the relationship between self-reported alcohol craving and positive and negative emotional responses to alcohol-related information of different types. Here, we report supplementary results regarding bivariate relationships between alcohol craving and a larger set of specific positive and negative emotions.
+In the main manuscript, we report results directly testing H4 about the relationship between self-reported alcohol craving and positive and negative emotional responses to alcohol-related information of different types. Here, we report supplementary results regarding bivariate relationships between alcohol craving and a larger set of discrete positive and negative emotions.
 
-Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and ratings of alcohol-craving (significance indicators corrected for family-wise error rate at p<.05 FWER). For both pro- and anti-alcohol information, nine out of 10 emotions show significant bivariate relationships with alcohol craving, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
+Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and ratings of alcohol-craving (significance indicators corrected for family-wise error rate at p<.05 FWER). For both pro- and anti-alcohol information, eight to nine out of 10 emotions show significant bivariate relationships with alcohol craving in each message condition, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
 
 \begin{figure}
     \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
-    \includegraphics[height=5in, width=6in]{Figures/EmoCorMat_Figure.png}
+    \includegraphics[height=6in, width=6.5in]{Figures/EmoCorMat_Figure.png}
     \label{fig:corMatsEmo}
 \end{figure}
 
@@ -169,8 +169,6 @@ fam_table[is.na(fam_table)]<-''
 
 fam_table %>% kable(caption='Relationship between perceived message familiarity and alcohol craving by source condition for pro- (left) and anti-alcohol messages (right), pID = participant ID; sID = stimulus ID)',booktabs=T) 
 @
-
-
 
 \end{document}
 
