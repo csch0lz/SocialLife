@@ -77,7 +77,7 @@ Based on the existing knowledge, we expect the following:
 
 H3: The extent to which message receivers experience H3a: positive [H3b: negative] emotions in response to alcohol-related information will be H3a: positively [H3b: negatively] related to alcohol craving.
 
-H4: The effect of H4a: positive [H4b: negative] emotions on alcohol craving will be moderated by valence so that there is a stronger H4a: positive [H4b: negative] relationship for professionally-produced and peer-produced pro-alcohol compared to professional anti-alcohol information. 
+H4: The effect hypothesized in H3a [H3b] will be stronger (H4a; i.e. more positive) [H4b: /weaker; i.e. less negative] for professional and peer-produced pro-alcohol compared to professional anti-alcohol information. 
 
 Next to the potentially special role of anti-alcohol peer-produced content, the existing literature does not support clear hypotheses about potential source effects. It is possible, for instance, that peer- and professionally produced messages differ quantitatively in the extent to which they elicit the same emotions or systematically target different types of emotions. It is also possible that the relationship between alcohol craving and emotional responses differs between source types. For instance, social content in peer-produced messages may lead to a higher relevance of authentically induced emotions for craving. We will explore these relationships here. 
 
@@ -87,6 +87,7 @@ Familiarity is defined here as an index of perceptions that the characters displ
 On average, content analyses of alcohol-related posts on social media, the most accessible way of quantifying the information environment, confirm the idea that pro-alcohol content is much more prevalent than anti-alcohol. Moreover, general self-serving biases (\cite{mezulis_is_2004}) and third-person effects [CITE] likely bias recipients of anti-alcohol information to underestimate their own similarities and familiarity with characters who are experiencing negative outcomes from drinking alcohol. Based on the existing literature, we expect the following:
 
 H5: Pro-alcohol information will be perceived as more familiar than anti-alcohol information. 
+
 H6: Perceived familiarity will be significantly associated with message effectiveness. In other words, the relationship between familiarity and alcohol craving will be moderated by valence so that the slope will be positive (leading to more craving) for pro-alcohol messages and negative (leading to less craving) for anti-alcohol messages. 
 
 Exemplifying the siloed nature of the literature on different types of alcohol-messaging, the concepts of familiarity and self-relevance are not as well defined in work on peer-produced messaging. Social influence research does suggest that peers who are like us have a stronger impact on our behavior [cite], also in the specific context of alcohol consumption [cite]. Suggesting that, especially pro-alcohol peer-produced information may be among the most familiar content types studied here whereas anti-alcohol peer-produced information is likely to be the least familiar. We will further explore these relationships.
@@ -395,11 +396,11 @@ sd_df=emo_df_1ab %>% filter(condition!='anti_social',(specific_emotion =='positi
 
 This intuition is partially supported by the data. The standard deviation of the strength of positive emotional responses to professional anti-alcohol stimuli (SD = $\Sexpr{sd_df %>% filter(val_cond=='anti',specific_emotion=='positive') %>% .[1,3] %>% round(.,2)}$) is indeed somewhat smaller than that in response to pro-alcohol stimuli (SD = $\Sexpr{sd_df %>% filter(val_cond=='pro',specific_emotion=='positive') %>% .[1,3] %>% round(.,2)}$). In contrast, the standard deviation of the strength of negative emotional responses to professional anti-alcohol stimuli (SD = $\Sexpr{sd_df %>% filter(val_cond=='anti',specific_emotion=='negative') %>% .[1,3] %>% round(.,2)}$) is larger than that in response to pro-alcohol stimuli (SD = $\Sexpr{sd_df %>% filter(val_cond=='pro',specific_emotion=='negative') %>% .[1,3] %>% round(.,2)}$). However, these data are not in line with the idea that there is no variance in the experience of positive or negative emotions in response to some message types.
 
-Figure ~\ref{fig:RegEmo} and Table ~\ref{tab:emoTable} show linear relationships between positive and negative emotional responses to the four types of messages and alcohol craving. In line with H3, positive emotional responses to alcohol information are generally positively associated with alcohol craving and vice versa for negative emotional responses (ADD TO TABLE 4). positive emotions indeed seem to show stronger positive relationships with alcohol in pro-alcohol compared to anti-alcohol stimuli, but these differences are not as pronounced as may be expected. That is, even for professional anti-alcohol information, positive emotions significantly impact craving responses in message-inconsistent ways. We did also observe a moderation of the effect of negative emotional experience on craving by message valence, but the direction of this effect is opposite to what was hypothesized in H3. The effect of negative emotions on craving was more strongly negative in resposne to pro- compared to anti-alcohol information, suggesting that, overall, emotional responses are more potentent in response to pro-alcohol stimuli.  
+Figure ~\ref{fig:RegEmo} and Table ~\ref{tab:emoTable} show linear relationships between positive and negative emotional responses to the four types of messages and alcohol craving. In line with H3, positive emotional responses to alcohol information are generally positively associated with alcohol craving and vice versa for negative emotional responses (see main effects model in \ref{tab:emoTable}). Further, in accordance with H4, we did find that valence condition significantly moderated the effect of emotional responses to alcohol information on craving, but not always in the expected direction (see full model in Table \ref{tab:emoTable} and Figure \ref{fig:FigureEmo}). Confirming H4a, positive emotions showed stronger positive relationships with alcohol in pro-alcohol compared to anti-alcohol stimuli. However, in contrast to H4b, negative emotional responses were also more strongly (negatively) coupled with craving for pro- compared to anti-alcohol information.  and negative emotions showed a stronger negative relationship with alcohol craving in response to anti, but these differences are not as pronounced as may be expected. That is, even for professional anti-alcohol information, positive emotions significantly impact craving responses in message-inconsistent ways. In other words, emotional responses were generally more impactful in response to pro-alcohol compared to anti-alcohol stimuli.  
 
 Note that despite the differences in average emotional responses to professional and peer-produced anti-alcohol information (Figure ~\ref{fig:FigureEmo}), we do not observe pronounced differences in the ways in which these emotional responses are linked to alcohol craving.
 
-The Supplementary Materials further present results for a number of specific positive and negative emotions. 
+The Supplementary Materials provide further details about the relationship between several discrete emotions and alcohol craving by condition. 
 
 <<RegEmo,results='as.is',echo=FALSE,warning=FALSE,message=FALSE,fig.cap='Relationship between the strength of experienced emotions in response to message exposure and alcohol craving by message type (Study 1a/b)'>>=
 emo_df_1ab = study1a_emo_df %>% bind_rows(study1b_emo_df)
@@ -427,9 +428,7 @@ emo_table %>% kable(caption='Relationship between positive and negative emotions
 
 \subsection{Familiarity} 
 
-Finally, we examined whether and how familiarity impacted alcohol craving across pro- and anti-alcohol messages in Study 1a and 1b. For each message, participants rated the extent to which it showed people like them ("like me") or showed a familiar situation ("familiar"). We created a familiarity index by averaging these two items. Figure ~\ref{fig:FigureFamiliarity} displays means and 95\% confidence intervals across conditions. 
-
-Unsurprisingly, pro-alcohol stimuli were perceived as more familiar than anti-alcohol stimuli, likely due to a lower occurrence of anti-alcohol information in natural social media environments (\cite{alhabash_social_2022}) and elsewhere. Peer-produced pro-alcohol information even felt similar in terms of familiarity to non-alcoholic information.
+Finally, we examined whether and how familiarity impacted alcohol craving across pro- and anti-alcohol messages in Study 1a and 1b. Figure ~\ref{fig:FigureFamiliarity} displays means and 95\% confidence intervals across conditions. 
 
 <<echo=FALSE, message=FALSE>>=
 familiarity_study1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df) %>% 
@@ -457,7 +456,17 @@ familiarity_study1ab=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df
 familiarity_study1ab = familiarity_study1ab %>% 
   pivot_wider(values_from=fam_rating,names_from=var) %>% 
   mutate(fam_index=(`like me` + `familiar situation`)/2)
+
+fam_agg=familiarity_study1ab %>% group_by(filename,valence) %>%
+summarize(fam_index=mean(fam_index,na.rm=T))  %>%
+filter(valence %in% c('pro-alcohol','anti-alcohol'))
+
+varEQL=fam_agg %>% var.test(fam_index~valence,data=.) %>% .$p.value > 0.05
+
+t=fam_agg %>% t.test(fam_index~valence,data=.,var.equal=varEQL)
 @
+
+Supporting H5, pro-alcohol stimuli were perceived as substantially more familiar than anti-alcohol stimuli (Mean difference on the 7-point scale=$\Sexpr{round(mean(fam_agg$fam_index[fam_agg$valence=='pro-alcohol'],na.rm=T)-mean(fam_agg$fam_index[fam_agg$valence=='anti-alcohol'],na.rm=T),3)}$, T($\Sexpr{round(t$parameter,2)}$)=$\Sexpr{round(t$statistic,3)}$, p $\Sexpr{ifelse(t$p.value<0.001,'< .001',paste0('= ',format(round(t$p.value,3),digits=3)))}$), likely due to a lower occurrence of anti-alcohol information in natural social media environments (\cite{alhabash_social_2022}) and elsewhere. Participants even reported similar levels of familiarity with peer-produced pro-alcohol information as with non-alcoholic information (Figure \ref{fig:FigureFamiliarity}.
 
 <<FigureFamiliarity, fig.cap="Familiarity Ratings by Condition (Study 1a/b)",echo=FALSE,message=FALSE>>=
   familiarity_study1ab%>%
@@ -470,7 +479,7 @@ familiarity_study1ab = familiarity_study1ab %>%
   scale_fill_grey() + theme_bw()
 @
 
-Does familiarity play a role in alcohol craving? As shown in Table ~\ref{tab:famTable} and Figure ~\ref{fig:famFigure}, when participants perceived messages to be more familiar, they also experienced higher alcohol craving, confirming H4. This effect was moderated by valence condition so that familiarity was more strongly positively associated with alcohol craving in pro- compared to anti-alcohol messages. However, in contrast to H5, the coefficient remained positive for anti-alcohol messages and, in fact, was significantly larger for anti- compared to non-alcoholic messages. In other words, familiarity did not contribute to message effectiveness in anti-alcohol messaging. We did not find significant differences in the effects of familiarity on craving between professional and peer-produced sources for either pro- or anti-alcohol messages (see Supplementary Materials).
+What role does familiarity play in message effects on alcohol craving? As shown in Table ~\ref{tab:famTable} and Figure ~\ref{fig:famFigure}, when participants perceived messages to be more familiar, they also experienced higher alcohol craving, confirming H4. This effect was moderated by valence condition so that familiarity was more strongly positively associated with alcohol craving in pro- compared to anti-alcohol messages. However, in contrast to H5, the coefficient remained positive for anti-alcohol messages and, in fact, was significantly larger for anti- compared to non-alcoholic messages. In other words, familiarity did not contribute to message effectiveness in anti-alcohol messaging. We did not find significant differences in the effects of familiarity on craving between professional and peer-produced sources for either pro- or anti-alcohol messages (see Supplementary Materials).
 
 <<famTable, echo=FALSE,message=FALSE,results='asis'>>=
 fam_table=read_csv('Tables/familiarityTable.csv',col_types=cols()) 
