@@ -25,13 +25,15 @@ familiarity_1ab_wide = familiarity_1ab %>%
   mutate(fam_index=(`shows people that are like me`+`shows a situation I'm familiar with`)/2)
 
 fam_table_full=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
-  lmer(drink_rating~fam_index*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
+  filter(!grepl('non',val_cond)) %>%
+  mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
+  lmer(drink_rating~fam_index*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence (1): pro-alcohol','Valence (2): non-alcoholic','FI x Valence (1)','FI x Valence (2)','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','FI x Valence','pID Intercept','sID Intercept','study Intercept','Residual')
 
 fam_table_full=fam_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
@@ -44,13 +46,15 @@ fam_table_full=fam_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_cha
 fam_table_full$Estimate[!grepl(',',fam_table_full$Estimate)]<-as.character(round(as.numeric(fam_table_full$Estimate[!grepl(',',fam_table_full$Estimate)]),2))
 
 fam_table_main=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
-  lmer(drink_rating~fam_index+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
+  mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
+  filter(!grepl('non',val_cond)) %>%
+  lmer(drink_rating~fam_index+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table_main$term=c('Intercept','Familiarity Index (FI)','Valence (1): pro-alcohol','Valence (2): non-alcoholic','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_main$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','pID Intercept','sID Intercept','study Intercept','Residual')
 
 fam_table_main=fam_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
@@ -71,6 +75,7 @@ write_csv(.,'Tables/familiarityTable.csv')
 # supplementary table source effects
 pro_source=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   filter(grepl('pro_',condition),!grepl('non',condition)) %>%
+  mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
   lmer(drink_rating~fam_index*condition+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
@@ -79,6 +84,7 @@ pro_source=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
 
 anti_source=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   filter(grepl('anti_',condition),!grepl('non',condition)) %>%
+  mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
   lmer(drink_rating~fam_index*condition+(1|pIDs)+(1|filename)+(1|Study),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',

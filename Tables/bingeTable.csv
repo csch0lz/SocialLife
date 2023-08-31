@@ -1,8 +1,8 @@
 effect,term,estimate,95% CI,p.value
-fixed,Intercept, 1.14,[ 0.71;1.57],p = <.001
+fixed,Intercept, 1.59,[ 1.36;1.81],p = <.001
 fixed,Binge Drinking Frequency (BD), 0.09,[ 0.02;0.16],p = 0.017
-fixed,Valence 1: Anti- vs. Non-Alcoholic,-0.10,[-0.67;0.46],p = 0.722
-fixed,Valence 2: Pro- vs. Non-Alcoholic, 1.40,[ 0.85;1.96],p = <.001
+fixed,Valence 1: Anti- vs. Non-Alcoholic,-0.10,[-0.40;0.20],p = 0.524
+fixed,Valence 2: Pro- vs. Non-Alcoholic, 2.36,[ 2.06;2.66],p = <.001
 fixed,BD x Valence 1, 0.00,[-0.09;0.09],p = 0.982
 fixed,BD x Valence 2, 0.18,[ 0.09;0.27],p = <.001
 random,sID, 0.47,,

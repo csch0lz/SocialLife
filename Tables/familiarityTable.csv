@@ -1,11 +1,9 @@
 effect,term,Main Effects Model,Full Model
-fixed,Intercept,"0.84 [0.71, 0.97], p < .001","1.1 [0.95, 1.24], p < .001"
-fixed,Familiarity Index (FI),"0.34 [0.32, 0.37], p < .001","0.24 [0.2, 0.27], p < .001"
-fixed,Valence (1): pro-alcohol,"1.49 [1.36, 1.62], p < .001","0.57 [0.38, 0.75], p < .001"
-fixed,Valence (2): non-alcoholic,"-0.8 [-1, -0.59], p < .001","0.07 [-0.25, 0.4], p = 0.66"
-fixed,FI x Valence (1),NA,"0.27 [0.23, 0.32], p < .001"
-fixed,FI x Valence (2),NA,"-0.14 [-0.2, -0.08], p < .001"
-random,pID Intercept,0.79,0.76
-random,sID Intercept,0.35,0.35
+fixed,Intercept,"2.06 [1.94, 2.18], p < .001","1.86 [1.74, 1.98], p < .001"
+fixed,Familiarity Index (FI),"0.39 [0.37, 0.42], p < .001","0.23 [0.2, 0.27], p < .001"
+fixed,Valence: pro-alcohol,"1.41 [1.28, 1.54], p < .001","1.45 [1.32, 1.58], p < .001"
+fixed,FI x Valence,NA,"0.27 [0.23, 0.32], p < .001"
+random,pID Intercept,0.81,0.79
+random,sID Intercept,0.33,0.33
 random,study Intercept,0,0
 random,Residual,1.08,1.06

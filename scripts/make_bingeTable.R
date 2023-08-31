@@ -29,6 +29,7 @@ binge_table=study1b_drink_df %>%
                                       binge_drinking==1~10,
                                       TRUE~binge_drinking),
          val_cond=factor(val_cond,levels=c('non-alcoholic','anti-alcohol','pro-alcohol'))) %>% 
+  mutate(binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE)) %>%
   lmer(drink_rating~binge_drinking_rev*val_cond + (1|pIDs) + (1|filename),data=.)  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(group=ifelse(group=='pIDs','pID',
