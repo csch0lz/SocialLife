@@ -65,7 +65,7 @@ fam_table_main$Estimate[!grepl(',',fam_table_main$Estimate)]<-as.character(round
 names(fam_table_full)[3]<-'Full Model'
 names(fam_table_main)[3]<-'Main Effects Model'
 
-fam_table_main %>% left_join(fam_table_full) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
+fam_table_main %>% full_join(fam_table_full) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>% arrange(effect) %>%
 write_csv(.,'Tables/familiarityTable.csv')
 
 # supplementary table source effects
