@@ -201,6 +201,8 @@ source_df <- source_df %>% mutate(val_cond=case_when(grepl('pro_',condition)~'pr
                                                         TRUE~NA_character_),
                                   source_cond=factor(source_cond))
 
+# For the two people (50,28) that filled out the survey twice, offering two good responses, I"m only keeping demographics once (they provided identical information on demographics in both responses)
+ppt_df = ppt_df %>% filter(!(ResponseId %in% c('R_30wS269Sjkugzmq','R_2zwqhkldJCeZnjf')))
 
 # Save out datastructures
 saveRDS(drink_df,'data/study1a/cleaned/drink_df.RDS')

@@ -61,7 +61,8 @@ craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: profession
 craving_table_main=craving_table_main %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
                                  p.value_2=ifelse(p.value_2!='',paste0('p = ',p.value_2),p.value_2),
                                  `Study 1a`=ifelse(p.value_1!='',paste0(estimate_1,' ',`95% CI_1`,', ',p.value_1),estimate_1),
-                                 `Study 2`=ifelse(p.value_2!='',paste0(estimate_2,' ',`95% CI_2`,', ',p.value_2),estimate_2)) %>%
+                                 `Study 2`=ifelse(p.value_2!='',paste0(estimate_2,' ',`95% CI_2`,', ',p.value_2),estimate_2),
+                                 effect=ifelse(effect=='ran_pars','random',effect)) %>%
           select(effect,term,`Study 1a`, `Study 2`) 
 
 write_csv(craving_table_main,'Tables/cravingTableMain.csv')
@@ -113,7 +114,8 @@ craving_table_inter$term=c('Intercept','Valence: pro-alcohol','Source: professio
 craving_table_inter=craving_table_inter %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
                                                  p.value_2=ifelse(p.value_2!='',paste0('p = ',p.value_2),p.value_2),
                                                  `Study 1a`=ifelse(p.value_1!='',paste0(estimate_1,' ',`95% CI_1`,', ',p.value_1),estimate_1),
-                                                 `Study 2`=ifelse(p.value_2!='',paste0(estimate_2,' ',`95% CI_2`,', ',p.value_2),estimate_2)) %>%
-  select(effect,term,`Study 1a`, `Study 2`) 
+                                                 `Study 2`=ifelse(p.value_2!='',paste0(estimate_2,' ',`95% CI_2`,', ',p.value_2),estimate_2),
+                                                 effect=ifelse(effect=='ran_pars','random',effect)) %>%
+  select(effect,term,`Study 1a`, `Study 2`)
 
 write_csv(craving_table_inter,'Tables/cravingTableInter.csv')
