@@ -52,6 +52,10 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 @
 
 \section{Supplementary Methods}
+\subsection{Visual Stimulus Design}
+
+The main manuscript details the sampling procedure for still images and hashtags which are used to create stimuli for all three studies. To present these stimuli to participants, we placed them into visual templates. Specifically, in Studies 1a/b, and half of Study 2 trials for each participant, the template mimicked an Instagram post. For the second half of Study 2 trials, we placed images and hashtags in a template mimicking a Google search result. The purpose of this manipulation was to test the specificity of any results to the context of social media as opposed to general online environments. Note that, because we did not find any significant effects of this exploratory online platform factor, we are reporting results collapsing across media conditions.
+
 \subsection{Manipulation Checks (Study 1a/1b)}
 Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
 
@@ -147,18 +151,6 @@ craving_table_inter[is.na(craving_table_inter)]<-''
 
 kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence * source + control variables +(1|participant ID) + (1|stimulus ID)')
 @
-
-\subsection{Emotions}
-
-In the main manuscript, we report results directly testing H4 about the relationship between self-reported alcohol craving and positive and negative emotional responses to alcohol-related information of different types. Here, we report supplementary results regarding bivariate relationships between alcohol craving and a larger set of discrete positive and negative emotions.
-
-Figure ~\ref{fig:corMatsEmo} shows correlations between each perceived emotion and ratings of alcohol-craving (significance indicators corrected for family-wise error rate at p<.05 FWER). For both pro- and anti-alcohol information, eight to nine out of 10 emotions show significant bivariate relationships with alcohol craving in each message condition, even after stringent correction for multiple comparisons. Emotional responses, thus, are key to understanding the effects of diverse types of alcohol information on alcohol craving. 
-
-\begin{figure}
-    \caption{Correlations between drinking urges and emotional responses to pro- and anti-alcohol information in Studies 1a and 1b. Significance tests are corrected for family wise error rate using Bonferroni correction.}
-    \includegraphics[height=6in, width=6.5in]{Figures/EmoCorMat_Figure.png}
-    \label{fig:corMatsEmo}
-\end{figure}
 
 \subsection{Familiarity}
 
