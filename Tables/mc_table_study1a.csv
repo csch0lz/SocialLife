@@ -1,11 +1,11 @@
 rating,effect,term,estimate,95% CI,p
-negative,fixed,Intercept,5.8819530799310416,[ 5.71; 6.05],<.001
-negative,fixed,Valence: pro-alcohol,-3.964908901342704,[-4.20;-3.73],<.001
-negative,random,pID Intercept,0.4110481686760751,,
-negative,random,sID Intercept,0.6991803934130651,,
-negative,random,Residual,1.2264782984857365,,
-positive,fixed,Intercept,1.5331907714883708,[ 1.37; 1.70],<.001
-positive,fixed,Valence: pro-alcohol,3.227300172234002,[ 3.02; 3.43],<.001
-positive,random,pID Intercept,0.7570310749594159,,
-positive,random,sID Intercept,0.6079783664174958,,
-positive,random,Residual,1.2188378639893154,,
+negative,fixed,Intercept,5.881953079933587,[ 5.71; 6.05],<.001
+negative,fixed,Valence: pro-alcohol,-3.964908901347861,[-4.20;-3.73],<.001
+negative,random,pID Intercept,0.41104816877748807,,
+negative,random,sID Intercept,0.699180393458819,,
+negative,random,Residual,1.22647829846712,,
+positive,fixed,Intercept,1.5331907714869153,[ 1.37; 1.70],<.001
+positive,fixed,Valence: pro-alcohol,3.2273001722366836,[ 3.02; 3.43],<.001
+positive,random,pID Intercept,0.7570310750479132,,
+positive,random,sID Intercept,0.6079783663758278,,
+positive,random,Residual,1.218837863981723,,
