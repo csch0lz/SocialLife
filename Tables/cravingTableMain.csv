@@ -8,6 +8,6 @@ fixed,Gender: Non-Binary,"-0.13 [-0.75; 0.49], p = 0.680",
 fixed,Binge Drinking Freq.," 0.09 [ 0.05; 0.13], p = <.001",    
 fixed,Drinking Freq.," 0.03 [-0.02; 0.08], p = 0.175",    
 fixed,AUDIT,    ," 0.02 [-0.01; 0.04], p = 0.228"
-ran_pars,pID Intercept, 0.50, 0.43
-ran_pars,sID Intercept, 0.22, 0.15
-ran_pars,Residual, 0.62, 0.76
+random,pID Intercept, 0.50, 0.43
+random,sID Intercept, 0.22, 0.15
+random,Residual, 0.62, 0.76

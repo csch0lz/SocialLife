@@ -1,0 +1,6 @@
+load("/Users/cscholz/Library/CloudStorage/OneDrive-UvA/Research/Projects/TalkingDrinks_fMRI(2019-PC-11278)/writing/PilotPaperTalkingDrinks/data/study1a/cleaned/ppt_df.RDS")
+ppt_df
+t=readRDS('~/OneDrive - UvA/Research/Projects/TalkingDrinks_fMRI(2019-PC-11278)/writing/PilotPaperTalkingDrinks/data/study1a/cleaned/ppt_df.RDS')
+t
+t[grepl('50_',t$pIDs),]
+t[grepl('28_',t$pIDs),]
