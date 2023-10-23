@@ -221,7 +221,7 @@ craving_table_main=read_csv('Tables/cravingTableMain.csv',col_types=cols())
 
 craving_table_main[is.na(craving_table_main)]<-''
 
-kable(craving_table_main,caption='Condition effects on standardized alcohol craving (Freq. = Frequency, pID = participant ID; sID = stimulus ID)',booktabs=T,digit=2, format='latex') %>%
+kable(craving_table_main,caption='Condition effects on standardized alcohol craving (B [95 percent CI], p-value)',booktabs=T,digit=2, format='latex') %>%
  kable_styling(latex_options = "scale_down") %>% add_footnote("Note. The study 2 model only includes trials in which standardized alcohol cues were shown. Continuous predictors were grand mean-centered., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence + source + control variables +(1|participant ID) + (1|stimulus ID)")
 @
 
