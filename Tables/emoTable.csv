@@ -8,11 +8,7 @@ fixed,PosEmo x Valence,NA,"0.22 [0.18, 0.27], p < .001"
 fixed,NegEmo x Valence,NA,"-0.09 [-0.14, -0.04], p < .001"
 fixed,PosEmo x Source,NA,"0.01 [-0.03, 0.05], p = 0.508"
 fixed,NegEmo x Source,NA,"-0.02 [-0.05, 0.02], p = 0.429"
-random,pID Intercept,0.76,NA
-random,sID Intercept,0.24,NA
-random,Study intercept,0,NA
-random,Residual,1,NA
-random,pID Intercept,NA,0.76
-random,sID Intercept,NA,0.22
-random,Study intercept,NA,0
-random,Residual,NA,0.98
+random,pID Intercept,0.76,0.76
+random,sID Intercept,0.24,0.22
+random,Study intercept,0,0
+random,Residual,1,0.98

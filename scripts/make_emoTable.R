@@ -32,8 +32,7 @@ emo_table_full=emo_1ab %>% left_join(drink_1ab) %>%
 
 emo_table_full = emo_table_full %>%
   mutate(term=c('Intercept','Positive emotions (PosEmo)','Valence: pro-alcohol','Negative emotions (NegEmo)','Source: professional', 'PosEmo x Valence','NegEmo x Valence','PosEmo x Source','NegEmo x Source','pID Intercept','sID Intercept','Study intercept','Residual'),
-         order=c(1,2,4,3,5,6,7,8,9,10,11,12,13),
-         effect=ifelse(effect=='ran_pars','random',effect)) %>% arrange(order) %>% select(-order)
+         order=c(1,2,4,3,5,6,7,8,9,10,11,12,13)) %>% arrange(order) %>% select(-order)
 
 emo_table_full=emo_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
