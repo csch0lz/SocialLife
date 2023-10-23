@@ -213,18 +213,6 @@ Given the differences in the rating scales (see Table \ref{tab:measures}), bever
 
 \subsection{Information valence (H1), but not source, influences alcohol craving}
 
-First, we examined within-person effects of message valence and source on (standardized) alcohol craving in Studies 1a and 2, controlling for age, gender, binge-drinking and drinking frequency (Study 1a), AUDIT scores (Study 2), and accounting for random intercepts across participants and messages.  
-Table \ref{tab:cravingTableMain} shows strong valence effects so that pro-alcohol messages lead to stronger alcohol craving than anti-alcohol messages. This valence effect is larger in Study 1a, in which craving was measured directly following stimulus exposure, whereas Study 2 measured craving in response to alcohol cues shown after each stimulus exposure (see Figure \ref{fig:FigureAlcValTask}). There was no main effect of source. We further did find strong evidence of interactions between valence and source (see Supplementary Materials for details).  
-
-<<cravingTableMain, echo=FALSE,results='asis'>>=
-craving_table_main=read_csv('Tables/cravingTableMain.csv',col_types=cols()) 
-
-craving_table_main[is.na(craving_table_main)]<-''
-
-kable(craving_table_main,caption='Condition effects on standardized alcohol craving (B [95 percent CI], p-value)',booktabs=T,digit=2, format='latex') %>%
- kable_styling(latex_options = "scale_down") %>% add_footnote("Note. The study 2 model only includes trials in which standardized alcohol cues were shown. Continuous predictors were grand mean-centered., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence + source + control variables +(1|participant ID) + (1|stimulus ID)")
-@
-
 <<echo=FALSE,message=FALSE>>=
 all_ppts=ppts_study1a %>% bind_rows(ppts_study1b)
 all_drink_df=study1a_drink_df %>% bind_rows(study1b_drink_df)
@@ -253,7 +241,7 @@ varEQL2=test2_data %>% var.test(drink_rating~val_cond,data=.) %>% .$p.value > 0.
 t2=test2_data %>% t.test(drink_rating~val_cond,data=.,var.equal=varEQL2)
 @
 
-In partial support of H1, Figure \ref{fig:specificityPlot} (left panel) further shows that, relative to non-alcoholic messages, pro-alcohol messages significantly increased craving (Mean-difference = $\Sexpr{round(t1$estimate[1]-t1$estimate[2],2)}$, 95\%CI[$\Sexpr{round(t1$conf.int[1],2)}$;$\Sexpr{round(t1$conf.int[2],2)}$], T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$. The effect of anti-alcohol messages was significantly smaller. In fact, anti-alcohol messages did not lower craving significantly in comparison to non-alcoholic messages (Mean-difference = $\Sexpr{round(t2$estimate[1]-t2$estimate[2],2)}$, 95\%CI[$\Sexpr{round(t2$conf.int[1],2)}$;$\Sexpr{round(t2$conf.int[2],2)}$], T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$), which could indicate a floor effect. 
+In partial support of H1, independent samples t-tests on aggregated (message-level) Study 1a/b data show that, relative to non-alcoholic messages, pro-alcohol messages significantly increased craving (Mean-difference = $\Sexpr{round(t1$estimate[1]-t1$estimate[2],2)}$, 95\%CI[$\Sexpr{round(t1$conf.int[1],2)}$;$\Sexpr{round(t1$conf.int[2],2)}$], T($\Sexpr{t1$parameter}$)=$\Sexpr{round(t1$statistic,3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$. The effect of anti-alcohol messages was significantly smaller. In fact, anti-alcohol messages did not lower craving significantly in comparison to non-alcoholic messages (Mean-difference = $\Sexpr{round(t2$estimate[1]-t2$estimate[2],2)}$, 95\%CI[$\Sexpr{round(t2$conf.int[1],2)}$;$\Sexpr{round(t2$conf.int[2],2)}$], T($\Sexpr{t2$parameter}$)=$\Sexpr{round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$), which could indicate a floor effect (Figure \ref{fig:specificityPlot}, left panel). 
 
 <<specificityPlot,fig.cap="Stimulus-Level Relationship between Stimulus Valence (pro- vs. anti-alcohol) and Beverage Craving; Error bars represent 95\\% confidence intervals.",echo=FALSE,message=FALSE>>=
 
@@ -300,9 +288,23 @@ valPlot2=study2_logs %>% group_by(file,val_cond,type) %>%
 ggarrange(valPlot1,valPlot2, ncol=2)
 @
 
+Next, we further interrogated both valence and source effects using a mixed effects regression model predicting Study 1a and 2 (standardized) alcohol craving based on message valence and source, controlling for age, gender, binge-drinking and drinking frequency (Study 1a), AUDIT scores (Study 2), and accounting for random intercepts across participants and messages.  
+Table \ref{tab:cravingTableMain} confirms strong valence effects as already indicated by Figure \ref{fig:specificityPlot}. Pro-alcohol messages lead to stronger alcohol craving than anti-alcohol messages. This valence effect is larger in Study 1a, in which craving was measured directly following stimulus exposure, whereas Study 2 measured craving in response to alcohol cues shown after each stimulus exposure (see Figure \ref{fig:FigureAlcValTask}). There was no main effect of source. We further found no strong evidence of interactions between valence and source (see Supplementary Materials for details). 
+
+Confirming H2, Table \ref{tab:cravingTableMain} and Figure ~\ref{fig:specificityPlot} (right panel) further reveal a strong interaction effect between message valence and cue type in Study 2. Exposure to pro- vs. anti-alcohol information was specifically associated with an increase in alcohol craving rather than a general appetite for beverages. In fact, pro-alcohol messaging decreased craving for non-alcoholic drinks compared to anti-alcohol messages.
+
+<<cravingTableMain, echo=FALSE,results='asis'>>=
+craving_table_main=read_csv('Tables/cravingTableMain.csv',col_types=cols()) 
+
+craving_table_main[is.na(craving_table_main)]<-''
+
+kable(craving_table_main,caption='Condition effects on standardized alcohol craving (B [95 percent CI], p-value)',booktabs=T,digit=2, format='latex') %>%
+ kable_styling(latex_options = "scale_down") %>% add_footnote("Note. Study 2 effects are reported for the reference category of trials in which standardized alcohol (as opposed to non-alcoholic) cues were shown. Continuous predictors were grand mean-centered., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the Study 1a model was Standardized craving ~ valence + source + control variables +(1|participant ID) + (1|stimulus ID). The Study 2 model additionally includes the terms: cue type + valence x cue type")
+@
+
 \subsubsection{Drinking habits are associated with message receptivity}
 
-A possible explanation for the ineffectiveness of anti-alcohol messaging (compared to non-alcoholic content) is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and thus do not (and are not intended to) resonate with low risk drinkers. Yet, in an exploratory follow-up analysis of Study 1b, we found that those who reported higher binge drinking frequency, on average, reported higher alcohol craving and a higher sensitivity to pro-alcohol (compared to non-alcoholic) stimuli, but not to anti-alcohol stimuli (Table \ref{tab:bingeTable}; Figure \ref{fig:bingeFigure}).
+A possible explanation for the ineffectiveness of anti-alcohol messaging (compared to non-alcoholic content) is that anti-alcohol messages are generally targeted at high risk (binge) drinkers and are not necessarily intended to resonate with low risk drinkers. Yet, in an exploratory follow-up analysis of Study 1b, we found that those who reported higher binge drinking frequency, on average, reported higher alcohol craving and a higher sensitivity to pro-alcohol (compared to non-alcoholic) stimuli, but not to anti-alcohol stimuli (Table \ref{tab:bingeTable}; Figure \ref{fig:bingeFigure}).
 
 <<bingeTable,echo=FALSE,message=FALSE,results='asis'>>= 
 
@@ -339,17 +341,6 @@ study1b_drink_df %>%
   theme_bw() +
   labs(y='Alcohol Craving',x='Valence Condition',fill='Binge Drinking Habits')+
   scale_fill_grey() 
-@
-
-
-\subsection{Valence effects are specific to alcohol craving}
-
-Next, we tested whether exposure to pro- vs. anti-alcohol information was specifically associated with an increase in alcohol craving rather than a general appetite for beverages (H2). Study 2 results show that the main effect of valence is specific to trials in which participants rated their craving for alcoholic (rather than non-alcoholic) drinks, confirming H2 (see Figure ~\ref{fig:specificityPlot}). In fact, pro-alcohol messaging actually decreased craving for non-alcoholic drinks compared to anti-alcohol messages.
-
-<<echo=FALSE,message=FALSE>>=
-avgs_study1a=study1a_drink_df %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(drink_rating,na.rm=T), sd_drink_rating=sd(drink_rating,na.rm=T)) %>% ungroup()
-
-avgs_study2=study2_logs %>% group_by(val_cond) %>% summarize(avg_drink_rating=mean(rating.keys,na.rm=T),sd_drink_rating=sd(rating.keys,na.rm=T)) %>% ungroup() 
 @
 
 \subsection{Drivers of Alcohol Craving}
@@ -396,7 +387,7 @@ ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) +
   geom_errorbar(aes(ymin=`Average Emotion Rating (1-7)`-(1.96*se_emo),ymax=`Average Emotion Rating (1-7)`+(1.96*se_emo)),position=position_dodge(0.9),width=0.15) +
   facet_wrap(~specific_emotion) +
   scale_fill_grey() +
-  labs(x='Valence Condition',fill='Source')
+  labs(x='Valence Condition',fill='Source') + theme_bw()
 @
 
 How are these emotional responses linked to alcohol craving for pro- and anti-alcohol content? Prior literature supports the hypothesis that the effect of positive [/negative] emotions will be positively [/negatively] associated with alcohol craving (H3) and that these effects would be moderated by stimulus valence so that positive emotions are more tightly coupled with craving in response to pro-alcohol stimuli and negative emotions matter more in response to anti-alcohol information. A key underlying assumption here is that there should be little variance in positive (/negative) emotions in response to anti-alcohol (/pro-alcohol) stimuli and any positive (/negative) emotion that is evoked should serve the message intent (i.e. lower (/heighten) alcohol craving).
