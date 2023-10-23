@@ -23,14 +23,17 @@ emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=spec
 emo_table_full=emo_1ab %>% left_join(drink_1ab) %>%
   mutate(positive=scale(positive,scale=FALSE),
          negative=scale(negative,scale=FALSE)) %>%
-  lmer(drink_rating~positive*val_cond+negative*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(drink_rating~positive*val_cond+negative*val_cond+positive*source_cond+negative*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
                               ifelse(group=='filename','sID',group))) 
 
 
-emo_table_full$term=c('Intercept','Positive emotions (PosEmo)','Valence: pro-alcohol','Negative emotions (NegEmo)','PosEmo x Valence','NegEmo x Valence','pID Intercept','sID Intercept','Study intercept','Residual')
+emo_table_full = emo_table_full %>%
+  mutate(term=c('Intercept','Positive emotions (PosEmo)','Valence: pro-alcohol','Negative emotions (NegEmo)','Source: professional', 'PosEmo x Valence','NegEmo x Valence','PosEmo x Source','NegEmo x Source','pID Intercept','sID Intercept','Study intercept','Residual'),
+         order=c(1,2,4,3,5,6,7,8,9,10,11,12,13),
+         effect=ifelse(effect=='ran_pars','random',effect)) %>% arrange(order) %>% select(-order)
 
 emo_table_full=emo_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
@@ -47,14 +50,14 @@ emo_table_full$Estimate[!grepl(',',emo_table_full$Estimate)]<-as.character(round
 emo_table_main=emo_1ab %>% left_join(drink_1ab) %>%
   mutate(positive=scale(positive,scale=FALSE),
          negative=scale(negative,scale=FALSE)) %>%
-  lmer(drink_rating~positive+negative+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(drink_rating~positive+negative+val_cond+source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
                       ifelse(group=='filename','sID',group))) 
 
 
-emo_table_main$term=c('Intercept','Positive emotions (PosEmo)','Negative emotions (NegEmo)','Valence: pro-alcohol','pID Intercept','sID Intercept','Study intercept','Residual')
+emo_table_main$term=c('Intercept','Positive emotions (PosEmo)','Negative emotions (NegEmo)','Valence: pro-alcohol','Source: professional','pID Intercept','sID Intercept','Study intercept','Residual')
 
 emo_table_main=emo_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                            p.value>=0.001~paste0('p = ',round(p.value,3)),
