@@ -37,8 +37,7 @@ craving_table_main<-study2_logs %>%
   mutate(gender_char=fct_relevel(gender_char,'male',after=0),
          age=scale(age,scale=FALSE),
          AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
-  filter(type=='alcohol') %>% 
-  lmer(rating.keys_z~val_cond+source_cond + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
+  lmer(rating.keys_z~val_cond+source_cond + val_cond*type + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study=2, group=ifelse(group=='file','sID',group)) %>%
@@ -56,7 +55,8 @@ craving_table_main<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_main[is.na(craving_table_main)]<-''
-craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','AUDIT','pID Intercept','sID Intercept','Residual')
+craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: alcoholic', 'AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual')
+craving_table_main = craving_table_main %>% mutate(order=c(1,2,3,6,7,8,9,10,4,11,5,12,13,14)) %>% arrange(order) %>% select(-order)
 
 craving_table_main=craving_table_main %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
                                  p.value_2=ifelse(p.value_2!='',paste0('p = ',p.value_2),p.value_2),
@@ -90,8 +90,7 @@ craving_table_inter<-study2_logs %>%
   left_join(study2_ppts) %>% 
   mutate(gender_char=fct_relevel(gender_char,'male',after=0),
          AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
-  filter(type=='alcohol') %>% 
-  lmer(rating.keys_z~val_cond*source_cond + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
+  lmer(rating.keys_z~val_cond*source_cond + val_cond*type + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study=2, group=ifelse(group=='file','sID',group)) %>%
@@ -109,7 +108,9 @@ craving_table_inter<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_inter[is.na(craving_table_inter)]<-''
-craving_table_inter$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'ValencexSource','Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','AUDIT','pID Intercept','sID Intercept','Residual')
+craving_table_inter = craving_table_inter %>% mutate(term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Valence x Source','Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: alcoholic','AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual'),
+                                                     order=c(1,2,3,7,8,5,9,10,11,4,12,6,13,14,15)) %>%
+                      arrange(order) %>% select(-order)
 
 craving_table_inter=craving_table_inter %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
                                                  p.value_2=ifelse(p.value_2!='',paste0('p = ',p.value_2),p.value_2),
