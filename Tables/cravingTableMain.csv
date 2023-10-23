@@ -2,7 +2,7 @@ effect,term,Study 1a,Study 2
 fixed,Intercept,"-0.46 [-0.56;-0.36], p = <.001","-0.62 [-0.83;-0.42], p = <.001"
 fixed,Valence: pro-alcohol," 1.05 [ 0.97; 1.14], p = <.001"," 0.89 [ 0.82; 0.96], p = <.001"
 fixed,Source: professional,"-0.03 [-0.11; 0.06], p = 0.519"," 0.01 [-0.06; 0.08], p = 0.879"
-fixed,Cue Type: alcoholic,    ," 1.22 [ 1.12; 1.31], p = <.001"
+fixed,Cue Type: non-alcoholic,    ," 1.22 [ 1.12; 1.31], p = <.001"
 fixed,Valence x Cue Type,    ,"-1.54 [-1.68;-1.41], p = <.001"
 fixed,Age,"-0.02 [-0.03; 0.00], p = 0.030","-0.01 [-0.06; 0.04], p = 0.693"
 fixed,Gender: Male,"-0.17 [-0.31;-0.02], p = 0.022"," 0.14 [-0.09; 0.37], p = 0.227"

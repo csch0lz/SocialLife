@@ -55,7 +55,7 @@ craving_table_main<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_main[is.na(craving_table_main)]<-''
-craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: alcoholic', 'AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual')
+craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: non-alcoholic', 'AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual')
 craving_table_main = craving_table_main %>% mutate(order=c(1,2,3,6,7,8,9,10,4,11,5,12,13,14)) %>% arrange(order) %>% select(-order)
 
 craving_table_main=craving_table_main %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
@@ -108,7 +108,7 @@ craving_table_inter<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_inter[is.na(craving_table_inter)]<-''
-craving_table_inter = craving_table_inter %>% mutate(term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Valence x Source','Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: alcoholic','AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual'),
+craving_table_inter = craving_table_inter %>% mutate(term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Valence x Source','Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: non-alcoholic','AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual'),
                                                      order=c(1,2,3,7,8,5,9,10,11,4,12,6,13,14,15)) %>%
                       arrange(order) %>% select(-order)
 
