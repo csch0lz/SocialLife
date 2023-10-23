@@ -81,7 +81,8 @@ emo_df = df %>% pivot_longer(values_to='emo_rating',names_to = 'variable', cols=
   separate(QualtricsMsgID,into=c('QualtricsMsgID','specific_emotion'),sep=' - ') %>%
   mutate(emo_rating=as.numeric(emo_rating)) %>%
   select(ResponseId,pIDs,QualtricsMsgNr,QualtricsMsgID,specific_emotion,emo_rating) %>%
-  left_join(msg_ids,by=c('QualtricsMsgID'='Qualtrics_ID')) 
+  left_join(msg_ids,by=c('QualtricsMsgID'='Qualtrics_ID')) %>%
+  filter(specific_emotion %in% c('positive','negative'))
 
 
 # source data
