@@ -19,14 +19,13 @@ study2_ppts=read_csv('data/study2/cleaned/S1_cleaned.csv')
 
 s1_craving_model_main<-study1a_drink_df %>% 
   left_join(study1a_ppts) %>% 
-  mutate(gender_char=fct_relevel(gender_char,'male',after=0),
-         age=scale(age,scale=FALSE),
-         binge_drinking_rev=as.numeric(binge_drinking_rev),
-         drinking_freq_rev=as.numeric(drinking_freq_rev),
-         binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE),
-         drinking_freq_rev=scale(drinking_freq_rev,scale=FALSE))%>%
-  lmer(drink_rating_z~val_cond+source_cond + age + gender_char + as.numeric(binge_drinking_rev) + as.numeric(drinking_freq_rev)+
-         (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
+  #mutate(gender_char=fct_relevel(gender_char,'male',after=0),
+  #       age=scale(age,scale=FALSE),
+  #       binge_drinking_rev=as.numeric(binge_drinking_rev),
+  #       drinking_freq_rev=as.numeric(drinking_freq_rev),
+  #       binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE),
+  #       drinking_freq_rev=scale(drinking_freq_rev,scale=FALSE))%>%
+  lmer(drink_rating_z~val_cond+source_cond + (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(study=1,group=ifelse(group=='pIDs','pID',
@@ -34,10 +33,10 @@ s1_craving_model_main<-study1a_drink_df %>%
 
 craving_table_main<-study2_logs %>% 
   left_join(study2_ppts) %>% 
-  mutate(gender_char=fct_relevel(gender_char,'male',after=0),
-         age=scale(age,scale=FALSE),
-         AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
-  lmer(rating.keys_z~val_cond+source_cond + val_cond*type + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
+  #mutate(gender_char=fct_relevel(gender_char,'male',after=0),
+  #       age=scale(age,scale=FALSE),
+  #       AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
+  lmer(rating.keys_z~val_cond+source_cond + val_cond*type +(1|pID)+(1|file),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study=2, group=ifelse(group=='file','sID',group)) %>%
@@ -55,8 +54,7 @@ craving_table_main<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_main[is.na(craving_table_main)]<-''
-craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: non-alcoholic', 'AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual')
-craving_table_main = craving_table_main %>% mutate(order=c(1,2,3,6,7,8,9,10,4,11,5,12,13,14)) %>% arrange(order) %>% select(-order)
+craving_table_main$term=c('Intercept','Valence: pro-alcohol','Source: professional','Cue Type: non-alcoholic', 'Valence x Cue Type','pID Intercept','sID Intercept','Residual')
 
 craving_table_main=craving_table_main %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
                                  p.value_2=ifelse(p.value_2!='',paste0('p = ',p.value_2),p.value_2),
@@ -73,14 +71,13 @@ write_csv(craving_table_main,'Tables/cravingTableMain.csv')
 
 s1_craving_model_inter<-study1a_drink_df %>% 
   left_join(study1a_ppts) %>% 
-  mutate(gender_char=fct_relevel(gender_char,'male',after=0),
-         age=scale(age,scale=FALSE),
-         binge_drinking_rev=as.numeric(binge_drinking_rev),
-         drinking_freq_rev=as.numeric(drinking_freq_rev),
-         binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE),
-         drinking_freq_rev=scale(drinking_freq_rev,scale=FALSE))%>%
-  lmer(drink_rating_z~val_cond*source_cond + age + gender_char + as.numeric(binge_drinking_rev) + as.numeric(drinking_freq_rev)+
-         (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
+  #mutate(gender_char=fct_relevel(gender_char,'male',after=0),
+  #       age=scale(age,scale=FALSE),
+  #       binge_drinking_rev=as.numeric(binge_drinking_rev),
+  #       drinking_freq_rev=as.numeric(drinking_freq_rev),
+  #       binge_drinking_rev=scale(binge_drinking_rev,scale=FALSE),
+  #       drinking_freq_rev=scale(drinking_freq_rev,scale=FALSE))%>%
+  lmer(drink_rating_z~val_cond*source_cond + (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(study=1,group=ifelse(group=='pIDs','pID',
@@ -88,9 +85,9 @@ s1_craving_model_inter<-study1a_drink_df %>%
 
 craving_table_inter<-study2_logs %>% 
   left_join(study2_ppts) %>% 
-  mutate(gender_char=fct_relevel(gender_char,'male',after=0),
-         AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
-  lmer(rating.keys_z~val_cond*source_cond + val_cond*type + age + gender_char + AUDIT_score +(1|pID)+(1|file),data=.) %>% 
+  #mutate(gender_char=fct_relevel(gender_char,'male',after=0),
+  #       AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
+  lmer(rating.keys_z~val_cond*source_cond + val_cond*type + (1|pID)+(1|file),data=.) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study=2, group=ifelse(group=='file','sID',group)) %>%
@@ -108,8 +105,8 @@ craving_table_inter<-study2_logs %>%
   mutate_all(as.character)
 
 craving_table_inter[is.na(craving_table_inter)]<-''
-craving_table_inter = craving_table_inter %>% mutate(term=c('Intercept','Valence: pro-alcohol','Source: professional','Age','Gender: Male', 'Valence x Source','Gender: Non-Binary','Binge Drinking Freq.','Drinking Freq.','Cue Type: non-alcoholic','AUDIT','Valence x Cue Type','pID Intercept','sID Intercept','Residual'),
-                                                     order=c(1,2,3,7,8,5,9,10,11,4,12,6,13,14,15)) %>%
+craving_table_inter = craving_table_inter %>% mutate(term=c('Intercept','Valence: pro-alcohol','Source: professional','Valence x Source','Cue Type: non-alcoholic','Valence x Cue Type','pID Intercept','sID Intercept','Residual'),
+                                                     order=c(1,2,3,5,4,6,7,8,9)) %>%
                       arrange(order) %>% select(-order)
 
 craving_table_inter=craving_table_inter %>% mutate(p.value_1=ifelse(p.value_1!='',paste0('p = ',p.value_1),p.value_1),
