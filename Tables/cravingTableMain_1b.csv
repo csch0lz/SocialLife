@@ -1,0 +1,7 @@
+effect,term,Estimate
+fixed,Intercept,"-0.23 [-0.38;-0.08], p = 0.003"
+fixed,Valence: anti-alcohol,"-0.06 [-0.25; 0.13], p = 0.538"
+fixed,Valence: pro-alcohol," 1.45 [ 1.26; 1.65], p = <.001"
+random,sID Intercept, 0.31
+random,pID Intercept, 0.39
+random,Residual, 0.69

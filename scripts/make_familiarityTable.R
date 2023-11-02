@@ -27,13 +27,13 @@ familiarity_1ab_wide = familiarity_1ab %>%
 fam_table_full=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   filter(!grepl('non',val_cond)) %>%
   mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
-  lmer(drink_rating~fam_index*val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
+  lmer(drink_rating~fam_index*val_cond+fam_index*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','FI x Valence','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','Source: Professional', 'FI x Valence','FI x Source','pID Intercept','sID Intercept','study Intercept','Residual')
 
 fam_table_full=fam_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
@@ -48,13 +48,13 @@ fam_table_full$Estimate[!grepl(',',fam_table_full$Estimate)]<-as.character(round
 fam_table_main=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
   mutate(fam_index=scale(fam_index,scale=FALSE)) %>%
   filter(!grepl('non',val_cond)) %>%
-  lmer(drink_rating~fam_index+val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
+  lmer(drink_rating~fam_index+val_cond+source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control=lmerControl(optimizer='bobyqa'))  %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study=1,group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table_main$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_main$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','Source: professional','pID Intercept','sID Intercept','study Intercept','Residual')
 
 fam_table_main=fam_table_main %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),
