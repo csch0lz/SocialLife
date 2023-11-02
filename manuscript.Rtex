@@ -54,7 +54,7 @@ H1: Alcohol craving will be higher in response to pro- versus non-alcoholic mess
 
 Message effects as hypothesized in H1 are more consequential for public health interests to the extent that they specifically modulate craving for alcohol as opposed to general appetite for beverages. Prior work is uninformative regarding the specificity of alcohol message effects.
 
-H2: The effect specified in H1 is stronger when craving is assessed for alcoholic rather than non-alcoholic beverages. 
+H2: The effect pro- vs. anti-alcohol messaging on is stronger when craving is assessed for alcoholic rather than non-alcoholic beverages. 
 
 After establishing these basic relationships, we can examine novel, relative effects of different message types: To reduce (risky) alcohol consumption, is it more effective to produce more anti-alcohol messaging or further regulate pro-alcohol messaging? To our knowledge, only two existing studies addressed this question, with contradictory results and limited generalizability. Stautz and Marteau (CITE 2016) randomly assigned participants to view either ten anti-alcohol, pro-alcohol, or non-alcoholic video advertisements. Anti-alcohol (vs. non-alcoholic) messages significantly reduced drinking urges, while pro-alcohol stimuli did not have significant effects. Using the same design, Stautz and colleagues (CITE 2017) found consistently (but insignificantly) larger effects in the pro- vs. non-alcoholic compared to the anti- vs. non-alcoholic comparison. It remains unclear how these results translate to new stimulus types or to complex information environments which contain more than one message type per person. The present study compares relative effect sizes of a larger sample of static pro- and anti-alcohol messages (relative to non-alcoholic stimuli) in a within-subject design.
 
@@ -209,7 +209,7 @@ We then conducted two types of analyses. First, we estimated condition effects o
 
 \subsection{Information valence, but not source, influences alcohol craving}
 
-We fit a multi-level regression model to Study 1b data, the only study including non-alcoholic messages to test H1. In partial support of the hypothesis, Table shows that pro-alcohol messages significantly enhanced alcohol craving relative to non-alcoholic messages. The effect of anti- (vs. non-alcoholic) messages was significantly smaller and not significantly different from zero. 
+To test H1, we fit a multi-level regression model to Study 1b data, the only study including non-alcoholic messages. In partial support of the hypothesis, Table \ref{tab:H1Table} and Figure \ref{fig:specificityPlot} (left panel) show that pro-alcohol messages significantly enhanced alcohol craving relative to non-alcoholic messages. The effect of anti- (vs. non-alcoholic) messages was significantly smaller and not significantly different from zero. 
 
 <<H1Table, echo=FALSE,results='asis'>>=
 H1Table=read_csv('Tables/cravingTableMain_1b.csv',col_types=cols()) 
@@ -217,7 +217,7 @@ H1Table=read_csv('Tables/cravingTableMain_1b.csv',col_types=cols())
 H1Table[is.na(H1Table)]<-''
 
 kable(H1Table,caption='Valence effects on alcohol craving in Study 1b (B [95 percent CI], p-value)',booktabs=T,digit=2, format='latex') %>%
- kable_styling(latex_options = "scale_down") %>% add_footnote("Note. pID = participant ID; sID = stimulus ID, The equation used to fit the Study 1a model was Standardized craving ~ valence + source + control variables +(1|participant ID) + (1|stimulus ID). The Study 2 model additionally includes the terms: cue type + valence x cue type")
+ kable_styling(latex_options = "scale_down") %>% add_footnote("Note. pID = participant ID; sID = stimulus ID, The equation used to fit this model was craving ~ valence +(1|participant ID) + (1|stimulus ID).")
 @
 
 <<specificityPlot,fig.cap="Stimulus-Level Relationship between Stimulus Valence (pro- vs. anti-alcohol) and Beverage Craving; Error bars represent 95\\% confidence intervals.",echo=FALSE,message=FALSE>>=
@@ -265,8 +265,8 @@ valPlot2=study2_logs %>% group_by(file,val_cond,type) %>%
 ggarrange(valPlot1,valPlot2, ncol=2)
 @
 
-Next, we further interrogated both valence and source effects using a mixed effects regression model predicting Study 1a and 2 (standardized) alcohol craving based on message valence and source, controlling for age, gender, binge-drinking and drinking frequency (Study 1a), AUDIT scores (Study 2), and accounting for random intercepts across participants and messages.  
-Table \ref{tab:cravingTableMain} confirms strong valence effects as already indicated by Figure \ref{fig:specificityPlot}. Pro-alcohol messages lead to stronger alcohol craving than anti-alcohol messages. This valence effect is larger in Study 1a, in which craving was measured directly following stimulus exposure, whereas Study 2 measured craving in response to alcohol cues shown after each stimulus exposure (see Figure \ref{fig:FigureAlcValTask}). There was no main effect of source. We further found no strong evidence of interactions between valence and source (see Supplementary Materials for details). 
+Next, we examined H2 as well as potential source effects on craving using a mixed effects regression model predicting Study 1a and 2 (standardized) alcohol craving based on message valence and source, and accounting for random intercepts across participants and messages.  
+Table \ref{tab:cravingTableMain} confirms a strong valence effect (pro- > anti-alcohol) as already indicated by Figure \ref{fig:specificityPlot} (left panel) and Table \ref{tab:H1Table}. There was no main effect of source and no evidence of interactions between valence and source (see Supplementary Materials for details). 
 
 Confirming H2, Table \ref{tab:cravingTableMain} and Figure ~\ref{fig:specificityPlot} (right panel) further reveal a strong interaction effect between message valence and cue type in Study 2. Exposure to pro- vs. anti-alcohol information was specifically associated with an increase in alcohol craving rather than a general appetite for beverages. In fact, pro-alcohol messaging decreased craving for non-alcoholic drinks compared to anti-alcohol messages.
 
