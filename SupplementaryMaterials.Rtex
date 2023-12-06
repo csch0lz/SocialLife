@@ -51,16 +51,9 @@ study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS')
 study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 @
 
-\section{Supplementary Methods}
-
-\subsection{Manipulation Checks (Study 1a/1b)}
-Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
-
-In addition, Study 1a and 1b participants rated the perceived source of each image: "Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image." Answer choices included: A professional or company account, An influencer, and An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes). Ratings were provided on three 7-point Likert-type scales (1 = Certainly did not post this, 7 = Certainly posted this). While our experimental manipulations only covered professional and peer-produced ('average user') sources, we added an Influencer category to the manipulation check to assess whether there were differences in participants' likelihood to misattribute a stimulus to an Influencer as a source.
-
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
-We used the manipulation checks assessed in Study 1a and 1b in order to examine whether the stimuli where perceived as intended.
+We used the manipulation checks assessed in Study 1a and 1b (Table 2 of the main manuscript) in order to examine whether the stimuli where perceived as intended.
 
 First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Figure \ref{fig:mcPlot}A for condition-averages).
 
@@ -139,14 +132,14 @@ kable_styling(font_size=8) %>% add_footnote('Note. DV = Dependent Variable. The 
 
 \subsection{Condition Effects on Craving}
 
-In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableMain} reveals no differences in valence effects depending on stimulus source.  
+In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableInter} reveals no differences in valence effects depending on stimulus source.  
 
 <<cravingTableInter, echo=FALSE,results='asis'>>=
 craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols()) 
 
 craving_table_inter[is.na(craving_table_inter)]<-''
 
-kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the two models in this table was Standardized craving ~ valence * source + control variables +(1|participant ID) + (1|stimulus ID)')
+kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the Study 1a model was Standardized craving ~ valence * source  +(1|participant ID) + (1|stimulus ID). The equation used to fit the Study 2 model was Standardized craving ~ valence * source + valence * cue type + source * cue type +(1|participant ID) + (1|stimulus ID).')
 @
 
 \subsection{Familiarity}
