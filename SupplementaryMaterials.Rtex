@@ -53,19 +53,6 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 
 \section{Supplementary Methods}
 
-\subsection{Visual Stimulus Design}
-
-The main manuscript details the sampling procedure for still images and hashtags which are used to create stimuli for all three studies. To present these stimuli to participants, we placed them into visual templates. Specifically, in Studies 1a/b, and half of Study 2 trials for each participant, the template mimicked an Instagram post. For the second half of Study 2 trials, we placed images and hashtags in a template mimicking a Google search result where the hashtags were displayed as search terms. The purpose of this manipulation was to test the specificity of any results to the context of social media as opposed to general online environments. Note that, because we did not find any significant effects of this exploratory online platform factor, we are reporting results collapsing across media conditions. 
-
-Table X prints textual stimulus descriptions together with descriptive information about each stimulus and the stimulus source.
-
-<<TableStims,echo=FALSE,results='asis'>>=
-stim_table=read_csv('data/study1a/stims_for_pretest_utf.csv',col_types=cols()) 
-
-kable(stim_table,caption='Stimulus descriptions and characteristics',booktabs=T) %>%
-kable_styling(font_size=8) 
-@
-
 \subsection{Manipulation Checks (Study 1a/1b)}
 Study 1a participants rated each image on two valence items: "Two what extent does this image show [positive/negative] aspects of drinking alcohol?" on two 7-point Likert-type scales (1 = Not at all; 7 = Very much). Study 1b focused on the characterization of non-alcoholic images and did not measure valence of alcohol-related information.
 
