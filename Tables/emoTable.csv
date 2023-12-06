@@ -1,9 +1,9 @@
 effect,term,Main Effects Model,Full Model
-fixed,Intercept,"2.41 [2.3, 2.53], p < .001","2.21 [2.09, 2.33], p < .001"
+fixed,Intercept,"2.25 [2.13, 2.37], p < .001","2.1 [1.98, 2.21], p < .001"
 fixed,Positive emotions (PosEmo),"0.47 [0.45, 0.5], p < .001","0.32 [0.28, 0.36], p < .001"
 fixed,Negative emotions (NegEmo),"-0.05 [-0.08, -0.03], p < .001","-0.05 [-0.08, -0.01], p = 0.005"
-fixed,Valence: pro-alcohol,"0.83 [0.71, 0.94], p < .001","0.88 [0.77, 0.99], p < .001"
-fixed,Source: professional,"0.07 [-0.03, 0.17], p = 0.147","0.06 [-0.03, 0.15], p = 0.209"
+fixed,Valence: pro-alcohol,"0.83 [0.71, 0.94], p < .001","0.79 [0.67, 0.9], p < .001"
+fixed,Source: professional,"0.07 [-0.03, 0.17], p = 0.147","0.05 [-0.04, 0.14], p = 0.27"
 fixed,PosEmo x Valence,NA,"0.22 [0.18, 0.27], p < .001"
 fixed,NegEmo x Valence,NA,"-0.09 [-0.14, -0.04], p < .001"
 fixed,PosEmo x Source,NA,"0.01 [-0.03, 0.05], p = 0.508"

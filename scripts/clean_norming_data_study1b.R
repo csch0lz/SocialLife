@@ -23,7 +23,7 @@ ppt_df= df %>% select(ResponseId,pIDs,StartDate,EndDate,Finished,`Duration (in m
 ppt_df[duplicated(ppt_df$pIDs),]
 
 #get ground truth (rated by Christin) people on image
-msg_ratings=read_csv('data/study1b/nonalc_stims_for_pretest.csv',col_types=cols()) %>% select(filename,people) 
+#msg_ratings=read_csv('data/study1b/nonalc_stims_for_pretest.csv',col_types=cols()) %>% select(filename,people) 
 
 # Get message ids
 msg_ids=read_csv('data/study1b/QualtricsURLs_allstims.csv',col_types=cols()) %>% 
@@ -34,15 +34,15 @@ msg_ids=read_csv('data/study1b/QualtricsURLs_allstims.csv',col_types=cols()) %>%
                              grepl('as',filename)~'anti_social',
                              grepl('ps',filename)~'pro_social',
                              TRUE~NA_character_)) %>%
-  select(QualtricsURL,filename,condition) %>%
-  left_join(msg_ratings) %>% 
-  mutate(people=as.numeric(people),
-         attention_ground_truth=case_when(people==0~1,
-                                          people==1~2,
-                                          people>1 & people<6~3,
-                                          people>5 & people<11~4,
-                                          people>10~5,
-                                          TRUE~NA_real_))
+  select(QualtricsURL,filename,condition) #%>%
+  #left_join(msg_ratings) %>% 
+ # mutate(people=as.numeric(people),
+  #       attention_ground_truth=case_when(people==0~1,
+  #                                        people==1~2,
+   #                                       people>1 & people<6~3,
+    #                                      people>5 & people<11~4,
+     #                                     people>10~5,
+      #                                    TRUE~NA_real_))
 
 
 
@@ -65,19 +65,9 @@ drink_df = df %>% pivot_longer(values_to='drink_rating',names_to = 'variable', c
 
 # emo data
 emo_df = df %>% pivot_longer(values_to='emo_rating',names_to = 'variable', cols=names(df)[grepl('emo_',names(df))]) %>%
-  select(ResponseId,pIDs,variable,emo_rating) %>%
+  select(ResponseId,pIDs,variable,emo_rating) %>% 
   filter(!is.na(emo_rating)) %>% 
-  mutate(variable=sub('\\[Field-2\\] - ','',variable),
-         variable=sub('alc[[:digit:]]_','',variable),
-         variable=sub('emo_non','',variable),
-         variable=sub('emo','',variable),
-         variable=sub('[[:digit:]]+_','',variable),
-         variable=sub('[[:digit:]]_','',variable),
-         variable=sub('[[:digit:]]_','',variable),
-         variable=sub('_h','h',variable),
-         variable=sub('_h','h',variable),
-         emo_rating=as.numeric(emo_rating)) %>% 
-  separate(variable,into = c('QualtricsURL','specific_emotion'),sep=" - ") %>% 
+  separate(variable, into = c("delete","QualtricsURL","specific_emotion"), sep = " - ") %>% select(-delete) %>% 
   select(ResponseId,pIDs,QualtricsURL,specific_emotion,emo_rating) %>% 
   left_join(msg_ids)  %>%
   filter(specific_emotion %in% c('positive','negative'))

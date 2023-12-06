@@ -15,14 +15,15 @@ round_format=function(vec,digits=2){
 study1a_drink_df=readRDS('data/study1a/cleaned/drink_df.RDS')  %>% mutate(Study='Study 1a')
 study1b_drink_df=readRDS('data/study1b/cleaned/drink_df.RDS') %>% mutate(Study='Study 1b')
 study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS') %>% mutate(Study='Study 1a')
-study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Study 1b')
+study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Study 1b') %>% mutate(emo_rating=as.numeric(emo_rating))
 
 drink_1ab=bind_rows(study1a_drink_df,study1b_drink_df)
 emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=specific_emotion,values_from=emo_rating)
 
 emo_table_full=emo_1ab %>% left_join(drink_1ab) %>%
+  filter(!grepl('non',val_cond)) %>%
   mutate(positive=scale(positive,scale=FALSE),
-         negative=scale(negative,scale=FALSE)) %>%
+         negative=scale(negative,scale=FALSE)) %>% 
   lmer(drink_rating~positive*val_cond+negative*val_cond+positive*source_cond+negative*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
