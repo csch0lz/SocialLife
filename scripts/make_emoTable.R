@@ -48,6 +48,7 @@ emo_table_full$Estimate[!grepl(',',emo_table_full$Estimate)]<-as.character(round
 
 
 emo_table_main=emo_1ab %>% left_join(drink_1ab) %>%
+  filter(!grepl('non',val_cond)) %>%
   mutate(positive=scale(positive,scale=FALSE),
          negative=scale(negative,scale=FALSE)) %>%
   lmer(drink_rating~positive+negative+val_cond+source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
