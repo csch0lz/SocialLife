@@ -10,6 +10,9 @@
 \addbibresource{references.bib}
 \usepackage{pgfplotstable}
 \usepackage{longtable}
+%Define a new column type using p for text wrapping:
+\usepackage{array}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{Supplementary Materials - Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
 \shorttitle{Supplementary Materials}
@@ -53,7 +56,18 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
-We used the manipulation checks assessed in Study 1a and 1b (Table 2 of the main manuscript) in order to examine whether the stimuli where perceived as intended.
+We used the manipulation checks assessed in Study 1a and 1b (Table \ref{tab:MCmeasures}) in order to examine whether the stimuli where perceived as intended.
+
+\begin{table}
+  \caption{Manipulation Checks}
+  \label{tab:MCmeasures}
+  \begin{tabular}{P{2cm}P{4cm}P{5cm}P{3cm}}      \toprule
+  Measure    & Assessed in & Wording & Answer Options \\ \midrule
+  Manipulation check valence & Study 1a & To what extent does this image show [positive/negative] aspects of drinking alcohol? (2 items) & Scale: 1 = Not at all, 7 = Very much \\
+  Manipulation check source & Study 1a/b & Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image. [A professional or company account/An influencer/An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes)] (3 items) & Scale: 1 = Certainly did not post this, 7 = Certainly posted this\\
+   \bottomrule
+  \end{tabular}
+\end{table}
 
 First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Figure \ref{fig:mcPlot}A for condition-averages).
 
