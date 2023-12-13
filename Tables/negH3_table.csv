@@ -1,0 +1,7 @@
+effect,term,Estimate
+fixed,(Intercept),"4.02 [3.84, 4.2], p < .001"
+fixed,val_condpro-alcohol,"-2.4 [-2.63, -2.16], p < .001"
+ran_pars,sd__(Intercept),0.739031995928987
+ran_pars,sd__(Intercept),0.689096227741682
+ran_pars,sd__(Intercept),0
+ran_pars,sd__Observation,1.38197936390282
