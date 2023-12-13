@@ -32,7 +32,7 @@ positive_H3=emo_1ab %>%
                            p.value>=0.001~paste0('p = ',round(p.value,3)),
                            p.value<0.001~paste0('p < .001'),
                            TRUE~NA_character_),
-         Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
+         Estimate=paste0('B = ',round(estimate,2),'95%CI [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
          Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))%>%
   dplyr::select(effect,term,Estimate) %>%
   write_csv(.,'Tables/posH3_table.csv')
@@ -48,7 +48,7 @@ negative_H3=emo_1ab %>%
                            p.value>=0.001~paste0('p = ',round(p.value,3)),
                            p.value<0.001~paste0('p < .001'),
                            TRUE~NA_character_),
-         Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
+         Estimate=paste0('B = ', round(estimate,2),'95%CI [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
          Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))%>%
   dplyr::select(effect,term,Estimate) %>%
   write_csv(.,'Tables/negH3_table.csv')
