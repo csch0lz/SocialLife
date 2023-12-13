@@ -1,6 +1,6 @@
 effect,term,Estimate
-fixed,(Intercept),"B = 1.8895%CI [1.43, 2.33], p = 0.004"
-fixed,val_condpro-alcohol,"B = 2.2795%CI [2.07, 2.48], p < .001"
+fixed,(Intercept),"B = 1.8895\%CI [1.43, 2.33], p = 0.004"
+fixed,val_condpro-alcohol,"B = 2.2795\%CI [2.07, 2.48], p < .001"
 ran_pars,sd__(Intercept),0.868307476675032
 ran_pars,sd__(Intercept),0.59783741582774
 ran_pars,sd__(Intercept),0.0489176238110798
