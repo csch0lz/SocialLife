@@ -331,36 +331,11 @@ study1b_drink_df %>%
 \subsection{Emotions}
 
 <<echo=FALSE,message=FALSE>>=
-all_ppts=ppts_study1a %>% bind_rows(ppts_study1b)
-all_emo_df=study1a_emo_df %>% bind_rows(study1b_emo_df)
-
-emo_ppts=all_emo_df %>% left_join(all_ppts,by='pIDs') %>%
-  mutate(val_cond=case_when(grepl('anti',condition)~'anti-alcohol',
-  grepl('pro_',condition)~'pro-alcohol',
-  grepl('non',condition)~'non-alcoholic',
-  TRUE~NA_character_),
-  val_cond=factor(val_cond,levels=c('anti-alcohol','non-alcoholic','pro-alcohol')))
-
-test1_data=emo_ppts %>% 
-  group_by(filename, val_cond,specific_emotion) %>%
-  summarise(emo_rating=mean(emo_rating,na.rm=T)) %>% 
-  filter(val_cond!='non-alcoholic',specific_emotion=='positive') 
- 
-varEQL1=test1_data %>% var.test(emo_rating~val_cond,data=.) %>% .$p.value > 0.05
-
-t1=test1_data %>% t.test(emo_rating~val_cond,data=.,var.equal=varEQL1)
-
-test2_data=emo_ppts %>% 
-  group_by(filename, val_cond,specific_emotion) %>%
-  summarise(emo_rating=mean(emo_rating,na.rm=T)) %>% 
-  filter(val_cond!='non-alcoholic',specific_emotion=='negative') 
-
-varEQL2=test2_data %>% var.test(emo_rating~val_cond,data=.) %>% .$p.value > 0.05
-
-t2=test2_data %>% t.test(emo_rating~val_cond,data=.,var.equal=varEQL2)
+posH3=read_csv('Tables/posH3_table.csv',col_types=cols())
+negH3=read_csv('Tables/negH3_table.csv',col_types=cols())
 @
 
-Next we examined the differential emotional responses (assessed in Studies 1a/b) to different alcohol message types and their relationships with alcohol craving. First, we estimated two mixed effects regression models regressing emotional responses (positive/negative) on valence condition (pro- vs. anti-alcohol) to test H3. Pro-alcohol messages led to more positive (Mean-difference = $\Sexpr{round(t1$estimate[2]-t1$estimate[1],2)}$, 95\%CI[$\Sexpr{round(abs(t1$conf.int[2]),2)}$;$\Sexpr{round(abs(t1$conf.int[1]),2)}$], T($\Sexpr{t1$parameter}$)=$\Sexpr{round(abs(t1$statistic),3)}$, p $\Sexpr{ifelse(t1$p.value<0.001,'< .001',paste0('= ',format(round(t1$p.value,3),digits=3)))}$) and less negative (Mean-difference = $\Sexpr{round(t2$estimate[2]-t2$estimate[1],2)}$, 95\%CI[$\Sexpr{-round(t2$conf.int[2],2)}$,$\Sexpr{-round(t2$conf.int[1],2)}$], T($\Sexpr{round(t2$parameter,2)}$)=$\Sexpr{-round(t2$statistic,3)}$, p $\Sexpr{ifelse(t2$p.value<0.001,'< .001',paste0('= ',format(round(t2$p.value,3),digits=3)))}$) emotional responses than anti-alcohol messages. We did not find substantial differences between professional and peer-produced stimuli within each valence condition (Figure ~\ref{fig:FigureEmo}). 
+Next we examined emotional responses (assessed in Studies 1a/b) to different alcohol message types and their relationships with alcohol craving. To test H3, we estimated two mixed effects regression models on Study 1 a/b data regressing emotional responses (positive/negative) on valence condition (pro- vs. anti-alcohol), allowing random intercepts across participants, stimuli, and studies. Pro-alcohol messages led to more positive ($\Sexpr{posH3$Estimate[2]}$) and less negative ($\Sexpr{negH3$Estimate[2]}$) emotional responses than anti-alcohol messages. Figure ~\ref{fig:FigureEmo} reveals no substantial differences between professional and peer-produced stimuli. 
 
 <<FigureEmo,fig.cap='Emotional Responses to Alcohol Information (Study 1 a/b). Errorbars represent 95\\% confidence intervals.',results='as.is',echo=FALSE,message=FALSE>>=
 drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
