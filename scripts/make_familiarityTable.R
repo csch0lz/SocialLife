@@ -33,7 +33,7 @@ fam_table_full=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 
-fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','Source: Professional', 'FI x Valence','FI x Source','pID Intercept','sID Intercept','study Intercept','Residual')
+fam_table_full$term=c('Intercept','Familiarity Index (FI)','Valence: pro-alcohol','Source: professional', 'FI x Valence','FI x Source','pID Intercept','sID Intercept','study Intercept','Residual')
 
 fam_table_full=fam_table_full %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
                                                  p.value>=0.001~paste0('p = ',round(p.value,3)),

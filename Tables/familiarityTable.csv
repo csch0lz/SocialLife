@@ -2,8 +2,7 @@ effect,term,Main Effects Model,Full Model
 fixed,Intercept,"1.95 [1.82, 2.08], p < .001","1.74 [1.61, 1.87], p < .001"
 fixed,Familiarity Index (FI),"0.4 [0.37, 0.43], p < .001","0.25 [0.21, 0.29], p < .001"
 fixed,Valence: pro-alcohol,"1.4 [1.28, 1.53], p < .001","1.44 [1.31, 1.56], p < .001"
-fixed,Source: professional,"0.24 [0.12, 0.35], p < .001",NA
-fixed,Source: Professional,NA,"0.24 [0.12, 0.36], p < .001"
+fixed,Source: professional,"0.24 [0.12, 0.35], p < .001","0.24 [0.12, 0.36], p < .001"
 fixed,FI x Valence,NA,"0.27 [0.23, 0.32], p < .001"
 fixed,FI x Source,NA,"-0.01 [-0.05, 0.03], p = 0.523"
 random,pID Intercept,0.8,0.79
