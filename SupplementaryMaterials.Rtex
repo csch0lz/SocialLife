@@ -61,7 +61,7 @@ We used the manipulation checks assessed in Study 1a and 1b (Table \ref{tab:MCme
 \begin{table}
   \caption{Manipulation Checks}
   \label{tab:MCmeasures}
-  \begin{tabular}{P{2cm}P{4cm}P{5cm}P{3cm}}      \toprule
+  \begin{tabular}{P{2.5cm}P{2.5cm}P{6cm}P{3cm}}      \toprule
   Measure    & Assessed in & Wording & Answer Options \\ \midrule
   Manipulation check valence & Study 1a & To what extent does this image show [positive/negative] aspects of drinking alcohol? (2 items) & Scale: 1 = Not at all, 7 = Very much \\
   Manipulation check source & Study 1a/b & Below are three types of Instagram users. For each type, please indicate how certain or uncertain you are that this type of user posted this image. [A professional or company account/An influencer/An average user (that is someone with relatively few followers, who uses the platform for non-commercial purposes)] (3 items) & Scale: 1 = Certainly did not post this, 7 = Certainly posted this\\
@@ -146,7 +146,7 @@ kable_styling(font_size=8) %>% add_footnote('Note. DV = Dependent Variable. The 
 
 \subsection{Condition Effects on Craving}
 
-In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableInter} reveals no differences in valence effects depending on stimulus source.  
+In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableInter} reveals no differences in valence effects depending on stimulus source.  
 
 <<cravingTableInter, echo=FALSE,results='asis'>>=
 craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols()) 
@@ -154,16 +154,6 @@ craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols())
 craving_table_inter[is.na(craving_table_inter)]<-''
 
 kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the Study 1a model was Standardized craving ~ valence * source  +(1|participant ID) + (1|stimulus ID). The equation used to fit the Study 2 model was Standardized craving ~ valence * source + valence * cue type + source * cue type +(1|participant ID) + (1|stimulus ID).')
-@
-
-\subsection{Familiarity}
-
-<<famSITable, echo=FALSE,message=FALSE,results='asis'>>=
-fam_table=read_csv('Tables/familiaritySITable.csv',col_types=cols()) 
-
-fam_table[is.na(fam_table)]<-''
-
-fam_table %>% kable(caption='Relationship between perceived message familiarity and alcohol craving by source condition for pro- (left) and anti-alcohol messages (right), pID = participant ID; sID = stimulus ID)',booktabs=T) 
 @
 
 \end{document}
