@@ -23,7 +23,6 @@
 
 \begin{document}
 
-
 <<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library('tidyverse')
 library('kableExtra')
