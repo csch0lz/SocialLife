@@ -91,21 +91,3 @@ anti_source=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
                               ifelse(group=='QualtricsMsgID','sID',group)))%>% 
   mutate(Valence='Valence: anti-alcohol')
 
-
-si_table=pro_source %>% bind_rows(anti_source)
-si_table$term=rep(c('Intercept','Familiarity Index (FI)','Source: Peer-Produced','FI x Source','pID Intercept','sID Intercept','study Intercept','Residual'),2)
-
-si_table=si_table %>% mutate(p.value=case_when(is.na(p.value)~NA_character_,
-                                                 p.value>=0.001~paste0('p = ',round(p.value,3)),
-                                                 p.value<0.001~paste0('p < .001'),
-                                                 TRUE~NA_character_),
-                               Estimate=paste0(round(estimate,2),' [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
-                               Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))
-
-si_table$Estimate[!grepl(',',si_table$Estimate)]<-as.character(round(as.numeric(si_table$Estimate[!grepl(',',si_table$Estimate)]),2))
-
-si_table = si_table %>% dplyr::select(effect,term,Estimate,Valence) %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
-  pivot_wider(values_from=Estimate,names_from=Valence)
-
-si_table%>%
-  write_csv(.,'Tables/familiaritySITable.csv')

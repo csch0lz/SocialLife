@@ -1,9 +1,0 @@
-effect,term,Valence: pro-alcohol,Valence: anti-alcohol
-fixed,Intercept,"3.86 [3.7, 4.02], p < .001","1.73 [1.61, 1.86], p < .001"
-fixed,Familiarity Index (FI),"0.45 [0.4, 0.49], p < .001","0.24 [0.2, 0.29], p < .001"
-fixed,Source: Peer-Produced,"-0.32 [-0.49, -0.15], p < .001","-0.11 [-0.26, 0.04], p = 0.151"
-fixed,FI x Source,"0.04 [-0.02, 0.09], p = 0.233","0.01 [-0.04, 0.06], p = 0.71"
-random,pID Intercept,1.15,0.66
-random,sID Intercept,0.31,0.28
-random,study Intercept,0,0
-random,Residual,1.04,0.83
