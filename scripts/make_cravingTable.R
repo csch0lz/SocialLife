@@ -37,12 +37,11 @@ s1b_table <- s1b_craving_model %>%
   mutate(study='1b',group=ifelse(group=='pIDs','pID',
                               ifelse(group=='filename','sID',group)))
 
-craving_table<-study2_logs %>% 
+s2_craving_model<-study2_logs %>% 
   left_join(study2_ppts) %>% 
-  #mutate(gender_char=fct_relevel(gender_char,'male',after=0),
-  #       age=scale(age,scale=FALSE),
-  #       AUDIT_score=scale(AUDIT_score,scale=FALSE))%>%
-  lmer(rating.keys_z~val_cond *type+val_cond*source_cond+source_cond*type +(1|pID)+(1|file),data=.) %>% 
+  lmer(rating.keys_z~val_cond *type+val_cond*source_cond+source_cond*type +(1|pID)+(1|file),data=.) 
+
+craving_table = s2_craving_model %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study='2', group=ifelse(group=='file','sID',group)) %>%
@@ -79,3 +78,14 @@ pc_valence1b=contrast(mm_valence1b,"pairwise")
 
 write_csv(data.frame(mm_valence1b),'Tables/craving_table_emmeans_valence_1b.csv')
 write_csv(data.frame(pc_valence1b),'Tables/craving_table_pairwiseComps_valence1b.csv')
+
+mm_source1a=emmeans(s1a_craving_model,specs=~source_cond)
+pc_source1a=contrast(mm_source1a,"pairwise")
+mm_source1b=emmeans(s1b_craving_model,specs=~source_cond)
+pc_source1b=contrast(mm_source1b,"pairwise")
+mm_source2=emmeans(s2_craving_model,specs=~source_cond)
+pc_source2=contrast(mm_source2,"pairwise")
+
+write_csv(data.frame(pc_source1a),'Tables/craving_table_pairwiseComps_source1a.csv')
+write_csv(data.frame(pc_source1b),'Tables/craving_table_pairwiseComps_source1b.csv')
+write_csv(data.frame(pc_source2),'Tables/craving_table_pairwiseComps_source2.csv')
