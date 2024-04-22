@@ -109,6 +109,10 @@ library('ggpubr')
 library('reshape2')
 library('patchwork')
 source('scripts/customFunctions.R')
+formatp <- function(p_value){
+  formatted_p <- ifelse(p_value<0.001,'<.001',paste0(' = ',as.character(format(round(p_value,3),nsmall=3))))
+  return(formatted_p)
+}
 ppts_study1a=readRDS('data/study1a/cleaned/ppt_df.RDS')
 ppts_study1b=readRDS('data/study1b/cleaned/ppt_df.RDS')
 study2_logs=read_csv('data/study2/cleaned/logs_cleaned.csv',col_types=cols())
@@ -179,9 +183,11 @@ Models testing condition effects on standardized beverage craving were fitted us
 <<emmeansOneB,echo=FALSE,message=FALSE>>=
 mm_valence1b=read_csv('Tables/craving_table_emmeans_valence_1b.csv',col_types=cols())
 pc_valence1b=read_csv('Tables/craving_table_pairwiseComps_valence1b.csv',col_types=cols())
+pc_pronon_1b=pc_valence1b %>% filter(contrast=='(non-alcoholic) - (pro-alcohol)') %>% mutate(estimate=paste0('estimate = ', round(estimate,2), ', SE= ', round(SE,2), ', p ', formatp(p.value))) %>% .$estimate
+pc_antinon_1b=pc_valence1b %>% filter(contrast=='(anti-alcohol) - (non-alcoholic)') %>% mutate(estimate=paste0('estimate = ', round(estimate,2), ', SE= ', round(SE,2), ', p ', formatp(p.value))) %>% .$estimate
 @
 
-H1 hypothesized a step-wise increase of alcohol craving from anti- to non-alcoholic to pro-alcohol messages. The Study 1b model (the only study including non-alcoholic messages) in Table \ref{tab:CravingTable} and Figure \ref{fig:cravingPlots}A indeed show a significant influence of valence on craving so that pro-alcohol messages significantly enhanced alcohol craving relative to non-alcoholic messages. The effect of anti- compared to non-alcoholic messages was significantly smaller and not significantly different from zero. 
+H1 hypothesized a step-wise increase of alcohol craving from anti- to non-alcoholic to pro-alcohol messages. The Study 1b model (the only study including non-alcoholic messages) in Table \ref{tab:CravingTable} and Figure \ref{fig:cravingPlots}A indeed show a significant influence of valence on craving so that pro-alcohol messages ($M_{marginal}$ = $\Sexpr{round(mm_valence1b$emmean[which(mm_valence1b$val_cond=='pro-alcohol')],2)}$) significantly enhanced standardized alcohol craving relative to non-alcoholic messages ($M_{marginal}$ = $\Sexpr{round(mm_valence1b$emmean[which(mm_valence1b$val_cond=='non-alcoholic')],2)}$; $\Sexpr{pc_pronon_1b}$). The effect of anti- ($M_{marginal}$ = $\Sexpr{round(mm_valence1b$emmean[which(mm_valence1b$val_cond=='anti-alcohol')],2)}$) compared to non-alcoholic messages was substantially smaller and not significantly different from zero ($\Sexpr{pc_antinon_1b}$). 
 
 <<CravingTable, echo=FALSE,results='asis'>>=
 CravingTable=read_csv('Tables/cravingTable.csv',col_types=cols()) 
@@ -265,8 +271,9 @@ ggarrange(valPlot1,valPlot2,bingePlot, ncol=2, nrow=2)
 
 @
 
-In what follows, analyses are focused on comparisons between pro- and anti-alcohol messages from professional and peer sources (Study 1a/2). We used mixed effects regression to examine H2 (about the specificity of valence effects to alcohol rather than general beverage craving) as well as potential source effects on craving. Specifically, we regressed (standardized) alcohol craving on message valence and source, including their interactions with cue type (alcoholic vs. non-alcoholic) and random intercepts across participants and messages.  
-Table \ref{tab:CravingTable} and Figure \ref{fig:cravingPlots} confirm the strong valence effect (pro- > anti-alcohol) in Study 1a and 2 that was previously found in Study 1b. There was no main effect of source and no evidence of interactions between valence and source (see Supplementary Materials for interactions). 
+All subsequent analyses are focused on comparisons between pro- and anti-alcohol messages from professional and peer sources to test the specificity of the effects of valence of alcohol-related information on alcohol (rather than general beverage) craving (H2) as well as potential source effects on craving. 
+
+Table \ref{tab:CravingTable} and Figure \ref{fig:cravingPlots} show that the strong valence effect (pro- > anti-alcohol) replicates across all three studies. None of the studies show a main effect of source or evidence of interactions between source and valence. 
 
 Confirming H2, Table \ref{tab:CravingTable} (Study 2) and Figure ~\ref{fig:cravingPlots}B show that exposure to pro- vs. anti-alcohol information was specifically associated with an increase in alcohol craving rather than a general appetite for non-alcoholic beverages. In fact, pro-alcohol messaging decreased craving for non-alcoholic drinks compared to anti-alcohol messages.
 
