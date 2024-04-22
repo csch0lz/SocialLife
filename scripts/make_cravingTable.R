@@ -21,14 +21,18 @@ study2_ppts=read_csv('data/study2/cleaned/S1_cleaned.csv')
 
 s1a_craving_model<-study1a_drink_df %>% 
   left_join(study1a_ppts) %>% 
-  lmer(drink_rating_z~val_cond*source_cond + (1|pIDs)+(1|QualtricsMsgID),data=.) %>% 
+  lmer(drink_rating_z~val_cond*source_cond + (1|pIDs)+(1|QualtricsMsgID),data=.) 
+
+s1a_table <- s1a_craving_model%>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study='1a',group=ifelse(group=='pIDs','pID',
                               ifelse(group=='QualtricsMsgID','sID',group)))
 
 s1b_craving_model<-study1b_drink_df %>% 
   left_join(study1b_ppts) %>% 
-  lmer(drink_rating_z~val_cond*source_cond + (1|pIDs)+(1|filename),data=.) %>% 
+  lmer(drink_rating_z~val_cond*source_cond + (1|pIDs)+(1|filename),data=.) 
+
+s1b_table <- s1b_craving_model %>%
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   mutate(study='1b',group=ifelse(group=='pIDs','pID',
                               ifelse(group=='filename','sID',group)))
@@ -42,8 +46,8 @@ craving_table<-study2_logs %>%
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 2',.before=1) %>%
   mutate(study='2', group=ifelse(group=='file','sID',group)) %>%
-  rbind(s1b_craving_model,.) %>%
-  rbind(s1a_craving_model,.) %>%
+  rbind(s1b_table,.) %>%
+  rbind(s1a_table,.) %>%
   mutate(`95% CI`=case_when(!is.na(conf.low)~paste0('[',format(round(conf.low,2),nsmall=2),';',format(round(conf.high,2),nsmall=2),']'),TRUE~NA_character_),
          p.value=formatp(p.value)) %>%
   select(study,effect, group, term, estimate, `95% CI`, p.value) %>% 
@@ -69,3 +73,9 @@ craving_table=craving_table %>% mutate(p.value_1a=ifelse(p.value_1a!='',paste0('
           select(effect,term,`Study 1a`,`Study 1b`, `Study 2`) 
 
 write_csv(craving_table,'Tables/cravingTable.csv')
+
+mm_valence1b=emmeans(s1b_craving_model,specs=~val_cond*source_cond)
+pc_valence1b=contrast(mm_valence1b,"pairwise")
+
+write_csv(data.frame(mm_valence1b),'Tables/craving_table_emmeans_valence_1b.csv')
+write_csv(data.frame(pc_valence1b),'Tables/craving_table_pairwiseComps_valence1b.csv')
