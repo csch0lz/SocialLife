@@ -74,7 +74,7 @@ craving_table=craving_table %>% mutate(p.value_1a=ifelse(p.value_1a!='',paste0('
 
 write_csv(craving_table,'Tables/cravingTable.csv')
 
-mm_valence1b=emmeans(s1b_craving_model,specs=~val_cond*source_cond)
+mm_valence1b=emmeans(s1b_craving_model,specs=~val_cond)
 pc_valence1b=contrast(mm_valence1b,"pairwise")
 
 write_csv(data.frame(mm_valence1b),'Tables/craving_table_emmeans_valence_1b.csv')
