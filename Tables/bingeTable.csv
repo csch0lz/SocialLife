@@ -1,4 +1,4 @@
-effect,term,estimate,95% CI,p.value
+effect,term,estimate,95% CI,p-value
 fixed,Intercept, 1.59,[ 1.36;1.81],p = <.001
 fixed,Binge Drinking Frequency (BD), 0.09,[ 0.02;0.16],p = 0.017
 fixed,Valence 1: Anti- vs. Non-Alcoholic,-0.10,[-0.40;0.20],p = 0.524

@@ -38,6 +38,6 @@ binge_table[is.na(binge_table)]<-''
 binge_table$term=c('Intercept','Binge Drinking Frequency (BD)','Valence 1: Anti- vs. Non-Alcoholic', 'Valence 2: Pro- vs. Non-Alcoholic', 'BD x Valence 1','BD x Valence 2','sID','pID','Residual')
 
   
-binge_table=binge_table %>% mutate(p.value=ifelse(p.value!='',paste0('p = ',p.value),p.value))
+binge_table=binge_table %>% mutate(p.value=ifelse(p.value!='',paste0('p = ',p.value),p.value)) |> rename('p-value'='p.value')
 
 write_csv(binge_table,'Tables/bingeTable.csv')
