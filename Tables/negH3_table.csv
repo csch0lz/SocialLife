@@ -1,7 +1,0 @@
-effect,term,Estimate
-fixed,(Intercept),"B = 4.02, 95\%CI [3.84, 4.2], p < .001"
-fixed,val_condpro-alcohol,"B = -2.4, 95\%CI [-2.63, -2.16], p < .001"
-ran_pars,sd__(Intercept),0.739031995928987
-ran_pars,sd__(Intercept),0.689096227741682
-ran_pars,sd__(Intercept),0
-ran_pars,sd__Observation,1.38197936390282
