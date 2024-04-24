@@ -1,6 +1,7 @@
 library('tidyverse')
 library('broom.mixed')
 library('lmerTest')
+library('emmeans')
 
 formatp <- function(p_value){
   formatted_p <- ifelse(p_value<0.001,'<.001',as.character(format(round(p_value,3),nsmall=3)))
@@ -20,11 +21,13 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Stud
 drink_1ab=bind_rows(study1a_drink_df,study1b_drink_df)
 emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=specific_emotion,values_from=emo_rating)
 
-emo_table=emo_1ab %>% left_join(drink_1ab) %>%
+emo_model=emo_1ab %>% left_join(drink_1ab) %>%
   filter(!grepl('non',val_cond)) %>%
   mutate(positive=scale(positive,scale=FALSE),
          negative=scale(negative,scale=FALSE)) %>% 
-  lmer(drink_rating~positive*val_cond+negative*val_cond+positive*source_cond+negative*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(drink_rating~positive*val_cond+negative*val_cond+positive*source_cond+negative*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) 
+
+emo_table = emo_model%>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
@@ -52,4 +55,10 @@ names(emo_table)[3]<-'Estimate (95% CI), p-value'
 emo_table %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
   arrange(effect) %>%
   write_csv(.,'Tables/emoTable.csv')
+
+mm_valence=emmeans(emo_model,specs=~val_cond)
+pc_valence=contrast(mm_valence,"pairwise")
+
+write_csv(data.frame(mm_valence),'Tables/emo_table_emmeans_valence.csv')
+write_csv(data.frame(pc_valence),'Tables/emo_table_pairwiseComps_valence.csv')
 
