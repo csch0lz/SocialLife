@@ -59,7 +59,7 @@ Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an e
 
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
-We used the manipulation checks assessed in Study 1a and 1b (Table \ref{tab:MCmeasures}) in order to examine whether the stimuli where perceived as intended.
+We used the manipulation checks assessed in Study 1a and 1b (Supplementary Table \ref{tab:MCmeasures}) in order to examine whether the stimuli where perceived as intended.
 
 \begin{table}
   \caption{Manipulation Checks}
@@ -72,7 +72,7 @@ We used the manipulation checks assessed in Study 1a and 1b (Table \ref{tab:MCme
   \end{tabular}
 \end{table}
 
-First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Figure \ref{fig:mcPlot}A for condition-averages).
+First, we assessed whether the valence of alcohol-related stimuli (pro- vs. anti-alcohol) was manipulated successfully in Study 1a by regressing the extent to which participants thought a stimulus showed positive and negative outcomes of alcohol consumption on a valence condition factor, accounting for random intercepts across participants and stimuli (Supplementary Table ~\ref{tab:mcTableVal}). Indeed, in Study 1a, pro-alcohol stimuli were rated as portraying much less negative and more positive outcomes of alcohol consumption than anti-alcohol stimuli (also see Supplementary Figure \ref{fig:mcPlot}A for condition-averages).
 
 <<mcTableVal,echo=FALSE>>=
 mc_table=read_csv('Tables/mc_table_study1a.csv',col_types=cols())
@@ -95,7 +95,7 @@ ggplot(aes(valence,mean,fill=val_cond)) +
   geom_errorbar(aes(ymin = mean-(1.96*se), ymax = mean+(1.96*se)),position=position_dodge(width=0.9),width=0.15) + 
   scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
   labs(title='A',y='Average Rating (1 not at all-7 very much)',x='Aspects of drinking alcohol',fill='Valence Cond.') + 
-  scale_fill_grey()+theme(legend.position="bottom") + plot_aes
+  scale_fill_manual(values=c('lightgrey','darkgrey'))+theme(legend.position="bottom") + plot_aes
 
 source_mc_plot_nonalc=study1b_source_df %>% filter(grepl('non',condition)) %>% 
   mutate(source_cond=case_when(grepl('prof', condition)~'professional',
@@ -109,7 +109,7 @@ source_mc_plot_nonalc=study1b_source_df %>% filter(grepl('non',condition)) %>%
   group_by(source_cond,`Post Source`) %>% summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
   scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
   labs(title='C',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
-  scale_fill_grey()  +
+  scale_fill_manual(values=c('lightgrey','darkgrey'))  +
   theme(legend.position="bottom") + plot_aes
 
 source_mc_plot=study1a_source_df %>% 
@@ -125,7 +125,7 @@ source_mc_plot=study1a_source_df %>%
   summarize(mean=mean(mean_source_rating,na.rm=T),se=std.error(mean_source_rating,na.rm=T)) %>% ggplot(aes(`Post Source`,mean,fill=source_cond)) + geom_bar(stat='identity',position='dodge') + geom_errorbar(aes(ymin=mean-(1.96*se),ymax=mean+(1.96*se)),position=position_dodge(0.9),width=0.15) +
   scale_y_continuous(breaks = seq(1,7,1), limits=c(0,7))+ 
   labs(title='B',y="Average Rating (1 Certainly didn't post-7 Certainly posted)",x= 'Perceived Source', fill='Source Cond.') +
-  scale_fill_grey() +
+  scale_fill_manual(values=c('lightgrey','darkgrey'))+
   theme(legend.position="bottom") + plot_aes
   
 combined_plots <- source_mc_plot + source_mc_plot_nonalc + plot_layout(guides = 'collect') & theme(legend.position = 'bottom')
@@ -146,18 +146,6 @@ mc_table[is.na(mc_table)]<-''
 kable(mc_table,caption='Effects of source condition on each of three perceived source ratings in Study 1a \\& 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
 kable_styling(font_size=8) %>% add_footnote('Note. DV = Dependent Variable. The equation used to fit the three models per study in this table was Perceived source certainty ~ Source condition +(1|participant ID) + (1|stimulus ID)')
 @ 
-
-\subsection{Condition Effects on Craving}
-
-In order to examine potential interaction effects between valence and source condition, we re-fit models reported in the main manuscript, including an additional interaction term between valence and source conditions. Table \ref{tab:cravingTableInter} reveals no differences in valence effects depending on stimulus source.  
-
-<<cravingTableInter, echo=FALSE,results='asis'>>=
-craving_table_inter=read_csv('Tables/cravingTableInter.csv',col_types=cols()) 
-
-craving_table_inter[is.na(craving_table_inter)]<-''
-
-kable(craving_table_inter,caption='Condition effects on standardized alcohol craving in response to diverse alcohol-related information, including a SourcexValence interaction',booktabs=T,digit=2) %>% add_footnote('Note. The study 2 model only includes trials in which standardized alcohol cues were shown., Freq. = Frequency, pID = participant ID; sID = stimulus ID, The equation used to fit the Study 1a model was Standardized craving ~ valence * source  +(1|participant ID) + (1|stimulus ID). The equation used to fit the Study 2 model was Standardized craving ~ valence * source + valence * cue type + source * cue type +(1|participant ID) + (1|stimulus ID).')
-@
 
 \end{document}
 
