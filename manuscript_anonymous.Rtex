@@ -304,7 +304,7 @@ kable(binge_table,caption='Effect of valence and binge-drinking habits on alcoho
 
 \subsection{Emotions}
 
-Next we examined the relationship between alcohol craving and emotional responses (assessed in Studies 1a/b) to different alcohol message types (Table ~\ref{tab:emoTable}). Supporting H3, pro-alcohol messages led to more positive () and less negative () emotional responses than anti-alcohol messages. Figure ~\ref{fig:FamEmoFigure}A reveals no substantial differences between professional and peer-produced stimuli. 
+Next we examined the relationship between alcohol craving and emotional responses (assessed in Studies 1a/b) to different alcohol message types. Supporting H3, pro-alcohol messages led to more positive (main effect derived through emmeans: ) and less negative emotional responses than anti-alcohol messages (main effect derived through emmeans:). Figure ~\ref{fig:FamEmoFigure}A reveals no substantial differences between professional and peer-produced stimuli. 
 
 <<MakeEmoFigureOne, echo=FALSE,message=FALSE>>=
 drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
