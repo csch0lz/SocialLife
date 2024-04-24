@@ -1,0 +1,14 @@
+effect,Emotion Term,Emotion Effect,Familiarity Term,Familiarity Effect
+fixed,Intercept,"2.1 [1.98, 2.21], p < .001",Intercept,"1.74 [1.61, 1.87], p < .001"
+fixed,Positive emotions (PosEmo),"0.32 [0.28, 0.36], p < .001",Familiarity Index (FI),"0.25 [0.21, 0.29], p < .001"
+fixed,Negative emotions (NegEmo),"-0.05 [-0.08, -0.01], p = 0.005",NA,NA
+fixed,Valence: pro-alcohol,"0.79 [0.67, 0.9], p < .001",Valence: pro-alcohol,"1.44 [1.31, 1.56], p < .001"
+fixed,Source: professional,"0.05 [-0.04, 0.14], p = 0.27",Source: professional,"0.24 [0.12, 0.36], p < .001"
+fixed,PosEmo x Valence,"0.22 [0.18, 0.27], p < .001",FI x Valence,"0.27 [0.23, 0.32], p < .001"
+fixed,NegEmo x Valence,"-0.09 [-0.14, -0.04], p < .001",FI x Source,"-0.01 [-0.05, 0.03], p = 0.523"
+fixed,PosEmo x Source,"0.01 [-0.03, 0.05], p = 0.508",NA,NA
+fixed,NegEmo x Source,"-0.02 [-0.05, 0.02], p = 0.429",NA,NA
+random,pID Intercept,0.76,pID Intercept,0.79
+random,sID Intercept,0.22,sID Intercept,0.31
+random,Study intercept,0,Study Intercept,0
+random,Residual,0.98,Residual,1.06
