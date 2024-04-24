@@ -343,6 +343,10 @@ fig_emo1=fig_df%>%
   summarize(`Average Emotion Rating (1-7)`=mean(mean_emo_rating,na.rm=T),
             se_emo=std.error(mean_emo_rating,na.rm=T)) %>% 
 filter(!is.na(source)) %>% 
+mutate(valence=case_when(valence=='anti-alcohol'~'anti',
+valence=='pro-alcohol'~'pro',
+valence=='non-alcoholic'~'non',
+TRUE~valence)) %>%
 ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) + 
     geom_bar(stat='identity',position='dodge') +
   geom_errorbar(aes(ymin=`Average Emotion Rating (1-7)`-(1.96*se_emo),ymax=`Average Emotion Rating (1-7)`+(1.96*se_emo)),position=position_dodge(0.9),width=0.15) +
@@ -351,7 +355,7 @@ ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) +
   labs(x='Valence Condition',fill='Source',tag='A') + theme_bw() + theme(legend.position='bottom')
 @
 
-Next, we examined the relationships between emotional responses to message exposure and alcohol craving in a mixed effects regression model predicting alcohol craving ratings using positive and negative emotional responses, stimulus valence and source, and accounting for nesting within participants, stimulus, and study (1a and 1b; see Table  ~\ref{tab:emoTable}). In line with H4a and 4b, positive emotional responses to alcohol-related messages generally led to higher alcohol craving and negative emotional responses led to lower alcohol craving. Further confirming H5a positive emotions were more strongly positively associated with craving for pro- vs. anti-alcohol messages. Yet, in contrast to H5b, targeted emotions did not universally act as stronger mechanisms towards craving across all messages. Specifically, the negative effect of negative emotional responses on craving was also stronger for pro- compared to anti-alcohol messages (Figure \ref{fig:FamEmoFigure}B). Emotional response did not interact with source condition.
+To examine the relationships between emotional responses to message exposure and alcohol craving, we used a mixed effects regression model regressing alcohol craving ratings on positive and negative emotional responses, stimulus valence and source, and accounting for nesting within participants, stimulus, and study (1a and 1b; see Table  ~\ref{tab:emofamTable}). In line with H4a and 4b, positive emotional responses to alcohol-related messages generally led to higher alcohol craving and negative emotional responses led to lower alcohol craving. Further confirming H5a positive emotions were more strongly positively associated with craving for pro- vs. anti-alcohol messages. Yet, in contrast to H5b, targeted emotions did not universally act as stronger mechanisms towards craving across all messages. Specifically, the negative effect of negative emotional responses on craving was also stronger for pro- compared to anti-alcohol messages (Figure \ref{fig:FamEmoFigure}B). Emotional response did not interact with source condition.
 
 <<MakeEmoFigureTwo,echo=FALSE,warning=FALSE,message=FALSE>>=
 emo_df_1ab = study1a_emo_df %>% bind_rows(study1b_emo_df) %>% filter(!grepl('non',condition))
@@ -361,24 +365,24 @@ master=drink_df_1ab %>% right_join(emo_df_1ab) %>% filter(specific_emotion %in% 
 
 fig_emo2=master%>%
 mutate(condition=fct_recode(condition,'Anti - Professional'='anti_prof','Anti - Peer-Produced'='anti_social','Pro - Professional'='pro_prof','Pro - Peer-Produced'='pro_social')) %>%
-group_by(filename,val_cond,source_cond,specific_emotion) %>%
+group_by(filename,val_cond,specific_emotion) %>%
 summarise(emo_rating=mean(emo_rating,na.rm=T),
           drink_rating=mean(drink_rating,na.rm=T)) %>%
-ggplot(aes(x=emo_rating,y=drink_rating,color=val_cond,linetype=source_cond)) +
+ggplot(aes(x=emo_rating,y=drink_rating,color=val_cond)) +
   geom_smooth(method='lm') +
   geom_point(alpha=0.3) +
-  scale_color_manual(values=c('darkred','darkgreen')) +
+  scale_color_manual(values=c('black','darkgrey')) +
   facet_wrap(~specific_emotion) +
-  labs(color='Condition',linetype='Source',y='Alcohol Craving (1-7)',x='Strength of experienced emotion (1-7)',tag='B') + 
+  labs(color='Condition',y='Alcohol Craving (1-7)',x='Strength of experienced emotion (1-7)',tag='B') + 
   theme_bw()+ theme(legend.position='bottom')
 @
 
-<<emoTable, echo=FALSE,message=FALSE,results='asis'>>=
-emo_table=read_csv('Tables/emoTable.csv',col_types=cols()) 
+<<emofamTable, echo=FALSE,message=FALSE,results='asis'>>=
+emo_fam_table=read_csv('Tables/emoFamTable.csv',col_types=cols()) 
 
-emo_table[is.na(emo_table)]<-''
+emo_fam_table[is.na(emo_fam_table)]<-''
 
-emo_table %>% kable(caption='Relationship between grand mean-centered positive and negative emotions in response to alcohol-related messages in Studies 1a/b and alcohol craving by condition)',booktabs=T) %>% 
+emo_fam_table %>% kable(caption='Relationship between grand mean-centered positive and negative emotions in response to alcohol-related messages ("Emotion Effect") and perceived familiarity of the messages ("Familiarity Effect") and alcohol craving in Studies 1a/b by message type)',booktabs=T) %>% 
 kable_styling(latex_options = "scale_down") %>% add_footnote("pID = participant ID; sID = stimulus ID; Trials displaying non-alcoholic stimuli in study 1b are excluded from this analysis.")
 @
 
@@ -420,15 +424,15 @@ varEQL=fam_agg %>% var.test(fam_index~valence,data=.) %>% .$p.value > 0.05
 t=fam_agg %>% t.test(fam_index~valence,data=.,var.equal=varEQL)
 @
 
-Supporting H6, pro-alcohol stimuli were perceived as more familiar than anti-alcohol stimuli (Mean difference=$\Sexpr{round(mean(fam_agg$fam_index[fam_agg$valence=='pro-alcohol'],na.rm=T)-mean(fam_agg$fam_index[fam_agg$valence=='anti-alcohol'],na.rm=T),3)}$, T($\Sexpr{round(t$parameter,2)}$)=$\Sexpr{round(t$statistic,3)}$, p $\Sexpr{ifelse(t$p.value<0.001,'< .001',paste0('= ',format(round(t$p.value,3),digits=3)))}$). Participants even reported similar levels of familiarity with peer-produced pro-alcohol and non-alcoholic messages (Figure \ref{fig:FamEmoFigure}C).
+Next we examined the role of perceived familiarity of the messages (assessed in Studies 1a/b) in alcohol craving. To test H6, we fit a multi-level regression model regressing familiarity on valence condition, accounting for random intercepts across participants, stimuli and studies (Study 1a & b). As expected, pro-alcohol messages were perceived as more familiar than anti-alcohol messages, with pro-alcohol messages even reaching levels of familiarity that were comparable to those of non-alcoholic information (Figure \ref{fig:FamEmoFigure}C).
 
 <<FamFigureOne, echo=FALSE,message=FALSE>>=
 fig_fam1=familiarity_study1ab%>%
   dplyr::group_by(source,valence,filename) %>%
     summarize(fam_index=mean(fam_index,na.rm=T)) %>% 
   group_by(source,valence) %>%
-  summarize(`Average Rating (1-7)`=mean(fam_index,na.rm=T),se_fam_index=std.error(fam_index,na.rm=T)) %>% ggplot(aes(source,`Average Rating (1-7)`,fill=valence)) + 
-  geom_bar(stat='identity',position='dodge') + labs(x='Source',y='Familiarity Index (1-7)', fill='Valence',tag='C') +
+  summarize(`Average Rating (1-7)`=mean(fam_index,na.rm=T),se_fam_index=std.error(fam_index,na.rm=T)) %>% ggplot(aes(valence,`Average Rating (1-7)`,fill=source)) + 
+  geom_bar(stat='identity',position='dodge') + labs(x='Valence',y='Familiarity Index (1-7)', fill='Source',tag='C') +
   geom_errorbar(aes(ymin=`Average Rating (1-7)`-(1.96*se_fam_index),ymax=`Average Rating (1-7)`+(1.96*se_fam_index)),position=position_dodge(0.9),width=0.15)+
   scale_fill_grey() + theme_bw()+ theme(legend.position='bottom')
 @
@@ -460,11 +464,12 @@ fig_fam2=drink_1ab %>% right_join(familiarity_1ab_wide) %>%
             val_cond=first(val_cond),
             source_cond=first(source_cond)) %>% 
   mutate(val_cond=factor(val_cond,levels=c('anti-alcohol','non-alcoholic','pro-alcohol'))) %>%
-  ggplot(aes(x=fam_index,y=drink_rating,color=val_cond,linetype=source_cond)) + 
+  filter(val_cond!='non-alcoholic') %>% 
+  ggplot(aes(x=fam_index,y=drink_rating,color=val_cond)) + 
   geom_smooth(method='lm') +
   geom_point(alpha=0.3) +
   theme_bw() +
-  scale_color_manual(values=c('darkred','darkgrey','darkgreen')) +
+  scale_color_manual(values=c('black','darkgrey')) +
   ylab('Alcohol Craving') + 
   xlab('Familiarity Index') +
   labs(color='Valence',tag='D')+ theme(legend.position='bottom')
