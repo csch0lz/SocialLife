@@ -1,6 +1,7 @@
 library('tidyverse')
 library('broom.mixed')
 library('lmerTest')
+library('emmeans')
 
 formatp <- function(p_value){
   formatted_p <- ifelse(p_value<0.001,'<.001',as.character(format(round(p_value,3),nsmall=3)))
