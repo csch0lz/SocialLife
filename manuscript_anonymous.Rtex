@@ -304,7 +304,12 @@ kable(binge_table,caption='Effect of valence and binge-drinking habits on alcoho
 
 \subsection{Emotions}
 
-Next we examined the relationship between alcohol craving and emotional responses (assessed in Studies 1a/b) to different alcohol message types. Supporting H3, pro-alcohol messages led to more positive (main effect derived through emmeans: ) and less negative emotional responses than anti-alcohol messages (main effect derived through emmeans:). Figure ~\ref{fig:FamEmoFigure}A reveals no substantial differences between professional and peer-produced stimuli. 
+<<emoTablesH3,echo=FALSE,message=FALSE>>=
+H3neg=read_csv('Tables/negH3_table.csv',col_types=cols())
+H3pos=read_csv('Tables/posH3_table.csv',col_types=cols())
+@
+
+Next we examined the role of emotional responses to messages (assessed in Studies 1a/b) in alcohol craving. To test H3, we fit two multi-level regression models regressing negative and positive emotions, respectively, on valence condition, accounting for random intercepts across participants, stimuli and studies (Study 1a & b). As expected, pro-alcohol messages were associated with more positive ($\Sexpr{H3pos$Estimate[2]}$) and less negative emotional responses than anti-alcohol messages ($\Sexpr{H3neg$Estimate[2]}$). Figure ~\ref{fig:FamEmoFigure}A reveals no substantial differences between professional and peer-produced stimuli. 
 
 <<MakeEmoFigureOne, echo=FALSE,message=FALSE>>=
 drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
@@ -346,7 +351,7 @@ ggplot(aes(x=valence,y=`Average Emotion Rating (1-7)`,fill=source)) +
   labs(x='Valence Condition',fill='Source',tag='A') + theme_bw() + theme(legend.position='bottom')
 @
 
-Next, we examined the relationships between emotional responses to message exposure and alcohol craving in a mixed effects regression model predicting alcohol craving ratings using positive and negative emotional responses, stimulus valence and source, and accounting for nesting within participants, stimulus, and study (1a and 1b). Table  ~\ref{tab:emoTable} prints versions of this model with and without stimulus valence by emotional response and source by emotional response interactions. In line with H4a and 4b, positive emotional responses to alcohol-related messages generally led to higher alcohol craving and negative emotional responses led to lower alcohol craving. Further confirming H5a positive emotions were more strongly positively associated with craving for pro- vs. anti-alcohol messages. Yet, in contrast to H5b, targeted emotions did not universally act as stronger mechanisms towards craving across all messages. Specifically, the negative effect of negative emotional responses on craving was also stronger for pro- compared to anti-alcohol messages (Figure \ref{fig:FamEmoFigure}B). Emotional response did not interact with source condition.
+Next, we examined the relationships between emotional responses to message exposure and alcohol craving in a mixed effects regression model predicting alcohol craving ratings using positive and negative emotional responses, stimulus valence and source, and accounting for nesting within participants, stimulus, and study (1a and 1b; see Table  ~\ref{tab:emoTable}). In line with H4a and 4b, positive emotional responses to alcohol-related messages generally led to higher alcohol craving and negative emotional responses led to lower alcohol craving. Further confirming H5a positive emotions were more strongly positively associated with craving for pro- vs. anti-alcohol messages. Yet, in contrast to H5b, targeted emotions did not universally act as stronger mechanisms towards craving across all messages. Specifically, the negative effect of negative emotional responses on craving was also stronger for pro- compared to anti-alcohol messages (Figure \ref{fig:FamEmoFigure}B). Emotional response did not interact with source condition.
 
 <<MakeEmoFigureTwo,echo=FALSE,warning=FALSE,message=FALSE>>=
 emo_df_1ab = study1a_emo_df %>% bind_rows(study1b_emo_df) %>% filter(!grepl('non',condition))
