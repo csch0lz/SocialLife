@@ -1,7 +1,6 @@
 library('tidyverse')
 library('broom.mixed')
 library('lmerTest')
-library('emmeans')
 
 formatp <- function(p_value){
   formatted_p <- ifelse(p_value<0.001,'<.001',as.character(format(round(p_value,3),nsmall=3)))
@@ -56,9 +55,4 @@ emo_table %>% mutate(effect=ifelse(effect=='ran_pars','random',effect)) %>%
   arrange(effect) %>%
   write_csv(.,'Tables/emoTable.csv')
 
-mm_valence=emmeans(emo_model,specs=~val_cond)
-pc_valence=contrast(mm_valence,"pairwise")
-
-write_csv(data.frame(mm_valence),'Tables/emo_table_emmeans_valence.csv')
-write_csv(data.frame(pc_valence),'Tables/emo_table_pairwiseComps_valence.csv')
 
