@@ -20,7 +20,6 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Stud
 
 drink_1ab=bind_rows(study1a_drink_df,study1b_drink_df)
 emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=specific_emotion,values_from=emo_rating)
-
 emo_model=emo_1ab %>% left_join(drink_1ab) %>%
   filter(!grepl('non',val_cond)) %>%
   mutate(positive=scale(positive,scale=FALSE),
