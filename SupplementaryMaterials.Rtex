@@ -49,13 +49,17 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 
 \section{Supplementary Methods}
 
-Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
+Supplementary Figure S\ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
 
 \begin{figure}
     \caption{Example Trial and Instructions Study 2 Task (To protect copyright interests, this figure depicts icons instead of the actual stimuli and beverage cues. See the GitHub reproducibility package (https://anonymous.4open.science/r/PilotPaperTalkingDrinks-anonymize/) for stimulus descriptions and sources. Original stimuli are available from the corresponding author upon request.)}
     \includegraphics[height=3in, width=6.5in]{Figures/FigureAlcValTask.png}
     \label{fig:FigureAlcValTask}
 \end{figure}
+
+Supplementary Table S\ref{tab:avgSelfReport} shows averages of key self-report measures disaggregated by study and message condition.
+
+
 
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
