@@ -36,13 +36,13 @@ fam_df=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df) %>%
   mutate(`Familiarity Index`=paste0(round_format(M),', ',round_format(SD))) %>% select(-M,-SD)
 
 descriptives_table=drink_df %>% left_join(emo_df) %>% left_join(fam_df) %>% ungroup() %>%
-  mutate(`Message Valence`=case_when(grepl('anti',condition)~'anti-alcohol',
+  mutate(`Valence`=case_when(grepl('anti',condition)~'anti-alcohol',
                                      grepl('non',condition)~'non-alcoholic',
                                      grepl('pro_',condition)~'pro-alcohol',TRUE~NA_character_),
-         `Message Source`=case_when(grepl('prof',condition)~'professional',
+         `Source`=case_when(grepl('prof',condition)~'professional',
                                     grepl('soc',condition)~'social', TRUE~NA_character_)) %>%
   #delete the condition column and order the other columns so that: Study, Message Valence, Message Source, everything else
-  select(-condition) %>% select(Study,`Message Valence`,`Message Source`,everything())
+  select(-condition) %>% select(Study,`Valence`,`Source`,everything())
 
 
 write_csv(descriptives_table,'Tables/descriptives_table.csv')
