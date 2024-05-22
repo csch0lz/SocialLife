@@ -59,7 +59,13 @@ Supplementary Figure S\ref{fig:FigureAlcValTask} provides a visualization of an 
 
 Supplementary Table S\ref{tab:avgSelfReport} shows averages of key self-report measures disaggregated by study and message condition.
 
+<<avgSelfReport,echo=FALSE>>=
+desc_table=read_csv('Tables/descriptives_table.csv',col_types=cols())
+desc_table[is.na(desc_table)]<-''
 
+kable(desc_table,booktabs=T,digits=2,caption='Descriptive Statistics (M, SD) for Self-Report Measures by Condition and Study') %>% kable_styling() %>%
+  add_footnote('Note. For Study 2, only trials in which alcoholic cues were presented are included.') 
+@
 
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
