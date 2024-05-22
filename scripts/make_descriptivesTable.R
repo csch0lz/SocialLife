@@ -44,5 +44,4 @@ descriptives_table=drink_df %>% left_join(emo_df) %>% left_join(fam_df) %>% ungr
   #delete the condition column and order the other columns so that: Study, Message Valence, Message Source, everything else
   select(-condition) %>% select(Study,`Valence`,`Source`,everything())
 
-
 write_csv(descriptives_table,'Tables/descriptives_table.csv')
