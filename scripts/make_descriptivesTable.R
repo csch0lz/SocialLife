@@ -25,15 +25,15 @@ drink_df=study1a_drink_df %>% bind_rows(study1b_drink_df) %>% bind_rows(study2_l
 emo_df=study1a_emo_df %>% bind_rows(study1b_emo_df) %>% 
   group_by(condition,specific_emotion,Study) %>% summarize(M=mean(emo_rating,na.rm=T),SD=sd(emo_rating,na.rm=T)) %>%
   pivot_wider(names_from='specific_emotion',values_from=c('M','SD')) %>% 
-mutate(`Positive Emotion`=paste0(round_format(M_positive),', ',round_format(SD_positive)),
-       `Negative Emotion`=paste0(round_format(M_negative),', ',round_format(SD_negative))) %>%
+mutate(`Positive \nEmotion`=paste0(round_format(M_positive),', ',round_format(SD_positive)),
+       `Negative \nEmotion`=paste0(round_format(M_negative),', ',round_format(SD_negative))) %>%
   select(!contains('_'))
 
 fam_df=study1a_familiarity_df %>% bind_rows(study1b_familiarity_df) %>% 
   filter(grepl('like me',familiarity_variable) | grepl('familiar with',familiarity_variable)) %>% 
   group_by(condition, Study, pIDs, filename) %>% summarize(fam_index=mean(fam_rating,na.rm=T)) %>% 
   group_by(condition,Study) %>% summarize(M=mean(fam_index,na.rm=T),SD=sd(fam_index,na.rm=T)) %>%
-  mutate(`Familiarity Index`=paste0(round_format(M),', ',round_format(SD))) %>% select(-M,-SD)
+  mutate(`Familiarity \nIndex`=paste0(round_format(M),', ',round_format(SD))) %>% select(-M,-SD)
 
 descriptives_table=drink_df %>% left_join(emo_df) %>% left_join(fam_df) %>% ungroup() %>%
   mutate(`Valence`=case_when(grepl('anti',condition)~'anti-alcohol',
