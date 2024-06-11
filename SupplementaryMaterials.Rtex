@@ -49,6 +49,8 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 
 \section{Supplementary Methods}
 
+\subsection{Messages}
+
 Supplementary Figure \ref{fig:templates} shows visual templates used to present messages to study participants.
 
 \begin{figure}
@@ -57,6 +59,8 @@ Supplementary Figure \ref{fig:templates} shows visual templates used to present 
     \label{fig:templates}
 \end{figure}
 
+\subsection{Procedures}
+
 Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
 
 \begin{figure}
@@ -64,6 +68,8 @@ Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an e
     \includegraphics[height=3in, width=6.5in]{Figures/FigureAlcValTask.png}
     \label{fig:FigureAlcValTask}
 \end{figure}
+
+\subsection{Self-Report Measures and Manipulation Checks}
 
 Supplementary Table \ref{tab:avgSelfReport} shows averages of key self-report measures disaggregated by study and message condition.
 
@@ -75,8 +81,11 @@ kable(desc_table,booktabs=T,digits=2,caption='Descriptive Statistics (M, SD) for
   add_footnote('Note. For Study 2, only trials in which alcoholic cues were presented are included.') 
 @
 
+Study 1a and 1b participants rated two manipulation check items per trial to assess whether the stimuli were perceived as intended according to the manipulated dimensions of valence and source. The items are presented in Supplementary Table \ref{tab:MCmeasures}.
+
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
+
 We used the manipulation checks assessed in Study 1a and 1b (Supplementary Table \ref{tab:MCmeasures}) in order to examine whether the stimuli where perceived as intended.
 
 \begin{table}
@@ -175,7 +184,7 @@ binge_table=read_csv('Tables/bingeTable.csv',col_types=cols())
 
 binge_table[is.na(binge_table)]<-''
 
-kable(binge_table,caption='Effect of valence and binge-drinking habits on alcohol craving in Study 1b)',booktabs=T,digit=2) %>% add_footnote("Note. ID = participant ID; sID = stimulus ID; Model equation: alcohol craving ~ binge drinking frequency * valence + (1|participant) + (1|stimulus)")
+kable(binge_table,caption='Effect of valence and binge-drinking habits on alcohol craving in Study 1b',booktabs=T,digit=2) %>% add_footnote("Note. ID = participant ID; sID = stimulus ID; Model equation: alcohol craving ~ binge drinking frequency * valence + (1|participant) + (1|stimulus)")
 @
 
 \end{document}
