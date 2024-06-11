@@ -49,15 +49,19 @@ study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS')
 
 \section{Supplementary Methods}
 
-Supplementary Figure S\ref{fig:templates} shows visual templates used to present messages to study participants.
+\subsection{Messages}
+
+Supplementary Figure \ref{fig:templates} shows visual templates used to present messages to study participants.
 
 \begin{figure}
-    \caption{Visual templates used for stimulus presentation)}
-    \includegraphics[height=3in, width=6.5in]{Figures/templates.png}
+    \caption{Visual templates used for stimulus presentation}
+    \includegraphics[height=3.5in, width=6in]{Figures/templates.png}
     \label{fig:templates}
 \end{figure}
 
-Supplementary Figure S\ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
+\subsection{Procedures}
+
+Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
 
 \begin{figure}
     \caption{Example Trial and Instructions Study 2 Task (To protect copyright interests, this figure depicts icons instead of the actual stimuli and beverage cues. See the GitHub reproducibility package (https://anonymous.4open.science/r/PilotPaperTalkingDrinks-anonymize/) for stimulus descriptions and sources. Original stimuli are available from the corresponding author upon request.)}
@@ -65,7 +69,9 @@ Supplementary Figure S\ref{fig:FigureAlcValTask} provides a visualization of an 
     \label{fig:FigureAlcValTask}
 \end{figure}
 
-Supplementary Table S\ref{tab:avgSelfReport} shows averages of key self-report measures disaggregated by study and message condition.
+\subsection{Self-Report Measures and Manipulation Checks}
+
+Supplementary Table \ref{tab:avgSelfReport} shows averages of key self-report measures disaggregated by study and message condition.
 
 <<avgSelfReport,echo=FALSE>>=
 desc_table=read_csv('Tables/descriptives_table.csv',col_types=cols())
@@ -75,8 +81,11 @@ kable(desc_table,booktabs=T,digits=2,caption='Descriptive Statistics (M, SD) for
   add_footnote('Note. For Study 2, only trials in which alcoholic cues were presented are included.') 
 @
 
+Study 1a and 1b participants rated two manipulation check items per trial to assess whether the stimuli were perceived as intended according to the manipulated dimensions of valence and source. The items are presented in Supplementary Table \ref{tab:MCmeasures}.
+
 \section{Supplementary Results}
 \subsection{Manipulation Checks}
+
 We used the manipulation checks assessed in Study 1a and 1b (Supplementary Table \ref{tab:MCmeasures}) in order to examine whether the stimuli where perceived as intended.
 
 \begin{table}
@@ -152,7 +161,7 @@ val_mc_plot + combined_plots +
   plot_layout(ncol=2,widths=c(1.5,2))
 @
 
-Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models per study, regressing the extent to which participants were certain that each of three types of users (professional, influencer, and peer) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Table ~\ref{tab:mcTableSource}, and Figure \ref{fig:mcPlot}B and C). Stimuli from professional sources showed higher ratings for certainty that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of certainty that a peer produced the stimulus. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli. 
+Second, we assessed whether participants were able to identify the manipulated source for images with alcoholic drinks (Study 1a) and images with non-alcoholic drinks (Study 1b) by estimating three multi-level regression models per study, regressing the extent to which participants were certain that each of three types of users (professional, influencer, and peer) was the source of each stimulus on a manipulated source condition factor (professional>peer), accounting for random intercepts across participants and stimuli (Supplementary Table ~\ref{tab:mcTableSource}, and Supplementary Figure \ref{fig:mcPlot}B and C). Stimuli from professional sources showed higher ratings for certainty that the stimulus was created by a professional user compared to stimuli from peer-produced sources and vice versa for ratings of certainty that a peer produced the stimulus. This effect holds for both alcohol-related and non-alcoholic stimuli. Of note, professional stimuli were more often attributed to influencers compared to peer-produced stimuli. 
 
 <<mcTableSource,echo=FALSE,results='asis'>>=
 mc_table=read_csv('Tables/mcTableSource.csv',col_types=cols()) %>%
@@ -164,6 +173,19 @@ mc_table[is.na(mc_table)]<-''
 kable(mc_table,caption='Effects of source condition on each of three perceived source ratings in Study 1a \\& 1b, Freq. = Frequency, pID = participant ID; sID = stimulus ID',booktabs=T,digit=2) %>%
 kable_styling(font_size=8) %>% add_footnote('Note. DV = Dependent Variable. The equation used to fit the three models per study in this table was Perceived source certainty ~ Source condition +(1|participant ID) + (1|stimulus ID)')
 @ 
+
+\subsection{Drinking habits and message receptivity}
+
+A key result in the main manuscript suggested that anti-alcohol messages (relative to non-alcoholic messages) had smaller effects on alcohol craving than pro-alcohol messages. In the main manuscript, we further report a follow-up analysis exploring the effect of binge drinking habits on message receptivity to examine the possibility that anti-alcohol messages only truly resonate with those who are targeted most directly, frequent binge drinkers. In concert with Figure 1c in the main manuscript, the multi-level regression model fit to Study 1b data in Supplementary Table ~\ref{tab:bingeTable} refutes this hypothesis. Frequent binge drinkers showed higher sensitivity to pro- but not anti-alcohol messages.
+
+<<bingeTable,echo=FALSE,message=FALSE,results='asis'>>= 
+
+binge_table=read_csv('Tables/bingeTable.csv',col_types=cols()) 
+
+binge_table[is.na(binge_table)]<-''
+
+kable(binge_table,caption='Effect of valence and binge-drinking habits on alcohol craving in Study 1b',booktabs=T,digit=2) %>% add_footnote("Note. ID = participant ID; sID = stimulus ID; Model equation: alcohol craving ~ binge drinking frequency * valence + (1|participant) + (1|stimulus)")
+@
 
 \end{document}
 
