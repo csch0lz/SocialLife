@@ -65,7 +65,7 @@ Supplementary Figure \ref{fig:templates} shows visual templates used to present 
 Supplementary Figure \ref{fig:FigureAlcValTask} provides a visualization of an example trial completed by Study 2 participants.
 
 \begin{figure}
-    \caption{Example Trial and Instructions Study 2 Task (To protect copyright interests, this figure depicts icons instead of the actual stimuli and beverage cues. See the GitHub reproducibility package (https://anonymous.4open.science/r/SocialLifeMessages) for stimulus descriptions and sources. Original stimuli are available from the corresponding author upon request.)}
+    \caption{Example Trial and Instructions Study 2 Task (To protect copyright interests, this figure depicts icons instead of the actual stimuli and beverage cues. See the GitHub reproducibility package (https://anonymous.4open.science/r/SocialLifeMessagesReview) for stimulus descriptions and sources. Original stimuli are available from the corresponding author upon request.)}
     \includegraphics[height=3in, width=6.5in]{Figures/FigureAlcValTask.png}
     \label{fig:FigureAlcValTask}
 \end{figure}
