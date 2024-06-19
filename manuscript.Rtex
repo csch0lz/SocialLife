@@ -1,4 +1,4 @@
-\documentclass[man, 11pt]{apa7}
+\documentclass[man, 12pt]{apa7}
 \usepackage{etoolbox}
 
 % Patch the document class to set the font to sans-serif
@@ -21,8 +21,8 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title{The Social Life of Health-Promotion Messages: Alcohol Craving in Complex Information Environments}
-\shorttitle{The Social Life of Health Messages}
+\title{The Social Life of Persuasive Messages: Message Effects in Complex Information Environments}
+\shorttitle{The Social Life of Persuasive Messages}
 
 \author{Christin Scholz\textsuperscript{1},
 Hang-Yee Chan\textsuperscript{2},
@@ -41,12 +41,9 @@ Eva van Reijmersdal\textsuperscript{1}}
    
    \addORCIDlink{Eva van Reijmersdal}{0000-0002-3950-3524},
    
-  The authors declare no conflict of interest.
   Correspondence concerning this article should be addressed to Christin Scholz, Amsterdam School of Communication Research, University of Amsterdam, Nieuwe Achtergracht 166, 1018WV Amsterdam, The Netherlands.  E-mail: c.scholz@uva.nl}
            
-\abstract{\textbf{Objective:} Within complex information environments, persuasive messages are often viewed in close proximity to other relevant and possibly contradictory content. While persuasion research focuses on optimizing individual message types (e.g. anti- or pro-alcohol messages), scarce knowledge about competition between message types hinders the prediction of message effects in real-world settings. We directly compared effects of competing message types to understand relative effects and underlying mechanisms. \textbf{Methods:} Across three studies, English-speaking convenience samples from online panels and our University's student pool (N=468) viewed a large sample of alcohol-related messages (N=190) of different types (pro-, anti-, and non-alcoholic messages from professional and peer sources). Using within-subject designs, we measured the relative impact of message types on alcohol craving and mechanisms driving these effects. \textbf{Results:} Pro-alcohol messages were more impactful than anti-alcohol messages, especially among frequent binge drinkers. Although emotional responses and familiarity with the alcohol-related content were relevant mechanisms for both pro- and anti-alcohol message effects, both mechanisms were more strongly coupled to craving in response to pro- (vs. anti-alcohol) messages. \textbf{Conclusions:} Accounting for a large variety of messages, our results suggest that restricting pro-alcohol content may be more effective in reducing consumption than producing anti-alcohol content within populations represented by our English-speaking convenience samples. The findings further raise specific concerns about the effectiveness of anti-alcohol messages that target familiarity and emotional processes, especially when viewed in direct competition with pro-alcohol information. Further research on the competition between related message types is crucial to support understanding and prediction of message effectiveness.
-
-SIGNIFICANCE: We examined how health promotion (professional anti-alcohol) messages perform relative to other relevant confirmatory (peer-produced anti-alcohol messages) and contradictory (professional/peer-produced pro-alcohol) information by comparing alcohol craving across message types. Understanding competition between message types will help improve predictions of message effects in modern, diverse information environments.}
+\abstract{In complex information environments, persuasive messages are often viewed in close proximity to other relevant and possibly contradictory content. While persuasion research focuses on optimizing individual message types (e.g. anti- or pro-alcohol messages), scarce knowledge about competition between message types hinders the prediction of message effects in real-world settings. We directly compared effects of competing message types to understand relative effects and underlying mechanisms. Across three studies (N=468), participants viewed a large sample of alcohol-related messages (N=190) of different types (pro-, anti-, and non-alcoholic messages from professional and peer sources). Using within-subject designs, we measured the relative impact of these message types on alcohol craving and mechanisms driving these effects. Pro-alcohol messages were more impactful than anti-alcohol messages, especially among frequent binge drinkers. Although emotional responses and familiarity with the alcohol-related content were relevant mechanisms for both pro- and anti-alcohol message effects, both mechanisms were more strongly coupled to craving in response to pro- (vs. anti-alcohol) messages. Overall, results demonstrate the utility of systematic comparisons of message types in persuasion research by identifying relative effect sizes and highlighting potential areas of interference between message effects of different types (e.g. when emotional anti- and pro-alcohol messages are viewed in close proximity). }
 
 \keywords{alcohol craving, anti-alcohol messages, persuasion, alcohol marketing, emotions, familiarity}
 
@@ -508,7 +505,15 @@ The generalizability of this set of results is limited in two important ways. Fi
 
 \subsection{Conclusions}
 
-We directly compared the effects of competing alcohol message types varying in valence and source in the same participants. Anti-alcohol messages were substantially less effective at impacting alcohol craving than pro-alcohol messages, especially in frequent binge drinkers. Mirroring this imbalance, emotionality and familiarity, key mechanisms underlying persuasive message effects, were found to more consistently and more strongly support pro-alcohol rather than anti-alcohol message effects. Pending further substantiation of these results by replication and extension studies, our work suggests that more emphasis should be put on removing pro-alcohol from rather than adding anti-alcohol content to the information environment. Our work further highlights the importance of more comparative work in persuasion research to empirically chart and theoretically account for currently unpredictable interference effects that may occur when a message recipient is exposed to competing messages in close temporal and/or spatial proximity.  
+We directly compared the effecs of competing persuasive message types varying in valence and source in the same participants. Anti-alcohol messages were substantially less effective at impacting alcohol craving than pro-alcohol messages, especially in frequent binge drinkers. Mirroring this imbalance, emotionality and familiarity, key mechanisms underlying persuasive message effects, were found to more consistently and more strongly support pro-alcohol rather than anti-alcohol message effects. This work suggests that more emphasis should be put on removing pro-alcohol from rather than adding anti-alcohol content to the information environment. Our work further highlights the importance of more comparative work in persuasion research to empirically chart and theoretically account for currently unpredictable interference effects that may occur when a message recipient is exposed to competing messages in close temporal and/or spatial proximity. 
+
+\section{Acknowledgments}
+
+This work was funded by a Veni grant from the Dutch Science Foundation (NWO, number VI.veni.191G.034; PI: C.S.). 
+
+\section{Declaration of Interests}
+
+The authors report there are no competing interests to declare.
 
 \printbibliography
 

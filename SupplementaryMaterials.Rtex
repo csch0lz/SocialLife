@@ -14,7 +14,7 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title{Supplementary Materials - Anti-Alcohol Messages in Context: How Alcohol-Craving is Affected by a Complex Information Environment}
+\title{Supplementary Materials - The Social Life of Persuasive Messages: Message Effects in Complex Information Environments}
 \shorttitle{Supplementary Materials}
 
 \author{ANONYMIZED}
@@ -22,6 +22,7 @@
 
 
 \begin{document}
+\maketitle
 
 <<hide=TRUE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library('tidyverse')
