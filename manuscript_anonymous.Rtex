@@ -2,9 +2,9 @@
 \usepackage{etoolbox}
 
 % Patch the document class to set the font to sans-serif
-\makeatletter
-\preto{\document}{\renewcommand{\rmdefault}{phv}} % Set main font to Helvetica
-\makeatother
+%\makeatletter
+%\preto{\document}{\renewcommand{\rmdefault}{phv}} % Set main font to Helvetica
+%\makeatother
  
 \usepackage{lipsum}
 
@@ -24,24 +24,9 @@
 \title{The Social Life of Health-Promotion Messages: Message Effects in Complex Information Environments}
 \shorttitle{The Social Life of Health-Promotion Messages}
 
-\author{Christin Scholz\textsuperscript{1},
-Hang-Yee Chan\textsuperscript{2},
-Hanneke Hendriks\textsuperscript{3},
-Eva van Reijmersdal\textsuperscript{1}}
-\affiliation{\textsuperscript{1}Amsterdam School of Communication Research University of Amsterdam,
-\textsuperscript{2}Department of Marketing King's Business School King's College London, 
-\textsuperscript{3}Communication Science Radboud University Nijmegen}
+\author{Anonymized for review}
 
-\authornote{
-   \addORCIDlink{Christin Scholz}{0000-0001-6567-7504},
-   
-   \addORCIDlink{Hang-Yee Chan}{0000-0001-7179-9436},
-   
-   \addORCIDlink{Hanneke Hendriks}{0000-0003-4184-0252},
-   
-   \addORCIDlink{Eva van Reijmersdal}{0000-0002-3950-3524},
-   
-  Correspondence concerning this article should be addressed to Christin Scholz, Amsterdam School of Communication Research, University of Amsterdam, Nieuwe Achtergracht 166, 1018WV Amsterdam, The Netherlands.  E-mail: c.scholz@uva.nl}
+\authornote{Anonymized for review}
            
 \abstract{In complex information environments, health-promotion messages are often viewed in close proximity to other relevant and possibly contradictory content. While persuasion research focuses on optimizing individual message types (e.g. anti- or pro-alcohol messages), scarce knowledge about competition between message types hinders the prediction of message effects in real-world health outcomes. We directly compared effects of competing message types to understand relative effects and underlying mechanisms. Across three studies (N=468), participants viewed a large sample of alcohol-related messages (N=190) of different types (pro-, anti-, and non-alcoholic messages from professional and peer sources). Using within-subject designs, we measured the relative impact of these message types on alcohol craving and mechanisms driving these effects. Pro-alcohol messages were more impactful than anti-alcohol messages, especially among frequent binge drinkers. Although emotional responses and familiarity with the alcohol-related content were relevant mechanisms for both pro- and anti-alcohol message effects, both mechanisms were more strongly coupled to craving in response to pro- (vs. anti-alcohol) messages. Overall, results demonstrate the utility of systematic comparisons of message types in health-promotion research by identifying relative effect sizes and highlighting potential areas of interference between message effects of different types (e.g. when emotional anti- and pro-alcohol messages are viewed in close proximity). }
 
@@ -114,7 +99,7 @@ H7: Enhancing message effectiveness, higher familiarity with pro-alcohol message
 Prior work focused on familiarity of professional messaging, creating a knowledge gap about peer-produced messages, which likely have stronger objective similarities with the life of message recipients. Here we explore whether familiarity is a stronger driver of craving in response to peer or professional messages and whether these effects differ by message valence.
 
 \section{Method}
-We conducted three online experiments to directly compare the impact of different alcohol-related message types on alcohol craving and to explore mechanisms of these effects. Study 1a established craving responses to a large sample of professional and peer-produced pro- and anti-alcohol messages representing a broad spectrum of alcohol-related information available in the information environment. Study 1b introduced comparison conditions of professional- and peer-produced messages about non-alcoholic beverages. Study 2 conceptually replicated Studies 1a/b using a subset of the same alcoholic stimuli and a different task design. All participants provided informed consent and study procedures were approved by the ethical review board at the University of Amsterdam (Protocol number anonymized for review). 
+We conducted three online experiments to directly compare the impact of different alcohol-related message types on alcohol craving and to explore mechanisms of these effects. Study 1a established craving responses to a large sample of professional and peer-produced pro- and anti-alcohol messages representing a broad spectrum of alcohol-related information available in the information environment. Study 1b introduced comparison conditions of professional- and peer-produced messages about non-alcoholic beverages. Study 2 conceptually replicated Studies 1a/b using a subset of the same alcoholic stimuli and a different task design. All participants provided informed consent and study procedures were approved by the ethical review board at the [university and protocol number anonymized for review]. 
 
 \subsection{Transparency and Openness}
 The studies reported here were not pre-registered. Measures, data, and analysis code are available on GitHub (https://anonymous.4open.science/r/SocialLifeMessagesReview). To protect copyright interests of original content creators, the stimulus set is only available upon request. The reproducibility package does include a table with descriptions of all stimuli and the stimulus source. Only Study 2 participants answered questions not described in this manuscript related to orthogonal research questions about meat consumption. These additional measures are included in the reproducibility package. 
