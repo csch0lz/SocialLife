@@ -2,9 +2,9 @@
 \usepackage{etoolbox}
 
 % Patch the document class to set the font to sans-serif
-\makeatletter
-\preto{\document}{\renewcommand{\rmdefault}{phv}} % Set main font to Helvetica
-\makeatother
+%\makeatletter
+%\preto{\document}{\renewcommand{\rmdefault}{phv}} % Set main font to Helvetica
+%\makeatother
  
 \usepackage{lipsum}
 
@@ -49,7 +49,9 @@ Eva van Reijmersdal\textsuperscript{1}}
 
 \begin{document}
 \maketitle
-Persuasive messages live largely unexplored, metaphorical "social lives". Within rich information environments, each message interacts and competes with its "peers" (i.e. other messages relevant to the same attitude or behavior which may or may not be congruent with the focal message; e.g. see \cite{young_effectiveness_2018, stautz_viewing_2016}). These interactions likely create interference between message effects which complicates the prediction of message effectiveness. To illustrate, like most daily choices, alcohol consumption has pros and cons. It is a social catalyst, associated with fun and friendship (\cite{duckworth_transitions_2021}), but also a significant cause of death, injury, and disease (\cite{oecd_avoidable_2016}). Consequently, diverse stakeholders, from alcohol brands, to public health authorities, to party-loving peers and concerned family, seek to influence alcohol consumption. Their voices create rich information environments and frequent exposures to alcohol-related messages varying in valence (pro/anti-alcohol) and source (peers or professionals). Extensive prior work has examined individual message types (e.g. exclusively pro-, \cite{jernigan_alcohol_2017}, or anti-alcohol messages, \cite{young_effectiveness_2018}). Yet, we know little about relative effectiveness and potential interference between effects of messages varying in source and valence. In three exploratory studies, we directly compared effects of pro- and anti-alcohol messages from professional and peer sources on alcohol craving and ask whether these messages exert influence through similar or different psychological mechanisms. 
+Persuasive messages live largely unexplored "social lives". Within rich, dynamic information environments, they encounter and compete with their “peers” - thematically related messages in close spatial and temporal proximity that are congruent or conflicting in content and source \cite{young_effectiveness_2018, stautz_viewing_2016}). Such encounters have become more frequent in algorithm-driven social media environments where users may see contrasting messages, such as alcohol ads and anti-drinking campaigns,  within a few scrolls. Alcohol occupies conflicting societal roles: social catalyst (\cite{duckworth_transitions_2021}), economic asset
+
+, but also a significant cause of death, injury, and disease (\cite{oecd_avoidable_2016}). Consequently, diverse stakeholders, from alcohol brands, to public health authorities, to party-loving peers and concerned family, seek to influence alcohol consumption. Their voices create rich information environments and frequent exposures to alcohol-related messages varying in valence (pro/anti-alcohol) and source (peers or professionals). Extensive prior work has examined individual message types (e.g. exclusively pro-, \cite{jernigan_alcohol_2017}, or anti-alcohol messages, \cite{young_effectiveness_2018}). Yet, we know little about relative effectiveness and potential interference between effects of messages varying in source and valence. In three exploratory studies, we directly compared effects of pro- and anti-alcohol messages from professional and peer sources on alcohol craving and ask whether these messages exert influence through similar or different psychological mechanisms. 
 
 \subsection{Persuasion in Complex Information Environments}
 
