@@ -14,7 +14,7 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title{Supplementary Materials - The Social Life of Persuasive Messages: Message Effects in Complex Information Environments}
+\title{Supplementary Materials - The Social Life of Health-Promotion Messages: Message Effects in Complex Information Environments}
 \shorttitle{Supplementary Materials}
 
 \author{ANONYMIZED}
