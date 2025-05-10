@@ -335,9 +335,22 @@ Next, we examined the extent to which the different message types succeeded in e
 <<emoTablesAvg,echo=FALSE,message=FALSE>>=
 EmoAvgneg=read_csv('Tables/EmoAvgneg_table.csv',col_types=cols())
 EmoAvgpos=read_csv('Tables/EmoAvgpos_table.csv',col_types=cols())
+
+study1a_emo_df=readRDS('data/study1a/cleaned/emo_df.RDS') %>% mutate(Study='Study 1a')
+study1b_emo_df=readRDS('data/study1b/cleaned/emo_df.RDS') %>% mutate(Study='Study 1b') %>% mutate(emo_rating=as.numeric(emo_rating))
+
+emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=specific_emotion,values_from=emo_rating) %>%
+  mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
+                            grepl('anti',condition)~'anti-alcohol',
+                            grepl('pro',condition)~'pro-alcohol',
+                            TRUE~NA_character_),
+         source_cond=case_when(grepl('social',condition)~'peer',
+                               grepl('prof',condition)~'professional',
+                               TRUE~NA_character_))
+
 @
 
-To examine differences in emotionality across message types, we fit two multi-level regression models regressing negative and positive emotions, respectively, on valence and source condition, accounting for random intercepts across participants, stimuli and studies. Pro-alcohol messages were associated with more positive ($\Sexpr{EmoAvgpos$Estimate[2]}$) and less negative emotional responses than anti-alcohol messages ($\Sexpr{EmoAvgneg$Estimate[2]}$). Figure ~\ref{fig:FamEmoFigure}A reveals no substantial differences between professional and peer-produced stimuli. Figure ~\ref{fig:FamEmoFigure}A further shows no substantial differences in the overall emotionality of messages varying in valence and source. For instance, while anti-alcohol messages scored, on average a WHAT 4??? on negative emotions and a 2???? on positive emotions, pro-alcohol messagess scored about a 2??? on negative and a 4???? on positive emotions, with minimal differences in source.
+To examine differences in emotionality across message types, we fit two multi-level regression models regressing negative and positive emotions, respectively, on valence, source, and their interaction, accounting for random intercepts across participants, stimuli and studies. Pro-alcohol messages were associated with more positive ($\Sexpr{EmoAvgpos$Estimate[2]}$) and less negative emotional responses than anti-alcohol messages ($\Sexpr{EmoAvgneg$Estimate[2]}$). Professionally produced messages evoked more negative emotions than peer-produced messages ($\Sexpr{EmoAvgneg$Estimate[3]}$), which was qualified by an interaction with valence ($\Sexpr{EmoAvgneg$Estimate[4]}$) such that the source effect was only present for anti-alcohol messages (SUPPLEMENTARY TABLE,  Figure ~\ref{fig:FamEmoFigure}A). Figure ~\ref{fig:FamEmoFigure}A further shows no substantial differences in the overall emotionality of messages varying in valence and source. For instance, while anti-alcohol messages scored, on average $\Sexpr{round(mean(emo_1ab$negative[grepl('anti',emo_1ab$condition)],na.rm=T),2)}$ on negative emotions and $\Sexpr{round(mean(emo_1ab$positive[grepl('anti',emo_1ab$condition)],na.rm=T),2)}$ on positive emotions, pro-alcohol messagess scored about $\Sexpr{round(mean(emo_1ab$negative[grepl('pro',emo_1ab$condition)],na.rm=T),2)}$ on negative and a $\Sexpr{round(mean(emo_1ab$positive[grepl('pro',emo_1ab$condition)],na.rm=T),2)}$ on positive emotions, with minimal differences in source.
 
 <<MakeEmoFigureOne, echo=FALSE,message=FALSE>>=
 drink_1ab=study1a_drink_df %>% bind_rows(study1b_drink_df)
