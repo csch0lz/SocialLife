@@ -1,7 +1,9 @@
 effect,term,Estimate
-fixed,(Intercept),"B = 1.88, 95\%CI [1.43, 2.33], p = 0.004"
-fixed,val_condpro-alcohol,"B = 2.27, 95\%CI [2.07, 2.48], p < .001"
-ran_pars,sd__(Intercept),0.868307574805917
-ran_pars,sd__(Intercept),0.597837463876229
-ran_pars,sd__(Intercept),0.0489172083611785
-ran_pars,sd__Observation,1.28826466940946
+fixed,(Intercept),"B = 2.01, 95\%CI [1.69, 2.32], p < .001"
+fixed,val_condpro-alcohol,"B = 2.19, 95\%CI [1.9, 2.47], p < .001"
+fixed,source_condprofessional,"B = -0.25, 95\%CI [-0.54, 0.03], p = 0.084"
+fixed,val_condpro-alcohol:source_condprofessional,"B = 0.17, 95\%CI [-0.23, 0.58], p = 0.403"
+ran_pars,sd__(Intercept),0.868502239431249
+ran_pars,sd__(Intercept),0.594948462181259
+ran_pars,sd__(Intercept),0.0489864523641092
+ran_pars,sd__Observation,1.28823232626913

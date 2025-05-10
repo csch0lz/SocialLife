@@ -19,11 +19,14 @@ emo_1ab=bind_rows(study1a_emo_df,study1b_emo_df) %>% pivot_wider(names_from=spec
   mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
                             grepl('anti',condition)~'anti-alcohol',
                             grepl('pro',condition)~'pro-alcohol',
-                            TRUE~NA_character_))
+                            TRUE~NA_character_),
+         source_cond=case_when(grepl('social',condition)~'peer',
+                               grepl('prof',condition)~'professional',
+                               TRUE~NA_character_))
 
 positive_Avg=emo_1ab %>% 
   filter(val_cond!='non-alcoholic') %>%
-  lmer(positive~val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(positive~val_cond*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
@@ -39,7 +42,7 @@ positive_Avg=emo_1ab %>%
 
 negative_Avg=emo_1ab %>% 
   filter(val_cond!='non-alcoholic') %>%
-  lmer(negative~val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(negative~val_cond*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
