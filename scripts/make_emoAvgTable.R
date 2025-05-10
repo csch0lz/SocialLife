@@ -35,7 +35,7 @@ positive_Avg=emo_1ab %>%
          Estimate=paste0('B = ',round(estimate,2),', 95\\%CI [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
          Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))%>%
   dplyr::select(effect,term,Estimate) %>%
-  write_csv(.,'Tables/EmoAvgneg_table.csv')
+  write_csv(.,'Tables/EmoAvgpos_table.csv')
 
 negative_Avg=emo_1ab %>% 
   filter(val_cond!='non-alcoholic') %>%
