@@ -1,0 +1,9 @@
+effect,term,Estimate
+fixed,(Intercept),"B = 2.62, 95\%CI [2.24, 3], p < .001"
+fixed,val_condpro-alcohol,"B = 1.7, 95\%CI [1.47, 1.93], p < .001"
+fixed,source_condprofessional,"B = -0.03, 95\%CI [-0.26, 0.2], p = 0.79"
+fixed,val_condpro-alcohol:source_condprofessional,"B = -0.07, 95\%CI [-0.39, 0.26], p = 0.678"
+ran_pars,sd__(Intercept),0.892243343154039
+ran_pars,sd__(Intercept),0.494687287866647
+ran_pars,sd__(Intercept),0.0893907977956169
+ran_pars,sd__Observation,1.61058215554947

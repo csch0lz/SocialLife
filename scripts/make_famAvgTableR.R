@@ -18,11 +18,14 @@ fam_1ab=bind_rows(study1a_familiarity_df,study1b_familiarity_df) %>%
   mutate(val_cond=case_when(grepl('non',condition)~'non-alcoholic',
                             grepl('anti',condition)~'anti-alcohol',
                             grepl('pro',condition)~'pro-alcohol',
-                            TRUE~NA_character_))
+                            TRUE~NA_character_),
+         source_cond=case_when(grepl('social',condition)~'peer',
+                               grepl('prof',condition)~'professional',
+                               TRUE~NA_character_))
 
-H6=fam_1ab %>% 
+famAvg=fam_1ab %>% 
   filter(val_cond!='non-alcoholic') %>%
-  lmer(fam_rating~val_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
+  lmer(fam_rating~val_cond*source_cond+(1|pIDs)+(1|filename)+(1|Study),data=.,control = lmerControl(optimizer='bobyqa')) %>% 
   broom.mixed::tidy(.,conf.int=TRUE) %>% 
   #add_row(.,effect='STUDY 1',.before=1)
   mutate(group=ifelse(group=='pIDs','pID',
@@ -34,5 +37,5 @@ H6=fam_1ab %>%
          Estimate=paste0('B = ',round(estimate,2),', 95\\%CI [',round(conf.low,2),', ',round(conf.high,2),'], ',p.value),
          Estimate=ifelse(grepl('NA',Estimate),estimate,Estimate))%>%
   dplyr::select(effect,term,Estimate) %>%
-  write_csv(.,'Tables/H6_table.csv')
+  write_csv(.,'Tables/famAvg_table.csv')
 
