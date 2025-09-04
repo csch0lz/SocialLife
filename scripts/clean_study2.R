@@ -16,6 +16,9 @@ logs=logs %>% left_join(all_alc_cues,by=c('alc_cue'='file'))
 #1 person did the task twice
 #logs %>% group_by(pID) %>% count() %>% filter(n>88)%>%select(pID) %>% as.character()
 ##leaving this in here because can't determine which one was first + shouldn't matter too much
+# one ID (9 ratings) removed bc they were testing the task pID==346558
+
+logs = logs %>% filter(pID!='346558_study2')
 
 ## Make new condition vars
 logs = logs %>% mutate(val_cond=case_when(grepl('anti',condition)~'anti-alcohol',
