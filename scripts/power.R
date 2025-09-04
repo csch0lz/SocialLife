@@ -1,8 +1,8 @@
 library(lme4)
 library(simr)
 
-#set seed to 1234
-set.seed(1234)
+#set seed
+set.seed(1111)
 
 test_beta=0.2
 
